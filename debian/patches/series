@@ -1,0 +1,7 @@
+#01-fix_paths.patch
+02-fix_desktop_files.patch
+03-fix_translation.patch
+#04-fix_POTFILES.skip.patch
+#05-fix_entries_sorting.patch  # refactored
+06-private_pythonlib.patch
+#07-fix_manpage_typos.patch

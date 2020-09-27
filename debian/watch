@@ -1,0 +1,3 @@
+version=3
+https://launchpad.net/disk-manager/+download \
+    http://launchpad.net/disk-manager/\d+.*/\d+.*/\+download/disk-manager-(\d+.*)\.tar\.gz

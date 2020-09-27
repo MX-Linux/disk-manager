@@ -1,0 +1,688 @@
+# Frensh translation for disk-manager
+# Copyright (C) 2007 Mertens Florent
+# This file is distributed under the same license as the disk-manager package.
+# Mertens Florent <flomertens AT gmail.com>, 2007.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: disk-manager 0.1\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2011-01-10 23:27+0100\n"
+"Last-Translator: Mertens Florent <flomertens AT gmail.com>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Rosetta-Export-Date: 2007-07-15 23:18:21+0000\n"
+
+#: ../disk-manager.in:60
+msgid "Insufficient rights"
+msgstr "Privilèges insuffisants"
+
+#: ../disk-manager.in:61
+msgid "You need administrative rights to start this application."
+msgstr ""
+"Vous devez avoir les privilèges d'administrateur pour lancer cette "
+"application."
+
+#: ../data/disk-manager.glade.h:1
+msgid "<b>Driver</b>"
+msgstr "<b>Pilote</b>"
+
+#: ../data/disk-manager.glade.h:2
+msgid "<b>Mount point</b>"
+msgstr "<b>Point de montage</b>"
+
+#: ../data/disk-manager.glade.h:3
+msgid "<b>Options</b>"
+msgstr "<b>Options</b>"
+
+#: ../data/disk-manager.glade.h:4
+msgid "Check device every 30 boots"
+msgstr "Vérifie le périphérique tout les 30 démarrage"
+
+#: ../data/disk-manager.glade.h:5
+msgid "History"
+msgstr "Historique"
+
+#: ../data/disk-manager.glade.h:6
+msgid "This driver seams to not be available for this type."
+msgstr "Ce driver ne semble pas être disponible pour ce type."
+
+#: ../data/disk-manager.glade.h:7
+msgid "_Edit"
+msgstr "_Editer"
+
+#: ../data/disk-manager.glade.h:8
+msgid "_File"
+msgstr "_Fichier"
+
+#: ../data/disk-manager.glade.h:9
+msgid "_Help"
+msgstr "_Aide"
+
+#: ../data/disk-manager.glade.h:10
+#, fuzzy
+msgctxt "yes"
+msgid "<b>Available space:</b>"
+msgstr "<b>Espace Disponible :</b>"
+
+#: ../data/disk-manager.glade.h:11
+#, fuzzy
+msgctxt "yes"
+msgid "<b>Device:</b>"
+msgstr "<b>Périphérique :</b>"
+
+#: ../data/disk-manager.glade.h:12
+#, fuzzy
+msgctxt "yes"
+msgid "<b>Free space:</b>"
+msgstr "<b>Espace Libre :</b>"
+
+#: ../data/disk-manager.glade.h:13
+#, fuzzy
+msgctxt "yes"
+msgid "<b>Label:</b>"
+msgstr "<b>Label :</b>"
+
+#: ../data/disk-manager.glade.h:14
+#, fuzzy
+msgctxt "yes"
+msgid "<b>Model:</b>"
+msgstr "<b>Modèle :</b>"
+
+#: ../data/disk-manager.glade.h:15
+#, fuzzy
+msgctxt "yes"
+msgid "<b>Mount point:</b>"
+msgstr "<b>Point de montage :</b>"
+
+#: ../data/disk-manager.glade.h:16
+#, fuzzy
+msgctxt "yes"
+msgid "<b>Options:</b>"
+msgstr "<b>Options :</b>"
+
+#: ../data/disk-manager.glade.h:17
+#, fuzzy
+msgctxt "yes"
+msgid "<b>Serial:</b>"
+msgstr "<b>Numéro de série :</b>"
+
+#: ../data/disk-manager.glade.h:18
+#, fuzzy
+msgctxt "yes"
+msgid "<b>Total size:</b>"
+msgstr "<b>Taille total :</b>"
+
+#: ../data/disk-manager.glade.h:19
+#, fuzzy
+msgctxt "yes"
+msgid "<b>Type:</b>"
+msgstr "<b>Type :</b>"
+
+#: ../data/disk-manager.glade.h:20
+#, fuzzy
+msgctxt "yes"
+msgid "<b>Used space:</b>"
+msgstr "<b>Espace Utilisé :</b>"
+
+#: ../data/disk-manager.glade.h:21
+#, fuzzy
+msgctxt "yes"
+msgid "<b>Vendor:</b>"
+msgstr "<b>Vendeur :</b>"
+
+#: ../data/disk-manager.glade.h:22
+#, fuzzy
+msgctxt "yes"
+msgid "<b>bus:</b>"
+msgstr "<b>bus :</b>"
+
+#: ../data/disk-manager.glade.h:23
+#, fuzzy
+msgctxt "yes"
+msgid "<big><b>Configuration file:</b></big>"
+msgstr "<big><b>Fichier de configuration :</b></big>"
+
+#: ../data/disk-manager.glade.h:24
+#, fuzzy
+msgctxt "yes"
+msgid "<big><b>Configuration history:</b></big>"
+msgstr "<big><b>Historique de la configuration :</b></big>"
+
+#: ../data/disk-manager.glade.h:25
+#, fuzzy
+msgctxt "yes"
+msgid "<big><b>New partitions detected</b></big>"
+msgstr "<big><b>Nouvelles partitions détectées</b></big>"
+
+#: ../data/disk-manager.glade.h:26
+#, fuzzy
+msgctxt "yes"
+msgid "Alternatively you can configure them "
+msgstr ""
+"Alternativement, vous pouvez les configurer \n"
+"automatiquement avec le bouton \"Configuration auto\""
+
+#: ../data/disk-manager.glade.h:27
+#, fuzzy
+msgctxt "yes"
+msgid "Applying changes."
+msgstr "Appliquer les changements"
+
+#: ../data/disk-manager.glade.h:28
+#, fuzzy
+msgctxt "yes"
+msgid "Auto Configure"
+msgstr "Configuration auto"
+
+#: ../data/disk-manager.glade.h:29
+#, fuzzy
+msgctxt "yes"
+msgid "Drive"
+msgstr "Disque"
+
+#: ../data/disk-manager.glade.h:30
+#, fuzzy
+msgctxt "yes"
+msgid "Empty the log"
+msgstr "Vider le journal"
+
+#: ../data/disk-manager.glade.h:31
+#, fuzzy
+msgctxt "yes"
+msgid "Not available"
+msgstr "Non disponible"
+
+#: ../data/disk-manager.glade.h:32
+#, fuzzy
+msgctxt "yes"
+msgid "Size"
+msgstr "Taille"
+
+#: ../data/disk-manager.glade.h:33
+#, fuzzy
+msgctxt "yes"
+msgid "The following new partitions were detected."
+msgstr ""
+"Les nouvelles partitions suivantes ont été détectées\n"
+"Sélectionnez celles que vous voulez configurer :"
+
+#: ../data/disk-manager.glade.h:34
+#, fuzzy
+msgctxt "yes"
+msgid "View config"
+msgstr "Voir la config"
+
+#: ../data/disk-manager.glade.h:35
+#, fuzzy
+msgctxt "yes"
+msgid "Volume"
+msgstr "Volume"
+
+#: ../data/disk-manager.desktop.in.in.h:1 ../DiskManager/DiskManager.py:102
+msgid "Disk Manager"
+msgstr "Gestionnaire de disque"
+
+#: ../data/disk-manager.desktop.in.in.h:2
+msgid "Manage filesystem configuration"
+msgstr "Gère la configuration du système de fichier"
+
+#: ../DiskManager/Dialogs.py:63 ../DiskManager/Fstab/Mounter.py:193
+msgid "Return options to defaults"
+msgstr "Revenir aux options par default"
+
+#: ../DiskManager/Dialogs.py:64
+msgid "Select a directory"
+msgstr "Sélectionne un répertoire"
+
+#: ../DiskManager/Dialogs.py:121 ../DiskManager/Fstab/Mounter.py:204
+#, python-format
+msgid "No driver is available for this type of filsystem : '%s'"
+msgstr "Pas de driver disponible pour ce type de système de fichier : '%s'"
+
+#: ../DiskManager/Dialogs.py:176
+msgid "Wrong mount point"
+msgstr "Mauvais Point de montage"
+
+#: ../DiskManager/Dialogs.py:177
+#, python-format
+msgid ""
+"<i>%s</i> is currently in use.\n"
+"You should try another one."
+msgstr ""
+"<i>%s</i> est actuellement utilisé.\n"
+"Vous devriez essayer un autre."
+
+#: ../DiskManager/Dialogs.py:188
+msgid "Options formatting error"
+msgstr "Options mal formatées"
+
+#: ../DiskManager/Dialogs.py:189
+#, python-format
+msgid ""
+"<i>%s</i> is not formatted correctly.\n"
+"Options should be separated by coma (,)"
+msgstr ""
+"<i>%s</i> n'est pas formaté correctement.\n"
+"Les options doivent être séparé par une virgule (,)"
+
+#: ../DiskManager/Dialogs.py:258 ../DiskManager/DiskManager.py:400
+msgid "Reverting to an older version?"
+msgstr "Revenir à une ancienne version ?"
+
+#: ../DiskManager/Dialogs.py:259 ../DiskManager/DiskManager.py:401
+msgid "This will apply the following changes:"
+msgstr "Cela va appliquer les changements suivants :"
+
+#: ../DiskManager/Dialogs.py:259 ../DiskManager/DiskManager.py:401
+msgid "Do you want to continue?"
+msgstr "Voulez vous continuer ?"
+
+#: ../DiskManager/Dialogs.py:283
+msgid "Emptying History?"
+msgstr "Vider l'historique"
+
+#: ../DiskManager/Dialogs.py:284
+msgid "Do you want to empty the History?"
+msgstr "Voulez vous vider l'historique ?"
+
+#: ../DiskManager/Dialogs.py:313 ../DiskManager/Dialogs.py:314
+#: ../DiskManager/Dialogs.py:315
+msgid "Not available"
+msgstr "Non disponible"
+
+#: ../DiskManager/Dialogs.py:349
+msgid ""
+"Removing unknown devices from\n"
+"the configuration file?"
+msgstr ""
+"Supprimer des périphériques inconnues du\n"
+"fichier de configuration ?"
+
+#: ../DiskManager/Dialogs.py:350
+msgid ""
+"I can not find any existing block devices\n"
+"corresponding to the following devices:"
+msgstr ""
+"Je ne trouve pas de périphériques existant\n"
+"correspondant aux périphériques suivants :"
+
+#: ../DiskManager/Dialogs.py:352
+msgid ""
+"It is advisable to remove them in order to avoid failed mount\n"
+"at start-up. Select the ones you want to remove."
+msgstr ""
+"Il est recommandé de les supprimer pour éviter des échec de montage\n"
+"au démarrage. Sélectionnez ceux que vous voulez supprimer."
+
+#: ../DiskManager/Dialogs.py:355
+msgid "Remove selected"
+msgstr "Supprimer sélection"
+
+#: ../DiskManager/Dialogs.py:355
+msgid "Don't show me this warning in the future."
+msgstr "Ne me montrez pas cet avertissement à l'avenir."
+
+#: ../DiskManager/Dialogs.py:390
+msgid "Duplicate entry detected"
+msgstr "Entrées en double détecté"
+
+#: ../DiskManager/Dialogs.py:391
+msgid ""
+"The following entries of your configuration file use the same mount point:"
+msgstr ""
+"Les entrées suivantes du fichier de configuration utilisent le même point de "
+"montage :"
+
+#: ../DiskManager/Dialogs.py:392
+msgid ""
+"Two different devices can not share the same mount point.\n"
+"You should select the one you want, and the others will be commented.\n"
+"They will be kept in the configuration file, but will be disabled."
+msgstr ""
+"Deux périphériques différents ne peuvent pas partager le même point de "
+"montage.\n"
+"Vous devriez sélectionner celui que vous voulez, et les autres seront "
+"commentés.\n"
+"Ils seront gardé dans votre fichier de configuration, mais seront désactivés."
+
+#: ../DiskManager/Dialogs.py:395
+msgid "Keep selected"
+msgstr "Garder la sélection"
+
+#: ../DiskManager/Dialogs.py:437
+msgid "translator-credits"
+msgstr "Mertens Florent <flomertens AT gmail.com>"
+
+#: ../DiskManager/DiskManager.py:159
+msgid "Enable"
+msgstr "Active"
+
+#: ../DiskManager/DiskManager.py:165
+msgid "Device"
+msgstr "Périphérique"
+
+#: ../DiskManager/DiskManager.py:178
+msgid "Mount point"
+msgstr "Point de montage"
+
+#: ../DiskManager/DiskManager.py:185
+msgid "Type"
+msgstr "Type"
+
+#: ../DiskManager/DiskManager.py:192
+msgid "Total"
+msgstr "Total"
+
+#: ../DiskManager/DiskManager.py:199
+msgid "Free"
+msgstr "Libre"
+
+#: ../DiskManager/DiskManager.py:206
+msgid "Used"
+msgstr "Utilisé"
+
+#: ../DiskManager/DiskManager.py:315
+msgid "Editing system partition?"
+msgstr "Éditer une partition système ?"
+
+#: ../DiskManager/DiskManager.py:316
+#, python-format
+msgid ""
+"<i>%s</i> is an important system partition.\n"
+"Be really careful when editing it, or you may have\n"
+"serious problems. Do you want to continue?"
+msgstr ""
+"<i>%s</i> est une partition importante pour le système.\n"
+"Faite très attention en l'éditant, ou vous pouvez avoir de\n"
+"sérieux problèmes. Voulez vous continuer ?"
+
+#: ../DiskManager/DiskManager.py:392
+msgid "Unmount"
+msgstr "Démonter"
+
+#: ../DiskManager/DiskManager.py:395
+msgid "Mount"
+msgstr "Monter"
+
+#: ../DiskManager/Utility.py:43
+msgid "KB"
+msgstr "Ko"
+
+#: ../DiskManager/Utility.py:43
+msgid "MB"
+msgstr "Mo"
+
+#: ../DiskManager/Utility.py:43
+msgid "GB"
+msgstr "Go"
+
+#: ../DiskManager/Utility.py:43
+msgid "TB"
+msgstr "To"
+
+#: ../DiskManager/Fstab/FstabHandler.py:431
+msgid "Unmounting disabled devices?"
+msgstr "Démonter des périphériques désactivés ?"
+
+#: ../DiskManager/Fstab/FstabHandler.py:432
+msgid "You disabled the following devices:"
+msgstr "Vous venez de désactiver les périphériques suivants :"
+
+#: ../DiskManager/Fstab/FstabHandler.py:432
+msgid "Do you want to unmount them?"
+msgstr "Voulez vous les démonter ?"
+
+#: ../DiskManager/Fstab/FstabHandler.py:434
+msgid "Unmount selected"
+msgstr "Démonter sélection"
+
+#: ../DiskManager/Fstab/FstabHandler.py:443
+msgid "Reboot require"
+msgstr "Redémarrage requis"
+
+#: ../DiskManager/Fstab/FstabHandler.py:444
+msgid ""
+"In order to apply all your changes,\n"
+"you'll need to reboot your computer."
+msgstr ""
+"Pour appliquer tous les changements,\n"
+"vous devrez redémarrer votre ordinateur."
+
+#: ../DiskManager/Fstab/Mounter.py:59
+msgid "Mounting partition"
+msgstr "Montage des partitions"
+
+#: ../DiskManager/Fstab/Mounter.py:61
+msgid "Unmounting partition"
+msgstr "Démontage des partitions"
+
+#: ../DiskManager/Fstab/Mounter.py:63
+msgid "Applying changes"
+msgstr "Appliquer les changements"
+
+#: ../DiskManager/Fstab/Mounter.py:69
+#, python-format
+msgid "Unmounting %s"
+msgstr "Démontage de %s"
+
+#: ../DiskManager/Fstab/Mounter.py:83
+#, python-format
+msgid "Mounting %s"
+msgstr "Montage de %s"
+
+#: ../DiskManager/Fstab/Mounter.py:118
+msgid "Unmounting failed"
+msgstr "Échec du démontage"
+
+#: ../DiskManager/Fstab/Mounter.py:119
+#, python-format
+msgid "Unmounting <i>%s</i> failed because of the following error:"
+msgstr "Le démontage de <i>%s</i> a échoué à cause de l'erreur suivante :"
+
+#: ../DiskManager/Fstab/Mounter.py:124
+msgid "You can also use the 'lazy' options to detach the filesystem now."
+msgstr ""
+"Vous pouvez aussi utiliser l'option 'lazy' pour détacher le système de "
+"fichier maintenant."
+
+#: ../DiskManager/Fstab/Mounter.py:129
+#, python-format
+msgid ""
+"Unmounting <i>%s</i> failed, because\n"
+"it is currently used by the following applications:"
+msgstr ""
+"Le démontage de <i>%s</i> a échoué car\n"
+"il est actuellement utilisé par les applications suivantes :"
+
+#: ../DiskManager/Fstab/Mounter.py:131
+msgid "Close all applications that use it and retry to unmount."
+msgstr ""
+"Fermer toutes les applications qui pourrez l'utiliser et réessayer de "
+"remonter."
+
+#: ../DiskManager/Fstab/Mounter.py:134
+msgid "The filesystem might be temporary buzy. Wait few seconds and retry."
+msgstr ""
+"Le système de fichier est probablement temporairement utilisé.\n"
+"Attendez quelques secondes et recommencez."
+
+#: ../DiskManager/Fstab/Mounter.py:137
+msgid "Unmount with the 'lazy' option"
+msgstr "Démonter avec l'option 'lazy'"
+
+#: ../DiskManager/Fstab/Mounter.py:138
+msgid "Retry unmount"
+msgstr "Réessayer de remonter"
+
+#: ../DiskManager/Fstab/Mounter.py:141
+msgid "Even with the lazy option, unmounting failed."
+msgstr "Même avec l'option lazy, le démontage a échoué."
+
+#: ../DiskManager/Fstab/Mounter.py:153
+msgid "Mounting failed"
+msgstr "Échec du montage"
+
+#: ../DiskManager/Fstab/Mounter.py:154
+#, python-format
+msgid "Mounting <i>%s</i> failed because of the following error:"
+msgstr "Le montage de <i>%s</i> a échoué à cause de l'erreur suivante :"
+
+#: ../DiskManager/Fstab/Mounter.py:157
+msgid "Retry mount"
+msgstr "Réessayer de monter"
+
+#: ../DiskManager/Fstab/Mounter.py:188
+msgid "You can try one of the following action:"
+msgstr "Vous pouvez essayer une des actions suivantes :"
+
+#: ../DiskManager/Fstab/Mounter.py:191
+#, python-format
+msgid "It seams that option '%s' is not allowed."
+msgstr "Il semble que l'option '%s' ne soit pas autorisé."
+
+#: ../DiskManager/Fstab/Mounter.py:195
+#, python-format
+msgid "Don't use the '%s' option"
+msgstr "Ne pas utiliser l'option '%s'"
+
+#: ../DiskManager/Fstab/Mounter.py:197
+#, python-format
+msgid "It seams that fs type '%s' is not valid."
+msgstr "Il semble que le type '%s' ne soit pas valide."
+
+#: ../DiskManager/Fstab/Mounter.py:201
+#, python-format
+msgid "Using driver '%s' (%s)"
+msgstr "Utiliser le driver '%s' (%s)"
+
+#: ../DiskManager/Fstab/Mounter.py:207
+msgid ""
+"You can try to use the 'force' option. Be Aware that this could be risky."
+msgstr ""
+"Vous pouvez essayé d'utiliser l'option 'force'. Soyez prévenu que cela peut "
+"être risqué."
+
+#: ../DiskManager/Fstab/Mounter.py:208
+msgid "Use the 'force' option"
+msgstr "Utiliser l'option 'force'"
+
+#~ msgid "No authentication program founds"
+#~ msgstr "Pas de programme d'authentification trouvé"
+
+#~ msgid ""
+#~ "Disk Manager need to be run as root, but I can't find\n"
+#~ "a graphical authentication program.\n"
+#~ "You should install <i>gksu</i> or <i>kdesu</i>.\n"
+#~ "Alternatively, you can run disk-manager from the terminal with <i>su</i> "
+#~ "or <i>sudo</i>."
+#~ msgstr ""
+#~ "Disk Manager doit être lancé en tant que root, mais je ne\n"
+#~ "trouve aucun programme d'authentification graphique.\n"
+#~ "Vous devriez installer <i>gksu</i> ou <i>kdesu</i>.\n"
+#~ "Alternativement, vous pouvez lancer disk-manager depuis le terminal avec "
+#~ "<i>su</i> ou <i>sudo</i>."
+
+#~ msgid "<b>NTFS policy</b>"
+#~ msgstr "<b>Règle pour NTFS</b>"
+
+#~ msgid "<b>Notification</b>"
+#~ msgstr "<b>Notification</b>"
+
+#~ msgid "<b>Status</b>"
+#~ msgstr "<b>Statut</b>"
+
+#~ msgid "Advanced configuration"
+#~ msgstr "Configuration avancée"
+
+#~ msgid "Apply policy for all partitions"
+#~ msgstr "Appliquer la règle pour toutes les partitions"
+
+#~ msgid ""
+#~ "Applying changes.\n"
+#~ "Please wait until the process finishes."
+#~ msgstr ""
+#~ "Applications des changements\n"
+#~ "Veuillez attendre la fin du processus."
+
+#~ msgid "Configure new partitions"
+#~ msgstr "Configurer les nouvelles partitions"
+
+#~ msgid "Detect new devices on start-up"
+#~ msgstr "Détecte les nouveaux périphériques au démarrage"
+
+#~ msgid "Enable write support"
+#~ msgstr "Active le support en écriture"
+
+#~ msgid "General"
+#~ msgstr "Général"
+
+#~ msgid "Total available size:"
+#~ msgstr "Total taille disponible :"
+
+#~ msgid "Total free size:"
+#~ msgstr "Total taille libre :"
+
+#~ msgid "Total used size:"
+#~ msgstr "Total taille utilisé :"
+
+#~ msgid "Check for new partitions"
+#~ msgstr "Détecte de nouvelles partitions"
+
+#~ msgid "Disk manager"
+#~ msgstr "Gestionnaire de disque"
+
+#~ msgid "<Enter a mount point>"
+#~ msgstr "<Entrer un point de montage>"
+
+#~ msgid "Add"
+#~ msgstr "Ajouter"
+
+#~ msgid "Mount Point"
+#~ msgstr "Point de montage"
+
+#~ msgid "Formatting error"
+#~ msgstr "Erreur de format"
+
+#~ msgid ""
+#~ "<i>%s</i> contains an invalid character.\n"
+#~ "Mount point should be in /media/. Alternatively, you can enter a simple "
+#~ "name, like <i>disk</i>."
+#~ msgstr ""
+#~ "<i>%s</i> contient un caractère invalide.\n"
+#~ "Les point de montage doivent être dans /media/. Alternativement, vous "
+#~ "pouvez entrer un simple nom, comme <i>disque</i>."
+
+#~ msgid ""
+#~ "Available size can differ from free size\n"
+#~ "because some space may be reserved for the root user."
+#~ msgstr ""
+#~ "La taille disponible peut différer de la taille libre\n"
+#~ "car de la place peut être réservé pour l'utilisateur root"
+
+#~ msgid "%i new partition(s) can be configured."
+#~ msgstr "%i nouvelles partition(s) peuvent être configurées."
+
+#~ msgid "All partitions are configured"
+#~ msgstr "Toutes les partitions sont configurées"
+
+#~ msgid "%i partitions are in use. (total size : %s)"
+#~ msgstr "%i partitions sont utilisées. (taille total : %s)"
+
+#~ msgid "New partitions detected"
+#~ msgstr "Nouvelles partitions détectées"
+
+#~ msgid ""
+#~ "New partitions have been detected and can be\n"
+#~ "configured by clicking on this icon."
+#~ msgstr ""
+#~ "De nouvelles partitions ont été détectées et peuvent être .\n"
+#~ "configuré en cliquant sur cette icône."
+
+#~ msgid "Start configuration"
+#~ msgstr "Démarre la Configuration"
+
+#~ msgid "Automatic configuration"
+#~ msgstr "Configuration automatique"
