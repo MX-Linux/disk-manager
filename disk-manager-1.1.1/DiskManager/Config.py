@@ -21,9 +21,9 @@
 import os
 import pwd
 import logging
-import ConfigParser
-from config import CONF_FILE
-from Utility import get_user
+import configparser
+from .config import CONF_FILE
+from .Utility import get_user
 
 # Default configuration :
 
@@ -53,33 +53,33 @@ categorie = {
 } 
 
 
-class Config(ConfigParser.SafeConfigParser) :
+class Config(configparser.SafeConfigParser) :
 
     def __init__(self) :
     
-        ConfigParser.SafeConfigParser.__init__(self)
+        configparser.SafeConfigParser.__init__(self)
         try :
             self.read_config()
-        except ConfigParser.ParsingError :
+        except configparser.ParsingError :
             logging.warning("Parsing error while loading conf file. Using default configuration...")
-        for section in categorie.keys() :
+        for section in list(categorie.keys()) :
             if not self.has_section(section) :
                 self.add_section(section)
-            for option in categorie[section].keys() :
+            for option in list(categorie[section].keys()) :
                 if not self.has_option(section,option) :
                     self.set(section,option,categorie[section][option])   
         self.apply_change()
     
     def set(self, section, option, value) :
     
-        ConfigParser.SafeConfigParser.set(self, section, option, str(value))
+        configparser.SafeConfigParser.set(self, section, option, str(value))
         self.apply_change()
         
     def set_default(self, section, option) :
     
-        ConfigParser.SafeConfigParser.set(self, section, option, categorie[section][option])
+        configparser.SafeConfigParser.set(self, section, option, categorie[section][option])
         self.apply_change()
-        return ConfigParser.SafeConfigParser.get(self, section, option)
+        return configparser.SafeConfigParser.get(self, section, option)
         
     def read_config(self) :
         ''' Ugly stuff. We actually store config file in the user home, to be able to

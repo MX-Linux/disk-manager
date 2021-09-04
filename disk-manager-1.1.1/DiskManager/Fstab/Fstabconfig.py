@@ -47,8 +47,8 @@ LSOF     = "lsof"
 DMESG    = "dmesg"
 BLKID    = "/sbin/blkid"
 DMSETUP  = "/sbin/dmsetup"
-MOUNT    = "/bin/mount"
-UMOUNT   = "/bin/umount"
+MOUNT    = "/usr/bin/mount"
+UMOUNT   = "/usr/bin/umount"
 MODPROBE = "/sbin/modprobe"
 
 if os.path.exists("/lib/udev/vol_id") :

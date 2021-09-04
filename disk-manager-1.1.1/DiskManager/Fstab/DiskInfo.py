@@ -22,12 +22,12 @@ import os
 import sys
 import glob
 import logging
-from commands import *
+from subprocess import *
 from subprocess import *
 
-from Fstabconfig import *
-from FstabError import *
-import FstabData
+from DiskManager.Fstab.Fstabconfig import *
+from DiskManager.Fstab.FstabError import *
+from DiskManager.Fstab import FstabData
 
 REQUIRED = ["DEV", "DEVICE", "DEV_NUM", "FS_TYPE"]
 DEFAULT_BACKEND = "ToolsBackend"
@@ -147,11 +147,11 @@ class DiskInfoBase(list) :
             be the job of a backend. Also set here what we ignore or not. '''
 
         # Set FS_DRIVERS
-        if dev.has_key("FS_TYPE") and dev.has_key("FS_USAGE") and dev["FS_USAGE"] == "filesystem" :
+        if "FS_TYPE" in dev and "FS_USAGE" in dev and dev["FS_USAGE"] == "filesystem" :
             dev["FS_DRIVERS"] = self.get_drivers(dev["FS_TYPE"])
             
         # Set FS_LABEL_SAFE
-        if dev.has_key("FS_LABEL") and not dev.has_key("FS_LABEL_SAFE") :
+        if "FS_LABEL" in dev and "FS_LABEL_SAFE" not in dev :
             label = dev["FS_LABEL"]
             label = label.replace("/", "")
             for char in FstabData.special_char :
@@ -161,23 +161,23 @@ class DiskInfoBase(list) :
                 dev["FS_LABEL_SAFE"] = label
                 
         # Set DEV_NUM
-        if dev.has_key("MINOR") and dev.has_key("MAJOR") :
+        if "MINOR" in dev and "MAJOR" in dev :
             dev["DEV_NUM"] = os.makedev(int(dev["MAJOR"]), int(dev["MINOR"]))
 
         # Ignore every dev if FS_USAGE != filesystem or if REMOVABLE
         # also ignore dev that don't have all REQUIRED attributes
         dev["IGNORE"] = False
-        if not dev.has_key("FS_USAGE") :
+        if "FS_USAGE" not in dev :
             dev["IGNORE"] = True
         elif not dev["FS_USAGE"] == "filesystem" :
             dev["IGNORE"] = True
-        if not min(map(dev.has_key, REQUIRED)) :
+        if not min(list(map(lambda x: x in dev, REQUIRED))) :
             dev["IGNORE"] = True
         if dev["REMOVABLE"] :
             dev["IGNORE"] = True
 
         # Ignore older entry with the same DEVICE
-        if dev.has_key("DEVICE") :
+        if "DEVICE" in dev :
             for device in self.search(dev["DEVICE"], keys = ["DEVICE"]) :
                 if not self[device]["DEV"] == dev["DEV"] :
                     logging.debug("W: " + "Ignore duplicate entry : " + self[device]["DEV"] \
@@ -190,11 +190,11 @@ class DiskInfoBase(list) :
     
         self._reverse_database = {}
         for i in range(len(self)) :
-            if self[i].has_key("DEV_NUM") :
+            if "DEV_NUM" in self[i] :
                 self._reverse_database["DEV_NUM=%s" % self[i]["DEV_NUM"]] = i
-            if self[i].has_key("FS_UUID") :
+            if "FS_UUID" in self[i] :
                 self._reverse_database["UUID=%s" % self[i]["FS_UUID"]] = i
-            if self[i].has_key("FS_LABEL") :
+            if "FS_LABEL" in self[i] :
                 self._reverse_database["LABEL=%s" % self[i]["FS_LABEL"]] = i
         
     def get_drivers(self, type, reload = False) :
@@ -207,7 +207,7 @@ class DiskInfoBase(list) :
             To avoid having to do the work again and again, result is cached, and so
             you ll need to set reload to True to have up to date results. '''
     
-        if self._driver_db.has_key(type) and not reload :
+        if type in self._driver_db and not reload :
             return self._driver_db["type"]
         self._driver_db["type"] = { "primary" : [], "secondary" : [], "all" : {} }
         if type in open("/proc/filesystems").read() or self._check_module(type) :
@@ -217,10 +217,10 @@ class DiskInfoBase(list) :
                 special = special.split("mount.")[-1]
                 self._driver_db["type"]["primary"].append([special, \
                     FstabData.special_driver.get(special, FstabData.special_driver["__unknow__"])])
-        if FstabData.secondary_driver.has_key("__all__") :
+        if "__all__" in FstabData.secondary_driver :
             self._driver_db["type"]["secondary"].append([ \
                 FstabData.secondary_driver["__all__"], "Secondary Driver"])
-        if FstabData.secondary_driver.has_key(type) :
+        if type in FstabData.secondary_driver :
             self._driver_db["type"]["secondary"].append([ \
                 FstabData.secondary_driver[type], "Secondary Driver"])
         for driver in self._driver_db["type"]["primary"] + self._driver_db["type"]["secondary"] :
@@ -239,12 +239,12 @@ class DiskInfoBase(list) :
             if item < len(self) :
                 return list.__getitem__(self, item)
             else :
-                raise NotInDatabase, "Index %i out of range" % item
+                raise NotInDatabase("Index %i out of range" % item)
         else :
             try :
                 return list.__getitem__(self, self.search(item)[0])
             except :
-                raise NotInDatabase, "Can't find %s in the database" % item
+                raise NotInDatabase("Can't find %s in the database" % item)
             
     def list(self, col = "DEVICE", ignored = True, keep_index = False) :
         ''' x.list([col], [ignored], [keep_index]) -> List all values of attribute col.
@@ -260,7 +260,7 @@ class DiskInfoBase(list) :
                 if keep_index :
                     result.append("")
                 continue
-            if k.has_key(col) :
+            if col in k :
                 result.append(k[col])
             else :
                 result.append("")
@@ -282,7 +282,7 @@ class DiskInfoBase(list) :
             Set ignored to False, to not return device with IGNORE=True. Default to True '''
 
         self.load_database()
-        if self._loaded and self._reverse_database.has_key(pattern) :
+        if self._loaded and pattern in self._reverse_database :
             result = self._reverse_database[pattern]
             if ignored or not self[result]["IGNORE"] :
                 return result
@@ -332,13 +332,13 @@ class DiskInfoBase(list) :
             result += "Query database for all devices :\n\n"
             for i in range(len(self)) :
                 result += "Info for " + self[i]["DEV"] + " :\n"
-                result += "\n".join(["-> %s=%s" % (k, v) for k, v in self[i].items()])
+                result += "\n".join(["-> %s=%s" % (k, v) for k, v in list(self[i].items())])
                 result += "\n\n"
         else :
             result += "Query database for " + device + " :\n\n"
             if self.search(device) :
                 result += "Info for " + self[device]["DEV"] + " :\n"
-                result += "\n".join(["-> %s=%s" % (k, v) for k, v in self[device].items()])
+                result += "\n".join(["-> %s=%s" % (k, v) for k, v in list(self[device].items())])
                 result += "\n\n"
             else :
                 result += device + " not in the database"

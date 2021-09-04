@@ -22,18 +22,13 @@ import os
 import time
 from xml.sax.saxutils import escape as escape_mkup
 
-import pygtk
-pygtk.require("2.0")
-import gtk
-import gobject
-import gtk.glade
-from SimpleGladeApp import SimpleGladeApp
+from .SimpleGladeApp import SimpleGladeApp
 from gettext import gettext as _
 
-from Fstabconfig import *
-from FstabDialogs import *
-from Fstab import *
-from FstabUtility import *
+from .Fstabconfig import *
+from .FstabDialogs import *
+from .Fstab import *
+from .FstabUtility import *
 
 
 class Mounter(SimpleGladeApp) :
@@ -142,7 +137,7 @@ class Mounter(SimpleGladeApp) :
 
         ret = dialog(type, title, text, data, action, options, self.top_level)
 
-        if ret[0] == gtk.RESPONSE_REJECT :
+        if ret[0] == Gtk.RESPONSE_REJECT :
             return False
         if ret[2][0] :
             self.lazy = True
@@ -178,11 +173,11 @@ class Mounter(SimpleGladeApp) :
         elif entry["FSTAB_TYPE"] in ("ntfs-3g", 'ntfs-fuse') and "force" in error[1] \
                 and not entry.hasopt("force") :
             err_code = "NTFSUNCLEAN"
-        elif not entry.has_key("FS_DRIVERS") :
+        elif "FS_DRIVERS" not in entry :
             err_code = "NODRIVER"
         elif not entry["FS_DRIVERS"]["primary"] :
             err_code = "NODRIVER"
-        elif entry["FSTAB_TYPE"] not in entry["FS_DRIVERS"]["all"].keys() or len(data) == 0 :
+        elif entry["FSTAB_TYPE"] not in list(entry["FS_DRIVERS"]["all"].keys()) or len(data) == 0 :
             err_code = "BADTYPE"    
 
         retry_string = _("You can try one of the following action:")
@@ -211,7 +206,7 @@ class Mounter(SimpleGladeApp) :
 
         ret = dialog("error", title, text, data, action, options, self.top_level)
 
-        if not ret[0] == gtk.RESPONSE_REJECT and err_code :
+        if not ret[0] == Gtk.RESPONSE_REJECT and err_code :
             if err_code == "BADOPT" :
                 if 0 in ret[2][0] :
                     entry["FSTAB_OPTION"] = entry.defaultopt()
@@ -241,11 +236,11 @@ class Mounter(SimpleGladeApp) :
     def set_gui(self, label) :
     
         self.progressbar.set_fraction(0.0)
-        self.title.set_label("<big><b>%s</b></big>" % label)
+        self.title2.set_label("<big><b>%s</b></big>" % label)
         self.progress_label.set_label("")
         self.window_mounting_progress.show_now()
-        while gtk.events_pending() :
-            gtk.main_iteration()
+        while Gtk.events_pending() :
+            Gtk.main_iteration()
             
     def hide_gui(self) :
 
@@ -258,14 +253,14 @@ class Mounter(SimpleGladeApp) :
             self.progressbar.set_fraction(step/float(self.total))
         if text != "":
             self.progress_label.set_label(text)
-        while gtk.events_pending() :
-            gtk.main_iteration()
+        while Gtk.events_pending() :
+            Gtk.main_iteration()
         
     def restore_gui(self) :
     
-        while gtk.events_pending() :
-            gtk.main_iteration()
+        while Gtk.events_pending() :
+            Gtk.main_iteration()
         time.sleep(0.05)
-        while gtk.events_pending() :
-            gtk.main_iteration()
+        while Gtk.events_pending() :
+            Gtk.main_iteration()
 

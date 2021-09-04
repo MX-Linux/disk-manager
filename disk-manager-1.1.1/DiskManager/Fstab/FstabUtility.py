@@ -22,10 +22,10 @@ import os
 import sys
 import time
 import glob
-from commands import *
+from subprocess import *
 
-import FstabData
-from Fstabconfig import *
+from . import FstabData
+from .Fstabconfig import *
 
 def get_used_file(path) :
 

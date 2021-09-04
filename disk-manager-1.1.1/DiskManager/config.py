@@ -39,5 +39,4 @@ NTFS_READ         = DATADIR + "/ro-policy.fdi"
 CONF_FILE         = "/.disk-manager.conf"
 
 # Su handler :
-SU_HANDLER 	      = "gksu"
-
+SU_HANDLER 	      = "su-to-root -X -c"

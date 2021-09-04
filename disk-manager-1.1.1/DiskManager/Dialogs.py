@@ -22,21 +22,18 @@ import re
 import time
 from xml.sax.saxutils import escape as escape_mkup
 
-import pygtk
-pygtk.require("2.0")
-import gtk
-import gtk.glade
-import gobject
-import pango
-from gettext import gettext as _
-from SimpleGladeApp import SimpleGladeApp
+from gi.repository import Gtk
+from gi.repository import GdkPixbuf, GObject, Pango
 
-from config import *
-from Config  import *
-from Fstab.FstabHandler import *
-from Utility import *
-           
-                    
+from gettext import gettext as _
+from .SimpleGladeApp import SimpleGladeApp
+
+from .config import *
+from .Config  import *
+from .Fstab.FstabHandler import *
+from .Utility import *
+
+
 class EditPartition(SimpleGladeApp) :
     ''' Class to manage the Edit/Add device dialog '''
         
@@ -56,9 +53,9 @@ class EditPartition(SimpleGladeApp) :
         self.driver_box.connect("changed", self.on_driver_changed)
         self.path.connect("activate", self.on_apply)
         self.options.connect("activate", self.on_apply)
-        self.apply_button.connect("clicked", self.on_apply)
+        self.apply_button2.connect("clicked", self.on_apply)
         self.dialog_edit.connect("delete-event", self.on_quit)
-        self.cancel_button.connect("clicked", self.on_quit)
+        self.cancel_button2.connect("clicked", self.on_quit)
         
         gtk.Tooltips().set_tip(self.default_button, _("Return options to defaults"))
         gtk.Tooltips().set_tip(self.browser_button, _("Select a directory"))
@@ -67,14 +64,14 @@ class EditPartition(SimpleGladeApp) :
         self.options.set_text(self.entry["FSTAB_OPTION"])
         
         self.vbox_driver.hide()
-        if self.entry.has_key("FS_DRIVERS") :
+        if "FS_DRIVERS" in self.entry :
             self.drivers = self.entry["FS_DRIVERS"]
         else :
             self.drivers = {"primary" : [], "all" : {}, "secondary" : []}
         drivers_list = self.drivers["primary"][:]
         driver = self.entry["FSTAB_TYPE"]
         if not driver in [ k[0] for k in drivers_list ] :
-            if self.drivers["all"].has_key(driver) :
+            if driver in self.drivers["all"] :
                 drivers_list.append(self.drivers["all"][driver])
             else :
                 drivers_list.append([driver, "Unknow driver", 0])
@@ -108,7 +105,7 @@ class EditPartition(SimpleGladeApp) :
     def set_driver(self) :
 
         if self.drivers["primary"] :
-            if self.drivers["all"].has_key(self.entry["FSTAB_TYPE"]) :
+            if self.entry["FSTAB_TYPE"] in self.drivers["all"] :
                 self.driver_warning_box.hide()
                 fsk = self.drivers["all"][self.entry["FSTAB_TYPE"]][2]
             else :
@@ -200,7 +197,7 @@ class HistoryDialog(SimpleGladeApp) :
     
         SimpleGladeApp.__init__(self, GLADEFILE, "dialog_history", domain = "disk-manager")
         self.dialog_history.set_title("")
-        if parent : 
+        if parent: 
             self.dialog_history.set_transient_for(parent)
         
         self.disk = disk

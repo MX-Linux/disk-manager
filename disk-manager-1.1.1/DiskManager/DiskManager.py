@@ -27,46 +27,45 @@ import threading
 from subprocess import Popen
 from xml.sax.saxutils import escape as escape_mkup
 
-import pygtk
-pygtk.require("2.0")
-import gtk
-import pango
-import gtk.glade
-import gobject
-from SimpleGladeApp import SimpleGladeApp
+import gi
+gi.require_version("Gtk", "3.0")
+gi.require_version("GdkPixbuf", "2.0")
+from gi.repository import Gtk
+from gi.repository import GdkPixbuf, Pango
+#  from .SimpleGladeApp import SimpleGladeApp
 from gettext import gettext as _
 
-from Utility import *
+from DiskManager.Utility import *
 
 try :
-    import pynotify
+    import notify2
     NOTIFICATION = True
 except :
-    print >>sys.stderr, "WARNING : python-notify is not installed, disable notification"
+    print("WARNING : python-notify is not installed, disable notification", file=sys.stderr)
     NOTIFICATION = False
 
-if not gtk.check_version( 2, 10, 0 ) == None :
+#  if not Gtk.check_version( 2, 10, 0 ) == None :
+    #  TRAYTYPE = "egg"
+#  else :
+try :
+    pynotify.Notification.attach_to_status_icon
+    TRAYTYPE = "gtk"
+except :
     TRAYTYPE = "egg"
-else :
-    try :
-        pynotify.Notification.attach_to_status_icon
-        TRAYTYPE = "gtk"
-    except :
-        TRAYTYPE = "egg"
-        
+
 if TRAYTYPE == "egg" :
     try :
         import egg.trayicon
     except :
-        if not gtk.check_version( 2, 10, 0 ) == None :
-            print >>sys.stderr, "WARNING : Can't find a valid tray icon module"
-            TRAYTYPE = None
-        else :
-            TRAYTYPE = "gtk"
-            NOTIFICATION = False
-            print >>sys.stderr, "WARNING : python-notify is too old, disable notification"
-            
-ICON_THEME = gtk.icon_theme_get_default()
+        #  if not Gtk.check_version( 2, 10, 0 ) == None :
+            #  print("WARNING : Can't find a valid tray icon module", file=sys.stderr)
+            #  TRAYTYPE = None
+        #  else :
+        TRAYTYPE = "gtk"
+        NOTIFICATION = False
+        print("WARNING : python-notify is too old, disable notification", file=sys.stderr)
+
+ICON_THEME = Gtk.IconTheme.get_default()
 ICON_THEME.append_search_path("%s/.icons" % get_user("dir"))
 ICON_THEME.append_search_path("%s/.local/share/icons" % get_user("dir"))
 try :
@@ -75,32 +74,30 @@ except :
     try :
         PIX_MOUNT = ICON_THEME.load_icon("hdd_mount", 24, 0)
     except :
-        PIX_MOUNT = gtk.gdk.Pixbuf(gtk.gdk.COLORSPACE_RGB, True, 8, 1, 1)
+        PIX_MOUNT = GdkPixbuf.Pixbuf(GdkPixbuf.Colorspace.RGB, True, 8, 1, 1)
 try :
     PIX_UNMOUNT = ICON_THEME.load_icon("gnome-dev-removable", 24, 0)
 except :
     try :
         PIX_UNMOUNT = ICON_THEME.load_icon("hdd_unmount", 24, 0)
     except :
-        PIX_UNMOUNT = gtk.gdk.Pixbuf(gtk.gdk.COLORSPACE_RGB, True, 8, 1, 1)       
+        PIX_UNMOUNT =  GdkPixbuf.Pixbuf(GdkPixbuf.Colorspace.RGB, True, 8, 1, 1)
 
-from config import *
-from Config import Config
-from Dialogs import *
-from Fstab.FstabHandler import *
-
-gtk.glade.bindtextdomain("disk-manager",localedir)
-gtk.glade.textdomain("disk-manager")
+from DiskManager.config import *
+from DiskManager.Config import Config
+from DiskManager.Dialogs import *
+from DiskManager.Fstab.FstabHandler import *
 
 
-class DiskManager(SimpleGladeApp) :
+class DiskManager(SimpleGladeApp):
     ''' Class that manage the main window '''
 
     def __init__(self) :
 
         SimpleGladeApp.__init__(self, GLADEFILE, "window_main", domain = "disk-manager")
+
         self.window_main.set_title(_("Disk Manager"))
-        
+
         # Start configuration
         self.conf = Config()
 
@@ -112,13 +109,12 @@ class DiskManager(SimpleGladeApp) :
         # Start fstab handler
         naming = self.conf.get("General", "fstab_naming")
         backend = self.conf.get("General", "backend")
-        self.disk = FstabHandler(FSTAB, naming = naming, backend = backend, \
+        self.disk = FstabHandler(FSTAB, naming = naming, backend = backend,
                 parent = self.window_main, external_change_watch = True)
-        
         # Draw stuff
         try :
-            self.window_main.resize(\
-                self.conf.getint("Gui Config", "main_width"), \
+            self.window_main.resize(
+                self.conf.getint("Gui Config", "main_width"),
                 self.conf.getint("Gui Config", "main_height"))
         except :
             self.conf.set_default("Gui Config", "main_width")
@@ -128,11 +124,22 @@ class DiskManager(SimpleGladeApp) :
         self.window_main.show()
         self.setupTreeView()
         self.update_main()
-                
         # Store all detected device
         detected = " ".join([ k["DEVICE"] for k in self.disk.get_all() ])
         self.conf.set("Detected Device", "detected", detected)
-        
+
+        #  self.quit_menu = self.builder.get_object("quit_menu")
+        #  self.undo_menu = self.builder.get_object("undo_menu")
+        #  self.save_menu = self.builder.get_object("save_menu")
+        #  self.history_menu = self.builder.get_object("history_menu")
+        #  self.about_menu = self.builder.get_object("about_menu")
+        #  self.edit_button = self.builder.get_object("edit_button")
+        #  self.mount_button = self.builder.get_object("mount_button")
+        #  self.info_button = self.builder.get_object("info_button")
+        #  self.treeview = self.builder.get_object("treeview")
+        #  self.treeview = self.builder.get_object("treeview")
+        #  self.disk = self.builder.get_object("disk")
+
         # Connect events
         self.quit_menu.connect("activate", self.on_close_clicked)
         self.window_main.connect("destroy", self.on_close_clicked)
@@ -144,101 +151,99 @@ class DiskManager(SimpleGladeApp) :
         self.edit_button.connect("clicked",  self.on_edit_clicked)
         self.mount_button.connect("clicked",  self.on_mount_clicked)
         self.info_button.connect("clicked", self.on_info_clicked)
-        self.treeview.connect("row-activated", self.on_row_activated)
-        self.treeview.connect("cursor_changed", self.on_cursor_changed)
-        self.disk.connect("any_changed", gobject.idle_add, self.update_main)
-                
-        gtk.gdk.threads_init()
-        
+        self.treeview2.connect("row-activated", self.on_row_activated)
+        self.treeview2.connect("cursor_changed", self.on_cursor_changed)
+        self.disk.connect("any_changed", GObject.idle_add, self.update_main)
+
     def setupTreeView(self) :
         ''' treeview setup '''
-        
-        renderer= gtk.CellRendererToggle()
+
+        renderer= Gtk.CellRendererToggle()
         renderer.set_property("activatable", True)
         renderer.connect("toggled", self.on_enable_toggled)
-        column = gtk.TreeViewColumn(_("Enable"), renderer, active=0, sensitive=1, activatable=1)
+        column = Gtk.TreeViewColumn(_("Enable"), renderer, active=0, sensitive=1, activatable=1)
         column.set_sort_column_id(0)
         column.set_reorderable(True)
-        self.treeview.append_column(column)
-        
-        pix_renderer = gtk.CellRendererPixbuf()
-        column = gtk.TreeViewColumn(_("Device"))
+        self.treeview2.append_column(column)
+
+        pix_renderer = Gtk.CellRendererPixbuf()
+        column = Gtk.TreeViewColumn(_("Device"))
         column.pack_start(pix_renderer, False)
         column.set_attributes(pix_renderer, pixbuf=6)
         pix_renderer.set_property("xpad", 3)
-        text_renderer = gtk.CellRendererText()
+        text_renderer = Gtk.CellRendererText()
         column.pack_end(text_renderer, False)
         column.set_attributes(text_renderer, text=2, sensitive=0, style=5)
         column.set_sort_column_id(2)
         column.set_reorderable(True)
         column.set_expand(True)
-        self.treeview.append_column(column)
+        self.treeview2.append_column(column)
         
-        renderer = gtk.CellRendererText()
-        column = gtk.TreeViewColumn(_("Mount point"), renderer, text=3, sensitive=0, style=5)
+        renderer = Gtk.CellRendererText()
+        column = Gtk.TreeViewColumn(_("Mount point"), renderer, text=3, sensitive=0, style=5)
         column.set_sort_column_id(3)
         column.set_expand(True)
         column.set_reorderable(True)
-        self.treeview.append_column(column)
+        self.treeview2.append_column(column)
        
-        renderer = gtk.CellRendererText()
-        column = gtk.TreeViewColumn(_("Type"), renderer, text=4, sensitive=0, style=5)
+        renderer = Gtk.CellRendererText()
+        column = Gtk.TreeViewColumn(_("Type"), renderer, text=4, sensitive=0, style=5)
         column.set_sort_column_id(4)
         column.set_expand(True)
         column.set_reorderable(True)
-        self.treeview.append_column(column)
+        self.treeview2.append_column(column)
         
-        renderer = gtk.CellRendererText()
-        column = gtk.TreeViewColumn(_("Total"), renderer, text=7, sensitive=0, style=5)
+        renderer = Gtk.CellRendererText()
+        column = Gtk.TreeViewColumn(_("Total"), renderer, text=7, sensitive=0, style=5)
         column.set_sort_column_id(7)
         column.set_expand(True)
         column.set_reorderable(True)
-        self.treeview.append_column(column)
-        
-        renderer = gtk.CellRendererText()
-        column = gtk.TreeViewColumn(_("Free"), renderer, text=8, sensitive=0, style=5)
+        self.treeview2.append_column(column)
+
+        renderer = Gtk.CellRendererText()
+        column = Gtk.TreeViewColumn(_("Free"), renderer, text=8, sensitive=0, style=5)
         column.set_sort_column_id(8)
         column.set_expand(True)
         column.set_reorderable(True)
-        self.treeview.append_column(column)
-        
-        renderer = gtk.CellRendererProgress()
-        column = gtk.TreeViewColumn(_("Used"), renderer, text=9, value=10, sensitive=0)
+        self.treeview2.append_column(column)
+
+        renderer = Gtk.CellRendererProgress()
+        column = Gtk.TreeViewColumn(_("Used"), renderer, text=9, value=10, sensitive=0)
         column.set_sort_column_id(9)
         column.set_expand(True)
         column.set_reorderable(True)
         renderer.set_property("ypad", 4)
         renderer.set_property("xpad", 4)
-        self.treeview.append_column(column)
-        
-        self.tree_store = gtk.ListStore(bool, bool, str, str, str, int, \
-                    gtk.gdk.Pixbuf, str, str, str, int)
+        self.treeview2.append_column(column)
+
+        self.tree_store = Gtk.ListStore(bool, bool, str, str, str, int, \
+                    GdkPixbuf.Pixbuf, str, str, str, int)
         self.tree_store.set_sort_func(7, self.sort_size, "size")
         self.tree_store.set_sort_func(8, self.sort_size, "free")
         self.tree_store.set_sort_func(9, self.sort_size, "used")
         try :
             self.tree_store.set_sort_column_id( \
                 int(self.conf.get("Gui Config", "selected")), \
-                getattr(gtk,"SORT_" + self.conf.get("Gui Config", \
+                getattr(Gtk.SortType, self.conf.get("Gui Config", \
                     "selected_order").upper()))
         except ValueError :
             self.tree_store.set_sort_column_id( \
                 int(self.conf.set_default("Gui Config", "selected")), \
-                getattr(gtk,"SORT_" + self.conf.set_default("Gui Config", \
+                getattr(Gtk.SortType, self.conf.set_default("Gui Config", \
                     "selected_order").upper()))
-        self.treeview.set_model(self.tree_store)
-        
+        self.treeview2.set_model(self.tree_store)
+
     def update_main(self) :
         ''' Update the window '''
-    
-        focus_path = self.treeview.get_cursor()[0]
+
+        focus_path = self.treeview2.get_cursor()[0]
         if focus_path :
             l = self.tree_store[focus_path]
             current_focus = (l[2], l[3])
 
         self.undo_menu.set_sensitive(self.disk.original_has_changed())
         self.save_menu.set_sensitive(self.disk.lastsave_has_changed())
-                        
+
         (self.total, self.total_free, self.total_used, self.total_avail) = (0,0,0,0)
         configured = self.disk.get_configured()
         self.tree_store.clear()
@@ -252,10 +257,10 @@ class DiskManager(SimpleGladeApp) :
             if entry in configured :
                 self.total += size_real
                 enable = True
-                style = pango.STYLE_NORMAL
+                style = Pango.Style.NORMAL
             else :
                 enable = False
-                style = pango.STYLE_ITALIC
+                style = Pango.Style.ITALIC
             if entry.get_is_mounted() :
                 pix = PIX_MOUNT
                 free_real = entry.get_free_size()
@@ -276,17 +281,17 @@ class DiskManager(SimpleGladeApp) :
                 per_use = 0
             self.tree_store.append((enable, sensitive, device, path, type, \
                     style, pix, size, free, used, per_use))
-                                        
+
         if focus_path :
             for path in range(len(self.tree_store)) :
                 l = self.tree_store[path]
                 if current_focus == (l[2], l[3]) :
-                    self.treeview.set_cursor(path)
+                    self.treeview2.set_cursor(path)
                     break
                 elif current_focus[0] == l[2] and len(self.disk.search(l[2], keys = ["DEV"])) < 2 :
-                    self.treeview.set_cursor(path)
+                    self.treeview2.set_cursor(path)
                     break
-        if not self.treeview.get_cursor()[0] :
+        if not self.treeview2.get_cursor()[0] :
             self.info_button.set_sensitive(False)
             self.mount_button.set_sensitive(False)
             self.edit_button.set_sensitive(False)
@@ -309,7 +314,7 @@ class DiskManager(SimpleGladeApp) :
              
     def on_edit_clicked(self, button) :
 
-        path = self.treeview.get_cursor()[0]
+        path = self.treeview2.get_cursor()[0]
         entry = self.disk[self.tree_store[path][3]]
         if entry.get_is_system() :
             ret = dialog("question", _("Editing system partition?"), \
@@ -317,14 +322,14 @@ class DiskManager(SimpleGladeApp) :
                 "Be really careful when editing it, or you may have\n" \
                 "serious problems. Do you want to continue?") % entry["DEV"], \
                 parent = self.window_main)
-            if ret[0] == gtk.RESPONSE_REJECT :
+            if ret[0] == Gtk.RESPONSE_REJECT :
                 return
         dial = EditPartition(self.disk, entry, parent = self.window_main)
         dial.dialog_edit.run()
 
     def on_mount_clicked(self, button) :
     
-        path = self.treeview.get_cursor()[0]
+        path = self.treeview2.get_cursor()[0]
         entry = self.disk[self.tree_store[path][3]]
         if entry.get_is_mounted() : 
             self.disk.umount(entry)
@@ -333,26 +338,26 @@ class DiskManager(SimpleGladeApp) :
         
     def on_info_clicked(self, button) :
     
-        path = self.treeview.get_cursor()[0]
+        path = self.treeview2.get_cursor()[0]
         col = path[0]
         dial = InfoDialog(None, self.disk, parent = self.window_main)
         res = 0
-        while not res in (gtk.RESPONSE_CLOSE, gtk.RESPONSE_DELETE_EVENT) :
+        while not res in (Gtk.RESPONSE_CLOSE, Gtk.RESPONSE_DELETE_EVENT) :
             dial.entry = self.disk[self.tree_store[path][3]]
             dial.update_dial()
             if col == 0 :
                 dial.back_button.set_sensitive(False)
             if col == len(self.tree_store) - 1 :
-                dial.forward_button.set_sensitive(False)                
+                dial.forward_button.set_sensitive(False)
             res = dial.dialog_info.run()
-            if res == 1 : 
+            if res == 1:
                 col = col - 1
                 dial.forward_button.set_sensitive(True)
             if res == 2 :
                 col = col + 1
                 dial.back_button.set_sensitive(True)
             path = (col,)
-            self.treeview.set_cursor(path)
+            self.treeview2.set_cursor(path)
         dial.dialog_info.destroy()
         
     def on_row_activated(self, treeview, path, view_column) :
@@ -366,7 +371,7 @@ class DiskManager(SimpleGladeApp) :
     
         use = self.tree_store[path][0]
         entry = self.disk[self.tree_store[path][3]]
-        self.treeview.set_cursor(path)
+        self.treeview2.set_cursor(path)
         if use :
             self.disk.unconfigure(entry)
         else :
@@ -375,7 +380,7 @@ class DiskManager(SimpleGladeApp) :
     def on_cursor_changed(self, treeview) :
         ''' Set button when we change device in the advance configuration '''
 
-        path = self.treeview.get_cursor()[0]
+        path = self.treeview2.get_cursor()[0]
         try :
             entry = self.disk[self.tree_store[path][3]]
         except NotInDatabase :
@@ -388,10 +393,10 @@ class DiskManager(SimpleGladeApp) :
         self.edit_button.set_sensitive(True)
         self.mount_button.set_sensitive(sensitive)
         if entry.get_is_mounted() :
-            self.icon_mount.set_from_stock(gtk.STOCK_CANCEL, gtk.ICON_SIZE_BUTTON)
+            self.icon_mount.set_from_stock(Gtk.STOCK_CANCEL, Gtk.IconSize.BUTTON)
             self.label_mount.set_label(_("Unmount"))
         else :
-            self.icon_mount.set_from_stock(gtk.STOCK_APPLY, gtk.ICON_SIZE_BUTTON)
+            self.icon_mount.set_from_stock(Gtk.STOCK_APPLY, Gtk.IconSize.BUTTON)
             self.label_mount.set_label(_("Mount"))
             
     def on_revert_clicked(self, button) :
@@ -400,7 +405,7 @@ class DiskManager(SimpleGladeApp) :
         ret = dialog("question", _("Reverting to an older version?"), \
             [_("This will apply the following changes:"), _("Do you want to continue?")],
             "\n".join(self.disk.get_changes_current_to_original()), parent = self.window_main)
-        if ret[0] == gtk.RESPONSE_YES :
+        if ret[0] == Gtk.RESPONSE_YES :
             self.disk.undo()
         
     def on_history_clicked(self, button) :
@@ -424,8 +429,8 @@ class DiskManager(SimpleGladeApp) :
 se the app '''
 
         self.window_main.hide()
-        while gtk.events_pending() :
-            gtk.main_iteration()
+        while Gtk.events_pending() :
+            Gtk.main_iteration()
         self.conf.set("Gui Config", "selected", \
                 self.tree_store.get_sort_column_id()[0])
         self.conf.set("Gui Config", "selected_order", \
@@ -433,4 +438,4 @@ se the app '''
         self.conf.set("Gui Config", "main_width", self.width)
         self.conf.set("Gui Config", "main_height", self.height)
         self.disk.shutdown()
-        gtk.main_quit()
+        Gtk.main_quit()

@@ -22,11 +22,11 @@ import os
 import pwd
 import logging
 from subprocess import *
-from urllib import quote
+from urllib.parse import quote
 
 from gettext import gettext as _
 
-from config import *
+from .config import *
 
 pref_browser = { "GNOME" : { "file" : [["gnome-open"], ["nautilus", "--no-desktop"]], \
                              "http" : [["gnome-open"], ["epiphany"], ["firefox"], ["mozilla"]] }, \
@@ -50,20 +50,20 @@ def get_user(request = "name") :
     ''' Get user information. Request could be name, uid, gid, dir, shell, ... '''
 
     try :
-        if os.environ.has_key("SUDO_USER") :
+        if "SUDO_USER" in os.environ :
             user = pwd.getpwnam(os.environ["SUDO_USER"])
-        if os.environ.has_key("SUDO_UID") :
+        if "SUDO_UID" in os.environ :
             user = pwd.getpwuid(int(os.environ["SUDO_UID"]))
-        elif os.environ.has_key("USERHELPER_UID") :
+        elif "USERHELPER_UID" in os.environ :
             user = pwd.getpwuid(int(os.environ["USERHELPER_UID"]))
-        elif os.environ.has_key("USERNAME") :
+        elif "USERNAME" in os.environ :
             user = pwd.getpwnam(os.environ["USERNAME"])
         else :
             user = pwd.getpwnam(os.environ["USER"])
     except :
         logging.warning("Can't find your username. I assume for now that you are root.\n"\
              "But please report that bug and attach the following :\n%s" \
-                    % "\n".join([ "%s = %s" % k for k in os.environ.items() ]))
+                    % "\n".join([ "%s = %s" % k for k in list(os.environ.items()) ]))
         user = pwd.getpwnam(0)
     if user.pw_uid == "0" :
         logging.warning("Can't find your real username. Some features will not work.")
@@ -82,7 +82,7 @@ def open_url(url) :
     user = get_user()
     desktop = get_desktop(default = "GNOME")
     browsers= pref_browser[desktop][url[:4]]
-    [ browsers.extend(k) for k in [ k[url[:4]] for k in pref_browser.values() ] ]
+    [ browsers.extend(k) for k in [ k[url[:4]] for k in list(pref_browser.values()) ] ]
     for test in browsers :
         if test_cmd(test[0]) :
             browser = " ".join(test)
@@ -93,12 +93,12 @@ def open_url(url) :
         logging.debug("-> Not possible")
         return False
     for key in ["HOME", "USER", "XAUTHORITY", "LOGNAME"] :
-        if os.environ.has_key(key) :
+        if key in os.environ :
             setattr(open_url, "current_%s" % key, os.environ[key])
     os.putenv("USER", user)
     os.putenv("LOGNAME", user)
     os.putenv("HOME", get_user("dir"))
-    if os.environ.has_key("%s_user-XAUTHORITY" % PACKAGE) :
+    if "%s_user-XAUTHORITY" % PACKAGE in os.environ :
         os.putenv("XAUTHORITY", os.environ["%s_user-XAUTHORITY" % PACKAGE])
 
     cmd = "su - %s -m -c '%s %s'" % (user, browser, url)
@@ -127,9 +127,9 @@ def get_desktop(default = None) :
         session for example, but we still can detect a desktop if keys are unset by a su
         helper (conseolheper for example). '''
 
-    if os.environ.has_key("KDE_FULL_SESSION") or os.environ.has_key("KDE_MULTIHEAD"):
+    if "KDE_FULL_SESSION" in os.environ or "KDE_MULTIHEAD" in os.environ:
         desktop = "KDE"
-    elif os.environ.has_key("GNOME_DESKTOP_SESSION_ID") :
+    elif "GNOME_DESKTOP_SESSION_ID" in os.environ :
         desktop = "GNOME"
     elif pidof("startkde") or pidof("kicker") :
         desktop = "KDE"

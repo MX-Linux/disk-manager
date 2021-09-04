@@ -27,8 +27,6 @@ import gettext
 from optparse import OptionParser
 from gettext import gettext as _
 
-import gtk
-
 # Hack to make sure that path is set correctly when installation is in /usr/local
 if "/usr/local" in sys.argv[0] :
     for path in sys.path[:] :
@@ -37,7 +35,7 @@ if "/usr/local" in sys.argv[0] :
             if not local_path in sys.path :
                 sys.path.append(path.replace("/usr", "/usr/local"))
                 
-print sys.path
+print(sys.path)
 
 from DiskManager.DiskManager import *
 from DiskManager.Config import Config
@@ -45,7 +43,7 @@ from DiskManager.Config import Config
 def main(args, opts) :
     
     if opts.version :
-        print PACKAGE,VERSION
+        print(PACKAGE,VERSION)
         return
 
     if opts.query :
@@ -53,10 +51,10 @@ def main(args, opts) :
             logging.warning("Query database without root privilege.")
             logging.warning("Result might be incomplete.\n")
         info = get_diskinfo_backend()()
-        print info.export(opts.query.strip())
+        print(info.export(opts.query.strip()))
         return
         
-    gtk.window_set_default_icon_name("disk-manager")
+    # gtk.window_set_default_icon_name("disk-manager")
 
     if not os.getuid() == 0 :
         dialog("warning", _("Insufficient rights"), \

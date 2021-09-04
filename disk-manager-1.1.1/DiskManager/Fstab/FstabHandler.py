@@ -23,17 +23,17 @@ import time
 import shutil
 import logging
 import threading
-import ConfigParser
+import configparser
 from gettext import gettext as _
 
-from Fstabconfig import *
-from FstabUtility import *
-from Fstab import *
-from FstabDialogs import *
-from FstabError import *
-from EventHandler import *
-from Mounter import *
-import FstabData
+from .Fstabconfig import *
+from .FstabUtility import *
+from .Fstab import *
+from .FstabDialogs import *
+from .FstabError import *
+from .EventHandler import *
+from .Mounter import *
+from . import FstabData
 
 available_mode = ["real", "delay", "virtual"]
 
@@ -277,7 +277,7 @@ class FstabHandler(MntFile) :
             item can be a FSTAB_PATH or an entry '''
     
         entry = self._get_entry(item)
-        if entry.has_key(attribute) :
+        if attribute in entry :
             return entry[attribute]
         return "None"
         
@@ -498,7 +498,7 @@ class FstabHandler(MntFile) :
     def _initlog(self) :
     
         if self.logchanges :
-            self._logconf = ConfigParser.RawConfigParser()
+            self._logconf = configparser.RawConfigParser()
             self._logconf.read(FSTAB_LOG)
             if not self._logconf.has_section("Original") :
                 logging.debug("Creating original backup")

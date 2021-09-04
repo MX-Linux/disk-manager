@@ -23,9 +23,9 @@ import time
 import logging
 import threading
 
-from Fstabconfig import *
-from Fstab import *
-from FstabError import *
+from .Fstabconfig import *
+from .Fstab import *
+from .FstabError import *
 
 class EventHandler :
 
