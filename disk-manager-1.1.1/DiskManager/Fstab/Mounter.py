@@ -40,7 +40,7 @@ class Mounter(SimpleGladeApp) :
         self.parent = parent
         self.top_level = None
         self.init_gui()
-        
+
     def do(self, mount = [], umount = []) :
         ''' x.do([Entries], [Entries]) -> umount the second list, and mount the first one\n
             mounted entry in mount= and unmounted entry in umount= will be ignored.
@@ -57,8 +57,8 @@ class Mounter(SimpleGladeApp) :
         else :
             label = _("Applying changes")
         self.set_gui(label)
-        
-        if umount :    
+
+        if umount:
             for entry in umount :
                 self.safepath = escape_mkup(entry["FSTAB_PATH"])
                 label = _("Unmounting %s") % self.safepath
@@ -66,7 +66,7 @@ class Mounter(SimpleGladeApp) :
                 if entry.get_is_mounted() :
                     res_umount += self.umount_device(entry)
                     if res_umount and entry["FSTAB_PATH"] not in self.disk.list("FSTAB_PATH") :
-                        self.disk.append(entry)    
+                        self.disk.append(entry)
             self.update_gui("", len(umount))
 
         if mount and umount :
@@ -80,12 +80,12 @@ class Mounter(SimpleGladeApp) :
                 if not entry.get_is_mounted() :
                     res_mount += self.mount_device(entry)
             self.update_gui("", self.total)
-            
+
         self.hide_gui()
         return (res_umount, res_mount)
-            
+
     def umount_device(self, entry) :
-    
+
         self.lazy = False
         keep_going = True
         while keep_going :

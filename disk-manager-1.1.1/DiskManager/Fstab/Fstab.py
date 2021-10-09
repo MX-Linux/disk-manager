@@ -22,6 +22,7 @@ import os
 import re
 import copy
 import shutil
+import tempfile
 from subprocess import *
 
 from . import FstabData
@@ -443,7 +444,7 @@ class MntFile(list) :
             self.naming = "auto"
         if self.naming == "auto" and self.search("UUID=", strict = "no", keys = ["FSTAB_NAME"]) :
             self.naming = "uuid"
-        self.sort(cmp=self._sort_path)
+        self.sort(key=self._sort_path)
         for entry in self + self.other :
             if "LABEL=" in entry["FSTAB_NAME"] and "FS_LABEL" in entry \
                     and len(self.search(entry["FS_LABEL"], keys = ["FS_LABEL"])) < 2 \
@@ -493,8 +494,8 @@ class MntFile(list) :
     def apply(self) :
         ''' x.apply() -> Write MntFile to filename '''
         
-        tmpfile = os.tmpfile()
-        tmpfile.write(FstabData.header)
+        tmpfile = tempfile.NamedTemporaryFile()
+        tmpfile.write(FstabData.header.encode('utf-8'))
         tmpfile.write(self.write())
         tmpfile.seek(0)
         mntfile = open(self.filename, "w")
