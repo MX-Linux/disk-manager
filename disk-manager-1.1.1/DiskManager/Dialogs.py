@@ -52,16 +52,16 @@ class EditPartition(SimpleGladeApp) :
         self.browser_button.connect("clicked", self.on_browser_clicked)
         self.driver_box.connect("changed", self.on_driver_changed)
         self.path.connect("activate", self.on_apply)
-        self.options.connect("activate", self.on_apply)
+        self.options3.connect("activate", self.on_apply)
         self.apply_button2.connect("clicked", self.on_apply)
         self.dialog_edit.connect("delete-event", self.on_quit)
         self.cancel_button2.connect("clicked", self.on_quit)
         
-        gtk.Tooltips().set_tip(self.default_button, _("Return options to defaults"))
-        gtk.Tooltips().set_tip(self.browser_button, _("Select a directory"))
+        # gtk.Tooltips().set_tip(self.default_button, _("Return options to defaults"))
+        # gtk.Tooltips().set_tip(self.browser_button, _("Select a directory"))
          
         self.path.set_text(self.entry["FSTAB_PATH"])
-        self.options.set_text(self.entry["FSTAB_OPTION"])
+        self.options3.set_text(self.entry["FSTAB_OPTION"])
         
         self.vbox_driver.hide()
         if "FS_DRIVERS" in self.entry :
@@ -100,7 +100,7 @@ class EditPartition(SimpleGladeApp) :
     def on_default_clicked(self, button) :
         ''' Load default options '''
 
-        self.options.set_text(self.entry.defaultopt())
+        self.options3.set_text(self.entry.defaultopt())
 
     def set_driver(self) :
 
@@ -142,13 +142,13 @@ class EditPartition(SimpleGladeApp) :
         current = self.driver_box.get_active_text().split()[0]
         if self.entry["DEVICE"] and not self.entry["FSTAB_TYPE"] == current :
             self.disk.set(self.entry, type=current)
-            self.options.set_text(self.entry["FSTAB_OPTION"])
+            self.options3.set_text(self.entry["FSTAB_OPTION"])
             self.set_driver()
         
     def on_apply(self, widget) :
     
         if not self.check_new_options() and not self.check_new_path() :
-            self.disk.set(self.entry, path=self.path.get_text(), option=self.options.get_text(), \
+            self.disk.set(self.entry, path=self.path.get_text(), option=self.options3.get_text(), \
                 paso=self.check_button.get_active())
             self.disk.apply_now()
             self.on_quit(widget)
@@ -179,14 +179,14 @@ class EditPartition(SimpleGladeApp) :
     def check_new_options(self) :
         ''' Check that options are of the type : jsjk,skks,skks '''
     
-        options = self.options.get_text()
+        options = self.options3.get_text()
         if re.search("^([a-zA-Z0-9=_.@/-]+,)*[a-zA-Z0-9=_.@/-]+$", options) :
             return 0     
         dialog("warning", _("Options formatting error"), \
                 _("<i>%s</i> is not formatted correctly.\n" \
                 "Options should be separated by coma (,)") % escape_mkup(options), \
                 parent = self.dialog_edit)
-        self.dialog_edit.set_focus(self.options)
+        self.dialog_edit.set_focus(self.options3)
         return 1
 
 
@@ -291,15 +291,15 @@ class HistoryDialog(SimpleGladeApp) :
 class InfoDialog(SimpleGladeApp) :
 
     def __init__(self, entry, disk, parent = None) :
-    
+
         SimpleGladeApp.__init__(self, GLADEFILE, "dialog_info", domain = "disk-manager")
-        if parent : 
+        if parent :
             self.dialog_info.set_transient_for(parent)
         self.entry = entry
         self.disk = disk
-        
+
     def update_dial(self) :
-    
+
         self.dialog_info.set_title(self.entry["DEV"] + " information")
         self.size_label.set_label(size_renderer(self.entry.get_size()))
         if self.entry.get_is_mounted() :
@@ -322,7 +322,7 @@ class InfoDialog(SimpleGladeApp) :
         self.model_label.set_label(self.disk.get_attribute(self.entry, "MODEL"))
         self.serial_label.set_label(self.disk.get_attribute(self.entry, "SERIAL"))
         self.bus_label.set_label(self.disk.get_attribute(self.entry, "BUS"))
-        
+
 class SanityCheck :
 
     def __init__(self, parent = None, conf = None) :

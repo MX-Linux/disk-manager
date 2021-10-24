@@ -128,18 +128,6 @@ class DiskManager(SimpleGladeApp):
         detected = " ".join([ k["DEVICE"] for k in self.disk.get_all() ])
         self.conf.set("Detected Device", "detected", detected)
 
-        #  self.quit_menu = self.builder.get_object("quit_menu")
-        #  self.undo_menu = self.builder.get_object("undo_menu")
-        #  self.save_menu = self.builder.get_object("save_menu")
-        #  self.history_menu = self.builder.get_object("history_menu")
-        #  self.about_menu = self.builder.get_object("about_menu")
-        #  self.edit_button = self.builder.get_object("edit_button")
-        #  self.mount_button = self.builder.get_object("mount_button")
-        #  self.info_button = self.builder.get_object("info_button")
-        #  self.treeview = self.builder.get_object("treeview")
-        #  self.treeview = self.builder.get_object("treeview")
-        #  self.disk = self.builder.get_object("disk")
-
         # Connect events
         self.quit_menu.connect("activate", self.on_close_clicked)
         self.window_main.connect("destroy", self.on_close_clicked)
@@ -322,7 +310,7 @@ class DiskManager(SimpleGladeApp):
                 "Be really careful when editing it, or you may have\n" \
                 "serious problems. Do you want to continue?") % entry["DEV"], \
                 parent = self.window_main)
-            if ret[0] == Gtk.RESPONSE_REJECT :
+            if ret[0] == Gtk.ResponseType.REJECT :
                 return
         dial = EditPartition(self.disk, entry, parent = self.window_main)
         dial.dialog_edit.run()
@@ -342,7 +330,7 @@ class DiskManager(SimpleGladeApp):
         col = path[0]
         dial = InfoDialog(None, self.disk, parent = self.window_main)
         res = 0
-        while not res in (Gtk.RESPONSE_CLOSE, Gtk.RESPONSE_DELETE_EVENT) :
+        while not res in (Gtk.ResponseType.CLOSE, Gtk.ResponseType.DELETE_EVENT) :
             dial.entry = self.disk[self.tree_store[path][3]]
             dial.update_dial()
             if col == 0 :
@@ -381,8 +369,10 @@ class DiskManager(SimpleGladeApp):
         ''' Set button when we change device in the advance configuration '''
 
         path = self.treeview2.get_cursor()[0]
+        logging.debug("on_cursor_changed: path = {}".format(path))
         try :
-            entry = self.disk[self.tree_store[path][3]]
+            idx = self.tree_store[path][3]
+            entry = self.disk[idx]
         except NotInDatabase :
             self.info_button.set_sensitive(False)
             self.edit_button.set_sensitive(False)
@@ -405,7 +395,7 @@ class DiskManager(SimpleGladeApp):
         ret = dialog("question", _("Reverting to an older version?"), \
             [_("This will apply the following changes:"), _("Do you want to continue?")],
             "\n".join(self.disk.get_changes_current_to_original()), parent = self.window_main)
-        if ret[0] == Gtk.RESPONSE_YES :
+        if ret[0] == Gtk.ResponseType.YES:
             self.disk.undo()
         
     def on_history_clicked(self, button) :

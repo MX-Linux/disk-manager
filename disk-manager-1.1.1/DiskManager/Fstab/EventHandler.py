@@ -66,7 +66,7 @@ class EventHandler :
                 
     def stop_watch(self) :
 
-        if hasattr(self, "th_watch") and self.th_watch.isAlive() :
+        if hasattr(self, "th_watch") and self.th_watch.is_alive() :
             self.alive = False
             logging.debug("Stopping Watch...")
             self.th_watch.join()

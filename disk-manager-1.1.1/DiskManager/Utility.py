@@ -101,7 +101,8 @@ def open_url(url) :
     if "%s_user-XAUTHORITY" % PACKAGE in os.environ :
         os.putenv("XAUTHORITY", os.environ["%s_user-XAUTHORITY" % PACKAGE])
 
-    cmd = "su - %s -m -c '%s %s'" % (user, browser, url)
+    # cmd = "su - %s -m -c '%s %s'" % (user, browser, url)
+    cmd = "su %s -m -c '%s %s'" % (user, browser, url) # This should work because su will not shar env
 
     logging.debug("Command : %s" % cmd)
     Popen(cmd, close_fds=True, shell=True)

@@ -23,6 +23,7 @@ from gettext import gettext as _
 
 from .Fstabconfig import *
 from .SimpleGladeApp import SimpleGladeApp
+import logging
 
 
 ACCEPTED_TYPE = ["warning", "info", "error", "question"]
@@ -181,7 +182,6 @@ class DialogBuilder(SimpleGladeApp) :
         self.check_box.show_all()
         
     def set_size(self) :
-    
         if hasattr(self, "treeview") :
             widget = self.treeview
             if self.data and len(self.data) > 1 and isinstance(self.data[1], bool) :
@@ -192,6 +192,7 @@ class DialogBuilder(SimpleGladeApp) :
             maxrow = 8
         elif hasattr(self, "textview") :
             widget = self.textview
+            logging.debug('{}'.format(self.data))
             sample = self.data.split("\n")
             ypad = 2
             maxrow = 8
@@ -199,6 +200,7 @@ class DialogBuilder(SimpleGladeApp) :
             return
         ctx = widget.get_pango_context()
         layout = Pango.Layout(ctx)
+        logging.debug('set_size: sample = {}'.format(sample))
         row = min(len(sample) + 2, maxrow)
         if self.options and row > 5 :
             row -= min(len(self.options), 3)
