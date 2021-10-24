@@ -1,3 +1,4 @@
+	../[encoding: UTF-8] \
 	../disk-manager.in \
 	../data/disk-manager.glade \
 	../data/disk-manager.desktop.in.in \
