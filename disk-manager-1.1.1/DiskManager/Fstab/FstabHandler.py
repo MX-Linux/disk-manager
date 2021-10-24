@@ -96,6 +96,7 @@ class FstabHandler(MntFile) :
 
         # Create Mounter object
         self._mounter = Mounter(self, parent = self._parent)
+        self._mounter.hide_gui()
 
         # Start Event Handler
         self._event = EventHandler(self, external_change_watch)
