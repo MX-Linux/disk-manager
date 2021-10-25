@@ -19,22 +19,8 @@ AC_PATH_PROGS([UMOUNT], [umount], /bin/umount, [/sbin /usr/sbin $PATH])
 AC_PATH_PROGS([BLKID], [blkid], /sbin/blkid, [/sbin /usr/sbin $PATH])
 AC_PATH_PROGS([DMSETUP], [dmsetup], /sbin/dmsetup, [/sbin /usr/sbin $PATH])
 
-# Check for pygtk
 AM_PATH_PYTHON
-AC_DEFUN([required_pygtk_version], [2.6.0])
 AC_SUBST([PYOPTIONS], [-OOt])
-AC_MSG_CHECKING(for pygtk >= required_pygtk_version installed)
-prog="
-import pygtk; pygtk.require('2.0')
-import gobject
-assert gobject.pygtk_version >= tuple(map(int, 'required_pygtk_version'.split('.')))
-"
-if $PYTHON -c "$prog" 1>&AC_FD_CC 2>&AC_FD_CC; then
-    AC_MSG_RESULT(found)
-else
-    AC_MSG_RESULT(not found)
-    AC_MSG_ERROR(required pygtk version not found)
-fi
 
 # Internationalization
 GETTEXT_PACKAGE=disk-manager

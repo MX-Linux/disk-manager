@@ -94,9 +94,9 @@ class ToolsBackend(DiskInfoBase) :
         (sts, result) = self._exec(cmd)
         if not sts :
             for line in result :
-                logging.debug("(udevinfo output) " + line.strip())
+                logging.debug("(udevinfo output) " + line.strip().decode("utf-8"))
                 try :
-                    device = "/dev/" + re.search("N: (\S+)", line).groups()[0]
+                    device = "/dev/" + re.search("N: (\S+)", line.decode("utf-8")).groups()[0]
                     dev["DEVICE"] = device
                     logging.debug("-> Found DEVICE : " + device)
                 except AttributeError :
@@ -104,7 +104,7 @@ class ToolsBackend(DiskInfoBase) :
                 # Used for debugging blkid & vol_id :
                 # continue
                 try :
-                    (attr, value) = re.search("E: ID_(\S+)=(.+)", line).groups()
+                    (attr, value) = re.search("E: ID_(\S+)=(.+)", line.decode('utf-8')).groups()
                     dev[attr] = value
                     logging.debug("-> Found " + attr + " : "+ value)
                 except AttributeError :
@@ -116,7 +116,7 @@ class ToolsBackend(DiskInfoBase) :
                 
         # If udevinfo fail or didn't give DEVICE, it's might be a mapped device.
         # Try to get DEVICE from dmsetup
-        if not dev.has_key("DEVICE") and "dm-" in dev["DEV"] :
+        if "DEVICE" not in dev and "dm-" in dev["DEV"] :
             cmd = DMSETUP + " info -j " + dev["MAJOR"] + " -m " + dev["MINOR"] + " | grep Name"
             (sts, result) = self._exec(cmd)
             result = "".join(result)
@@ -144,7 +144,7 @@ class ToolsBackend(DiskInfoBase) :
                     else :
                         logging.debug("-> Check DEVICE : fail")
         # If still no DEVICE, try /dev/ + DEV
-        if not dev.has_key("DEVICE") :
+        if "DEVICE" not in dev :
             device = "/dev/" + dev["DEV"]
             if os.path.exists(device) :
                 logging.debug("Warning : no DEVICE found, try " + device)
@@ -165,7 +165,7 @@ class ToolsBackend(DiskInfoBase) :
             for slave in dev["SLAVES"] :
                 if self.search(slave) :
                     logging.debug("-> Add   SLAVES : " + slave)
-                    if not self[slave].has_key("FS_USAGE") or self[slave] == "filesystem" :
+                    if "FS_USAGE" not in self[slave] or self[slave] == "filesystem" :
                         self[slave]["FS_USAGE"] = "other"
                         logging.debug("-> Set   %s FS_USAGE : other" % slave)
                     dev["REMOVABLE"] = dev["REMOVABLE"] and self[slave]["REMOVABLE"] 
@@ -174,7 +174,7 @@ class ToolsBackend(DiskInfoBase) :
         # Call vol_id to complete informations. This is important even if udevinfo
         # worked successfully, because udev db might be not up to date, and udev
         # might be wrong on some FS_LABEL (ones with " for exemple)    
-        if dev.has_key("DEVICE") :
+        if "DEVICE" in dev :
             cmd = VOLID + " --export " + dev["DEVICE"]
             (sts, result) = self._exec(cmd)
             if not sts :
@@ -196,25 +196,25 @@ class ToolsBackend(DiskInfoBase) :
                         logging.debug("(vol_id output) " + line.strip())
                         try :
                             (attr, value) = re.search("(\S+):(.+)", line).groups()
-                            if d.has_key(attr) and not dev.has_key(d[attr]) :
+                            if attr in d and d[attr] not in dev :
                                 dev[d[attr]] = value
                                 logging.debug("-> Found " + d[attr] + " : " + value)
                         except AttributeError :
                             pass
             # If vol_id fail, call blkid. Don't overwrite info, blkid is less reliable
             # than any of the other tools.
-            if sts and not dev.has_key("FS_USAGE") :
+            if sts and "FS_USAGE" not in dev :
                 logging.debug("Warning : vol_id failled, call blkid")
                 cmd = BLKID + " " + dev["DEVICE"]
                 (sts, result) = self._exec(cmd)
-                result = "".join(result)
+                result = "".join([i.decode('utf-8') for i in result])
                 if not sts :
                     logging.debug("(blkid output) " + result.strip())
                     for attr in ("TYPE", "LABEL", "UUID") :
                         try :
                             pattern = "\\b" + attr + "=\"([^\"]+)\""
                             value = re.search(pattern, result).groups()[0]
-                            if not dev.has_key("FS_" + attr) :
+                            if "FS_" + attr not in dev :
                                 dev["FS_" + attr] = re.search(pattern, result).groups()[0]
                                 logging.debug("-> Found " + attr + " : " + dev["FS_" + attr])
                             if attr == "TYPE" :
@@ -228,7 +228,7 @@ class ToolsBackend(DiskInfoBase) :
                     
         for attr in ("UUID", "LABEL") :
             # If no UUID, LABEL try to get them manually
-            if dev.has_key("DEVICE") and not dev.has_key("FS_" + attr) :
+            if "DEVICE" in dev and "FS_" + attr not in dev :
                 if os.path.exists(dev["DEVICE"]) and os.path.isdir("/dev/disk/by-" + attr.lower()) :
                     for file in os.listdir("/dev/disk/by-" + attr.lower()) :
                         if os.path.samefile("/dev/disk/by-" + attr.lower() + "/" + file, dev["DEVICE"]) :

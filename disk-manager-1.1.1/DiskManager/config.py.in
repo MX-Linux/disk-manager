@@ -40,4 +40,3 @@ CONF_FILE         = "/.disk-manager.conf"
 
 # Su handler :
 SU_HANDLER 	      = "@SUHANDLER@"
-

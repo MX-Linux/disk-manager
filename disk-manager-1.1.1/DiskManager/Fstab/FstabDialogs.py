@@ -18,14 +18,12 @@
 #  Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
 #
 
-import pygtk
-pygtk.require("2.0")
-import gtk
-import pango
+from gi.repository import Gtk, Pango
 from gettext import gettext as _
 
-from Fstabconfig import *
-from SimpleGladeApp import SimpleGladeApp
+from .Fstabconfig import *
+from .SimpleGladeApp import SimpleGladeApp
+import logging
 
 
 ACCEPTED_TYPE = ["warning", "info", "error", "question"]
@@ -46,7 +44,7 @@ class WrongDialogType(Exception) :
 class DialogBuilder(SimpleGladeApp) :
     ''' This class will create a builder with widget appropriate to the data you give hime '''
 
-    def __init__(self, type, buttons, title, text, data = None, options = None, parent = None) :
+    def __init__(self, type, buttons, title, text, data, options, parent = None) :
         ''' See dialog doc for more information. You should not need to call this method
             directly, but use the dialog fct instead '''
     
@@ -70,8 +68,8 @@ class DialogBuilder(SimpleGladeApp) :
             self.buttons.insert(0, "no")
         else :
             raise WrongDialogType(type)
-        SimpleGladeApp.__init__(self, GLADEFILE, "dialog_template", domain = PACKAGE)
-        self.dialog_main = self.dialog_template
+        SimpleGladeApp.__init__(self, GLADEFILE, root = "dialog_template", domain = PACKAGE)
+        self.dialog_main = self.main_widget
         self.dialog_main.set_title("")
         if parent :
             self.dialog_main.set_transient_for(parent)
@@ -84,16 +82,16 @@ class DialogBuilder(SimpleGladeApp) :
             if not isinstance(button, str) :
                 continue
             try :
-                response = getattr(gtk, "RESPONSE_%s" % button.upper())
+                response = getattr(Gtk, "RESPONSE_%s" % button.upper())
             except :
                 response = 0
-            if hasattr(gtk, "STOCK_%s" % button.upper()) :
-                button = getattr(gtk, "STOCK_%s" % button.upper())
+            if hasattr(Gtk, "STOCK_%s" % button.upper()) :
+                button = getattr(Gtk, "STOCK_%s" % button.upper())
             widget = self.dialog_main.add_button(button, response)
         self.dialog_main.set_focus(widget)
         self.title_label.set_label("<big><b>" + self.title + "</b></big>")
         try :
-            self.image.set_from_stock(getattr(gtk, "STOCK_DIALOG_%s" % self.type.upper()), gtk.ICON_SIZE_DIALOG)
+            self.image.set_from_stock(getattr(Gtk, "STOCK_DIALOG_%s" % self.type.upper()), Gtk.ICON_SIZE_DIALOG)
         except :
             pass
         if isinstance(self.text, list) :
@@ -117,7 +115,7 @@ class DialogBuilder(SimpleGladeApp) :
     
     def setup_treeview(self) :
     
-        self.treeview  = gtk.TreeView()
+        self.treeview  = Gtk.TreeView()
         self.treeview.set_headers_visible(False)
         self.scrolledwindow.add(self.treeview)
         if len(self.data) > 1 and isinstance(self.data[1], bool) :
@@ -126,16 +124,16 @@ class DialogBuilder(SimpleGladeApp) :
         else :
             sensitive = True
             data = self.data
-        renderer1 = gtk.CellRendererToggle()
+        renderer1 = Gtk.CellRendererToggle()
         renderer1.set_property("sensitive", sensitive)
         if sensitive :
             self.treeview.connect("cursor-changed", self.on_treeview_toggled)
-        column = gtk.TreeViewColumn("", renderer1, active=0)
+        column = Gtk.TreeViewColumn("", renderer1, active=0)
         self.treeview.append_column(column)
-        renderer2 = gtk.CellRendererText()
-        column = gtk.TreeViewColumn("", renderer2, text=1)
+        renderer2 = Gtk.CellRendererText()
+        column = Gtk.TreeViewColumn("", renderer2, text=1)
         self.treeview.append_column(column)
-        self.tree_store = gtk.ListStore(bool, str)
+        self.tree_store = Gtk.ListStore(bool, str)
         self.treeview.set_model(self.tree_store)
         for entry in data :
             if isinstance(entry, list) :
@@ -148,18 +146,18 @@ class DialogBuilder(SimpleGladeApp) :
         
     def setup_textview(self) :
     
-        self.textview = gtk.TextView()
+        self.textview = Gtk.TextView()
         self.textview.set_editable(False)
         self.textview.set_cursor_visible(False)
         self.scrolledwindow.add(self.textview)
-        buf = gtk.TextBuffer()
+        buf = Gtk.TextBuffer()
         buf.set_text(self.data)
         self.textview.set_buffer(buf)
         self.scrolledwindow.show_all()
         
     def setup_check_button(self) :
     
-        box = gtk.VBox(homogeneous=True, spacing = 0)
+        box = Gtk.VBox(homogeneous=True, spacing = 0)
         if len(self.options) > 1 and isinstance(self.options[1], bool) :
             grouped = self.options[1]
             options = self.options[0]
@@ -174,9 +172,9 @@ class DialogBuilder(SimpleGladeApp) :
             else :
                 value = False
             if grouped :
-                widget = gtk.RadioButton(label = option, group = widget)
+                widget = Gtk.RadioButton(label = option, group = widget)
             else :
-                widget = gtk.CheckButton(option)
+                widget = Gtk.CheckButton(option)
             widget.set_active(value)
             box.pack_start(widget, expand=False)
         self.check_box = box
@@ -184,10 +182,9 @@ class DialogBuilder(SimpleGladeApp) :
         self.check_box.show_all()
         
     def set_size(self) :
-    
         if hasattr(self, "treeview") :
             widget = self.treeview
-            if len(self.data) > 1 and isinstance(self.data[1], bool) :
+            if self.data and len(self.data) > 1 and isinstance(self.data[1], bool) :
                 sample = self.data[0]
             else :
                 sample = self.data
@@ -195,13 +192,15 @@ class DialogBuilder(SimpleGladeApp) :
             maxrow = 8
         elif hasattr(self, "textview") :
             widget = self.textview
+            logging.debug('{}'.format(self.data))
             sample = self.data.split("\n")
             ypad = 2
             maxrow = 8
         else :
             return
         ctx = widget.get_pango_context()
-        layout = pango.Layout(ctx)
+        layout = Pango.Layout(ctx)
+        logging.debug('set_size: sample = {}'.format(sample))
         row = min(len(sample) + 2, maxrow)
         if self.options and row > 5 :
             row -= min(len(self.options), 3)
@@ -214,14 +213,13 @@ class DialogBuilder(SimpleGladeApp) :
         width = min(max(w), 450)
         height = (layout.get_pixel_size()[1] + ypad) * row
         widget.set_size_request(width, height)
-        
     def run(self) :
 
         ret = self.dialog_main.run()
-        if ret in (gtk.RESPONSE_DELETE_EVENT, gtk.RESPONSE_CANCEL, gtk.RESPONSE_CLOSE, gtk.RESPONSE_NO) :
-            ret = gtk.RESPONSE_REJECT
+        if ret in (Gtk.RESPONSE_DELETE_EVENT, Gtk.RESPONSE_CANCEL, Gtk.RESPONSE_CLOSE, Gtk.RESPONSE_NO) :
+            ret = Gtk.RESPONSE_REJECT
         result = [ret, None, None]
-        if not ret == gtk.RESPONSE_REJECT :
+        if not ret == Gtk.RESPONSE_REJECT :
             if hasattr(self, "treeview") :
                 select = []
                 unselect = []

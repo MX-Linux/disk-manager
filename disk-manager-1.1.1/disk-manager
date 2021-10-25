@@ -1,4 +1,4 @@
-#! @PYTHON@ @PYOPTIONS@
+#! /usr/bin/python -OOt
 # -*- python -*-
 # -*- coding: UTF-8 -*-
 #

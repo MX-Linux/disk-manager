@@ -22,12 +22,14 @@ import os
 import re
 import copy
 import shutil
+import tempfile
+import functools
 from subprocess import *
 
-import FstabData
-from DiskInfo import *
-from FstabError import *
-from FstabUtility import *
+from . import FstabData
+from .DiskInfo import *
+from .FstabError import *
+from .FstabUtility import *
 
 
 class EntryBase(dict) :
@@ -38,7 +40,7 @@ class EntryBase(dict) :
 
     def __init__(self, entry) :
 
-        if not globals().has_key("info") :
+        if "info" not in globals() :
             globals()["info"] = get_diskinfo_backend("auto")()
         for i in FstabData.categorie : self[i] = ""
         for i in range(len(entry)) : self[FstabData.categorie[i]] = entry[i]
@@ -53,9 +55,9 @@ class EntryBase(dict) :
         ''' w.write() -> Return a string of the entry in fstab/mtab synthax '''
 
         result = ""
-        if type == "FS_UUID" or type == "FS_LABEL" and self.has_key("DEVICE") :
+        if type == "FS_UUID" or type == "FS_LABEL" and "DEVICE" in self :
             result += "#Entry for " + self["DEVICE"] + " :\n%s=" % type.split("_")[-1]
-        elif type == "DEVICE" and self.has_key("FSTAB_NAME") and os.path.exists(self["FSTAB_NAME"]) :
+        elif type == "DEVICE" and "FSTAB_NAME" in self and os.path.exists(self["FSTAB_NAME"]) :
             if os.path.samefile(self["DEVICE"], self["FSTAB_NAME"]) :
                 type = "FSTAB_NAME"
         result += "%s\t" % self[type]
@@ -80,7 +82,7 @@ class Entry(EntryBase) :
         self.parent = parent
         EntryBase.__init__(self, entry)
         if not self["FSTAB_PATH"] :
-            if self.has_key("FS_LABEL_SAFE") :
+            if "FS_LABEL_SAFE" in self :
                 self["FSTAB_PATH"] = "/media/" + self["FS_LABEL_SAFE"]
             else :
                 self["FSTAB_PATH"]  = "/media/" + self["DEV"]
@@ -91,12 +93,12 @@ class Entry(EntryBase) :
         ''' x.__setitem__(i, y) <==> x[i]=y '''
 
         if key == "FSTAB_TYPE" and item :
-            if self.has_key("FS_TYPE") and item == self["FS_TYPE"] :
+            if "FS_TYPE" in self and item == self["FS_TYPE"] :
                 try :
                     item = self["FS_DRIVERS"]["primary"][0][0]
                 except :
                     item = self["FS_TYPE"]
-            if self.has_key("FSTAB_OPTION") :
+            if "FSTAB_OPTION" in self :
                 for value in self.listopt():
                     if value not in FstabData.common :
                         self.removeopt(value)
@@ -105,15 +107,15 @@ class Entry(EntryBase) :
                     default[0] += "," + self["FSTAB_OPTION"]
                 (self["FSTAB_OPTION"], self["FSTAB_FREQ"], self["FSTAB_PASO"]) = default
 
-        if key == "FSTAB_OPTION" and item and self.has_key("FSTAB_OPTION") :
+        if key == "FSTAB_OPTION" and item and "FSTAB_OPTION" in self :
             listopt = item.split(",")
             if "locale=autoset" in listopt :
                 listopt.remove("locale=autoset")
                 listopt.append("locale=" + os.environ["LANG"])
                 item = ",".join(listopt)
                 
-        if key == "FSTAB_PATH" and item and self.has_key("DEVICE") \
-                and self.has_key("FSTAB_PATH") :
+        if key == "FSTAB_PATH" and item and "DEVICE" in self \
+                and "FSTAB_PATH" in self :
             while not check_path(item, self.parent, entry = self) :
                 logging.debug("-> %s is in use." % item)
                 item = item + "_"
@@ -309,7 +311,7 @@ class MntFile(list) :
     def __init__(self, filename, fd = None, minimal = False, \
             naming = "auto", backend = "auto") :
 
-        if not globals().has_key("info") :
+        if "info" not in globals() :
             globals()["info"] = get_diskinfo_backend(backend)()
         self.info = info
         (self.dev, self.other, self.comment) = ([], [], [])
@@ -348,6 +350,11 @@ class MntFile(list) :
         ''' x.__getitem__(y) <==> x[y] '''
         
         if isinstance(item, int) :
+            try :
+                return list.__getitem__(self, item)
+            except :
+                raise NotInDatabase(item)
+        elif isinstance(item, slice) :
             try :
                 return list.__getitem__(self, item)
             except :
@@ -394,7 +401,7 @@ class MntFile(list) :
         
         result = []
         for k in self : 
-            if k.has_key(col) :
+            if col in k :
                 result.append(k[col])
             else :
                 result.append("")
@@ -438,17 +445,17 @@ class MntFile(list) :
             self.naming = "auto"
         if self.naming == "auto" and self.search("UUID=", strict = "no", keys = ["FSTAB_NAME"]) :
             self.naming = "uuid"
-        self.sort(cmp=self._sort_path)
+        self.sort(key=functools.cmp_to_key(self._sort_path))
         for entry in self + self.other :
-            if "LABEL=" in entry["FSTAB_NAME"] and entry.has_key("FS_LABEL") \
+            if "LABEL=" in entry["FSTAB_NAME"] and "FS_LABEL" in entry \
                     and len(self.search(entry["FS_LABEL"], keys = ["FS_LABEL"])) < 2 \
                     and os.path.exists("/dev/disk/by-label/%s" % entry["FS_LABEL"]) : 
                 type = "FS_LABEL"
-            elif self.naming == "uuid" and entry.has_key("FS_UUID") \
+            elif self.naming == "uuid" and "FS_UUID" in entry \
                     and len(self.search(entry["FS_UUID"], keys = ["FS_UUID"])) < 2 \
                     and os.path.exists("/dev/disk/by-uuid/%s" % entry["FS_UUID"]) :
                 type = "FS_UUID"
-            elif entry.has_key("DEVICE") :
+            elif "DEVICE" in entry :
                 type = "DEVICE"
             else :
                 type = "FSTAB_NAME"
@@ -488,11 +495,11 @@ class MntFile(list) :
     def apply(self) :
         ''' x.apply() -> Write MntFile to filename '''
         
-        tmpfile = os.tmpfile()
-        tmpfile.write(FstabData.header)
-        tmpfile.write(self.write())
+        tmpfile = tempfile.NamedTemporaryFile()
+        tmpfile.write(FstabData.header.encode('utf-8'))
+        tmpfile.write(self.write().encode('utf-8'))
         tmpfile.seek(0)
-        mntfile = open(self.filename, "w")
+        mntfile = open(self.filename, "wb")
         shutil.copyfileobj(tmpfile, mntfile)
         mntfile.close()
         tmpfile.close()
@@ -525,7 +532,7 @@ def list_created_path(action = "list", path = None) :
     if action == "list" :
         if len(li) == 1 and len(li[0]) == 0 :
             return []
-        return map(decode, li)
+        return list(map(decode, li))
         
 def clean_path(path) :
     ''' Remove the path if not in use '''
@@ -580,6 +587,6 @@ def device_is_mounted(device) :
 if __name__ == "__main__":
     logging.basicConfig(level=logging.DEBUG, format='%(levelname)s : %(message)s')
     fstab = MntFile("fstab.test", minimal=True)
-    print fstab.list("FSTAB_PATH")
+    print(fstab.list("FSTAB_PATH"))
     fstab.sort(cmp=fstab._sort_path)
-    print fstab.list("FSTAB_PATH")
+    print(fstab.list("FSTAB_PATH"))
