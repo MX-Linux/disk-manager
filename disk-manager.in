@@ -34,6 +34,8 @@ if "/usr/local" in sys.argv[0] :
             local_path = path.replace("/usr", "/usr/local")
             if not local_path in sys.path :
                 sys.path.append(path.replace("/usr", "/usr/local"))
+
+sys.path.append("/usr/lib/python3.9/site-packages")
                 
 print(sys.path)
 

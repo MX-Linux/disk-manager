@@ -1,7 +1,6 @@
 disk-manager (21.10.01) mx; urgency=medium
 
   * update from original source
-  * does not building into a deb yet
 
  -- Dolphin Oracle <dolphinoracle@gmail.com>  Sun, 07 Nov 2021 12:15:46 -0500
 
