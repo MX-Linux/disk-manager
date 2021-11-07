@@ -6,4 +6,4 @@
 
 %:
 	dh $@ \
-		--with python2
+		--with python3
