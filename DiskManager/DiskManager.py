@@ -2,6 +2,7 @@
 #
 #  DiskManager.py : Manage main interfaces
 #  Copyright (C) 2007 Mertens Florent <flomertens@gmail.com>
+#  Copyright (C) 2021 MX Linux Project <dolphinoracle@gmail.com> with permission from Mertens Florent
 #
 #  This program is free software; you can redistribute it and/or modify
 #  it under the terms of the GNU General Public License as published by
