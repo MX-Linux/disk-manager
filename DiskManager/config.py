@@ -2,6 +2,8 @@
 #
 #  config.py : Store all dirs, commands, files used in the same place
 #  Copyright (C) 2007 Mertens Florent <flomertens@gmail.com>
+#  Updated 2021 for MX Linux Project by team member Nite Coder
+#  Maintenance of project assumed by MX Linux with permission from original author.
 #
 #  This program is free software; you can redistribute it and/or modify
 #  it under the terms of the GNU General Public License as published by
@@ -20,8 +22,8 @@
 
 prefix     = "/usr/local"
 PACKAGE    = "disk-manager"
-VERSION    = "1.1.1"
-HOMEPAGE   = "http://flomertens.free.fr/disk-manager/"
+VERSION    = "21.10.01"
+HOMEPAGE   = "https://github.com/MX-Linux/disk-manager"
 AUTHORS    = ["Mertens Florent <flomertens AT gmail.com>"]
 
 DATADIR   = prefix + "/share/" + PACKAGE

@@ -2,6 +2,8 @@
 #
 #  FstabHandler.py : High level class for managing fstab file
 #  Copyright (C) 2007 Mertens Florent <flomertens@gmail.com>
+#  Updated 2021 for MX Linux Project by team member Nite Coder
+#  Maintenance of project assumed by MX Linux with permission from original author.
 #
 #  This program is free software; you can redistribute it and/or modify
 #  it under the terms of the GNU General Public License as published by
