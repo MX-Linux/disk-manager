@@ -1,4 +1,11 @@
 ------------------------------------------------------------
+version:  21.10.01
+committer:  Dolphin Oracle <dolphinoracle@gmail.com>
+branch:  development
+timestamp:  2021-11-07
+message:  
+   * update from original source to gtk3 (Nite Coder)
+------------------------------------------------------------
 revno: 154
 committer: Mertens Florent <flomertens@gmail.com>
 branch nick: DiskManager
