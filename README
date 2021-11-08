@@ -21,8 +21,8 @@ make install (as root)
 Requirements :
 ==============
 
-- python (>= 2.4)
-- pygtk (>= 2.6)
+- python3 
+- python-gi
 - udev (>= 60 strongly recommended, but might works with lower udev)
 - dmsetup (optional, for crypt, lvm and raid device)
 - e2fsprogs for blkid (optional, absolutely needed for old udev (< 60))
@@ -31,39 +31,13 @@ Requirements :
 Special requirements :
 ======================
 
-+ Notification of new devices at startup :
- - pygtk (>= 2.10) or python-gnome2-extras
- - python-notify (optionnal)
-
 + NTFS read/write support :
  - ntfs-3g driver (http://www.ntfs-3g.org)
-
-+ NTFS read/write support for external device :
- - hal with fuse support. This mean hal >= 0.5.9
-   The version from your distribution may already include this support.
-   If it's not the case, you can get a patch from there :
-   http://librarian.launchpad.net/4667871/support-fuse.patch
- - gnome-mount or any storage device mounting program that use
-   hal as backend and can handle ntfs-3g.
-
-
-Want to help :
-==============
-
-If you want to help to make this program rock solid, and the more
-user friendly possible, you are welcome to give an hand.
-There is always a lot of stuff to do.
-- you can fill bug when you encounter one (see Bug report)
-- you can translate this program in your own language (see Translation)
-- if you want to get more implicate in the project, you can
-  look at the TODO list, and pick a task that need some works
-  (but email me before starting, so we don't duplicate works)
-
 
 Bug report :
 ============
 
-You can report bug on launchpad : https://bugs.launchpad.net/disk-manager/+bugs
+You can file an issue here on github.
 
 If disk-manager failed to detect devices, or detect wrong devices, 
 it's might be useful to attach to your bug report the full database
@@ -76,9 +50,5 @@ also with a copy of your /etc/fstab
 
 Translation :
 =============
-
-You can translate this application easily with the rosetta framework :
-
-https://translations.launchpad.net/disk-manager/+translations
-
+info to follow
 
