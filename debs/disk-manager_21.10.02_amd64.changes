@@ -1,0 +1,31 @@
+Format: 1.8
+Date: Mon, 08 Nov 2021 19:04:00 -0500
+Source: disk-manager
+Binary: disk-manager
+Architecture: source all
+Version: 21.10.02
+Distribution: mx
+Urgency: medium
+Maintainer: David Paleino <dapal@debian.org>
+Changed-By: Dolphin Oracle <dolphinoracle@gmail.com>
+Description:
+ disk-manager - simple graphical filesystem configurator
+Changes:
+ disk-manager (21.10.02) mx; urgency=medium
+ .
+   * install to /usr instead of /usr/local
+Checksums-Sha1:
+ 3ec2b846152d815f87a34c9a79604b87ecb317ce 802 disk-manager_21.10.02.dsc
+ d48fcff9c97d74ce47bf4295d23ab0426397a088 359205 disk-manager_21.10.02.tar.gz
+ f6b795a6ce2580669d6cbdc7ba15c6a6e1a6b1c3 111820 disk-manager_21.10.02_all.deb
+ 40eff53a3195503dcb11e1eefd8c5d4494d1552c 6920 disk-manager_21.10.02_amd64.buildinfo
+Checksums-Sha256:
+ 01e3da0382fa91c86ff595eb910078d3c090271f7c8eb464b62d02bdcf5fb5b2 802 disk-manager_21.10.02.dsc
+ a47a18f5011906da0da8c952f0c489dfb51629e93bd91dd01e6115f2f9e51606 359205 disk-manager_21.10.02.tar.gz
+ 1a9db40f952b25d8c59d28221e69f993e263f5a1c1dff845db0fc3b39e0b95bc 111820 disk-manager_21.10.02_all.deb
+ 4d50578ca46b8bdbae24c0d74b8099f7e9cf719f7f0358df8eb27f10bb30aa0d 6920 disk-manager_21.10.02_amd64.buildinfo
+Files:
+ c259571090c161be5cd2a5cff26e7493 802 admin optional disk-manager_21.10.02.dsc
+ c849b41ad124257dc2ef3b345ec6362a 359205 admin optional disk-manager_21.10.02.tar.gz
+ b1e2cb5dcc8ee3199d6ae1b3fef642c8 111820 admin optional disk-manager_21.10.02_all.deb
+ 01c4d86409a513f5f8d71fcfbbfe44af 6920 admin optional disk-manager_21.10.02_amd64.buildinfo
