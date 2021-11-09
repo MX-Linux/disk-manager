@@ -1,3 +1,9 @@
+disk-manager (21.10.02) mx; urgency=medium
+
+  * install to /usr instead of /usr/local
+
+ -- Dolphin Oracle <dolphinoracle@gmail.com>  Mon, 08 Nov 2021 19:04:00 -0500
+
 disk-manager (21.10.01) mx; urgency=medium
 
   * update from original source
