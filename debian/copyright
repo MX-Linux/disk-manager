@@ -1,8 +1,8 @@
-Format-Specification: http://wiki.debian.org/Proposals/CopyrightFormat
+Format: https://www.debian.org/doc/packaging-manuals/copyright-format/1.0/
+Upstream-Name: disk-manager
 Upstream-Author: Mertens Florent <flomertens@gmail.com>
-Packaged-By: David Paleino <d.paleino@gmail.com>
-Packaged-Date: Tue, 17 Jun 2008 21:21:54 +0200
 Original-Source-Location: http://flomertens.free.fr/disk-manager/download/source/
+Source: https://github.com/MX-Linux/disk-manager
 
 Files: DiskManager/SimpleGladeApp.py
  DiskManager/Fstab/SimpleGladeApp.py
