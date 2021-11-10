@@ -1,5 +1,14 @@
 disk-manager (21.10.02) mx; urgency=medium
 
+  * Switch to debhelper-compat and delete compat file.
+  * Minor control and copyright file refinements.
+  * Add debian/source folder and files.
+  * Delete debian/disk-manager.xpm as icon is standard at this point.
+  
+ -- SwampRabbit <swamprabbit@mxlinux.org>  Wed, 10 Nov 2021 13:31:49 -0500
+
+disk-manager (21.10.02) mx; urgency=medium
+
   * install to /usr instead of /usr/local
 
  -- Dolphin Oracle <dolphinoracle@gmail.com>  Mon, 08 Nov 2021 19:04:00 -0500
