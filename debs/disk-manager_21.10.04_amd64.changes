@@ -1,0 +1,55 @@
+-----BEGIN PGP SIGNED MESSAGE-----
+Hash: SHA512
+
+Format: 1.8
+Date: Thu, 11 Nov 2021 13:15:02 -0500
+Source: disk-manager
+Binary: disk-manager
+Architecture: source all
+Version: 21.10.04
+Distribution: mx
+Urgency: medium
+Maintainer: David Paleino <dapal@debian.org>
+Changed-By: fehlix <fehlix@mxlinux.org>
+Description:
+ disk-manager - simple graphical filesystem configurator
+Changes:
+ disk-manager (21.10.04) mx; urgency=medium
+ .
+   * addjust nvme and mmcblk device detection
+   * filter out loop devices
+   * replace label Demonter with Unmount in disk-manager.desktop.glade
+   * adjust disk-manager.desktop.in.in
+Checksums-Sha1:
+ 0395b79b17cbce0d0c8a5761f871633322916ed9 1630 disk-manager_21.10.04.dsc
+ 88b5c3f5b8da2bec9b253be04ac1969a176a53c4 481612 disk-manager_21.10.04.tar.xz
+ 4fb0cde5b2d7ccf79f8aa7b614fffa6c8d53c7df 71996 disk-manager_21.10.04_all.deb
+ bdad07c6cd89b8ba7b3ef99b587c4cc4961460c2 8613 disk-manager_21.10.04_amd64.buildinfo
+Checksums-Sha256:
+ e2c2eaf41eaf304a4234d2361385f3426bfbec12d89f721623428b6f10f821bd 1630 disk-manager_21.10.04.dsc
+ 766382026e6c89a52d5140b5b47d32fc9efcc88bbee3e1ea978d231641c6b6a7 481612 disk-manager_21.10.04.tar.xz
+ 5ab6e5f99262c405f25202aeb5322382d60402f350522bf0d1e470a30f05c657 71996 disk-manager_21.10.04_all.deb
+ 6b7d1156b05ef4d01d4add9734543f82167710ba761ee226b583a8f84da3175c 8613 disk-manager_21.10.04_amd64.buildinfo
+Files:
+ 72a12ddf6af566fe1ea257d30130bed3 1630 admin optional disk-manager_21.10.04.dsc
+ 28ff6aa19fb71940e1ac643d550a1806 481612 admin optional disk-manager_21.10.04.tar.xz
+ 34d189a6f85135dac6cdad1237d580c5 71996 admin optional disk-manager_21.10.04_all.deb
+ 36ec5d507bf38df85cfe36b3b2701db9 8613 admin optional disk-manager_21.10.04_amd64.buildinfo
+
+-----BEGIN PGP SIGNATURE-----
+
+iQJHBAEBCgAxFiEEgRnC8/wKXRM2S0xLL1ePG6ydm+kFAmGNZTcTHGZlaGxpeEBt
+eGxpbnV4Lm9yZwAKCRAvV48brJ2b6cJ2EACc76d+vUAts798v9nrqMOfeL9skgR/
+rPjr+jWMbvAQJ2vdlOG5e8fKZOl9xUAgwnbfkm3TL5xnwHECwGBXA9VSNcfDdtt1
+onmPJQNKiqXBUsNRjAtjWzWx+nVkiYJ9adWImnOyBytpjVi78piFnKY83PjyfGIF
+m4GP+9Zgx6tSNv90Mvkt5N8wfVGDkGymR8dp3YM7AnuvNtRxg7p0A5qDXSumolVD
+hEKbKXsrprbaqocVxkzTcwcr1Z/rL0/tzrWfEqMuhiopBJ5bxRCc1yZfAUFv85ST
+XPnGDXaM48J+W7Mcz329iMenSUVKwbvcZBRdn0uBxKQZUGR0wk08zln2hytBqeyL
+DBmgUhggHRshZdD+vwJN6GA14z2pkx9BRRJGMbgLL8cDhVoJNRAF6HPCuTgFfBqr
+IA7ujMS2MmKysIzWN5h8iy8Xh2cZIADOY9x0iPFQBcpyp6vdNS532ZtMmHv7fcUK
+kBcLyOJ/hyPUJDqIHhu65V0fSYT5gGk6DxFUHDLaesF+r748eZGy4Sn/IsBU+Qkv
++0kcrAptMcE2EyuTu7oH8QzgaQC8QFZeUoaz+iKQKuBEsN8gTMNkjXbGbFvoPCy4
+Tcq2XCBG+TsH5GAdbD7P5GmTHV1l12z5DadErKS/ojVYjCEHs3Ye5Yg/CLxN07LS
+382faUHj/WqsvQ==
+=5fKu
+-----END PGP SIGNATURE-----

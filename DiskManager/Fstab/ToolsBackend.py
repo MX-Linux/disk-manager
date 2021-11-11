@@ -67,7 +67,9 @@ class ToolsBackend(DiskInfoBase) :
         
         # See if this partition is from a parent already in the database
         try :
-            drive = re.search("(\w{1,3})[0-9]", dev["DEV"]).groups()[0]
+            drive = re.search("^([a-z]{1,4}|(nvme[0-9]{1,2}n[0-9]{1,2}|mmcblk[0-9]{1,2})p)[0-9]{1,3}$", dev["DEV"]).groups()[0]
+            if any(y in drive for y in ["mmcblk", "nvme"]):
+                drive = drive[:-1]
             dev["PARENT"] = self[drive]["DEV"]
         except NotInDatabase :
             dev["PARENT"] = None

@@ -423,7 +423,7 @@ class MntFile(list) :
                     if value == pattern and i not in result :
                         result.append(i)
                 else :
-                    if value.find(pattern) is not -1 and i not in result :
+                    if value.find(pattern) != -1 and i not in result :
                         result.append(i)
                 i = i + 1
         return result

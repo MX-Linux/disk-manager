@@ -1872,7 +1872,7 @@ automatically with the "Auto Configure" button</property>
                                   <object class="GtkLabel" id="label_mount">
                                     <property name="visible">True</property>
                                     <property name="can-focus">False</property>
-                                    <property name="label">Demonter</property>
+                                    <property name="label">Unmount</property>
                                     <property name="xalign">0</property>
                                   </object>
                                   <packing>
@@ -2021,7 +2021,7 @@ Please wait until the process finishes.</property>
           <object class="GtkLabel" id="progress_label">
             <property name="visible">True</property>
             <property name="can-focus">False</property>
-            <property name="label" context="yes">&lt;i&gt;Mouting *&lt;/i&gt;</property>
+            <property name="label" context="yes">&lt;i&gt;Mounting *&lt;/i&gt;</property>
             <property name="use-markup">True</property>
             <property name="width-chars">35</property>
             <property name="xalign">0</property>

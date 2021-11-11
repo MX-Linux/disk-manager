@@ -95,7 +95,7 @@ class DiskInfoBase(list) :
         fd = open("/proc/partitions")
         devices = fd.readlines()[2:]
         fd.close()
-        return [x for x in devices if any(y not in x for y in "sr")]
+        return [x for x in devices if all(y not in x for y in ["loop", "sr"])]
         
     def load_database(self, reload = False) :
         ''' x.load_database([reload]) -> load the database.\n
