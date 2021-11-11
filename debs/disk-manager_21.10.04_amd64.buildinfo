@@ -1,20 +1,23 @@
+-----BEGIN PGP SIGNED MESSAGE-----
+Hash: SHA512
+
 Format: 1.0
 Source: disk-manager
 Binary: disk-manager
 Architecture: all source
-Version: 21.10.03
+Version: 21.10.04
 Checksums-Md5:
- c810ddec1c5933fc41a7bbe42f857b4d 718 disk-manager_21.10.03.dsc
- 374063273ed0165e6cfd1a280aec7d20 71852 disk-manager_21.10.03_all.deb
+ 72a12ddf6af566fe1ea257d30130bed3 1630 disk-manager_21.10.04.dsc
+ 34d189a6f85135dac6cdad1237d580c5 71996 disk-manager_21.10.04_all.deb
 Checksums-Sha1:
- 10bbb447a867bf47aba31e74ef29665bf803fac8 718 disk-manager_21.10.03.dsc
- 56dfcbec87e20daae70126d98071db75faf472a4 71852 disk-manager_21.10.03_all.deb
+ 0395b79b17cbce0d0c8a5761f871633322916ed9 1630 disk-manager_21.10.04.dsc
+ 4fb0cde5b2d7ccf79f8aa7b614fffa6c8d53c7df 71996 disk-manager_21.10.04_all.deb
 Checksums-Sha256:
- ca15aca2fe0bb4c5458f70d7c4b95d4cca83b2632101ec99150008470b9afe5a 718 disk-manager_21.10.03.dsc
- 8070c9b6228d1c09404ba0572c0203c82f81b3a3adf111fa56903ae1df5b65f7 71852 disk-manager_21.10.03_all.deb
+ e2c2eaf41eaf304a4234d2361385f3426bfbec12d89f721623428b6f10f821bd 1630 disk-manager_21.10.04.dsc
+ 5ab6e5f99262c405f25202aeb5322382d60402f350522bf0d1e470a30f05c657 71996 disk-manager_21.10.04_all.deb
 Build-Origin: Debian
 Build-Architecture: amd64
-Build-Date: Wed, 10 Nov 2021 19:33:40 -0500
+Build-Date: Thu, 11 Nov 2021 19:47:10 +0100
 Build-Tainted-By:
  merged-usr-via-aliased-dirs
  usr-local-has-libraries
@@ -218,7 +221,7 @@ Installed-Build-Depends:
  libxml2 (= 2.9.10+dfsg-6.7),
  libz3-4 (= 4.8.10-1),
  libzstd1 (= 1.4.8+dfsg-2.1),
- linux-libc-dev (= 5.14.16-1~mx21+1),
+ linux-libc-dev (= 5.14.6-3~mx21+1),
  login (= 1:4.8.1-1),
  lsb-base (= 11.1.0),
  m4 (= 1.4.18-5),
@@ -265,4 +268,22 @@ Installed-Build-Depends:
 Environment:
  DEB_BUILD_OPTIONS="parallel=4"
  LANG="en_US.UTF-8"
- SOURCE_DATE_EPOCH="1636589747"
+ SOURCE_DATE_EPOCH="1636654502"
+
+-----BEGIN PGP SIGNATURE-----
+
+iQJHBAEBCgAxFiEEgRnC8/wKXRM2S0xLL1ePG6ydm+kFAmGNZTcTHGZlaGxpeEBt
+eGxpbnV4Lm9yZwAKCRAvV48brJ2b6YeVD/sGAphW+AULzm49k7hZYbBi3cD27slh
+Y5it/BxIkq3we2JlIeBfr+tbRKasTtowL4X2JhMKFhdhqVdF2L008XFYIvcST+Ih
+th8b4cD5fdfD/TOUuIwoj+lzOvayVurfl+QssEfrcUcM0dhYsc8AcnNMhqkK8Od4
+e1J0yp8LhsBAZ0fH5++TNf+feHb5hQrXXJmF3lgs/Dt4iEatsJtUqZxCY3AH8zPM
+zPOISuj9r6viExK0CVVMkBGHpqzd23/2vIX4ykezpEaHcR70ll/7aYfL1/Tssfd7
+pFdZnTXcVgIp7kDWTEgNpnq4jACmJD3jWMKFzRe/AsHon5kQAjQlFKCOS5RgbQ2z
+NX2ypqbEuFQRdT+A3Vk9TXfmU2NLX+DdOLkIfzSW9dud4kQcaiZwi9IQBMDqwB+l
+XqHRrLncBmpKd/G+OwMwXbyZNoOF2S6HMvCHglC52LytHzh2U61gflv3F03IVaJJ
+bt7/APK6B/dBpH2yzM6XvFymHF2CVXNG5TFd2D35iKJK4APDBk6ck/dw5e1rjkO4
+hj0n3A0yWVGcKpBVhlLreYe1+ipO6H5TZ2RXM8f/i/xT8yBQi+R2v3+v4rQ2ZRIo
+83BbqAedgTtWGaro9m/uUiD4PL5nM1MMo+4RFOexlKpGcfX50qtEjr+5q4DvbOd9
+dPJh6hmkCmpwGA==
+=YYrY
+-----END PGP SIGNATURE-----
