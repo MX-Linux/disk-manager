@@ -1,3 +1,9 @@
+disk-manager (21.10.05) mx; urgency=medium
+
+  * addjust dialog button events
+
+ -- fehlix <fehlix@mxlinux.org>  Thu, 11 Nov 2021 18:00:14 -0500
+
 disk-manager (21.10.04) mx; urgency=medium
 
   * addjust nvme and mmcblk device detection

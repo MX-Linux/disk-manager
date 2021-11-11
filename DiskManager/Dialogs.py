@@ -25,7 +25,7 @@ import re
 import time
 from xml.sax.saxutils import escape as escape_mkup
 
-from gi.repository import Gtk
+from gi.repository import Gtk as gtk
 from gi.repository import GdkPixbuf, GObject, Pango
 
 from gettext import gettext as _
@@ -258,7 +258,7 @@ class HistoryDialog(SimpleGladeApp) :
         ret = dialog("question", _("Reverting to an older version?"), \
             [_("This will apply the following changes:"), _("Do you want to continue?")],
             "\n".join(self.disk.get_changes_current_to(version)), parent = self.dialog_history)
-        if ret[0] == gtk.RESPONSE_YES :
+        if ret[0] == gtk.ResponseType.YES :
             self.disk.revert_to(version)
         self.on_cursor_changed(self.treeview)
         
@@ -282,7 +282,7 @@ class HistoryDialog(SimpleGladeApp) :
     
         ret = dialog("question", _("Emptying History?"), \
             _("Do you want to empty the History?"), parent = self.dialog_history)
-        if ret[0] == gtk.RESPONSE_YES :
+        if ret[0] == gtk.ResponseType.YES :
             self.disk.cleanlog()
             self.update_dialog()
             
@@ -355,7 +355,7 @@ class SanityCheck :
                 "at start-up. Select the ones you want to remove.")], \
                 [ "%s on %s" % (k["FSTAB_NAME"], k["FSTAB_PATH"]) for k in unknow_block ], \
                 _("Remove selected"), [_("Don't show me this warning in the future.")], self.parent)
-            if not dial[0] ==  gtk.RESPONSE_REJECT :
+            if not dial[0] ==  gtk.ResponseType.REJECT :
                 for i in dial[1][0] :
                     logging.debug("Removing unknow entry : %s" % unknow_block[i]["FSTAB_NAME"])
                     self.fstab.other.remove(unknow_block[i])
@@ -395,7 +395,7 @@ class SanityCheck :
                 "You should select the one you want, and the others will be commented.\n"
                 "They will be kept in the configuration file, but will be disabled.")], \
                 data, _("Keep selected"), parent = self.parent)
-                if not dial[0] ==  gtk.RESPONSE_REJECT :
+                if not dial[0] ==  gtk.ResponseType.REJECT :
                     for j in dial[1][1] :
                         i = index[j]
                         logging.debug("Commenting duplicate : %s" % entries[j])

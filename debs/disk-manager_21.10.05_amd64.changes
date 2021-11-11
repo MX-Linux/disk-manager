@@ -1,0 +1,52 @@
+-----BEGIN PGP SIGNED MESSAGE-----
+Hash: SHA512
+
+Format: 1.8
+Date: Thu, 11 Nov 2021 18:00:14 -0500
+Source: disk-manager
+Binary: disk-manager
+Architecture: source all
+Version: 21.10.05
+Distribution: mx
+Urgency: medium
+Maintainer: David Paleino <dapal@debian.org>
+Changed-By: fehlix <fehlix@mxlinux.org>
+Description:
+ disk-manager - simple graphical filesystem configurator
+Changes:
+ disk-manager (21.10.05) mx; urgency=medium
+ .
+   * addjust dialog button events
+Checksums-Sha1:
+ e485e410b5a4859d6ece3fd9a39a679f494f8dbb 1630 disk-manager_21.10.05.dsc
+ 3a3ce4c934e0b1964ed0c28c6adefc00f2992962 715644 disk-manager_21.10.05.tar.xz
+ c473adaea1d70bf7129c8e61343ff931591ec786 72040 disk-manager_21.10.05_all.deb
+ 5466a9c8a27c30a9fcb5232ed9d9be7ba5d4b8b8 8613 disk-manager_21.10.05_amd64.buildinfo
+Checksums-Sha256:
+ 509026c70567918b6fc7b84b6f040d168bd34fe83abf91b827e86d1a9ae517f1 1630 disk-manager_21.10.05.dsc
+ 52a444b642f631831a80df13f1cfd221a6d63292cd43dce3e15288f98eb33fc1 715644 disk-manager_21.10.05.tar.xz
+ d2cd95b65e02515f7928f439cc636a973578a1327a8393fc55e264bfa8aa812c 72040 disk-manager_21.10.05_all.deb
+ 1abfee40e25671e04a978eae4f7dc47c15167d9565877d654be2f138e6ef8a9c 8613 disk-manager_21.10.05_amd64.buildinfo
+Files:
+ 1744d1f18c224b7a855a9177c0555f33 1630 admin optional disk-manager_21.10.05.dsc
+ 3447c8687b2ff1a75d490953f97943ba 715644 admin optional disk-manager_21.10.05.tar.xz
+ b2215ba7a92d41e79e28dcf1dda7c803 72040 admin optional disk-manager_21.10.05_all.deb
+ 1d6306d60a80500aacd9b1259ab7d734 8613 admin optional disk-manager_21.10.05_amd64.buildinfo
+
+-----BEGIN PGP SIGNATURE-----
+
+iQJHBAEBCgAxFiEEgRnC8/wKXRM2S0xLL1ePG6ydm+kFAmGNpIsTHGZlaGxpeEBt
+eGxpbnV4Lm9yZwAKCRAvV48brJ2b6R0rD/9W1S+JrP5UqsDvG+o3R6wISHvxEQAL
+W+ViEOlEMuOA0BMwThIoGkkxiH7o9xtoxwu7/dJ7vOOYIt2DmYIyBDeGnhO19bZW
+/ZcsLHZHiFHxRAa4ZWILsXJ0OgQ2HmCHKXYbpABmptKNOcfyjvFBLHMsrjXdBFuj
+CQDgm316nMySSimWoXjcLNG1RfS5ZV6dKM32IFfoEDwcoABFIBYrPqgcPDbyW1QP
+0ucq7xBcKx9ea6PTvpLt2RK8fDbiON/fGKshg57gu84Htz3vpwzmUJS550mxr9GC
+VK77RsymThAYQv2u94EfO80ymWa0rIwG7WN8yBKEXMf9aplqhKvSEdppwtl1Cs1S
+cQ9wHy/FQJyVNhmF/X/zw6wqo0bLXv39NZiPt/dyilP9daTzBT9xKPDI6SNJ4be9
+DonJquXdVtLcD0PK/rV4F6jb9QUF5duCwILsl3BR39MHptjSdH0mOC6fvkzctgA1
+xGpkKXhSlmvKpb5l956nY9V7olMbDhgu42eOIhePL3UAW++nzyW4SBnXgGniQuMI
+lHBVTiBSumsYIck6otZcY/1psYUoIHkLzx9bY664kDLERGYhQaN12eLy0YgqOIJw
+J3TgswCN+LCdMIodQmApGVUky0T3IqkZBahCeq/Uk6ZXgJBekzdUSFb5maJ/uWEF
+KVlYbqzS6jqGfg==
+=JONx
+-----END PGP SIGNATURE-----
