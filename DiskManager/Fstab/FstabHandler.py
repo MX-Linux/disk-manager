@@ -435,7 +435,7 @@ class FstabHandler(MntFile) :
                 [_("You disabled the following devices:"), _("Do you want to unmount them?")], \
                 [ "%s on %s" % (k["DEV"], k["FSTAB_PATH"]) for k in change[3] ], \
                 _("Unmount selected"), parent = self._parent)
-            if not dial[0] == gtk.RESPONSE_REJECT :
+            if not dial[0] == Gtk.ResponseType.REJECT :
                 for i in dial[1][0] :
                     to_umount.append(change[3][i])
         logging.debug("-> Device to umount :\n-> |%s" % \

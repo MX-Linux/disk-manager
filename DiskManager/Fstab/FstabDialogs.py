@@ -218,10 +218,10 @@ class DialogBuilder(SimpleGladeApp) :
     def run(self) :
 
         ret = self.dialog_main.run()
-        if ret in (Gtk.RESPONSE_DELETE_EVENT, Gtk.RESPONSE_CANCEL, Gtk.RESPONSE_CLOSE, Gtk.RESPONSE_NO) :
-            ret = Gtk.RESPONSE_REJECT
+        if ret in (Gtk.ResponseType.DELETE_EVENT, Gtk.ResponseType.CANCEL, Gtk.ResponseType.CLOSE, Gtk.ResponseType.NO):
+            ret = Gtk.ResponseType.REJECT
         result = [ret, None, None]
-        if not ret == Gtk.RESPONSE_REJECT :
+        if not ret == Gtk.ResponseType.REJECT :
             if hasattr(self, "treeview") :
                 select = []
                 unselect = []

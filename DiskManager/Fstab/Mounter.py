@@ -139,7 +139,7 @@ class Mounter(SimpleGladeApp) :
 
         ret = dialog(type, title, text, data, action, options, self.top_level)
 
-        if ret[0] == Gtk.RESPONSE_REJECT :
+        if ret[0] == Gtk.ResponseType.REJECT :
             return False
         if ret[2][0] :
             self.lazy = True
@@ -208,7 +208,7 @@ class Mounter(SimpleGladeApp) :
 
         ret = dialog("error", title, text, data, action, options, self.top_level)
 
-        if not ret[0] == Gtk.RESPONSE_REJECT and err_code :
+        if not ret[0] == Gtk.ResponseType.REJECT and err_code :
             if err_code == "BADOPT" :
                 if 0 in ret[2][0] :
                     entry["FSTAB_OPTION"] = entry.defaultopt()
