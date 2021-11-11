@@ -1,0 +1,31 @@
+Format: 1.8
+Date: Wed, 10 Nov 2021 19:15:47 -0500
+Source: disk-manager
+Binary: disk-manager
+Architecture: source all
+Version: 21.10.03
+Distribution: mx
+Urgency: medium
+Maintainer: David Paleino <dapal@debian.org>
+Changed-By: Dolphin Oracle <dolphinoracle@gmail.com>
+Description:
+ disk-manager - simple graphical filesystem configurator
+Changes:
+ disk-manager (21.10.03) mx; urgency=medium
+ .
+   * filter out optical devices (fehlix)
+Checksums-Sha1:
+ 10bbb447a867bf47aba31e74ef29665bf803fac8 718 disk-manager_21.10.03.dsc
+ 28ea6e3a9b54c7a810e23d5383ddee3c38bb048f 249328 disk-manager_21.10.03.tar.xz
+ 56dfcbec87e20daae70126d98071db75faf472a4 71852 disk-manager_21.10.03_all.deb
+ f3c9aaf9fc2a9988c89c0075555d9a61afdf88ff 7699 disk-manager_21.10.03_amd64.buildinfo
+Checksums-Sha256:
+ ca15aca2fe0bb4c5458f70d7c4b95d4cca83b2632101ec99150008470b9afe5a 718 disk-manager_21.10.03.dsc
+ 6d594932b54f377fe703ab084a7dad5b7a84a84adcf1bfa7335b2531cf66d0e0 249328 disk-manager_21.10.03.tar.xz
+ 8070c9b6228d1c09404ba0572c0203c82f81b3a3adf111fa56903ae1df5b65f7 71852 disk-manager_21.10.03_all.deb
+ ae7876c9529531b841b627091e0aa4f430d5b650cbdb76b3bc03430c1e1e33fa 7699 disk-manager_21.10.03_amd64.buildinfo
+Files:
+ c810ddec1c5933fc41a7bbe42f857b4d 718 admin optional disk-manager_21.10.03.dsc
+ 4231922f2f09a0511fa0cf9b63d54807 249328 admin optional disk-manager_21.10.03.tar.xz
+ 374063273ed0165e6cfd1a280aec7d20 71852 admin optional disk-manager_21.10.03_all.deb
+ 44ef412f8ebc5e08fcecace810ba62ac 7699 admin optional disk-manager_21.10.03_amd64.buildinfo
