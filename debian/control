@@ -25,7 +25,7 @@ Depends: ${python3:Depends}, ${misc:Depends},
          dmsetup,
          ntfs-3g
 Description: simple graphical filesystem configurator
- Disk-Manager is a simple filesystem configurator that allows you to:
+ Disk Manager is a simple filesystem configurator that allows you to:
   * Automatically detect new partitions at startup.
-  * Fully manage configuration of filesystem.
+  * Fully manage configuration of filesystem mount options.
   * Enable/disable write support for NTFS (needs ntfs-3g installed).
