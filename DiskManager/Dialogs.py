@@ -409,15 +409,10 @@ class SanityCheck :
         
 def about_dialog(button, parent) :
 
-    def dial_open_url(dialog, link) :
-        open_url(link)
-    gtk.about_dialog_set_url_hook(dial_open_url)
     dial = gtk.AboutDialog()
-    if parent : 
-        dial.set_transient_for(parent)
     dial.set_name("Disk Manager")
     dial.set_version(VERSION)
-    dial.set_copyright("Copyright © 2007 Mertens Florent")
+    dial.set_copyright("Copyright © 2007 Mertens Florent \n 2021 MX Linux")
     dial.set_license( \
         "This program is free software; you can redistribute it and/or\n"
         "modify it under the terms of the GNU General Public License\n"

@@ -1,3 +1,9 @@
+disk-manager (21.10.06) mx; urgency=medium
+
+  * about dialog revamp 
+
+ -- Dolphin Oracle <dolphinoracle@gmail.com>  Fri, 12 Nov 2021 17:25:32 -0500
+
 disk-manager (21.10.05) mx; urgency=medium
 
   * addjust dialog button events
