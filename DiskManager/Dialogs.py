@@ -429,7 +429,7 @@ def about_dialog(button, parent) :
         "Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA  02110-1301  USA")
     dial.set_comments("Easily manage your filesystem configuration")
     dial.set_website(HOMEPAGE)
-    dial.set_website_label("Disk Manager Homepage")
+    dial.set_website_label("https://github.com/MX-Linux/disk-manager")
     dial.set_authors(AUTHORS)
     dial.set_translator_credits(_("translator-credits"))
     dial.set_logo_icon_name("disk-manager")
