@@ -129,26 +129,42 @@ class EditPartition(SimpleGladeApp) :
         #gladexml =  gtk.glade.XML(GLADEFILE, "dialog_mount_point")
         #dialog = gladexml.get_widget("dialog_mount_point")
 
-        builder = Gtk.Builder()
-        builder.add_from_file(GLADEFILE)
+        # builder = Gtk.Builder()
+        # builder.add_from_file(GLADEFILE)
 
-        dialog = builder.get_object("dialog_mount_point")
+        # dialog = builder.get_object("dialog_mount_point")
 
-        dialog.set_transient_for(self.dialog_edit)
-        dialog.select_filename(self.path.get_text())
-        for shortcut in (get_user("dir"), "/media", "/") :
-            try :
-                dialog.add_shortcut_folder(shortcut)
-            except gobject.GError : 
-                pass
-        ret = dialog.run()
-        print("FEHLIX: ret=")
-        print(ret)
-        print(dialog.get_filename())
+        # dialog.set_transient_for(self.dialog_edit)
+        # dialog.select_filename(self.path.get_text())
+        # for shortcut in (get_user("dir"), "/media", "/") :
+            # try :
+                # dialog.add_shortcut_folder(shortcut)
+            # except gobject.GError : 
+                # pass
+        # ret = dialog.run()
+        # print("FEHLIX: ret=")
+        # print(ret)
+        # print(dialog.get_filename())
         
-        if ret == 1 :
+        # if ret == 1 :
+            # self.path.set_text(dialog.get_filename())
+        # dialog.hide()
+        
+        dialog = Gtk.FileChooserDialog(title="Please choose a folder", action=Gtk.FileChooserAction.SELECT_FOLDER)
+        dialog.add_buttons(
+            Gtk.STOCK_CANCEL, Gtk.ResponseType.CANCEL, "Select", Gtk.ResponseType.OK
+        )
+        dialog.set_default_size(800, 400)
+
+        response = dialog.run()
+        if response == Gtk.ResponseType.OK:
+            print("Select clicked")
+            print("Folder selected: " + dialog.get_filename())
             self.path.set_text(dialog.get_filename())
-        dialog.hide()
+        elif response == Gtk.ResponseType.CANCEL:
+            print("Cancel clicked")
+
+        dialog.destroy()
 
     def on_driver_changed(self, button) :
     
