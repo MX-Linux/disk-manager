@@ -1702,6 +1702,7 @@ automatically with the "Auto Configure" button</property>
                   <object class="GtkMenu" id="file_menu">
                     <property name="visible">True</property>
                     <property name="can-focus">False</property>
+                    <!--
                     <child>
                       <object class="GtkImageMenuItem" id="save_menu">
                         <property name="label">gtk-save</property>
@@ -1720,6 +1721,7 @@ automatically with the "Auto Configure" button</property>
                         <property name="use-stock">False</property>
                       </object>
                     </child>
+                    -->
                     <child>
                       <object class="GtkSeparatorMenuItem">
                         <property name="visible">True</property>

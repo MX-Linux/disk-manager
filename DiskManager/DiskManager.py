@@ -39,33 +39,8 @@ from gettext import gettext as _
 
 from DiskManager.Utility import *
 
-try :
-    import notify2
-    NOTIFICATION = True
-except :
-    print("WARNING : python-notify is not installed, disable notification", file=sys.stderr)
-    NOTIFICATION = False
-
-#  if not Gtk.check_version( 2, 10, 0 ) == None :
-    #  TRAYTYPE = "egg"
-#  else :
-try :
-    pynotify.Notification.attach_to_status_icon
-    TRAYTYPE = "gtk"
-except :
-    TRAYTYPE = "egg"
-
-if TRAYTYPE == "egg" :
-    try :
-        import egg.trayicon
-    except :
-        #  if not Gtk.check_version( 2, 10, 0 ) == None :
-            #  print("WARNING : Can't find a valid tray icon module", file=sys.stderr)
-            #  TRAYTYPE = None
-        #  else :
-        TRAYTYPE = "gtk"
-        NOTIFICATION = False
-        print("WARNING : python-notify is too old, disable notification", file=sys.stderr)
+TRAYTYPE = "gtk"
+NOTIFICATION = False
 
 ICON_THEME = Gtk.IconTheme.get_default()
 ICON_THEME.append_search_path("%s/.icons" % get_user("dir"))
@@ -135,8 +110,8 @@ class DiskManager(SimpleGladeApp):
         self.window_main.connect("destroy", self.on_close_clicked)
         self.window_main.connect("configure-event", self.on_resize)
         self.undo_menu.connect("activate", self.on_revert_clicked)
-        self.save_menu.connect("activate", self.on_save_clicked)
-        self.history_menu.connect("activate", self.on_history_clicked)
+        #self.save_menu.connect("activate", self.on_save_clicked)
+        #self.history_menu.connect("activate", self.on_history_clicked)
         self.about_menu.connect("activate", about_dialog, self.window_main)
         self.edit_button.connect("clicked",  self.on_edit_clicked)
         self.mount_button.connect("clicked",  self.on_mount_clicked)
@@ -232,7 +207,7 @@ class DiskManager(SimpleGladeApp):
             current_focus = (l[2], l[3])
 
         self.undo_menu.set_sensitive(self.disk.original_has_changed())
-        self.save_menu.set_sensitive(self.disk.lastsave_has_changed())
+        #self.save_menu.set_sensitive(self.disk.lastsave_has_changed())
 
         (self.total, self.total_free, self.total_used, self.total_avail) = (0,0,0,0)
         configured = self.disk.get_configured()
