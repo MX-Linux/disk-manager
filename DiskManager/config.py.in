@@ -22,7 +22,7 @@ prefix     = "@prefix@"
 PACKAGE    = "@PACKAGE@"
 VERSION    = "@VERSION@"
 HOMEPAGE   = "@PACKAGE_BUGREPORT@"
-AUTHORS    = ["Mertens Florent <flomertens AT gmail.com>"]
+AUTHORS    = ["Original: Mertens Florent \n Nite Coder, fehlix, and dolphin oracle for MX Linux"]
 
 DATADIR   = prefix + "/share/" + PACKAGE
 GLADEFILE = DATADIR + "/" + PACKAGE + ".glade"
