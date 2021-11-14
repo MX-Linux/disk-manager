@@ -1,6 +1,6 @@
  dpkg-buildpackage -us -uc -ui
 dpkg-buildpackage: info: source package disk-manager
-dpkg-buildpackage: info: source version 21.10.09
+dpkg-buildpackage: info: source version 21.10.10
 dpkg-buildpackage: info: source distribution mx
 dpkg-buildpackage: info: source changed by Dolphin Oracle <dolphinoracle@gmail.com>
  dpkg-source --before-build .
@@ -11,8 +11,8 @@ dh clean \
    dh_clean
  dpkg-source -b .
 dpkg-source: info: using source format '3.0 (native)'
-dpkg-source: info: building disk-manager in disk-manager_21.10.09.tar.xz
-dpkg-source: info: building disk-manager in disk-manager_21.10.09.dsc
+dpkg-source: info: building disk-manager in disk-manager_21.10.10.tar.xz
+dpkg-source: info: building disk-manager in disk-manager_21.10.10.dsc
  debian/rules binary
 dh binary \
 	--with python3
@@ -343,8 +343,8 @@ make[3]: Entering directory '/media/dataext/development/working/disk-manager/all
 make[4]: Entering directory '/media/dataext/development/working/disk-manager/all/data'
 make[4]: Nothing to be done for 'install-exec-am'.
  /usr/bin/mkdir -p '/media/dataext/development/working/disk-manager/all/debian/disk-manager/usr/share/applications'
- /usr/bin/mkdir -p '/media/dataext/development/working/disk-manager/all/debian/disk-manager/usr/share/disk-manager'
  /usr/bin/mkdir -p '/media/dataext/development/working/disk-manager/all/debian/disk-manager/usr/share/man/man8'
+ /usr/bin/mkdir -p '/media/dataext/development/working/disk-manager/all/debian/disk-manager/usr/share/disk-manager'
  /usr/bin/install -c -m 644 disk-manager.desktop '/media/dataext/development/working/disk-manager/all/debian/disk-manager/usr/share/applications'
  /usr/bin/install -c -m 644 disk-manager.glade write-policy.fdi ro-policy.fdi '/media/dataext/development/working/disk-manager/all/debian/disk-manager/usr/share/disk-manager'
  /usr/bin/install -c -m 644 disk-manager.8 '/media/dataext/development/working/disk-manager/all/debian/disk-manager/usr/share/man/man8'
@@ -413,9 +413,9 @@ make[1]: Leaving directory '/media/dataext/development/working/disk-manager/all'
    dh_gencontrol
    dh_md5sums
    dh_builddeb
-dpkg-deb: building package 'disk-manager' in '../disk-manager_21.10.09_all.deb'.
+dpkg-deb: building package 'disk-manager' in '../disk-manager_21.10.10_all.deb'.
  dpkg-genbuildinfo
- dpkg-genchanges  >../disk-manager_21.10.09_amd64.changes
+ dpkg-genchanges  >../disk-manager_21.10.10_amd64.changes
 dpkg-genchanges: info: including full source code in upload
  dpkg-source --after-build .
 dpkg-buildpackage: info: full upload; Debian-native package (full source is included)
