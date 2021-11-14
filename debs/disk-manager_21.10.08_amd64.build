@@ -1,0 +1,421 @@
+ dpkg-buildpackage -us -uc -ui
+dpkg-buildpackage: info: source package disk-manager
+dpkg-buildpackage: info: source version 21.10.08
+dpkg-buildpackage: info: source distribution mx
+dpkg-buildpackage: info: source changed by Dolphin Oracle <dolphinoracle@gmail.com>
+ dpkg-source --before-build .
+dpkg-buildpackage: info: host architecture amd64
+ debian/rules clean
+dh clean \
+	--with python3
+   dh_clean
+ dpkg-source -b .
+dpkg-source: info: using source format '3.0 (native)'
+dpkg-source: info: building disk-manager in disk-manager_21.10.08.tar.xz
+dpkg-source: info: building disk-manager in disk-manager_21.10.08.dsc
+ debian/rules binary
+dh binary \
+	--with python3
+   dh_update_autotools_config
+   dh_autoreconf
+configure.ac:29: installing './compile'
+configure.ac:5: installing './install-sh'
+configure.ac:5: installing './missing'
+DiskManager/Fstab/Makefile.am:4: installing './py-compile'
+   dh_auto_configure
+	./configure --build=x86_64-linux-gnu --prefix=/usr --includedir=\${prefix}/include --mandir=\${prefix}/share/man --infodir=\${prefix}/share/info --sysconfdir=/etc --localstatedir=/var --disable-option-checking --disable-silent-rules --libdir=\${prefix}/lib/x86_64-linux-gnu --runstatedir=/run --disable-maintainer-mode --disable-dependency-tracking
+checking for a BSD-compatible install... /usr/bin/install -c
+checking whether build environment is sane... yes
+checking for a thread-safe mkdir -p... /usr/bin/mkdir -p
+checking for gawk... gawk
+checking whether make sets $(MAKE)... yes
+checking whether make supports nested variables... yes
+checking whether to enable maintainer-specific portions of Makefiles... no
+checking for su-to-root... su-to-root
+checking for modprobe... /sbin/modprobe
+checking for mount... /usr/bin/mount
+checking for umount... /usr/bin/umount
+checking for blkid... /sbin/blkid
+checking for dmsetup... /sbin/dmsetup
+checking for python... no
+checking for python2... no
+checking for python3... /usr/bin/python3
+checking for python version... 3.9
+checking for python platform... linux
+checking for python script directory... ${prefix}/lib/python3.9/site-packages
+checking for python extension module directory... ${exec_prefix}/lib/python3.9/site-packages
+checking whether make supports the include directive... yes (GNU style)
+checking for gcc... gcc
+checking whether the C compiler works... yes
+checking for C compiler default output file name... a.out
+checking for suffix of executables... 
+checking whether we are cross compiling... no
+checking for suffix of object files... o
+checking whether we are using the GNU C compiler... yes
+checking whether gcc accepts -g... yes
+checking for gcc option to accept ISO C89... none needed
+checking whether gcc understands -c and -o together... yes
+checking dependency style of gcc... none
+checking how to run the C preprocessor... gcc -E
+checking for grep that handles long lines and -e... /usr/bin/grep
+checking for egrep... /usr/bin/grep -E
+checking for ANSI C header files... yes
+checking for sys/types.h... yes
+checking for sys/stat.h... yes
+checking for stdlib.h... yes
+checking for string.h... yes
+checking for memory.h... yes
+checking for strings.h... yes
+checking for inttypes.h... yes
+checking for stdint.h... yes
+checking for unistd.h... yes
+checking locale.h usability... yes
+checking locale.h presence... yes
+checking for locale.h... yes
+checking for LC_MESSAGES... yes
+checking for CFPreferencesCopyAppValue... no
+checking for CFLocaleCopyCurrent... no
+checking libintl.h usability... yes
+checking libintl.h presence... yes
+checking for libintl.h... yes
+checking for ngettext in libc... yes
+checking for dgettext in libc... yes
+checking for bind_textdomain_codeset... yes
+checking for msgfmt... /usr/bin/msgfmt
+checking for dcgettext... yes
+checking if msgfmt accepts -c... yes
+checking for gmsgfmt... /usr/bin/msgfmt
+checking for xgettext... /usr/bin/xgettext
+checking whether NLS is requested... yes
+checking for intltool >= 0.35.0... 0.51.0 found
+checking for intltool-update... /usr/bin/intltool-update
+checking for intltool-merge... /usr/bin/intltool-merge
+checking for intltool-extract... /usr/bin/intltool-extract
+checking for xgettext... (cached) /usr/bin/xgettext
+checking for msgmerge... /usr/bin/msgmerge
+checking for msgfmt... (cached) /usr/bin/msgfmt
+checking for gmsgfmt... (cached) /usr/bin/msgfmt
+checking for perl... /usr/bin/perl
+checking for perl >= 5.8.1... 5.32.1
+checking for XML::Parser... ok
+checking that generated files are newer than configure... done
+configure: creating ./config.status
+config.status: creating Makefile
+config.status: creating disk-manager
+config.status: creating po/Makefile.in
+config.status: creating DiskManager/Makefile
+config.status: creating DiskManager/config.py
+config.status: creating DiskManager/Fstab/Makefile
+config.status: creating DiskManager/Fstab/Fstabconfig.py
+config.status: creating data/Makefile
+config.status: creating data/disk-manager.desktop.in
+config.status: creating data/icons/Makefile
+config.status: creating data/icons/16x16/Makefile
+config.status: creating data/icons/22x22/Makefile
+config.status: creating data/icons/24x24/Makefile
+config.status: creating data/icons/scalable/Makefile
+config.status: executing depfiles commands
+config.status: executing default-1 commands
+config.status: executing po/stamp-it commands
+   dh_auto_build
+	make -j4
+make[1]: Entering directory '/media/dataext/development/working/disk-manager/all'
+Making all in po
+make[2]: Entering directory '/media/dataext/development/working/disk-manager/all/po'
+file=`echo da | sed 's,.*/,,'`.gmo \
+  && rm -f $file && /usr/bin/msgfmt -o $file da.po
+file=`echo de | sed 's,.*/,,'`.gmo \
+  && rm -f $file && /usr/bin/msgfmt -o $file de.po
+file=`echo el | sed 's,.*/,,'`.gmo \
+  && rm -f $file && /usr/bin/msgfmt -o $file el.po
+file=`echo en_GB | sed 's,.*/,,'`.gmo \
+  && rm -f $file && /usr/bin/msgfmt -o $file en_GB.po
+file=`echo es | sed 's,.*/,,'`.gmo \
+  && rm -f $file && /usr/bin/msgfmt -o $file es.po
+file=`echo fr | sed 's,.*/,,'`.gmo \
+  && rm -f $file && /usr/bin/msgfmt -o $file fr.po
+file=`echo it | sed 's,.*/,,'`.gmo \
+  && rm -f $file && /usr/bin/msgfmt -o $file it.po
+file=`echo nb | sed 's,.*/,,'`.gmo \
+  && rm -f $file && /usr/bin/msgfmt -o $file nb.po
+file=`echo pl | sed 's,.*/,,'`.gmo \
+  && rm -f $file && /usr/bin/msgfmt -o $file pl.po
+file=`echo pt_BR | sed 's,.*/,,'`.gmo \
+  && rm -f $file && /usr/bin/msgfmt -o $file pt_BR.po
+file=`echo sv | sed 's,.*/,,'`.gmo \
+  && rm -f $file && /usr/bin/msgfmt -o $file sv.po
+file=`echo zh_CN | sed 's,.*/,,'`.gmo \
+  && rm -f $file && /usr/bin/msgfmt -o $file zh_CN.po
+make[2]: Leaving directory '/media/dataext/development/working/disk-manager/all/po'
+Making all in data
+make[2]: Entering directory '/media/dataext/development/working/disk-manager/all/data'
+Making all in icons
+make[3]: Entering directory '/media/dataext/development/working/disk-manager/all/data/icons'
+Making all in 16x16
+make[4]: Entering directory '/media/dataext/development/working/disk-manager/all/data/icons/16x16'
+make[4]: Nothing to be done for 'all'.
+make[4]: Leaving directory '/media/dataext/development/working/disk-manager/all/data/icons/16x16'
+Making all in 22x22
+make[4]: Entering directory '/media/dataext/development/working/disk-manager/all/data/icons/22x22'
+make[4]: Nothing to be done for 'all'.
+make[4]: Leaving directory '/media/dataext/development/working/disk-manager/all/data/icons/22x22'
+Making all in 24x24
+make[4]: Entering directory '/media/dataext/development/working/disk-manager/all/data/icons/24x24'
+make[4]: Nothing to be done for 'all'.
+make[4]: Leaving directory '/media/dataext/development/working/disk-manager/all/data/icons/24x24'
+Making all in scalable
+make[4]: Entering directory '/media/dataext/development/working/disk-manager/all/data/icons/scalable'
+make[4]: Nothing to be done for 'all'.
+make[4]: Leaving directory '/media/dataext/development/working/disk-manager/all/data/icons/scalable'
+make[4]: Entering directory '/media/dataext/development/working/disk-manager/all/data/icons'
+make[4]: Nothing to be done for 'all-am'.
+make[4]: Leaving directory '/media/dataext/development/working/disk-manager/all/data/icons'
+make[3]: Leaving directory '/media/dataext/development/working/disk-manager/all/data/icons'
+make[3]: Entering directory '/media/dataext/development/working/disk-manager/all/data'
+LC_ALL=C /usr/bin/intltool-merge  -d -u -c ../po/.intltool-merge-cache ../po disk-manager.desktop.in disk-manager.desktop
+Generating and caching the translation database
+Merging translations into disk-manager.desktop.
+make[3]: Leaving directory '/media/dataext/development/working/disk-manager/all/data'
+make[2]: Leaving directory '/media/dataext/development/working/disk-manager/all/data'
+Making all in DiskManager
+make[2]: Entering directory '/media/dataext/development/working/disk-manager/all/DiskManager'
+Making all in Fstab
+make[3]: Entering directory '/media/dataext/development/working/disk-manager/all/DiskManager/Fstab'
+make[3]: Nothing to be done for 'all'.
+make[3]: Leaving directory '/media/dataext/development/working/disk-manager/all/DiskManager/Fstab'
+make[3]: Entering directory '/media/dataext/development/working/disk-manager/all/DiskManager'
+make[3]: Nothing to be done for 'all-am'.
+make[3]: Leaving directory '/media/dataext/development/working/disk-manager/all/DiskManager'
+make[2]: Leaving directory '/media/dataext/development/working/disk-manager/all/DiskManager'
+make[2]: Entering directory '/media/dataext/development/working/disk-manager/all'
+make[2]: Nothing to be done for 'all-am'.
+make[2]: Leaving directory '/media/dataext/development/working/disk-manager/all'
+make[1]: Leaving directory '/media/dataext/development/working/disk-manager/all'
+   dh_auto_test
+	make -j4 check VERBOSE=1
+make[1]: Entering directory '/media/dataext/development/working/disk-manager/all'
+Making check in po
+make[2]: Entering directory '/media/dataext/development/working/disk-manager/all/po'
+INTLTOOL_EXTRACT=/usr/bin/intltool-extract srcdir=. /usr/bin/intltool-update --gettext-package disk-manager --pot
+rm -f missing notexist
+srcdir=. /usr/bin/intltool-update -m
+if [ -r missing -o -r notexist ]; then \
+  exit 1; \
+fi
+make[2]: Leaving directory '/media/dataext/development/working/disk-manager/all/po'
+Making check in data
+make[2]: Entering directory '/media/dataext/development/working/disk-manager/all/data'
+Making check in icons
+make[3]: Entering directory '/media/dataext/development/working/disk-manager/all/data/icons'
+Making check in 16x16
+make[4]: Entering directory '/media/dataext/development/working/disk-manager/all/data/icons/16x16'
+make[4]: Nothing to be done for 'check'.
+make[4]: Leaving directory '/media/dataext/development/working/disk-manager/all/data/icons/16x16'
+Making check in 22x22
+make[4]: Entering directory '/media/dataext/development/working/disk-manager/all/data/icons/22x22'
+make[4]: Nothing to be done for 'check'.
+make[4]: Leaving directory '/media/dataext/development/working/disk-manager/all/data/icons/22x22'
+Making check in 24x24
+make[4]: Entering directory '/media/dataext/development/working/disk-manager/all/data/icons/24x24'
+make[4]: Nothing to be done for 'check'.
+make[4]: Leaving directory '/media/dataext/development/working/disk-manager/all/data/icons/24x24'
+Making check in scalable
+make[4]: Entering directory '/media/dataext/development/working/disk-manager/all/data/icons/scalable'
+make[4]: Nothing to be done for 'check'.
+make[4]: Leaving directory '/media/dataext/development/working/disk-manager/all/data/icons/scalable'
+make[4]: Entering directory '/media/dataext/development/working/disk-manager/all/data/icons'
+make[4]: Nothing to be done for 'check-am'.
+make[4]: Leaving directory '/media/dataext/development/working/disk-manager/all/data/icons'
+make[3]: Leaving directory '/media/dataext/development/working/disk-manager/all/data/icons'
+make[3]: Entering directory '/media/dataext/development/working/disk-manager/all/data'
+make[3]: Nothing to be done for 'check-am'.
+make[3]: Leaving directory '/media/dataext/development/working/disk-manager/all/data'
+make[2]: Leaving directory '/media/dataext/development/working/disk-manager/all/data'
+Making check in DiskManager
+make[2]: Entering directory '/media/dataext/development/working/disk-manager/all/DiskManager'
+Making check in Fstab
+make[3]: Entering directory '/media/dataext/development/working/disk-manager/all/DiskManager/Fstab'
+make[3]: Nothing to be done for 'check'.
+make[3]: Leaving directory '/media/dataext/development/working/disk-manager/all/DiskManager/Fstab'
+make[3]: Entering directory '/media/dataext/development/working/disk-manager/all/DiskManager'
+make[3]: Nothing to be done for 'check-am'.
+make[3]: Leaving directory '/media/dataext/development/working/disk-manager/all/DiskManager'
+make[2]: Leaving directory '/media/dataext/development/working/disk-manager/all/DiskManager'
+make[2]: Entering directory '/media/dataext/development/working/disk-manager/all'
+make[2]: Nothing to be done for 'check-am'.
+make[2]: Leaving directory '/media/dataext/development/working/disk-manager/all'
+make[1]: Leaving directory '/media/dataext/development/working/disk-manager/all'
+   create-stamp debian/debhelper-build-stamp
+   dh_prep
+   dh_auto_install
+	make -j4 install DESTDIR=/media/dataext/development/working/disk-manager/all/debian/disk-manager AM_UPDATE_INFO_DIR=no
+make[1]: Entering directory '/media/dataext/development/working/disk-manager/all'
+Making install in po
+make[2]: Entering directory '/media/dataext/development/working/disk-manager/all/po'
+/bin/sh /media/dataext/development/working/disk-manager/all/install-sh -d /media/dataext/development/working/disk-manager/all/debian/disk-manager/usr/share/locale
+linguas="da de el en_GB es fr it nb pl pt_BR sv zh_CN "; \
+for lang in $linguas; do \
+  dir=/media/dataext/development/working/disk-manager/all/debian/disk-manager/usr/share/locale/$lang/LC_MESSAGES; \
+  /bin/sh /media/dataext/development/working/disk-manager/all/install-sh -d $dir; \
+  if test -r $lang.gmo; then \
+    /usr/bin/install -c -m 644 $lang.gmo $dir/disk-manager.mo; \
+    echo "installing $lang.gmo as $dir/disk-manager.mo"; \
+  else \
+    /usr/bin/install -c -m 644 ./$lang.gmo $dir/disk-manager.mo; \
+    echo "installing ./$lang.gmo as" \
+	 "$dir/disk-manager.mo"; \
+  fi; \
+  if test -r $lang.gmo.m; then \
+    /usr/bin/install -c -m 644 $lang.gmo.m $dir/disk-manager.mo.m; \
+    echo "installing $lang.gmo.m as $dir/disk-manager.mo.m"; \
+  else \
+    if test -r ./$lang.gmo.m ; then \
+      /usr/bin/install -c -m 644 ./$lang.gmo.m \
+	$dir/disk-manager.mo.m; \
+      echo "installing ./$lang.gmo.m as" \
+	   "$dir/disk-manager.mo.m"; \
+    else \
+      true; \
+    fi; \
+  fi; \
+done
+installing da.gmo as /media/dataext/development/working/disk-manager/all/debian/disk-manager/usr/share/locale/da/LC_MESSAGES/disk-manager.mo
+installing de.gmo as /media/dataext/development/working/disk-manager/all/debian/disk-manager/usr/share/locale/de/LC_MESSAGES/disk-manager.mo
+installing el.gmo as /media/dataext/development/working/disk-manager/all/debian/disk-manager/usr/share/locale/el/LC_MESSAGES/disk-manager.mo
+installing en_GB.gmo as /media/dataext/development/working/disk-manager/all/debian/disk-manager/usr/share/locale/en_GB/LC_MESSAGES/disk-manager.mo
+installing es.gmo as /media/dataext/development/working/disk-manager/all/debian/disk-manager/usr/share/locale/es/LC_MESSAGES/disk-manager.mo
+installing fr.gmo as /media/dataext/development/working/disk-manager/all/debian/disk-manager/usr/share/locale/fr/LC_MESSAGES/disk-manager.mo
+installing it.gmo as /media/dataext/development/working/disk-manager/all/debian/disk-manager/usr/share/locale/it/LC_MESSAGES/disk-manager.mo
+installing nb.gmo as /media/dataext/development/working/disk-manager/all/debian/disk-manager/usr/share/locale/nb/LC_MESSAGES/disk-manager.mo
+installing pl.gmo as /media/dataext/development/working/disk-manager/all/debian/disk-manager/usr/share/locale/pl/LC_MESSAGES/disk-manager.mo
+installing pt_BR.gmo as /media/dataext/development/working/disk-manager/all/debian/disk-manager/usr/share/locale/pt_BR/LC_MESSAGES/disk-manager.mo
+installing sv.gmo as /media/dataext/development/working/disk-manager/all/debian/disk-manager/usr/share/locale/sv/LC_MESSAGES/disk-manager.mo
+installing zh_CN.gmo as /media/dataext/development/working/disk-manager/all/debian/disk-manager/usr/share/locale/zh_CN/LC_MESSAGES/disk-manager.mo
+make[2]: Leaving directory '/media/dataext/development/working/disk-manager/all/po'
+Making install in data
+make[2]: Entering directory '/media/dataext/development/working/disk-manager/all/data'
+Making install in icons
+make[3]: Entering directory '/media/dataext/development/working/disk-manager/all/data/icons'
+Making install in 16x16
+make[4]: Entering directory '/media/dataext/development/working/disk-manager/all/data/icons/16x16'
+make[5]: Entering directory '/media/dataext/development/working/disk-manager/all/data/icons/16x16'
+make[5]: Nothing to be done for 'install-exec-am'.
+ /usr/bin/mkdir -p '/media/dataext/development/working/disk-manager/all/debian/disk-manager/usr/share/icons/hicolor/16x16/apps'
+ /usr/bin/install -c -m 644 disk-manager.png '/media/dataext/development/working/disk-manager/all/debian/disk-manager/usr/share/icons/hicolor/16x16/apps'
+make[5]: Leaving directory '/media/dataext/development/working/disk-manager/all/data/icons/16x16'
+make[4]: Leaving directory '/media/dataext/development/working/disk-manager/all/data/icons/16x16'
+Making install in 22x22
+make[4]: Entering directory '/media/dataext/development/working/disk-manager/all/data/icons/22x22'
+make[5]: Entering directory '/media/dataext/development/working/disk-manager/all/data/icons/22x22'
+make[5]: Nothing to be done for 'install-exec-am'.
+ /usr/bin/mkdir -p '/media/dataext/development/working/disk-manager/all/debian/disk-manager/usr/share/icons/hicolor/22x22/apps'
+ /usr/bin/install -c -m 644 disk-manager.png '/media/dataext/development/working/disk-manager/all/debian/disk-manager/usr/share/icons/hicolor/22x22/apps'
+make[5]: Leaving directory '/media/dataext/development/working/disk-manager/all/data/icons/22x22'
+make[4]: Leaving directory '/media/dataext/development/working/disk-manager/all/data/icons/22x22'
+Making install in 24x24
+make[4]: Entering directory '/media/dataext/development/working/disk-manager/all/data/icons/24x24'
+make[5]: Entering directory '/media/dataext/development/working/disk-manager/all/data/icons/24x24'
+make[5]: Nothing to be done for 'install-exec-am'.
+ /usr/bin/mkdir -p '/media/dataext/development/working/disk-manager/all/debian/disk-manager/usr/share/icons/hicolor/24x24/apps'
+ /usr/bin/install -c -m 644 disk-manager.png '/media/dataext/development/working/disk-manager/all/debian/disk-manager/usr/share/icons/hicolor/24x24/apps'
+make[5]: Leaving directory '/media/dataext/development/working/disk-manager/all/data/icons/24x24'
+make[4]: Leaving directory '/media/dataext/development/working/disk-manager/all/data/icons/24x24'
+Making install in scalable
+make[4]: Entering directory '/media/dataext/development/working/disk-manager/all/data/icons/scalable'
+make[5]: Entering directory '/media/dataext/development/working/disk-manager/all/data/icons/scalable'
+make[5]: Nothing to be done for 'install-exec-am'.
+ /usr/bin/mkdir -p '/media/dataext/development/working/disk-manager/all/debian/disk-manager/usr/share/icons/hicolor/scalable/apps'
+ /usr/bin/install -c -m 644 disk-manager.svg '/media/dataext/development/working/disk-manager/all/debian/disk-manager/usr/share/icons/hicolor/scalable/apps'
+make[5]: Leaving directory '/media/dataext/development/working/disk-manager/all/data/icons/scalable'
+make[4]: Leaving directory '/media/dataext/development/working/disk-manager/all/data/icons/scalable'
+make[4]: Entering directory '/media/dataext/development/working/disk-manager/all/data/icons'
+make[5]: Entering directory '/media/dataext/development/working/disk-manager/all/data/icons'
+make[5]: Nothing to be done for 'install-exec-am'.
+make  install-data-hook
+make[6]: Entering directory '/media/dataext/development/working/disk-manager/all/data/icons'
+*** Icon cache not updated.  After install, run this:
+***   gtk-update-icon-cache -f -t /usr/share/icons/hicolor
+make[6]: Leaving directory '/media/dataext/development/working/disk-manager/all/data/icons'
+make[5]: Leaving directory '/media/dataext/development/working/disk-manager/all/data/icons'
+make[4]: Leaving directory '/media/dataext/development/working/disk-manager/all/data/icons'
+make[3]: Leaving directory '/media/dataext/development/working/disk-manager/all/data/icons'
+make[3]: Entering directory '/media/dataext/development/working/disk-manager/all/data'
+make[4]: Entering directory '/media/dataext/development/working/disk-manager/all/data'
+make[4]: Nothing to be done for 'install-exec-am'.
+ /usr/bin/mkdir -p '/media/dataext/development/working/disk-manager/all/debian/disk-manager/usr/share/applications'
+ /usr/bin/mkdir -p '/media/dataext/development/working/disk-manager/all/debian/disk-manager/usr/share/man/man8'
+ /usr/bin/mkdir -p '/media/dataext/development/working/disk-manager/all/debian/disk-manager/usr/share/disk-manager'
+ /usr/bin/install -c -m 644 disk-manager.desktop '/media/dataext/development/working/disk-manager/all/debian/disk-manager/usr/share/applications'
+ /usr/bin/install -c -m 644 disk-manager.glade write-policy.fdi ro-policy.fdi '/media/dataext/development/working/disk-manager/all/debian/disk-manager/usr/share/disk-manager'
+ /usr/bin/install -c -m 644 disk-manager.8 '/media/dataext/development/working/disk-manager/all/debian/disk-manager/usr/share/man/man8'
+make[4]: Leaving directory '/media/dataext/development/working/disk-manager/all/data'
+make[3]: Leaving directory '/media/dataext/development/working/disk-manager/all/data'
+make[2]: Leaving directory '/media/dataext/development/working/disk-manager/all/data'
+Making install in DiskManager
+make[2]: Entering directory '/media/dataext/development/working/disk-manager/all/DiskManager'
+Making install in Fstab
+make[3]: Entering directory '/media/dataext/development/working/disk-manager/all/DiskManager/Fstab'
+make[4]: Entering directory '/media/dataext/development/working/disk-manager/all/DiskManager/Fstab'
+make[4]: Nothing to be done for 'install-exec-am'.
+ /usr/bin/mkdir -p '/media/dataext/development/working/disk-manager/all/debian/disk-manager/usr/lib/python3.9/site-packages/DiskManager/Fstab'
+ /usr/bin/install -c -m 644 __init__.py DiskInfo.py EventHandler.py Fstab.py Fstabconfig.py FstabData.py FstabDialogs.py FstabError.py FstabHandler.py FstabUtility.py Mounter.py SimpleGladeApp.py ToolsBackend.py '/media/dataext/development/working/disk-manager/all/debian/disk-manager/usr/lib/python3.9/site-packages/DiskManager/Fstab'
+Byte-compiling python modules...
+__init__.pyDiskInfo.pyEventHandler.pyFstab.pyFstabconfig.pyFstabData.pyFstabDialogs.pyFstabError.pyFstabHandler.pyFstabUtility.pyMounter.pySimpleGladeApp.pyToolsBackend.py
+Byte-compiling python modules (optimized versions) ...
+__init__.pyDiskInfo.pyEventHandler.pyFstab.pyFstabconfig.pyFstabData.pyFstabDialogs.pyFstabError.pyFstabHandler.pyFstabUtility.pyMounter.pySimpleGladeApp.pyToolsBackend.py
+make[4]: Leaving directory '/media/dataext/development/working/disk-manager/all/DiskManager/Fstab'
+make[3]: Leaving directory '/media/dataext/development/working/disk-manager/all/DiskManager/Fstab'
+make[3]: Entering directory '/media/dataext/development/working/disk-manager/all/DiskManager'
+make[4]: Entering directory '/media/dataext/development/working/disk-manager/all/DiskManager'
+make[4]: Nothing to be done for 'install-exec-am'.
+ /usr/bin/mkdir -p '/media/dataext/development/working/disk-manager/all/debian/disk-manager/usr/lib/python3.9/site-packages/DiskManager'
+ /usr/bin/install -c -m 644 __init__.py DiskManager.py Dialogs.py SimpleGladeApp.py config.py Config.py Utility.py '/media/dataext/development/working/disk-manager/all/debian/disk-manager/usr/lib/python3.9/site-packages/DiskManager'
+Byte-compiling python modules...
+__init__.pyDiskManager.pyDialogs.pySimpleGladeApp.pyconfig.pyConfig.pyUtility.py
+Byte-compiling python modules (optimized versions) ...
+__init__.pyDiskManager.pyDialogs.pySimpleGladeApp.pyconfig.pyConfig.pyUtility.py
+make[4]: Leaving directory '/media/dataext/development/working/disk-manager/all/DiskManager'
+make[3]: Leaving directory '/media/dataext/development/working/disk-manager/all/DiskManager'
+make[2]: Leaving directory '/media/dataext/development/working/disk-manager/all/DiskManager'
+make[2]: Entering directory '/media/dataext/development/working/disk-manager/all'
+make[3]: Entering directory '/media/dataext/development/working/disk-manager/all'
+make[3]: Nothing to be done for 'install-data-am'.
+ /usr/bin/mkdir -p '/media/dataext/development/working/disk-manager/all/debian/disk-manager/usr/sbin'
+ /usr/bin/install -c disk-manager '/media/dataext/development/working/disk-manager/all/debian/disk-manager/usr/sbin'
+make[3]: Leaving directory '/media/dataext/development/working/disk-manager/all'
+make[2]: Leaving directory '/media/dataext/development/working/disk-manager/all'
+make[1]: Leaving directory '/media/dataext/development/working/disk-manager/all'
+   dh_install
+   dh_installdocs
+   dh_installchangelogs
+   dh_installman
+   dh_python3
+   dh_icons
+   dh_perl
+   dh_link
+   dh_strip_nondeterminism
+	Normalized debian/disk-manager/usr/share/locale/en_GB/LC_MESSAGES/disk-manager.mo
+	Normalized debian/disk-manager/usr/share/locale/zh_CN/LC_MESSAGES/disk-manager.mo
+	Normalized debian/disk-manager/usr/share/locale/sv/LC_MESSAGES/disk-manager.mo
+	Normalized debian/disk-manager/usr/share/locale/pt_BR/LC_MESSAGES/disk-manager.mo
+	Normalized debian/disk-manager/usr/share/locale/de/LC_MESSAGES/disk-manager.mo
+	Normalized debian/disk-manager/usr/share/locale/es/LC_MESSAGES/disk-manager.mo
+	Normalized debian/disk-manager/usr/share/locale/el/LC_MESSAGES/disk-manager.mo
+	Normalized debian/disk-manager/usr/share/locale/nb/LC_MESSAGES/disk-manager.mo
+	Normalized debian/disk-manager/usr/share/locale/it/LC_MESSAGES/disk-manager.mo
+	Normalized debian/disk-manager/usr/share/locale/fr/LC_MESSAGES/disk-manager.mo
+	Normalized debian/disk-manager/usr/share/locale/da/LC_MESSAGES/disk-manager.mo
+	Normalized debian/disk-manager/usr/share/locale/pl/LC_MESSAGES/disk-manager.mo
+   dh_compress
+   dh_fixperms
+   dh_missing
+   dh_installdeb
+   dh_gencontrol
+   dh_md5sums
+   dh_builddeb
+dpkg-deb: building package 'disk-manager' in '../disk-manager_21.10.08_all.deb'.
+ dpkg-genbuildinfo
+ dpkg-genchanges  >../disk-manager_21.10.08_amd64.changes
+dpkg-genchanges: info: including full source code in upload
+ dpkg-source --after-build .
+dpkg-buildpackage: info: full upload; Debian-native package (full source is included)

@@ -1,0 +1,31 @@
+Format: 1.8
+Date: Sat, 13 Nov 2021 22:18:04 -0500
+Source: disk-manager
+Binary: disk-manager
+Architecture: source all
+Version: 21.10.08
+Distribution: mx
+Urgency: medium
+Maintainer: Dolphin Oracle <dolphinoracle@gmail.com>
+Changed-By: Dolphin Oracle <dolphinoracle@gmail.com>
+Description:
+ disk-manager - simple graphical filesystem configurator
+Changes:
+ disk-manager (21.10.08) mx; urgency=medium
+ .
+   * revised UI
+Checksums-Sha1:
+ 13b4649b53a76b940faebcd84f40e38959275170 726 disk-manager_21.10.08.dsc
+ da1b9d1e6d89117e9de10fc1fbc4686b189b7225 661452 disk-manager_21.10.08.tar.xz
+ 655524b61c2dac274dd75d40866a22cef79bf6e2 71940 disk-manager_21.10.08_all.deb
+ 21e2ce55df24750d045706441cd641e752325cb2 7699 disk-manager_21.10.08_amd64.buildinfo
+Checksums-Sha256:
+ 0d297a636efcb49102fc12fe0afa1de41cc7a8648fb12931121f5577ee77ec4a 726 disk-manager_21.10.08.dsc
+ e21d78886112abc47e446f3146e8ffa42f78d4d215fcf9e797fbaad0bc5d3c04 661452 disk-manager_21.10.08.tar.xz
+ fc36261febbc2131c2d0f5139a3e5752fb7538e52fa4ad0bd1552f9a32344873 71940 disk-manager_21.10.08_all.deb
+ 0af32a135dc96b32653e064995d1abaccd781c1e0be58f30046966fdcdbdf96d 7699 disk-manager_21.10.08_amd64.buildinfo
+Files:
+ abf2b75225a180f06b8bd5984301b680 726 admin optional disk-manager_21.10.08.dsc
+ fd287c5171aaa93d6e66aea425432cde 661452 admin optional disk-manager_21.10.08.tar.xz
+ ab9c7b1bae4627405a9481a7acaeda0d 71940 admin optional disk-manager_21.10.08_all.deb
+ 02f190a618a610f31e48385e28ea2ceb 7699 admin optional disk-manager_21.10.08_amd64.buildinfo
