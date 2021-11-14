@@ -24,6 +24,7 @@ import os
 import time
 import shutil
 import logging
+import tempfile
 import threading
 import configparser
 from gettext import gettext as _
@@ -550,7 +551,7 @@ class FstabHandler(MntFile) :
     def get_changes_current_from(self, name) :
         ''' x.get_changes_current_from(name) -> get log of change between name version -> current version '''
     
-        tmpfile = os.tmpfile()
+        tmpfile = tempfile.NamedTemporaryFile('w+t')
         tmpfile.write(self._logconf.get(name, "fstab"))
         tmpfile.seek(0)
         previous = MntFile(self.filename, tmpfile)
@@ -559,7 +560,7 @@ class FstabHandler(MntFile) :
     def get_changes_current_to(self, name) :
         ''' x.get_changes_current_to(name) -> get log of change between current version -> name version '''
     
-        tmpfile = os.tmpfile()
+        tmpfile = tempfile.NamedTemporaryFile('w+t')
         tmpfile.write(self._logconf.get(name, "fstab"))
         tmpfile.seek(0)
         previous = MntFile(self.filename, tmpfile)
@@ -569,7 +570,7 @@ class FstabHandler(MntFile) :
         ''' x.revert_to(name) -> revert to version name '''
     
         logging.debug("Revert version to %s", name)
-        tmpfile = os.tmpfile()
+        tmpfile = tempfile.NamedTemporaryFile('w+t')
         tmpfile.write(self._logconf.get(name, "fstab"))
         tmpfile.seek(0)
         self._rebuild_object(MntFile(self.filename, tmpfile))

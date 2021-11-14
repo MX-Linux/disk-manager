@@ -200,6 +200,9 @@ class DialogBuilder(SimpleGladeApp) :
             maxrow = 8
         else :
             return
+        if sample is None:
+            return
+        
         ctx = widget.get_pango_context()
         layout = Pango.Layout(ctx)
         logging.debug('set_size: sample = {}'.format(sample))

@@ -1,3 +1,10 @@
+disk-manager (21.10.07) mx; urgency=medium
+
+  * python-notify removed; os.tmpfile replaced by tempfile
+  * removed save and history menu items
+
+ -- fehlix <fehlix@mxlinux.org>  Thu, 13 Nov 2021 20:00:12 -0500
+
 disk-manager (21.10.06) mx; urgency=medium
 
   * about dialog revamp 

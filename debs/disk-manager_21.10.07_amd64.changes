@@ -1,0 +1,53 @@
+-----BEGIN PGP SIGNED MESSAGE-----
+Hash: SHA512
+
+Format: 1.8
+Date: Thu, 13 Nov 2021 20:00:12 -0500
+Source: disk-manager
+Binary: disk-manager
+Architecture: source all
+Version: 21.10.07
+Distribution: mx
+Urgency: medium
+Maintainer: David Paleino <dapal@debian.org>
+Changed-By: fehlix <fehlix@mxlinux.org>
+Description:
+ disk-manager - simple graphical filesystem configurator
+Changes:
+ disk-manager (21.10.07) mx; urgency=medium
+ .
+   * python-notify removed; os.tmpfile replaced by tempfile
+   * removed save and history menu items
+Checksums-Sha1:
+ 613e69212f048765e5243294eae6afa8663ded3e 1630 disk-manager_21.10.07.dsc
+ 7109a5d0a859e560415f1a032999e25c3dc9cd5a 454568 disk-manager_21.10.07.tar.xz
+ dd59f163dda92dd64a33c3ee83070b65cda8eb0d 72020 disk-manager_21.10.07_all.deb
+ f5e04d814aed173fb2f7f6ba107ca8a617f65601 8613 disk-manager_21.10.07_amd64.buildinfo
+Checksums-Sha256:
+ dbe1d27c0c408c7647f6abf69bbfddabaa808564aa90b7fafa771cbd1b26473c 1630 disk-manager_21.10.07.dsc
+ e2de4aa57f2728d0ba79cd2c0f3f13b94b0fbdd611f1bc2eb1e70b90fe2e5d08 454568 disk-manager_21.10.07.tar.xz
+ eee33e6301d644c40f80682662d9649969937d29f0f2a8b50285c25775886dbf 72020 disk-manager_21.10.07_all.deb
+ 6ea1957aa93207a679874aed61efbfde97ed6704ad2f02522a6ed1380ba5ee52 8613 disk-manager_21.10.07_amd64.buildinfo
+Files:
+ 4ec89fb3b9936528903dc750bca6e16e 1630 admin optional disk-manager_21.10.07.dsc
+ 756f714dbf36b255f3a3c34bef823e99 454568 admin optional disk-manager_21.10.07.tar.xz
+ e7fe63e08b39afb523814fa4f324e56e 72020 admin optional disk-manager_21.10.07_all.deb
+ 8e254e63ca52a899d6b5f3efe1a2cb77 8613 admin optional disk-manager_21.10.07_amd64.buildinfo
+
+-----BEGIN PGP SIGNATURE-----
+
+iQJHBAEBCgAxFiEEgRnC8/wKXRM2S0xLL1ePG6ydm+kFAmGQVykTHGZlaGxpeEBt
+eGxpbnV4Lm9yZwAKCRAvV48brJ2b6THREACjhPZysEQgyow0OI2pbZVijQY6nvmr
+ALeYXrDyxhOtJbHIRVOYO0+Zq6YQS7UPVODg5MlnY664Kw9XWDmKVFVmLtnXsw5t
+InGtiroafdLTfaJ2/lfxCOXK1rL/YmrzpVLWI31JbRt8c/kvvEEvglm9KzsGl3Ct
+u58ZwH8HTcSNj0zSs+6SGqeAFTvwVCXCQBLj48oELJrigHhjOPTUNIsG5u+H24G9
+BzfDOo4we/xuAFUfthutqjQpl3vlIgxVwCpXdaAby4oQ0b3TfPKjoW7m4kz1H9oB
+uXBwCTjtFvYnGhl/fbrSiEhf+jeBW4j+Qg1ilAMYBkR9cAydXjk2SIfiqZ3ysbtY
+45iVqz9O4bjkXRdruIQrmPVj1Ug2De+7u/nw6nQcCZCSfSAlbNNNxTCkFzafLZz9
+d6vrUVKFauVdbBAtuQmJHls0y8+5p+S3+V6Nw9osY1UYqaa8YGA843uqs5C4e+YJ
+uasT+SJuNgAMAYz63J8hNAFQsiKmCB00l/d3G9t2uM7Acu5Jb6N6RaX8YEbrNaJR
+Gmeg+FFu+HFmxsbSBXr+WN7F8KNlZVC9LYCEzsjVagARrUz/mIOa01szlvwoM5JK
+mEDFKgGs4VrrusLt43UUaNicVo1XR55vo2npYcTKEMzucsH8HQoTxNpdFIg0CNtd
+Hqp/iJWt9k45Ug==
+=Fh3J
+-----END PGP SIGNATURE-----

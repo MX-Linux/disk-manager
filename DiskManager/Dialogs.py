@@ -126,8 +126,14 @@ class EditPartition(SimpleGladeApp) :
 
     def on_browser_clicked(self, button) :
     
-        gladexml =  gtk.glade.XML(GLADEFILE, "dialog_mount_point")
-        dialog = gladexml.get_widget("dialog_mount_point")
+        #gladexml =  gtk.glade.XML(GLADEFILE, "dialog_mount_point")
+        #dialog = gladexml.get_widget("dialog_mount_point")
+
+        builder = Gtk.Builder()
+        builder.add_from_file(GLADEFILE)
+
+        dialog = builder.get_object("dialog_mount_point")
+
         dialog.set_transient_for(self.dialog_edit)
         dialog.select_filename(self.path.get_text())
         for shortcut in (get_user("dir"), "/media", "/") :
@@ -136,6 +142,10 @@ class EditPartition(SimpleGladeApp) :
             except gobject.GError : 
                 pass
         ret = dialog.run()
+        print("FEHLIX: ret=")
+        print(ret)
+        print(dialog.get_filename())
+        
         if ret == 1 :
             self.path.set_text(dialog.get_filename())
         dialog.hide()
@@ -242,12 +252,12 @@ class HistoryDialog(SimpleGladeApp) :
         version = self.versions[self.treeview.get_cursor()[0][0]]
         changes = self.disk.get_changes_current_to(version)
         buf = gtk.TextBuffer()
-        tag = buf.create_tag(weight=pango.WEIGHT_BOLD)
-        buf.insert_with_tags(buf.get_start_iter(), "Commit:\n\n", tag)
+        tag = buf.create_tag(weight=Pango.Weight.BOLD)
+        buf.insert_with_tags(buf.get_start_iter(), "Commit:\n", tag)
         buf.insert_at_cursor(self.disk.get_logcommit(version))
         if changes :
             iter = buf.get_end_iter()
-            buf.insert_with_tags(iter, "\n\nChanges between this version and current one:\n\n", tag)
+            buf.insert_with_tags(iter, "\nChanges between this version and current one:\n", tag)
             buf.insert_at_cursor("\n".join(changes))
             self.apply_button.set_sensitive(True)
         self.textview.set_buffer(buf)
