@@ -1,3 +1,9 @@
+disk-manager (21.10.08) mx; urgency=medium
+
+  * revised UI 
+
+ -- Dolphin Oracle <dolphinoracle@gmail.com>  Sat, 13 Nov 2021 22:18:04 -0500
+
 disk-manager (21.10.07) mx; urgency=medium
 
   * python-notify removed; os.tmpfile replaced by tempfile

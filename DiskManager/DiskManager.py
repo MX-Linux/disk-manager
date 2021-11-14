@@ -106,19 +106,20 @@ class DiskManager(SimpleGladeApp):
         self.conf.set("Detected Device", "detected", detected)
 
         # Connect events
-        self.quit_menu.connect("activate", self.on_close_clicked)
+        self.gtkbuttonquit.connect("clicked", self.on_close_clicked)
         self.window_main.connect("destroy", self.on_close_clicked)
         self.window_main.connect("configure-event", self.on_resize)
-        self.undo_menu.connect("activate", self.on_revert_clicked)
+        #self.undo_menu.connect("activate", self.on_revert_clicked)
         #self.save_menu.connect("activate", self.on_save_clicked)
         #self.history_menu.connect("activate", self.on_history_clicked)
-        self.about_menu.connect("activate", about_dialog, self.window_main)
+        self.gtkbuttonabout.connect("clicked", about_dialog, self.window_main)
         self.edit_button.connect("clicked",  self.on_edit_clicked)
         self.mount_button.connect("clicked",  self.on_mount_clicked)
         self.info_button.connect("clicked", self.on_info_clicked)
         self.treeview2.connect("row-activated", self.on_row_activated)
         self.treeview2.connect("cursor_changed", self.on_cursor_changed)
         self.disk.connect("any_changed", GObject.idle_add, self.update_main)
+        self.gtkbuttonhelp.connect("clicked", self.on_help_clicked)
 
     def setupTreeView(self) :
         ''' treeview setup '''
@@ -206,7 +207,7 @@ class DiskManager(SimpleGladeApp):
             l = self.tree_store[focus_path]
             current_focus = (l[2], l[3])
 
-        self.undo_menu.set_sensitive(self.disk.original_has_changed())
+        #self.undo_menu.set_sensitive(self.disk.original_has_changed())
         #self.save_menu.set_sensitive(self.disk.lastsave_has_changed())
 
         (self.total, self.total_free, self.total_used, self.total_avail) = (0,0,0,0)
@@ -300,6 +301,11 @@ class DiskManager(SimpleGladeApp):
             self.disk.umount(entry)
         else : 
             self.disk.mount(entry)
+            
+    def on_help_clicked(self, button) :
+		
+        cmd = 'mx-viewer https://mxlinux.org/wiki/help-files/help-disk-manager/ disk-manager'
+        os.system(cmd)
         
     def on_info_clicked(self, button) :
     
