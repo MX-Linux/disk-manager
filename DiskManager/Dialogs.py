@@ -310,6 +310,7 @@ class InfoDialog(SimpleGladeApp) :
             self.dialog_info.set_transient_for(parent)
         self.entry = entry
         self.disk = disk
+        self.infobuttonclose.connect("clicked", self.on_quit)
 
     def update_dial(self) :
 
@@ -335,6 +336,10 @@ class InfoDialog(SimpleGladeApp) :
         self.model_label.set_label(self.disk.get_attribute(self.entry, "MODEL"))
         self.serial_label.set_label(self.disk.get_attribute(self.entry, "SERIAL"))
         self.bus_label.set_label(self.disk.get_attribute(self.entry, "BUS"))
+        
+    def on_quit(self, button, event = None) :
+    
+        self.dialog_info.hide()
 
 class SanityCheck :
 

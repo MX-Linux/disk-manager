@@ -312,23 +312,11 @@ class DiskManager(SimpleGladeApp):
         path = self.treeview2.get_cursor()[0]
         col = path[0]
         dial = InfoDialog(None, self.disk, parent = self.window_main)
-        res = 0
-        while not res in (Gtk.ResponseType.CLOSE, Gtk.ResponseType.DELETE_EVENT) :
-            dial.entry = self.disk[self.tree_store[path][3]]
-            dial.update_dial()
-            if col == 0 :
-                dial.back_button.set_sensitive(False)
-            if col == len(self.tree_store) - 1 :
-                dial.forward_button.set_sensitive(False)
-            res = dial.dialog_info.run()
-            if res == 1:
-                col = col - 1
-                dial.forward_button.set_sensitive(True)
-            if res == 2 :
-                col = col + 1
-                dial.back_button.set_sensitive(True)
-            path = (col,)
-            self.treeview2.set_cursor(path)
+        dial.entry = self.disk[self.tree_store[path][3]]
+        dial.update_dial()
+        res = dial.dialog_info.run()
+        path = (col,)
+        self.treeview2.set_cursor(path)
         dial.dialog_info.destroy()
         
     def on_row_activated(self, treeview, path, view_column) :
