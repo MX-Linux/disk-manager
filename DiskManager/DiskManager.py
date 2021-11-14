@@ -304,7 +304,11 @@ class DiskManager(SimpleGladeApp):
             
     def on_help_clicked(self, button) :
 		
-        cmd = 'mx-viewer https://mxlinux.org/wiki/help-files/help-disk-manager/ disk-manager'
+        cmd = 'runuser -l $(logname) xdg-open https://mxlinux.org/wiki/help-files/help-disk-manager'
+        if os.path.exists("/usr/bin/mx-viewer") :
+           cmd = 'mx-viewer https://mxlinux.org/wiki/help-files/help-disk-manager/ disk-manager'
+        if os.path.exists("/usr/bin/antix-viewer") :
+           cmd = 'mx-viewer https://mxlinux.org/wiki/help-files/help-disk-manager/ disk-manager'
         os.system(cmd)
         
     def on_info_clicked(self, button) :
