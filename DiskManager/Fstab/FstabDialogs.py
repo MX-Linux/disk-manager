@@ -113,6 +113,8 @@ class DialogBuilder(SimpleGladeApp) :
     def on_treeview_toggled(self, widget) :
 
         path = self.treeview.get_cursor()[0]  
+        if path is None:
+            return
         self.tree_store[path][0] = not self.tree_store[path][0]
     
     def setup_treeview(self) :

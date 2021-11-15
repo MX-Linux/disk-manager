@@ -1,0 +1,53 @@
+-----BEGIN PGP SIGNED MESSAGE-----
+Hash: SHA512
+
+Format: 1.8
+Date: Sun, 14 Nov 2021 20:21:52 -0500
+Source: disk-manager
+Binary: disk-manager
+Architecture: source all
+Version: 21.10.11
+Distribution: mx
+Urgency: medium
+Maintainer: Dolphin Oracle <dolphinoracle@gmail.com>
+Changed-By: fehlix <fehlix@mxlinux.org>
+Description:
+ disk-manager - simple graphical filesystem configurator
+Changes:
+ disk-manager (21.10.11) mx; urgency=medium
+ .
+   * edit box resizable, fix ntfs drive warning
+   * default exfat, ntfs, vfat r/w permissions for user and users group
+Checksums-Sha1:
+ 2379dd61b52effa5e2c4352391a33fd94d9da294 1641 disk-manager_21.10.11.dsc
+ 6b8b2987ca72ca4c4b176747fa883edf6426b460 1276060 disk-manager_21.10.11.tar.xz
+ eda001bf3e37876fe372d01f43053cbbb1261456 72372 disk-manager_21.10.11_all.deb
+ 9fdb381ec2abf10be67f13c96844115250a9e015 8613 disk-manager_21.10.11_amd64.buildinfo
+Checksums-Sha256:
+ 5484198270a285ed3928de9bb454f885808e7a3188eacf9832e14c842cdfb57a 1641 disk-manager_21.10.11.dsc
+ 2e3c77b55d75ce95db84f9948041ddef04d207ff5b50f30f51bb8f7e8a9ba508 1276060 disk-manager_21.10.11.tar.xz
+ 2db00c2599740613d7a1147a96908d775e8d9de0791d4409ca060f91df3a861a 72372 disk-manager_21.10.11_all.deb
+ dc9cca145d79693783a46d0cb9fc4a1b500eb1c86aa5e349b7311633ecb7884d 8613 disk-manager_21.10.11_amd64.buildinfo
+Files:
+ 6b3817249f7397c4bd18093b89be3185 1641 admin optional disk-manager_21.10.11.dsc
+ abfb6cde46849016c18b5ba805084e4d 1276060 admin optional disk-manager_21.10.11.tar.xz
+ 8ebf524188eeead19d1249b4da868688 72372 admin optional disk-manager_21.10.11_all.deb
+ d2aaaf3761515520fbfe7eb44653f453 8613 admin optional disk-manager_21.10.11_amd64.buildinfo
+
+-----BEGIN PGP SIGNATURE-----
+
+iQJHBAEBCgAxFiEEgRnC8/wKXRM2S0xLL1ePG6ydm+kFAmGRrc4THGZlaGxpeEBt
+eGxpbnV4Lm9yZwAKCRAvV48brJ2b6eCeD/4naIBXVv1a1c73MgZyerHJoI9AroQt
+UOhtDP41ck3j2kyrbZXK8Mmqymdzs/CdU7bsYK44uZzZSGCvF6u8g1xD/Hp+vxlu
+YLeg0l7WbqoQnWltSCTB1OoYMlqOMTiu4Fox/tGDo/qNwBEMAaR0BtEXqS904oqA
+pWqSTwAMteepDU7GaSpU5o2cJD5FcOLWJqtLOow4jsuqT780uLAT+wFrml19TOFo
+bqokDh/NnEXr2PfNPZ6cKvq2/eL23/kh8SrNWUJjSAxKRF0VaB0RL8IFyKQE0ROO
+V0XQOlDYJXzWlKYqqJkHSKHu524M+r6W7d6ubPYYvlM7oCei6Fp+xZNHLTSGg4OJ
+cW9PHzFDmZVYquiisoq+ga3q9OJ7tcUiQSn9VVmbO4FcjqTOrvv1KI4nUd91bfUP
+44aTQXlV198mVOnJrwuupjYyCTvnAM5SCEPI2j0py3xom4Lrr9NGisXQdmpMtoPw
+YoAFySCqXrkgD8sTJuwINFX8qRKmeadPJ/3SWQ/dzYnzaKsxIOcVNvA7ajVaBy5B
+BpPf51F5nHpIQLk2k4O59Dx5J9hRpmppaC+MIg+iu120W6A24/HcajljtEzcU+YH
+iZbmxFd38OgS51A0tdwIEVumf/oW5q6SfjONTTXhxB0ddX97lzESfPt/w1LFhYrl
+kYcW15UdC71Ezw==
+=zDTu
+-----END PGP SIGNATURE-----
