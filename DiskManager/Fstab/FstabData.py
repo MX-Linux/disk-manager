@@ -19,19 +19,26 @@
 #  along with this program; if not, write to the Free Software
 #  Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
 #
+import os
+import grp
+from pwd import getpwnam
+uid = getpwnam(os.getlogin())[2]
+gid = grp.getgrnam('users')[2]
 
 # Default options for an fs
-defaults = { "ext3"         :   ("defaults", "0", "2"),
+defaults = { "btrfs"        :   ("defaults", "0", "2"),
+             "ext3"         :   ("defaults", "0", "2"),
              "ext2"         :   ("defaults", "0", "2"),
-             "vfat"         :   ("defaults,utf8,umask=0", "0", "2"),
-             "ntfs"         :   ("defaults,nls=utf8,umask=0222", "0", "0"),
-             "ntfs-3g"      :   ("defaults,locale=autoset", "0", "0"),
-             "ntfs-fuse"    :   ("defaults,locale=autoset,umask=0", "0", "0"),
+             "exfat"        :   ("defaults,utf8,dmask=0002,fmask=0113" + ",uid=" + str(uid) + ",gid=" + str(gid), "0", "2"),
+             "vfat"         :   ("defaults,utf8,dmask=0002,fmask=0113" + ",uid=" + str(uid) + ",gid=" + str(gid), "0", "2"),
+             "ntfs"         :   ("defaults,utf8,umask=0222", "0", "0"),
+             "ntfs-3g"      :   ("defaults,utf8,dmask=0002,fmask=0113" + ",uid=" + str(uid) + ",gid=" + str(gid), "0", "0"),
              "jfs"          :   ("defaults,iocharset=utf8", "0", "0"),
              "__default__"  :   ("defaults", "0", "0")}
 
 # Known special driver
 special_driver = { "ntfs-3g"    : "Read-write driver",
+                   "ntfs"       : "Access driver",
                    "ntfs-fuse"  : "Read-write driver",
                    "__unknow__" : "Unknow driver" }
                    

@@ -6,7 +6,7 @@
     <property name="can-focus">False</property>
     <property name="events">GDK_POINTER_MOTION_MASK | GDK_POINTER_MOTION_HINT_MASK | GDK_BUTTON_PRESS_MASK | GDK_BUTTON_RELEASE_MASK</property>
     <property name="border-width">6</property>
-    <property name="resizable">False</property>
+    <property name="resizable">True</property>
     <property name="window-position">center-on-parent</property>
     <property name="type-hint">dialog</property>
     <child internal-child="vbox">
@@ -92,7 +92,7 @@
                         <property name="events">GDK_POINTER_MOTION_MASK | GDK_POINTER_MOTION_HINT_MASK | GDK_BUTTON_PRESS_MASK | GDK_BUTTON_RELEASE_MASK</property>
                         <property name="spacing">3</property>
                         <child>
-                          <object class="GtkComboBox" id="driver_box">
+                          <object class="GtkComboBoxText" id="driver_box">
                             <property name="visible">True</property>
                             <property name="can-focus">False</property>
                           </object>

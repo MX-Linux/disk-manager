@@ -36,6 +36,8 @@ from .Config  import *
 from .Fstab.FstabHandler import *
 from .Utility import *
 
+import logging
+
 
 class EditPartition(SimpleGladeApp) :
     ''' Class to manage the Edit/Add device dialog '''
@@ -106,7 +108,9 @@ class EditPartition(SimpleGladeApp) :
         self.options3.set_text(self.entry.defaultopt())
 
     def set_driver(self) :
-
+        if self.entry["FS_TYPE"] in 'ntfs' :
+            self.driver_warning_box.hide()
+            self.driver_error_box.hide()
         if self.drivers["primary"] :
             if self.entry["FSTAB_TYPE"] in self.drivers["all"] :
                 self.driver_warning_box.hide()
@@ -142,7 +146,6 @@ class EditPartition(SimpleGladeApp) :
             # except gobject.GError : 
                 # pass
         # ret = dialog.run()
-        # print("FEHLIX: ret=")
         # print(ret)
         # print(dialog.get_filename())
         

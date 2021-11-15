@@ -345,6 +345,8 @@ class DiskManager(SimpleGladeApp):
 
         path = self.treeview2.get_cursor()[0]
         logging.debug("on_cursor_changed: path = {}".format(path))
+        if path is None:
+            return
         try :
             idx = self.tree_store[path][3]
             entry = self.disk[idx]
