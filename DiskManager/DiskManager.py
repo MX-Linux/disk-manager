@@ -283,13 +283,18 @@ class DiskManager(SimpleGladeApp):
         path = self.treeview2.get_cursor()[0]
         entry = self.disk[self.tree_store[path][3]]
         if entry.get_is_system() :
-            ret = dialog("question", _("Editing system partition?"), \
-                _("<i>%s</i> is an important system partition.\n" \
-                "Be really careful when editing it, or you may have\n" \
-                "serious problems. Do you want to continue?") % entry["DEV"], \
-                parent = self.window_main)
-            if ret[0] == Gtk.ResponseType.REJECT :
+            question = Gtk.MessageDialog(
+			    flags=0,
+			    message_type=Gtk.MessageType.QUESTION,
+			    buttons=Gtk.ButtonsType.YES_NO,
+			    text=_("Editing system partition?"),
+			    ) 
+            question.format_secondary_text(_("%s is an important system partition. Be really careful when editing it, or you may have serious problems. Do you want to continue?")%entry["DEV"])
+            response = question.run()
+            question.destroy()      
+            if response == Gtk.ResponseType.NO :
                 return
+                
         dial = EditPartition(self.disk, entry, parent = self.window_main)
         dial.dialog_edit.run()
 

@@ -1,0 +1,31 @@
+Format: 1.8
+Date: Sun, 14 Nov 2021 23:15:55 -0500
+Source: disk-manager
+Binary: disk-manager
+Architecture: source all
+Version: 21.10.12
+Distribution: mx
+Urgency: medium
+Maintainer: Dolphin Oracle <dolphinoracle@gmail.com>
+Changed-By: Dolphin Oracle <dolphinoracle@gmail.com>
+Description:
+ disk-manager - simple graphical filesystem configurator
+Changes:
+ disk-manager (21.10.12) mx; urgency=medium
+ .
+   * replacing warning dialog in edit with a standard gtk messagebox
+Checksums-Sha1:
+ f570e9f3adadb0696bb2535acf5244fb7531b3db 726 disk-manager_21.10.12.dsc
+ 211031c8fdd57a3504646c4625f81189b229cc40 125392 disk-manager_21.10.12.tar.xz
+ f961ae3b8b7c05bd9c9ff713fe6a448e873be0e8 72508 disk-manager_21.10.12_all.deb
+ 4d3c15e05044b0d48ee6080ae4d0910ba5048779 7699 disk-manager_21.10.12_amd64.buildinfo
+Checksums-Sha256:
+ aedb91035e066f232859b164a97d9ee2b6817defe372d5720fac554866f99764 726 disk-manager_21.10.12.dsc
+ 7b1c60f594b42b21eb04fdba13be18011ab612f44295b48fcce4a5913999c21e 125392 disk-manager_21.10.12.tar.xz
+ 827c3b9c1b911d6cc8c61070a344c70796cca6abe8b3a60cdbccb6d7b6ee22c9 72508 disk-manager_21.10.12_all.deb
+ 462b2a438cf18527c55af1627f56bf7c0ce4f41a15ed47dce9f194b33c17b9d9 7699 disk-manager_21.10.12_amd64.buildinfo
+Files:
+ 16eeaab6295c2756828525343eb0aab5 726 admin optional disk-manager_21.10.12.dsc
+ 3d65f72a98426cd695a5da4b0fcf93f8 125392 admin optional disk-manager_21.10.12.tar.xz
+ d47bc6bdfd7a6cad42150e1b2e8e2a8e 72508 admin optional disk-manager_21.10.12_all.deb
+ 95b1c77b1b9c292f32237b657d61ef10 7699 admin optional disk-manager_21.10.12_amd64.buildinfo
