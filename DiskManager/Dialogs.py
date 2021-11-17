@@ -152,11 +152,22 @@ class EditPartition(SimpleGladeApp) :
         # if ret == 1 :
             # self.path.set_text(dialog.get_filename())
         # dialog.hide()
-        
+
         dialog = Gtk.FileChooserDialog(title="Please choose a folder", action=Gtk.FileChooserAction.SELECT_FOLDER)
         dialog.add_buttons(
             Gtk.STOCK_CANCEL, Gtk.ResponseType.CANCEL, "Select", Gtk.ResponseType.OK
         )
+
+        logging.debug("Mountpoint: " + self.path.get_text())
+        user_mp_dir = os.path.dirname(os.path.realpath(self.path.get_text()))
+
+        default_mp_path = "/media"
+        if os.path.isdir(user_mp_dir):
+             mp_path = user_mp_dir
+        else:
+            mp_path = default_mp_path
+        
+        dialog.set_current_folder(mp_path)
         dialog.set_default_size(800, 400)
 
         response = dialog.run()

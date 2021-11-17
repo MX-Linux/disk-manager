@@ -51,22 +51,8 @@ def size_renderer(size) :
 def get_user(request = "name") :
     ''' Get user information. Request could be name, uid, gid, dir, shell, ... '''
 
-    try :
-        if "SUDO_USER" in os.environ :
-            user = pwd.getpwnam(os.environ["SUDO_USER"])
-        if "SUDO_UID" in os.environ :
-            user = pwd.getpwuid(int(os.environ["SUDO_UID"]))
-        elif "USERHELPER_UID" in os.environ :
-            user = pwd.getpwuid(int(os.environ["USERHELPER_UID"]))
-        elif "USERNAME" in os.environ :
-            user = pwd.getpwnam(os.environ["USERNAME"])
-        else :
-            user = pwd.getpwnam(os.environ["USER"])
-    except :
-        logging.warning("Can't find your username. I assume for now that you are root.\n"\
-             "But please report that bug and attach the following :\n%s" \
-                    % "\n".join([ "%s = %s" % k for k in list(os.environ.items()) ]))
-        user = pwd.getpwnam(0)
+    user = pwd.getpwnam(os.getlogin())
+
     if user.pw_uid == "0" :
         logging.warning("Can't find your real username. Some features will not work.")
     return getattr(user, "pw_" + request)
@@ -85,31 +71,37 @@ def open_url(url) :
     desktop = get_desktop(default = "GNOME")
     browsers= pref_browser[desktop][url[:4]]
     [ browsers.extend(k) for k in [ k[url[:4]] for k in list(pref_browser.values()) ] ]
+    browser = ""
     for test in browsers :
         if test_cmd(test[0]) :
             browser = " ".join(test)
             break
+    if not browser:
+        browser = "xdg-open"
+        
     logging.debug("Launching %s as user %s with %s" % (url, user, browser))
 
     if not browser or not user or user == "root" :
         logging.debug("-> Not possible")
         return False
-    for key in ["HOME", "USER", "XAUTHORITY", "LOGNAME"] :
+    for key in ["HOME", "USER", "XAUTHORITY", "LOGNAME", "MAIL", "XDG_RUNTIME_DIR"] :
         if key in os.environ :
             setattr(open_url, "current_%s" % key, os.environ[key])
     os.putenv("USER", user)
     os.putenv("LOGNAME", user)
     os.putenv("HOME", get_user("dir"))
+    os.putenv("MAIL", "/var/mail/%s" % user)
+    os.putenv("XDG_RUNTIME_DIR", "/run/user/%s" % str(get_user("uid")))
     if "%s_user-XAUTHORITY" % PACKAGE in os.environ :
         os.putenv("XAUTHORITY", os.environ["%s_user-XAUTHORITY" % PACKAGE])
 
-    # cmd = "su - %s -m -c '%s %s'" % (user, browser, url)
-    cmd = "su %s -m -c '%s %s'" % (user, browser, url) # This should work because su will not shar env
+    cmd = "runuser -u %s %s  '%s'" % (user, browser, url)
 
     logging.debug("Command : %s" % cmd)
+    #run(cmd, capture_output=False)
     Popen(cmd, close_fds=True, shell=True)
 
-    for key in ["HOME", "USER", "XAUTHORITY", "LOGNAME"] :
+    for key in ["HOME", "USER", "XAUTHORITY", "LOGNAME", "MAIL", "XDG_RUNTIME_DIR"] :
         if hasattr(open_url, "current_%s" % key) :
             os.putenv(key, getattr(open_url, "current_%s" % key))
     return True

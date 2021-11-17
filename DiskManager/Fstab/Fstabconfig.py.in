@@ -53,15 +53,8 @@ MOUNT    = "@MOUNT@"
 UMOUNT   = "@UMOUNT@"
 MODPROBE = "@MODPROBE@"
 
-if os.path.exists("/lib/udev/vol_id") :
-    VOLID = "/lib/udev/vol_id"
-elif os.path.exists("/sbin/udev_volume_id") :
-    VOLID = "/sbin/udev_volume_id"
-else :
-    VOLID = "vol_id"
-    
 if test_cmd("udevinfo") :
-	UDEVINFO = "udevinfo"
+    UDEVINFO = "udevinfo"
 else :
-	UDEVINFO = "udevadm info"
+    UDEVINFO = "udevadm info"
 

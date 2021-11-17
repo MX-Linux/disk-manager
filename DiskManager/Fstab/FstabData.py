@@ -25,16 +25,20 @@ from pwd import getpwnam
 uid = getpwnam(os.getlogin())[2]
 gid = grp.getgrnam('users')[2]
 
+gvfs = ""
+if os.path.exists("/etc/mx-version"):
+    gvfs = ",x-gvfs-show"
+
 # Default options for an fs
-defaults = { "btrfs"        :   ("defaults", "0", "2"),
-             "ext3"         :   ("defaults", "0", "2"),
-             "ext2"         :   ("defaults", "0", "2"),
-             "exfat"        :   ("defaults,utf8,dmask=0002,fmask=0113" + ",uid=" + str(uid) + ",gid=" + str(gid), "0", "2"),
-             "vfat"         :   ("defaults,utf8,dmask=0002,fmask=0113" + ",uid=" + str(uid) + ",gid=" + str(gid), "0", "2"),
-             "ntfs"         :   ("defaults,utf8,umask=0222", "0", "0"),
-             "ntfs-3g"      :   ("defaults,utf8,dmask=0002,fmask=0113" + ",uid=" + str(uid) + ",gid=" + str(gid), "0", "0"),
-             "jfs"          :   ("defaults,iocharset=utf8", "0", "0"),
-             "__default__"  :   ("defaults", "0", "0")}
+defaults = { "btrfs"        :   ("defaults" + gvfs, "0", "2"),
+             "ext3"         :   ("defaults" + gvfs, "0", "2"),
+             "ext2"         :   ("defaults" + gvfs, "0", "2"),
+             "exfat"        :   ("defaults" + ",uid=" + str(uid) + ",gid=" + str(gid) + ",dmask=0002,fmask=0113,utf8" + gvfs, "0", "2"),
+             "vfat"         :   ("defaults" + ",uid=" + str(uid) + ",gid=" + str(gid) + ",dmask=0002,fmask=0113,utf8" + gvfs, "0", "2"),
+             "ntfs"         :   ("defaults,umask=0222" + gvfs, "0", "0"),
+             "ntfs-3g"      :   ("defaults" + ",uid=" + str(uid) + ",gid=" + str(gid) + ",dmask=0002,fmask=0113,utf8" + gvfs, "0", "0"),
+             "jfs"          :   ("defaults,iocharset=utf8" + gvfs, "0", "0"),
+             "__default__"  :   ("defaults" + gvfs, "0", "0")}
 
 # Known special driver
 special_driver = { "ntfs-3g"    : "Read-write driver",
@@ -44,6 +48,7 @@ special_driver = { "ntfs-3g"    : "Read-write driver",
                    
 # Secondary driver
 secondary_driver = { "ext3"     : ("ext2"),
+                     "exfat"    : ("exFAT"),
                      "vfat"     : ("msdos"),
                      "__all__"  : ("auto")}
                      
@@ -51,7 +56,7 @@ secondary_driver = { "ext3"     : ("ext2"),
 ignore_fs = ("swap", "iso9660", "udf", "iso9660,udf", "udf,iso9660")
 
 # List device that we should ignore
-ignore_dev = ("/dev/fd0", "/dev/fd1", "/dev/fd2")
+ignore_dev = ("/dev/fd0", "/dev/fd1", "/dev/fd2", "/dev/sr0", "/dev/sr1", "/dev/sr2")
 
 # List of virtual device name
 virtual_dev = ("proc", "devpts", "tmpfs", "sysfs", "shmfs", "usbfs")

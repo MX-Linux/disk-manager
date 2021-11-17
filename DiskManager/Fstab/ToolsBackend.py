@@ -95,6 +95,8 @@ class ToolsBackend(DiskInfoBase) :
         
         # Get the more info posible about the device from udevinfo
         cmd = UDEVINFO + " -p " + dev["SYSFS_PATH"].replace("/sys","") + " -q all"
+        # fehlix
+        logging.debug("UDEVINFO : " + cmd)
         (sts, result) = self._exec(cmd)
         if not sts :
             for line in result :
@@ -179,36 +181,7 @@ class ToolsBackend(DiskInfoBase) :
         # worked successfully, because udev db might be not up to date, and udev
         # might be wrong on some FS_LABEL (ones with " for exemple)    
         if "DEVICE" in dev :
-            cmd = VOLID + " --export " + dev["DEVICE"]
-            (sts, result) = self._exec(cmd)
-            if not sts :
-                for line in result :
-                    logging.debug("(vol_id output) " + line.strip())
-                    try :
-                        (attr, value) = re.search("ID_(\S+)=(.+)", line).groups()
-                        dev[attr] = value
-                        logging.debug("-> Found " + attr + " : " + value)
-                    except AttributeError :
-                        pass
-            else :
-                logging.debug("Warning : First attempt failed. Trying something else...")
-                cmd = VOLID + " " + dev["DEVICE"] 
-                (sts, result) = self._exec(cmd)
-                if not sts :
-                    d = {"F" : "FS_USAGE", "T" : "FS_TYPE", "U" : "FS_UUID", "L" : "FS_LABEL"}
-                    for line in result :
-                        logging.debug("(vol_id output) " + line.strip())
-                        try :
-                            (attr, value) = re.search("(\S+):(.+)", line).groups()
-                            if attr in d and d[attr] not in dev :
-                                dev[d[attr]] = value
-                                logging.debug("-> Found " + d[attr] + " : " + value)
-                        except AttributeError :
-                            pass
-            # If vol_id fail, call blkid. Don't overwrite info, blkid is less reliable
-            # than any of the other tools.
-            if sts and "FS_USAGE" not in dev :
-                logging.debug("Warning : vol_id failled, call blkid")
+            if "FS_USAGE" not in dev :
                 cmd = BLKID + " " + dev["DEVICE"]
                 (sts, result) = self._exec(cmd)
                 result = "".join([i.decode('utf-8') for i in result])

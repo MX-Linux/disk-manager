@@ -284,11 +284,11 @@ class DiskManager(SimpleGladeApp):
         entry = self.disk[self.tree_store[path][3]]
         if entry.get_is_system() :
             question = Gtk.MessageDialog(
-			    flags=0,
-			    message_type=Gtk.MessageType.QUESTION,
-			    buttons=Gtk.ButtonsType.YES_NO,
-			    text=_("Editing system partition?"),
-			    ) 
+                flags=0,
+                message_type=Gtk.MessageType.QUESTION,
+                buttons=Gtk.ButtonsType.YES_NO,
+                text=_("Editing system partition?"),
+                ) 
             question.format_secondary_text(_("%s is an important system partition. Be really careful when editing it, or you may have serious problems. Do you want to continue?")%entry["DEV"])
             response = question.run()
             question.destroy()      
@@ -307,14 +307,52 @@ class DiskManager(SimpleGladeApp):
         else : 
             self.disk.mount(entry)
             
-    def on_help_clicked(self, button) :
-		
-        cmd = 'runuser -l $(logname) xdg-open https://mxlinux.org/wiki/help-files/help-disk-manager'
+    def on_help_clicked_orig(self, button) :
+        
+        #cmd = 'runuser -u $(logname) xdg-open https://mxlinux.org/wiki/help-files/help-disk-manager'
+        cmd = 'xdg-open https://mxlinux.org/wiki/help-files/help-disk-manager'
         if os.path.exists("/usr/bin/mx-viewer") :
            cmd = 'mx-viewer https://mxlinux.org/wiki/help-files/help-disk-manager/ disk-manager'
         if os.path.exists("/usr/bin/antix-viewer") :
-           cmd = 'mx-viewer https://mxlinux.org/wiki/help-files/help-disk-manager/ disk-manager'
-        os.system(cmd)
+           cmd = 'antix-viewer https://mxlinux.org/wiki/help-files/help-disk-manager/ disk-manager'
+        
+        cmd = "runuser -u $(logname) " + cmd
+        logging.debug("Command: " + cmd)
+        #os.system(cmd)
+        Popen(cmd, close_fds=True, shell=True)
+
+    def on_help_clicked(self, button) :
+        
+        help_url = "https://mxlinux.org/wiki/help-files/help-disk-manager/"
+
+        user = get_user()
+        
+        cmd = "xdg-open %s" % help_url
+        if os.path.exists("/usr/bin/mx-viewer") :
+           cmd = "mx-viewer %s disk-manager" % help_url
+        if os.path.exists("/usr/bin/antix-viewer") :
+           cmd = "antix-viewer %s disk-manager" % help_url
+
+        cmd = "runuser -u %s  -- " % user + cmd
+
+        for key in ["HOME", "USER", "XAUTHORITY", "LOGNAME", "MAIL", "XDG_RUNTIME_DIR"] :
+            if key in os.environ :
+                setattr(open_url, "current_%s" % key, os.environ[key])
+        os.putenv("USER", user)
+        os.putenv("LOGNAME", user)
+        os.putenv("HOME", get_user("dir"))
+        os.putenv("MAIL", "/var/mail/%s" % user)
+        os.putenv("XDG_RUNTIME_DIR", "/run/user/%s" % str(get_user("uid")))
+        if "%s_user-XAUTHORITY" % PACKAGE in os.environ :
+            os.putenv("XAUTHORITY", os.environ["%s_user-XAUTHORITY" % PACKAGE])
+    
+        logging.debug("Command : %s" % cmd)
+        Popen(cmd, close_fds=True, shell=True)
+    
+        for key in ["HOME", "USER", "XAUTHORITY", "LOGNAME", "MAIL", "XDG_RUNTIME_DIR"] :
+            if hasattr(open_url, "current_%s" % key) :
+                os.putenv(key, getattr(open_url, "current_%s" % key))
+        return True
         
     def on_info_clicked(self, button) :
     
