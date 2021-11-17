@@ -1,3 +1,9 @@
+disk-manager (21.10.14) mx; urgency=medium
+
+  * add xlinks2 used in antiX
+
+ -- fehlix <fehlix@mxlinux.org>  Wed, 17 Nov 2021 14:39:12 -0500
+
 disk-manager (21.10.13) mx; urgency=medium
 
   * adjust mountpoint slection, filechoser opens in current mountpoint dir

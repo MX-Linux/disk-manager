@@ -1,6 +1,6 @@
  dpkg-buildpackage -us -uc -ui -sa
 dpkg-buildpackage: info: source package disk-manager
-dpkg-buildpackage: info: source version 21.10.13
+dpkg-buildpackage: info: source version 21.10.14
 dpkg-buildpackage: info: source distribution mx
 dpkg-buildpackage: info: source changed by fehlix <fehlix@mxlinux.org>
  dpkg-source --before-build .
@@ -8,93 +8,11 @@ dpkg-buildpackage: info: host architecture amd64
  debian/rules clean
 dh clean \
 	--with python3
-   dh_auto_clean
-	make -j4 distclean
-make[1]: Entering directory '/tmpdir/merged_fehlix_development_disk-manager/BUILD/disk-manager'
-Making distclean in po
-make[2]: Entering directory '/tmpdir/merged_fehlix_development_disk-manager/BUILD/disk-manager/po'
-rm -f *.pox disk-manager.pot *.old.po cat-id-tbl.tmp
-rm -f .intltool-merge-cache
-rm -f Makefile Makefile.in POTFILES stamp-it
-rm -f *.mo *.msg *.cat *.cat.m *.gmo
-make[2]: Leaving directory '/tmpdir/merged_fehlix_development_disk-manager/BUILD/disk-manager/po'
-Making distclean in data
-make[2]: Entering directory '/tmpdir/merged_fehlix_development_disk-manager/BUILD/disk-manager/data'
-Making distclean in icons
-make[3]: Entering directory '/tmpdir/merged_fehlix_development_disk-manager/BUILD/disk-manager/data/icons'
-Making distclean in 16x16
-make[4]: Entering directory '/tmpdir/merged_fehlix_development_disk-manager/BUILD/disk-manager/data/icons/16x16'
-test -z "" || rm -f 
-test . = "." || test -z "" || rm -f 
-rm -f Makefile
-make[4]: Leaving directory '/tmpdir/merged_fehlix_development_disk-manager/BUILD/disk-manager/data/icons/16x16'
-Making distclean in 22x22
-make[4]: Entering directory '/tmpdir/merged_fehlix_development_disk-manager/BUILD/disk-manager/data/icons/22x22'
-test -z "" || rm -f 
-test . = "." || test -z "" || rm -f 
-rm -f Makefile
-make[4]: Leaving directory '/tmpdir/merged_fehlix_development_disk-manager/BUILD/disk-manager/data/icons/22x22'
-Making distclean in 24x24
-make[4]: Entering directory '/tmpdir/merged_fehlix_development_disk-manager/BUILD/disk-manager/data/icons/24x24'
-test -z "" || rm -f 
-test . = "." || test -z "" || rm -f 
-rm -f Makefile
-make[4]: Leaving directory '/tmpdir/merged_fehlix_development_disk-manager/BUILD/disk-manager/data/icons/24x24'
-Making distclean in scalable
-make[4]: Entering directory '/tmpdir/merged_fehlix_development_disk-manager/BUILD/disk-manager/data/icons/scalable'
-test -z "" || rm -f 
-test . = "." || test -z "" || rm -f 
-rm -f Makefile
-make[4]: Leaving directory '/tmpdir/merged_fehlix_development_disk-manager/BUILD/disk-manager/data/icons/scalable'
-make[4]: Entering directory '/tmpdir/merged_fehlix_development_disk-manager/BUILD/disk-manager/data/icons'
-test -z "" || rm -f 
-rm -f TAGS ID GTAGS GRTAGS GSYMS GPATH tags
-test . = "." || test -z "" || rm -f 
-make[4]: Leaving directory '/tmpdir/merged_fehlix_development_disk-manager/BUILD/disk-manager/data/icons'
-rm -f Makefile
-make[3]: Leaving directory '/tmpdir/merged_fehlix_development_disk-manager/BUILD/disk-manager/data/icons'
-make[3]: Entering directory '/tmpdir/merged_fehlix_development_disk-manager/BUILD/disk-manager/data'
-test -z "disk-manager.desktop" || rm -f disk-manager.desktop
-test -z "disk-manager.desktop.in" || rm -f disk-manager.desktop.in
-rm -f TAGS ID GTAGS GRTAGS GSYMS GPATH tags
-test . = "." || test -z "" || rm -f 
-make[3]: Leaving directory '/tmpdir/merged_fehlix_development_disk-manager/BUILD/disk-manager/data'
-rm -f Makefile
-make[2]: Leaving directory '/tmpdir/merged_fehlix_development_disk-manager/BUILD/disk-manager/data'
-Making distclean in DiskManager
-make[2]: Entering directory '/tmpdir/merged_fehlix_development_disk-manager/BUILD/disk-manager/DiskManager'
-Making distclean in Fstab
-make[3]: Entering directory '/tmpdir/merged_fehlix_development_disk-manager/BUILD/disk-manager/DiskManager/Fstab'
-test -z "Fstabconfig.py" || rm -f Fstabconfig.py
-test -z "Fstabconfig.py" || rm -f Fstabconfig.py
-test . = "." || test -z "" || rm -f 
-rm -f Makefile
-make[3]: Leaving directory '/tmpdir/merged_fehlix_development_disk-manager/BUILD/disk-manager/DiskManager/Fstab'
-make[3]: Entering directory '/tmpdir/merged_fehlix_development_disk-manager/BUILD/disk-manager/DiskManager'
-test -z "config.py" || rm -f config.py
-test -z "config.py" || rm -f config.py
-rm -f TAGS ID GTAGS GRTAGS GSYMS GPATH tags
-test . = "." || test -z "" || rm -f 
-make[3]: Leaving directory '/tmpdir/merged_fehlix_development_disk-manager/BUILD/disk-manager/DiskManager'
-rm -f Makefile
-make[2]: Leaving directory '/tmpdir/merged_fehlix_development_disk-manager/BUILD/disk-manager/DiskManager'
-make[2]: Entering directory '/tmpdir/merged_fehlix_development_disk-manager/BUILD/disk-manager'
-test -z "disk-manager" || rm -f disk-manager
-test -z "disk-manager" || rm -f disk-manager
-rm -f TAGS ID GTAGS GRTAGS GSYMS GPATH tags
-test . = "." || test -z "" || rm -f 
-rm -f cscope.out cscope.in.out cscope.po.out cscope.files
-test -z "intltool-extract intltool-merge intltool-update config.status.lineno" || rm -f intltool-extract intltool-merge intltool-update config.status.lineno
-make[2]: Leaving directory '/tmpdir/merged_fehlix_development_disk-manager/BUILD/disk-manager'
-rm -f config.status config.cache config.log configure.lineno config.status.lineno
-rm -f Makefile
-make[1]: Leaving directory '/tmpdir/merged_fehlix_development_disk-manager/BUILD/disk-manager'
-   dh_autoreconf_clean
    dh_clean
  dpkg-source -b .
 dpkg-source: info: using source format '3.0 (native)'
-dpkg-source: info: building disk-manager in disk-manager_21.10.13.tar.xz
-dpkg-source: info: building disk-manager in disk-manager_21.10.13.dsc
+dpkg-source: info: building disk-manager in disk-manager_21.10.14.tar.xz
+dpkg-source: info: building disk-manager in disk-manager_21.10.14.dsc
  debian/rules binary
 dh binary \
 	--with python3
@@ -476,18 +394,18 @@ make[1]: Leaving directory '/tmpdir/merged_fehlix_development_disk-manager/BUILD
    dh_perl
    dh_link
    dh_strip_nondeterminism
-	Normalized debian/disk-manager/usr/share/locale/it/LC_MESSAGES/disk-manager.mo
-	Normalized debian/disk-manager/usr/share/locale/fr/LC_MESSAGES/disk-manager.mo
-	Normalized debian/disk-manager/usr/share/locale/es/LC_MESSAGES/disk-manager.mo
-	Normalized debian/disk-manager/usr/share/locale/en_GB/LC_MESSAGES/disk-manager.mo
 	Normalized debian/disk-manager/usr/share/locale/sv/LC_MESSAGES/disk-manager.mo
 	Normalized debian/disk-manager/usr/share/locale/pt_BR/LC_MESSAGES/disk-manager.mo
 	Normalized debian/disk-manager/usr/share/locale/pl/LC_MESSAGES/disk-manager.mo
 	Normalized debian/disk-manager/usr/share/locale/nb/LC_MESSAGES/disk-manager.mo
-	Normalized debian/disk-manager/usr/share/locale/zh_CN/LC_MESSAGES/disk-manager.mo
 	Normalized debian/disk-manager/usr/share/locale/el/LC_MESSAGES/disk-manager.mo
 	Normalized debian/disk-manager/usr/share/locale/de/LC_MESSAGES/disk-manager.mo
 	Normalized debian/disk-manager/usr/share/locale/da/LC_MESSAGES/disk-manager.mo
+	Normalized debian/disk-manager/usr/share/locale/it/LC_MESSAGES/disk-manager.mo
+	Normalized debian/disk-manager/usr/share/locale/fr/LC_MESSAGES/disk-manager.mo
+	Normalized debian/disk-manager/usr/share/locale/es/LC_MESSAGES/disk-manager.mo
+	Normalized debian/disk-manager/usr/share/locale/en_GB/LC_MESSAGES/disk-manager.mo
+	Normalized debian/disk-manager/usr/share/locale/zh_CN/LC_MESSAGES/disk-manager.mo
    dh_compress
    dh_fixperms
    dh_missing
@@ -495,20 +413,20 @@ make[1]: Leaving directory '/tmpdir/merged_fehlix_development_disk-manager/BUILD
    dh_gencontrol
    dh_md5sums
    dh_builddeb
-dpkg-deb: building package 'disk-manager' in '../disk-manager_21.10.13_all.deb'.
+dpkg-deb: building package 'disk-manager' in '../disk-manager_21.10.14_all.deb'.
  dpkg-genbuildinfo
- dpkg-genchanges -sa >../disk-manager_21.10.13_amd64.changes
+ dpkg-genchanges -sa >../disk-manager_21.10.14_amd64.changes
 dpkg-genchanges: info: including full source code in upload
  dpkg-source --after-build .
 dpkg-buildpackage: info: full upload; Debian-native package (full source is included)
 Now signing changes and any dsc files...
- signfile dsc disk-manager_21.10.13.dsc fehlix <fehlix@mxlinux.org>
+ signfile dsc disk-manager_21.10.14.dsc fehlix <fehlix@mxlinux.org>
 
- fixup_buildinfo disk-manager_21.10.13.dsc disk-manager_21.10.13_amd64.buildinfo
- signfile buildinfo disk-manager_21.10.13_amd64.buildinfo fehlix <fehlix@mxlinux.org>
+ fixup_buildinfo disk-manager_21.10.14.dsc disk-manager_21.10.14_amd64.buildinfo
+ signfile buildinfo disk-manager_21.10.14_amd64.buildinfo fehlix <fehlix@mxlinux.org>
 
- fixup_changes dsc disk-manager_21.10.13.dsc disk-manager_21.10.13_amd64.changes
- fixup_changes buildinfo disk-manager_21.10.13_amd64.buildinfo disk-manager_21.10.13_amd64.changes
- signfile changes disk-manager_21.10.13_amd64.changes fehlix <fehlix@mxlinux.org>
+ fixup_changes dsc disk-manager_21.10.14.dsc disk-manager_21.10.14_amd64.changes
+ fixup_changes buildinfo disk-manager_21.10.14_amd64.buildinfo disk-manager_21.10.14_amd64.changes
+ signfile changes disk-manager_21.10.14_amd64.changes fehlix <fehlix@mxlinux.org>
 
 Successfully signed dsc, buildinfo, changes files

@@ -307,20 +307,6 @@ class DiskManager(SimpleGladeApp):
         else : 
             self.disk.mount(entry)
             
-    def on_help_clicked_orig(self, button) :
-        
-        #cmd = 'runuser -u $(logname) xdg-open https://mxlinux.org/wiki/help-files/help-disk-manager'
-        cmd = 'xdg-open https://mxlinux.org/wiki/help-files/help-disk-manager'
-        if os.path.exists("/usr/bin/mx-viewer") :
-           cmd = 'mx-viewer https://mxlinux.org/wiki/help-files/help-disk-manager/ disk-manager'
-        if os.path.exists("/usr/bin/antix-viewer") :
-           cmd = 'antix-viewer https://mxlinux.org/wiki/help-files/help-disk-manager/ disk-manager'
-        
-        cmd = "runuser -u $(logname) " + cmd
-        logging.debug("Command: " + cmd)
-        #os.system(cmd)
-        Popen(cmd, close_fds=True, shell=True)
-
     def on_help_clicked(self, button) :
         
         help_url = "https://mxlinux.org/wiki/help-files/help-disk-manager/"
@@ -329,9 +315,11 @@ class DiskManager(SimpleGladeApp):
         
         cmd = "xdg-open %s" % help_url
         if os.path.exists("/usr/bin/mx-viewer") :
-           cmd = "mx-viewer %s disk-manager" % help_url
+           cmd = "/usr/bin/mx-viewer %s disk-manager" % help_url
+        if os.path.exists("/usr/bin/xlinks2") :
+           cmd = "/usr/bin/xlinks2 %s" % help_url
         if os.path.exists("/usr/bin/antix-viewer") :
-           cmd = "antix-viewer %s disk-manager" % help_url
+           cmd = "/usr/bin/antix-viewer %s disk-manager" % help_url
 
         cmd = "runuser -u %s  -- " % user + cmd
 
