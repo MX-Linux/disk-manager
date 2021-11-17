@@ -1,3 +1,10 @@
+disk-manager (21.10.15) mx; urgency=medium
+
+  * display disk-manager task bar icon
+  * do not make any rows inactive text 
+
+ -- Dolphin Oracle <dolphinoracle@gmail.com>  Wed, 17 Nov 2021 17:08:18 -0500
+
 disk-manager (21.10.14) mx; urgency=medium
 
   * add xlinks2 used in antiX

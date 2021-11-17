@@ -1,23 +1,20 @@
------BEGIN PGP SIGNED MESSAGE-----
-Hash: SHA512
-
 Format: 1.0
 Source: disk-manager
 Binary: disk-manager
 Architecture: all source
-Version: 21.10.14
+Version: 21.10.15
 Checksums-Md5:
- cbc14f4baa4f6ccabf23b3f75c0dae08 1638 disk-manager_21.10.14.dsc
- 7edcf5fad64015ab90860ec0d08525ff 72512 disk-manager_21.10.14_all.deb
+ 16cab8368ea9ec6d4f1d3ec0c040edf4 726 disk-manager_21.10.15.dsc
+ 0234a3eb9345e36f56792692fba4f372 72588 disk-manager_21.10.15_all.deb
 Checksums-Sha1:
- e9dc2d0201c68fbb0700ad0a7ac241bf4b384be7 1638 disk-manager_21.10.14.dsc
- c3f112374a65dbcca90ed65dcab278f1535d9ac2 72512 disk-manager_21.10.14_all.deb
+ 244e4836df1ad3652f873a7b53b454e35f885ac7 726 disk-manager_21.10.15.dsc
+ fa874ac484fa8c8a6006baa407fae289791a1320 72588 disk-manager_21.10.15_all.deb
 Checksums-Sha256:
- f8258591f4848483c9b3ac936aeb98ce4bbcc05c00c259e4a0629d3fbcf2e9ef 1638 disk-manager_21.10.14.dsc
- c7a85104c280d7d8b5bdc1f8f9b60bb318a3fc8402ff091b0355b1f75793084d 72512 disk-manager_21.10.14_all.deb
+ 249bb520ddea5ced678959149803484e459658e6281e321d7a86d58aeca32927 726 disk-manager_21.10.15.dsc
+ 21e21e1b808f08fd6dd4b01321ba737106c64ed1822c38166117475fbd64f44e 72588 disk-manager_21.10.15_all.deb
 Build-Origin: Debian
 Build-Architecture: amd64
-Build-Date: Wed, 17 Nov 2021 20:57:28 +0100
+Build-Date: Wed, 17 Nov 2021 17:09:10 -0500
 Build-Tainted-By:
  merged-usr-via-aliased-dirs
  usr-local-has-libraries
@@ -221,7 +218,7 @@ Installed-Build-Depends:
  libxml2 (= 2.9.10+dfsg-6.7),
  libz3-4 (= 4.8.10-1),
  libzstd1 (= 1.4.8+dfsg-2.1),
- linux-libc-dev (= 5.14.6-3~mx21+1),
+ linux-libc-dev (= 5.14.16-1~mx21+1),
  login (= 1:4.8.1-1),
  lsb-base (= 11.1.0),
  m4 (= 1.4.18-5),
@@ -268,22 +265,4 @@ Installed-Build-Depends:
 Environment:
  DEB_BUILD_OPTIONS="parallel=4"
  LANG="en_US.UTF-8"
- SOURCE_DATE_EPOCH="1637177952"
-
------BEGIN PGP SIGNATURE-----
-
-iQJHBAEBCgAxFiEEgRnC8/wKXRM2S0xLL1ePG6ydm+kFAmGVXrATHGZlaGxpeEBt
-eGxpbnV4Lm9yZwAKCRAvV48brJ2b6VqcD/9WPbjtfrseBr/70orKzKZ93trC8J8p
-Ry0wX1nn6jD7ApK3I7LkUTiJeT3Vdd1HdSCBIUAJqnPCXllS6aF+KtgIgzGszac7
-J6JpdWYYVniQsTEMzOGYJ/yyj+L5Opmk+ed27ProHXF9bA0WLmsjh1OraBW91CXE
-uVetnf3jbqWh4dy876zsKTB5T09PN5O9epukNX5aAaxXIRUPh72B2VA33nNEcLYz
-Kef4IWP7nWTm6iUw3ciTs+yKiszgp+ieSU5EhgrCLJHOC0sVbZRkw9oaOinrpx1k
-vNGBpZFm8ddJxB66FT8hvU01xxTkJGvIIyth4Zex30bhlealtu+mhU4qYk3ZYC8I
-m+M6XpQEMn79f5dKrWFyBySUBD77daEQc2ijexJnRHXPdqCYoiiSkJBSLxx6xbk6
-XCsGmTSVaHqeIzTv7ZDEJUPaoUTxOF29amqXs7Q7oYX0VbvNO+wqb6q6fzaQbG8D
-/hvmDvUzMzx/lCfl1ZkTaRTe7kuK2mmBDgjjIWXKsYfAhuPwUDwfFdXCh5iVynQV
-3ljavKViHmdPoMLTgG9yG1eLKoUJ7aZtPcIm2lh8tV7VvnjMNMEclhG46NOJNGOw
-Z0kwLdcj6KW0KvO+goL0E7igcgMfxA+5zncsc8juTsRZ05usJRdzPNDnd4mVBtqA
-VTsCk8lIRbH5Yg==
-=Z7pX
------END PGP SIGNATURE-----
+ SOURCE_DATE_EPOCH="1637186898"

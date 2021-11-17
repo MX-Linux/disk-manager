@@ -139,42 +139,42 @@ class DiskManager(SimpleGladeApp):
         pix_renderer.set_property("xpad", 3)
         text_renderer = Gtk.CellRendererText()
         column.pack_end(text_renderer, False)
-        column.set_attributes(text_renderer, text=2, sensitive=0, style=5)
+        column.set_attributes(text_renderer, text=2, sensitive=1, style=5)
         column.set_sort_column_id(2)
         column.set_reorderable(True)
         column.set_expand(True)
         self.treeview2.append_column(column)
         
         renderer = Gtk.CellRendererText()
-        column = Gtk.TreeViewColumn(_("Mount point"), renderer, text=3, sensitive=0, style=5)
+        column = Gtk.TreeViewColumn(_("Mount point"), renderer, text=3, sensitive=1, style=5)
         column.set_sort_column_id(3)
         column.set_expand(True)
         column.set_reorderable(True)
         self.treeview2.append_column(column)
        
         renderer = Gtk.CellRendererText()
-        column = Gtk.TreeViewColumn(_("Type"), renderer, text=4, sensitive=0, style=5)
+        column = Gtk.TreeViewColumn(_("Type"), renderer, text=4, sensitive=1, style=5)
         column.set_sort_column_id(4)
         column.set_expand(True)
         column.set_reorderable(True)
         self.treeview2.append_column(column)
         
         renderer = Gtk.CellRendererText()
-        column = Gtk.TreeViewColumn(_("Total"), renderer, text=7, sensitive=0, style=5)
+        column = Gtk.TreeViewColumn(_("Total"), renderer, text=7, sensitive=1, style=5)
         column.set_sort_column_id(7)
         column.set_expand(True)
         column.set_reorderable(True)
         self.treeview2.append_column(column)
 
         renderer = Gtk.CellRendererText()
-        column = Gtk.TreeViewColumn(_("Free"), renderer, text=8, sensitive=0, style=5)
+        column = Gtk.TreeViewColumn(_("Free"), renderer, text=8, sensitive=1, style=5)
         column.set_sort_column_id(8)
         column.set_expand(True)
         column.set_reorderable(True)
         self.treeview2.append_column(column)
 
         renderer = Gtk.CellRendererProgress()
-        column = Gtk.TreeViewColumn(_("Used"), renderer, text=9, value=10, sensitive=0)
+        column = Gtk.TreeViewColumn(_("Used"), renderer, text=9, value=10, sensitive=1)
         column.set_sort_column_id(9)
         column.set_expand(True)
         column.set_reorderable(True)
@@ -217,7 +217,7 @@ class DiskManager(SimpleGladeApp):
             device = entry["DEV"]
             type = entry["FSTAB_TYPE"]
             path = entry["FSTAB_PATH"]
-            sensitive = not entry.get_is_system() or not entry in configured
+            sensitive = 1
             size_real  = entry.get_size()
             size = size_renderer(size_real)
             if entry in configured :
