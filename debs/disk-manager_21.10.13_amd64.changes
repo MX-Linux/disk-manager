@@ -1,0 +1,55 @@
+-----BEGIN PGP SIGNED MESSAGE-----
+Hash: SHA512
+
+Format: 1.8
+Date: Wed, 17 Nov 2021 08:00:48 -0500
+Source: disk-manager
+Binary: disk-manager
+Architecture: source all
+Version: 21.10.13
+Distribution: mx
+Urgency: medium
+Maintainer: Dolphin Oracle <dolphinoracle@gmail.com>
+Changed-By: fehlix <fehlix@mxlinux.org>
+Description:
+ disk-manager - simple graphical filesystem configurator
+Changes:
+ disk-manager (21.10.13) mx; urgency=medium
+ .
+   * adjust mountpoint slection, filechoser opens in current mountpoint dir
+   * adjust mount options, added g-vfs-show for visbility in file manager
+   * open html/file browser as user from within pkexec, set XDG_RUNTIME_DIR
+   * ignore ram,fd and sr devices even if setup in fstab
+Checksums-Sha1:
+ 6685080e5c8afafd7b73dd65d14117e8fb46b91e 1638 disk-manager_21.10.13.dsc
+ a0bcda8aa7c915d7a816b35009e511e625f20a17 331656 disk-manager_21.10.13.tar.xz
+ 1156b983b6e0c74f70b87ab23422b86cfb6fcb41 72588 disk-manager_21.10.13_all.deb
+ 762cadb36a6a67896d88dca0b8ea2a175dd436a1 8613 disk-manager_21.10.13_amd64.buildinfo
+Checksums-Sha256:
+ a3751731c21fb378121fbc5026a8d2f65c01e3f7e8de03c0921be52ba7046b2e 1638 disk-manager_21.10.13.dsc
+ 1d03c8a4e6f2e8fd0be3660e8f52501100d7602dc5d124f12cba5459c50abb23 331656 disk-manager_21.10.13.tar.xz
+ 0b409e8ca0bc105a07e299f298db7aaae782fcafe1cee8222468b3a282e142ff 72588 disk-manager_21.10.13_all.deb
+ a32b3294ae392d6becd26086d4ea4998a445a11e0a8410979b73bc70ea3b19e2 8613 disk-manager_21.10.13_amd64.buildinfo
+Files:
+ 3bd6cb8135f9ad5183a17ee6d28d0297 1638 admin optional disk-manager_21.10.13.dsc
+ f7729b186d3f46e1f3488500225a8196 331656 admin optional disk-manager_21.10.13.tar.xz
+ 74a38eb4676267d500d8426d6706b0c6 72588 admin optional disk-manager_21.10.13_all.deb
+ 24176143a3b4b6089edbd4e18e9c0b6a 8613 admin optional disk-manager_21.10.13_amd64.buildinfo
+
+-----BEGIN PGP SIGNATURE-----
+
+iQJHBAEBCgAxFiEEgRnC8/wKXRM2S0xLL1ePG6ydm+kFAmGVA7gTHGZlaGxpeEBt
+eGxpbnV4Lm9yZwAKCRAvV48brJ2b6e7SD/43Mgc6DFiC5FTBTWrisf2eW4d3eoRs
+A5ky8+8pji8DII8ajMMUcVPMnnEIOtr6kSzijHxnxHpJQSXHZZ7VtlTJkZigC9cq
+Cm4Va05Ieqk/vcXiSA4qMEfefGrGtf1ky9w3T5PK0RA4M/6Z81/SkUgqzpCApWf5
+idr6K8pFVBYd9xpSA7d6Hq8Am5ubNL8LHsMqmGdzL8O3TKQ15ONFwrNxF8wTOk7Q
+2sjLuyj4Lv0im19exGRkSQ6HyuQ3I4LAqDD62RjeZwXCI3FH5xc4dOJW9mlsuPmQ
+TvehqN/J+vdW+MKhYRxLC9AxTLwoe9hxXW3gcBeSxM2Pvme/d+PXH+rBvYjgRgjh
+9JJ3lCRaagtWq9vOH39pqBYTJuFcIaUgGUjzg2lDovbDNHFsEtOnVjrNgsaSFSwW
+cfBAlRqOBxalUe8W0D0YPSLiBCUSsK7BvOL87A5480OoQX0jVYBFbbc+aP+xc2ER
+MDzAlzzQkQhmKgyeMg25lwol8md1jZ/jFgZCg97cEpeb1nPDJ29gFSJB5u+ExeEv
+/lqMs3eL64uvn8mOKtiKDcKT6J1ULmGH2jYYOMEOO4ucKXyZ0p96rm8qyjzvD2oi
+jcFsWi0EJKp+kABBJ4n/MyaT9ODc962i2pbFmCiu1ufMZR0BpLQkizm/vAUG1zDb
+ednUi1eOOe3RiQ==
+=f7bP
+-----END PGP SIGNATURE-----
