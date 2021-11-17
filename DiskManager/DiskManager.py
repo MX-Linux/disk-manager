@@ -314,10 +314,10 @@ class DiskManager(SimpleGladeApp):
         user = get_user()
         
         cmd = "xdg-open %s" % help_url
-        if os.path.exists("/usr/bin/mx-viewer") :
-           cmd = "/usr/bin/mx-viewer %s disk-manager" % help_url
         if os.path.exists("/usr/bin/xlinks2") :
            cmd = "/usr/bin/xlinks2 %s" % help_url
+        if os.path.exists("/usr/bin/mx-viewer") :
+           cmd = "/usr/bin/mx-viewer %s disk-manager" % help_url
         if os.path.exists("/usr/bin/antix-viewer") :
            cmd = "/usr/bin/antix-viewer %s disk-manager" % help_url
 

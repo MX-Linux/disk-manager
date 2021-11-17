@@ -398,13 +398,13 @@ make[1]: Leaving directory '/tmpdir/merged_fehlix_development_disk-manager/BUILD
 	Normalized debian/disk-manager/usr/share/locale/pt_BR/LC_MESSAGES/disk-manager.mo
 	Normalized debian/disk-manager/usr/share/locale/pl/LC_MESSAGES/disk-manager.mo
 	Normalized debian/disk-manager/usr/share/locale/nb/LC_MESSAGES/disk-manager.mo
-	Normalized debian/disk-manager/usr/share/locale/el/LC_MESSAGES/disk-manager.mo
-	Normalized debian/disk-manager/usr/share/locale/de/LC_MESSAGES/disk-manager.mo
-	Normalized debian/disk-manager/usr/share/locale/da/LC_MESSAGES/disk-manager.mo
 	Normalized debian/disk-manager/usr/share/locale/it/LC_MESSAGES/disk-manager.mo
 	Normalized debian/disk-manager/usr/share/locale/fr/LC_MESSAGES/disk-manager.mo
 	Normalized debian/disk-manager/usr/share/locale/es/LC_MESSAGES/disk-manager.mo
 	Normalized debian/disk-manager/usr/share/locale/en_GB/LC_MESSAGES/disk-manager.mo
+	Normalized debian/disk-manager/usr/share/locale/el/LC_MESSAGES/disk-manager.mo
+	Normalized debian/disk-manager/usr/share/locale/de/LC_MESSAGES/disk-manager.mo
+	Normalized debian/disk-manager/usr/share/locale/da/LC_MESSAGES/disk-manager.mo
 	Normalized debian/disk-manager/usr/share/locale/zh_CN/LC_MESSAGES/disk-manager.mo
    dh_compress
    dh_fixperms

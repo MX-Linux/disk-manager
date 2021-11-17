@@ -18,35 +18,35 @@ Changes:
  .
    * add xlinks2 used in antiX
 Checksums-Sha1:
- 6365c8d711183502f4e55639fbd3346050252276 1638 disk-manager_21.10.14.dsc
- 78bf4d6e3a606fae78776f56781eb78a50fbdf17 539544 disk-manager_21.10.14.tar.xz
- 3778c819ca871912ac754d87f1ccad0278ed2790 72508 disk-manager_21.10.14_all.deb
- 82cebc6c1ae10e70d3e3de8fd515a846a606a5e4 8613 disk-manager_21.10.14_amd64.buildinfo
+ e9dc2d0201c68fbb0700ad0a7ac241bf4b384be7 1638 disk-manager_21.10.14.dsc
+ ad48ef15108a4f9642394f7788a4fddb3f63afc8 747512 disk-manager_21.10.14.tar.xz
+ c3f112374a65dbcca90ed65dcab278f1535d9ac2 72512 disk-manager_21.10.14_all.deb
+ ec212549e00ce79bbd552b1d4c0d6d458a86fd54 8613 disk-manager_21.10.14_amd64.buildinfo
 Checksums-Sha256:
- bbdd8ad1dd705c65a7dd74fe0a0445162a4d6855d02e23a65ba3faf923af9fa4 1638 disk-manager_21.10.14.dsc
- db72bc477e3417e7e51e500df5ae2962d9086011ce82ba95ee402d6979c6d60f 539544 disk-manager_21.10.14.tar.xz
- 3a5fda5fb170400e2d2232ce967310c1648e7e7d6c3563d4e2babf823cb372e0 72508 disk-manager_21.10.14_all.deb
- 402327bea5d5e109c3616a9c989cb6ba97307cf22413a76d7ebbcf144fa044bf 8613 disk-manager_21.10.14_amd64.buildinfo
+ f8258591f4848483c9b3ac936aeb98ce4bbcc05c00c259e4a0629d3fbcf2e9ef 1638 disk-manager_21.10.14.dsc
+ f9fd9d5431df1386d5aef2e31d7f208fdbd0294038ad2632e8cb8d8ee3104235 747512 disk-manager_21.10.14.tar.xz
+ c7a85104c280d7d8b5bdc1f8f9b60bb318a3fc8402ff091b0355b1f75793084d 72512 disk-manager_21.10.14_all.deb
+ bd6c6c43e6a3d72758c91386fa5d152fc98e4d36ff8b78dd4e2b329adfb2d36f 8613 disk-manager_21.10.14_amd64.buildinfo
 Files:
- 7a558a598f3d536bbfb3699d0d9ebd2b 1638 admin optional disk-manager_21.10.14.dsc
- ecc18ddf066fedde7c20a1bdb1cc97a5 539544 admin optional disk-manager_21.10.14.tar.xz
- fcaa61dc71953e6f3e08cb4f9bae445a 72508 admin optional disk-manager_21.10.14_all.deb
- c1952332029b82ee680783819698b7d5 8613 admin optional disk-manager_21.10.14_amd64.buildinfo
+ cbc14f4baa4f6ccabf23b3f75c0dae08 1638 admin optional disk-manager_21.10.14.dsc
+ fe15e46a5c2194e740f80e45b257e1b3 747512 admin optional disk-manager_21.10.14.tar.xz
+ 7edcf5fad64015ab90860ec0d08525ff 72512 admin optional disk-manager_21.10.14_all.deb
+ d7fd4077817f9e2f39758896ba5c9269 8613 admin optional disk-manager_21.10.14_amd64.buildinfo
 
 -----BEGIN PGP SIGNATURE-----
 
-iQJHBAEBCgAxFiEEgRnC8/wKXRM2S0xLL1ePG6ydm+kFAmGVWrkTHGZlaGxpeEBt
-eGxpbnV4Lm9yZwAKCRAvV48brJ2b6fuzD/9lJQrQ7dFEesBYiOvmrMvMJEmN8BlR
-9KWmcQJVk7NzGtBWvbvX51/6s59qjZC8mXoXF7iP01SZMXvMtfyG1ujT1JfeZH9O
-ettpwe1qTdnIHqENl++jmhsgicOzr6KrW24BkajkBXJIWlWDZ7QBksaDXzE60W+m
-dnRSYd+FHC7TRgp6weTe+8Ucvt7apik6EFGBLL108EgDybpDC6VXb17IlxsvBQCx
-np6q9/Me3o/acGJX8Y1CLu9OHpv+hupzbroB89nE4aNqQ9LCiz8zvGIaC5DWtazu
-8h4r+gl/F7TciEUuUA2PmmEz42mGeXOS5/uv7j7Mc7QQy66bXj7G4rAmamfCtW+6
-OQY7WUH0r+6nXuZAo3uasplvERAuwdpOiZQhOg1gB1tXh08LIq0w0yGfzu/p6eXQ
-phvbZOkDwYh3LeLy50JRD/FfVGT8ssQ4wIVtO+FQKY8g8iyt+cgOb8IzReqso0pI
-+vAqsmf3odEknktfSM/p9Qa8dRIaSd5NWWK7WHYX4Z3O5qXQN/jveIfRAb2VE5Ad
-+/AfmJHI8QRXzPp5XbFUubYHwZxv5GCH4QNOOw3jQE/bkuYThd/IZNTUUpfXjTuu
-xkpg5kGnPJ+jvHcpujnv52GcUwD4JyNuwymDu+zGg83iTIUM2Vlakn9/qGR5Znet
-n2E29aYF18twEA==
-=M9ZI
+iQJHBAEBCgAxFiEEgRnC8/wKXRM2S0xLL1ePG6ydm+kFAmGVXrATHGZlaGxpeEBt
+eGxpbnV4Lm9yZwAKCRAvV48brJ2b6XJiEACEFS4LSmo9ZB5QpebqJsWQM6eQbUiK
+aL1I3kNoWyYEY5Sbb9CM+Vyd7UVG/1Ec6y5jeumD5N5IqNC2KrMzNa65Y9rX4IId
+U2CrPRvLGICGM8tbvN7RXlQPCKHadMcOTkmmB9r8QvOGz3jwUuOUtmh+voinqVYY
+2D8T2FCJmaJaZQbT1oB0VBBk55IwfNaIeVZ5xkOZH0ZUh0teh6Ma03LSVkF/HTwr
+BXIoDp9j/+eja0zdyznfrBhwHgGInW4iUyo+p+AqcG1eD1YTn2Mx/39VWMBUKm9c
+46+LM3qsC/6wzODM42QvEu0aEj1XV9Qd0yLlwtlPsoQI7+lGbkFikSUwyhl9wFxc
+ZHgYazCKDkAqVMHnzGe0uk/ykxVZkgror9MKmIPFxTuTyVcUM/rOJVAvRdgkRxBM
+ZO4D3IptrXqr2tJA17BsJzje/rG1Eh2q0rYmybvM8/39ziMG2x4KZdzrWikytkR2
+2cSTYSRuAG8QKW4LLHP4B7tBWOXvSZw1eYH5Za4Ejvj6NPycUMIxgTz6kbi/CW7s
+qIfI2sL8LSfEJFkQZ+dt24MIrgzEJldGL1vzhdp4Wgs9vX5hc2NEVwQhcr6cCsvH
+pRQdpgJ8si1S4tx51BJ1pUNu8l0sabFoB+gURj0637sSAAfXCeSBQ0YrMgjVk0Ri
+dK4URevNkGFQqg==
+=buhZ
 -----END PGP SIGNATURE-----
