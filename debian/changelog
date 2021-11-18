@@ -1,3 +1,9 @@
+disk-manager (21.10.16) mx; urgency=medium
+
+  * fix fs driver detection for unloaded kernel modules
+
+ -- fehlix <fehlix@mxlinux.org>  Wed, 17 Nov 2021 20:14:37 -0500
+
 disk-manager (21.10.15) mx; urgency=medium
 
   * display disk-manager task bar icon
