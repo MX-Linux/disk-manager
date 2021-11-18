@@ -1,6 +1,3 @@
------BEGIN PGP SIGNED MESSAGE-----
-Hash: SHA512
-
 Format: 1.8
 Date: Thu, 18 Nov 2021 04:17:33 -0500
 Source: disk-manager
@@ -18,35 +15,17 @@ Changes:
  .
    * suppress stderr when checking for driver kernel module
 Checksums-Sha1:
- ada128f3086fe4024ac701bfa22fd82569b59746 1638 disk-manager_21.10.18.dsc
- 317eefa28e91f1f439a049e7e4d735cd67c45b42 332040 disk-manager_21.10.18.tar.xz
- 1d0514728538e704d3b602abd25385df1034ee94 72732 disk-manager_21.10.18_all.deb
- 5e9ca61a8d45543db427a22b159d2811430fb7e9 8613 disk-manager_21.10.18_amd64.buildinfo
+ cf0f74166c270cba63c00c033ad042fc934dbb29 726 disk-manager_21.10.18.dsc
+ 728e64190c86ece330e18b4e5ebd39f403a06248 540096 disk-manager_21.10.18.tar.xz
+ ad558aee3348d02f944d2bb476961a586b5884d7 72748 disk-manager_21.10.18_all.deb
+ 1c3e0f48d074bd16a7af488861e575c4b83656d7 7699 disk-manager_21.10.18_amd64.buildinfo
 Checksums-Sha256:
- a8eb3eb5c73d908d9c6fc4a6892444c55119969acafea65e07f45e199c3e40b8 1638 disk-manager_21.10.18.dsc
- f5559d076ffd6426ae9932d1d008f2de9e71c934c4cf2c06594823b510cf3bb1 332040 disk-manager_21.10.18.tar.xz
- dd7e6661308fd467953cd86d2189f470461cc1a61c67c0fdf75cce72b3d2652f 72732 disk-manager_21.10.18_all.deb
- 64ed276698c3bfda5f16944dac9b3ef9869f699de569aaad77fef439cbad924b 8613 disk-manager_21.10.18_amd64.buildinfo
+ 041868d144f64a464af712b212af8b5a1565311b51cab0003b5b4e3e057a8cb2 726 disk-manager_21.10.18.dsc
+ 61261c37e36ed205c6daaf25f319bfff6e63973c11636be21374dbe8bceea0e6 540096 disk-manager_21.10.18.tar.xz
+ 5e206ff108b9e28e0dc228a33578d9996f68c19620fb861d97e0495cd497de02 72748 disk-manager_21.10.18_all.deb
+ 2be59ed41ff8f44f53cf94136930055eac8c56d29b3ac825fa4614ebbfcd0448 7699 disk-manager_21.10.18_amd64.buildinfo
 Files:
- f3eb09b1304ca2b20cb28f9fb27c8a29 1638 admin optional disk-manager_21.10.18.dsc
- 2caa05304d3596ab4e8c8e642acc25b4 332040 admin optional disk-manager_21.10.18.tar.xz
- 8fed2bad36cbb94861c3788630ee2f66 72732 admin optional disk-manager_21.10.18_all.deb
- fb2034efb2c8d1a7a2ae1e914368c0b8 8613 admin optional disk-manager_21.10.18_amd64.buildinfo
-
------BEGIN PGP SIGNATURE-----
-
-iQJHBAEBCgAxFiEEgRnC8/wKXRM2S0xLL1ePG6ydm+kFAmGWMU0THGZlaGxpeEBt
-eGxpbnV4Lm9yZwAKCRAvV48brJ2b6bqMEACqdZw11tTHm/6IlNgQPcUh0+EKMGjy
-Mwv421xZ0+JUVBXqBaFVl6a2eCLZAjiIBf/S8tk5FBBz84EOloe2BWWPdwfB4twv
-kGDQhC+A7EWxNJ7WxuyrxfxLMP2yj0lf/iL2SlCInnLoIXu5DNqEqh3+sBmaiBou
-cpzgQ/uQibVBsAdgfiwhcuN3OSNkGkZNKIVmIhJehMgcklnuHjSmvrWtD5x+lrJN
-VlHTWM/r/jH32s56Cg/mw5gisNqzYLbjJA7ijM5OSg+EjgTGmMZI5fukEHrX9Pke
-9d+EhjUb7G6MGdT4yKQvOT9ONztHrAh09WNg2148G6rw87c1dGfFfHILPjJU46ZM
-XZf0bDKq/SlXyynkWJKGM+/KFoaPuwAglIkyqjff79tbVzRtKpe9Qi7Q0Z+bWYzN
-hbsmn2ai/RSvbIQWEMMP2myNY4IeP7QjzRhT4wkfek3bT9cSGd76baI4C7Qb281Y
-HUDmek4EkjAVKEFUigeLMPXSM54tPqadL8rPL+KuSP+X8SMRbctjrnlL2ZZ9A///
-hYH2AU4vcRL0eeA8QrgMeJGFKo6gUcUJG0sz+0RuFx+/slKd20muSPsV3v6YtBJh
-8UnwvRoG5BtEYRpG4evX+m05UkACsZoT+IxUkM6fIZ1+5TAohtWdUpnfXJq6rJQl
-XaKoBfJcGS+kIQ==
-=oXkQ
------END PGP SIGNATURE-----
+ a571cd9cf868dafb6ae7cdab6a2334ed 726 admin optional disk-manager_21.10.18.dsc
+ 0ccbfc2529790a0ae9ace3926c2d84a5 540096 admin optional disk-manager_21.10.18.tar.xz
+ 477a833ebd857d9540c7b84a6ccbcf5b 72748 admin optional disk-manager_21.10.18_all.deb
+ e497901a6afc458b7fc41410bd53436b 7699 admin optional disk-manager_21.10.18_amd64.buildinfo

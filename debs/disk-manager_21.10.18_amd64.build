@@ -1,18 +1,18 @@
- dpkg-buildpackage -us -uc -ui -sa
-dpkg-buildpackage: Information: Quellpaket disk-manager
-dpkg-buildpackage: Information: Quellversion 21.10.18
-dpkg-buildpackage: Information: Quelldistribution mx
-dpkg-buildpackage: Information: Quelle geändert durch fehlix <fehlix@mxlinux.org>
+ dpkg-buildpackage -us -uc -ui
+dpkg-buildpackage: info: source package disk-manager
+dpkg-buildpackage: info: source version 21.10.18
+dpkg-buildpackage: info: source distribution mx
+dpkg-buildpackage: info: source changed by fehlix <fehlix@mxlinux.org>
  dpkg-source --before-build .
-dpkg-buildpackage: Information: Host-Architektur amd64
+dpkg-buildpackage: info: host architecture amd64
  debian/rules clean
 dh clean \
 	--with python3
    dh_clean
  dpkg-source -b .
-dpkg-source: Information: Quellformat »3.0 (native)« wird verwendet
-dpkg-source: Information: disk-manager wird in disk-manager_21.10.18.tar.xz gebaut
-dpkg-source: Information: disk-manager wird in disk-manager_21.10.18.dsc gebaut
+dpkg-source: info: using source format '3.0 (native)'
+dpkg-source: info: building disk-manager in disk-manager_21.10.18.tar.xz
+dpkg-source: info: building disk-manager in disk-manager_21.10.18.dsc
  debian/rules binary
 dh binary \
 	--with python3
@@ -119,9 +119,9 @@ config.status: executing default-1 commands
 config.status: executing po/stamp-it commands
    dh_auto_build
 	make -j4
-make[1]: Verzeichnis „/tmpdir/merged_fehlix_development_disk-manager/BUILD/disk-manager“ wird betreten
+make[1]: Entering directory '/media/dataext/development/working/disk-manager/all'
 Making all in po
-make[2]: Verzeichnis „/tmpdir/merged_fehlix_development_disk-manager/BUILD/disk-manager/po“ wird betreten
+make[2]: Entering directory '/media/dataext/development/working/disk-manager/all/po'
 file=`echo da | sed 's,.*/,,'`.gmo \
   && rm -f $file && /usr/bin/msgfmt -o $file da.po
 file=`echo de | sed 's,.*/,,'`.gmo \
@@ -146,117 +146,117 @@ file=`echo sv | sed 's,.*/,,'`.gmo \
   && rm -f $file && /usr/bin/msgfmt -o $file sv.po
 file=`echo zh_CN | sed 's,.*/,,'`.gmo \
   && rm -f $file && /usr/bin/msgfmt -o $file zh_CN.po
-make[2]: Verzeichnis „/tmpdir/merged_fehlix_development_disk-manager/BUILD/disk-manager/po“ wird verlassen
+make[2]: Leaving directory '/media/dataext/development/working/disk-manager/all/po'
 Making all in data
-make[2]: Verzeichnis „/tmpdir/merged_fehlix_development_disk-manager/BUILD/disk-manager/data“ wird betreten
+make[2]: Entering directory '/media/dataext/development/working/disk-manager/all/data'
 Making all in icons
-make[3]: Verzeichnis „/tmpdir/merged_fehlix_development_disk-manager/BUILD/disk-manager/data/icons“ wird betreten
+make[3]: Entering directory '/media/dataext/development/working/disk-manager/all/data/icons'
 Making all in 16x16
-make[4]: Verzeichnis „/tmpdir/merged_fehlix_development_disk-manager/BUILD/disk-manager/data/icons/16x16“ wird betreten
-make[4]: Für das Ziel „all“ ist nichts zu tun.
-make[4]: Verzeichnis „/tmpdir/merged_fehlix_development_disk-manager/BUILD/disk-manager/data/icons/16x16“ wird verlassen
+make[4]: Entering directory '/media/dataext/development/working/disk-manager/all/data/icons/16x16'
+make[4]: Nothing to be done for 'all'.
+make[4]: Leaving directory '/media/dataext/development/working/disk-manager/all/data/icons/16x16'
 Making all in 22x22
-make[4]: Verzeichnis „/tmpdir/merged_fehlix_development_disk-manager/BUILD/disk-manager/data/icons/22x22“ wird betreten
-make[4]: Für das Ziel „all“ ist nichts zu tun.
-make[4]: Verzeichnis „/tmpdir/merged_fehlix_development_disk-manager/BUILD/disk-manager/data/icons/22x22“ wird verlassen
+make[4]: Entering directory '/media/dataext/development/working/disk-manager/all/data/icons/22x22'
+make[4]: Nothing to be done for 'all'.
+make[4]: Leaving directory '/media/dataext/development/working/disk-manager/all/data/icons/22x22'
 Making all in 24x24
-make[4]: Verzeichnis „/tmpdir/merged_fehlix_development_disk-manager/BUILD/disk-manager/data/icons/24x24“ wird betreten
-make[4]: Für das Ziel „all“ ist nichts zu tun.
-make[4]: Verzeichnis „/tmpdir/merged_fehlix_development_disk-manager/BUILD/disk-manager/data/icons/24x24“ wird verlassen
+make[4]: Entering directory '/media/dataext/development/working/disk-manager/all/data/icons/24x24'
+make[4]: Nothing to be done for 'all'.
+make[4]: Leaving directory '/media/dataext/development/working/disk-manager/all/data/icons/24x24'
 Making all in scalable
-make[4]: Verzeichnis „/tmpdir/merged_fehlix_development_disk-manager/BUILD/disk-manager/data/icons/scalable“ wird betreten
-make[4]: Für das Ziel „all“ ist nichts zu tun.
-make[4]: Verzeichnis „/tmpdir/merged_fehlix_development_disk-manager/BUILD/disk-manager/data/icons/scalable“ wird verlassen
-make[4]: Verzeichnis „/tmpdir/merged_fehlix_development_disk-manager/BUILD/disk-manager/data/icons“ wird betreten
-make[4]: Für das Ziel „all-am“ ist nichts zu tun.
-make[4]: Verzeichnis „/tmpdir/merged_fehlix_development_disk-manager/BUILD/disk-manager/data/icons“ wird verlassen
-make[3]: Verzeichnis „/tmpdir/merged_fehlix_development_disk-manager/BUILD/disk-manager/data/icons“ wird verlassen
-make[3]: Verzeichnis „/tmpdir/merged_fehlix_development_disk-manager/BUILD/disk-manager/data“ wird betreten
+make[4]: Entering directory '/media/dataext/development/working/disk-manager/all/data/icons/scalable'
+make[4]: Nothing to be done for 'all'.
+make[4]: Leaving directory '/media/dataext/development/working/disk-manager/all/data/icons/scalable'
+make[4]: Entering directory '/media/dataext/development/working/disk-manager/all/data/icons'
+make[4]: Nothing to be done for 'all-am'.
+make[4]: Leaving directory '/media/dataext/development/working/disk-manager/all/data/icons'
+make[3]: Leaving directory '/media/dataext/development/working/disk-manager/all/data/icons'
+make[3]: Entering directory '/media/dataext/development/working/disk-manager/all/data'
 LC_ALL=C /usr/bin/intltool-merge  -d -u -c ../po/.intltool-merge-cache ../po disk-manager.desktop.in disk-manager.desktop
 Generating and caching the translation database
 Merging translations into disk-manager.desktop.
-make[3]: Verzeichnis „/tmpdir/merged_fehlix_development_disk-manager/BUILD/disk-manager/data“ wird verlassen
-make[2]: Verzeichnis „/tmpdir/merged_fehlix_development_disk-manager/BUILD/disk-manager/data“ wird verlassen
+make[3]: Leaving directory '/media/dataext/development/working/disk-manager/all/data'
+make[2]: Leaving directory '/media/dataext/development/working/disk-manager/all/data'
 Making all in DiskManager
-make[2]: Verzeichnis „/tmpdir/merged_fehlix_development_disk-manager/BUILD/disk-manager/DiskManager“ wird betreten
+make[2]: Entering directory '/media/dataext/development/working/disk-manager/all/DiskManager'
 Making all in Fstab
-make[3]: Verzeichnis „/tmpdir/merged_fehlix_development_disk-manager/BUILD/disk-manager/DiskManager/Fstab“ wird betreten
-make[3]: Für das Ziel „all“ ist nichts zu tun.
-make[3]: Verzeichnis „/tmpdir/merged_fehlix_development_disk-manager/BUILD/disk-manager/DiskManager/Fstab“ wird verlassen
-make[3]: Verzeichnis „/tmpdir/merged_fehlix_development_disk-manager/BUILD/disk-manager/DiskManager“ wird betreten
-make[3]: Für das Ziel „all-am“ ist nichts zu tun.
-make[3]: Verzeichnis „/tmpdir/merged_fehlix_development_disk-manager/BUILD/disk-manager/DiskManager“ wird verlassen
-make[2]: Verzeichnis „/tmpdir/merged_fehlix_development_disk-manager/BUILD/disk-manager/DiskManager“ wird verlassen
-make[2]: Verzeichnis „/tmpdir/merged_fehlix_development_disk-manager/BUILD/disk-manager“ wird betreten
-make[2]: Für das Ziel „all-am“ ist nichts zu tun.
-make[2]: Verzeichnis „/tmpdir/merged_fehlix_development_disk-manager/BUILD/disk-manager“ wird verlassen
-make[1]: Verzeichnis „/tmpdir/merged_fehlix_development_disk-manager/BUILD/disk-manager“ wird verlassen
+make[3]: Entering directory '/media/dataext/development/working/disk-manager/all/DiskManager/Fstab'
+make[3]: Nothing to be done for 'all'.
+make[3]: Leaving directory '/media/dataext/development/working/disk-manager/all/DiskManager/Fstab'
+make[3]: Entering directory '/media/dataext/development/working/disk-manager/all/DiskManager'
+make[3]: Nothing to be done for 'all-am'.
+make[3]: Leaving directory '/media/dataext/development/working/disk-manager/all/DiskManager'
+make[2]: Leaving directory '/media/dataext/development/working/disk-manager/all/DiskManager'
+make[2]: Entering directory '/media/dataext/development/working/disk-manager/all'
+make[2]: Nothing to be done for 'all-am'.
+make[2]: Leaving directory '/media/dataext/development/working/disk-manager/all'
+make[1]: Leaving directory '/media/dataext/development/working/disk-manager/all'
    dh_auto_test
 	make -j4 check VERBOSE=1
-make[1]: Verzeichnis „/tmpdir/merged_fehlix_development_disk-manager/BUILD/disk-manager“ wird betreten
+make[1]: Entering directory '/media/dataext/development/working/disk-manager/all'
 Making check in po
-make[2]: Verzeichnis „/tmpdir/merged_fehlix_development_disk-manager/BUILD/disk-manager/po“ wird betreten
+make[2]: Entering directory '/media/dataext/development/working/disk-manager/all/po'
 INTLTOOL_EXTRACT=/usr/bin/intltool-extract srcdir=. /usr/bin/intltool-update --gettext-package disk-manager --pot
 rm -f missing notexist
 srcdir=. /usr/bin/intltool-update -m
 if [ -r missing -o -r notexist ]; then \
   exit 1; \
 fi
-make[2]: Verzeichnis „/tmpdir/merged_fehlix_development_disk-manager/BUILD/disk-manager/po“ wird verlassen
+make[2]: Leaving directory '/media/dataext/development/working/disk-manager/all/po'
 Making check in data
-make[2]: Verzeichnis „/tmpdir/merged_fehlix_development_disk-manager/BUILD/disk-manager/data“ wird betreten
+make[2]: Entering directory '/media/dataext/development/working/disk-manager/all/data'
 Making check in icons
-make[3]: Verzeichnis „/tmpdir/merged_fehlix_development_disk-manager/BUILD/disk-manager/data/icons“ wird betreten
+make[3]: Entering directory '/media/dataext/development/working/disk-manager/all/data/icons'
 Making check in 16x16
-make[4]: Verzeichnis „/tmpdir/merged_fehlix_development_disk-manager/BUILD/disk-manager/data/icons/16x16“ wird betreten
-make[4]: Für das Ziel „check“ ist nichts zu tun.
-make[4]: Verzeichnis „/tmpdir/merged_fehlix_development_disk-manager/BUILD/disk-manager/data/icons/16x16“ wird verlassen
+make[4]: Entering directory '/media/dataext/development/working/disk-manager/all/data/icons/16x16'
+make[4]: Nothing to be done for 'check'.
+make[4]: Leaving directory '/media/dataext/development/working/disk-manager/all/data/icons/16x16'
 Making check in 22x22
-make[4]: Verzeichnis „/tmpdir/merged_fehlix_development_disk-manager/BUILD/disk-manager/data/icons/22x22“ wird betreten
-make[4]: Für das Ziel „check“ ist nichts zu tun.
-make[4]: Verzeichnis „/tmpdir/merged_fehlix_development_disk-manager/BUILD/disk-manager/data/icons/22x22“ wird verlassen
+make[4]: Entering directory '/media/dataext/development/working/disk-manager/all/data/icons/22x22'
+make[4]: Nothing to be done for 'check'.
+make[4]: Leaving directory '/media/dataext/development/working/disk-manager/all/data/icons/22x22'
 Making check in 24x24
-make[4]: Verzeichnis „/tmpdir/merged_fehlix_development_disk-manager/BUILD/disk-manager/data/icons/24x24“ wird betreten
-make[4]: Für das Ziel „check“ ist nichts zu tun.
-make[4]: Verzeichnis „/tmpdir/merged_fehlix_development_disk-manager/BUILD/disk-manager/data/icons/24x24“ wird verlassen
+make[4]: Entering directory '/media/dataext/development/working/disk-manager/all/data/icons/24x24'
+make[4]: Nothing to be done for 'check'.
+make[4]: Leaving directory '/media/dataext/development/working/disk-manager/all/data/icons/24x24'
 Making check in scalable
-make[4]: Verzeichnis „/tmpdir/merged_fehlix_development_disk-manager/BUILD/disk-manager/data/icons/scalable“ wird betreten
-make[4]: Für das Ziel „check“ ist nichts zu tun.
-make[4]: Verzeichnis „/tmpdir/merged_fehlix_development_disk-manager/BUILD/disk-manager/data/icons/scalable“ wird verlassen
-make[4]: Verzeichnis „/tmpdir/merged_fehlix_development_disk-manager/BUILD/disk-manager/data/icons“ wird betreten
-make[4]: Für das Ziel „check-am“ ist nichts zu tun.
-make[4]: Verzeichnis „/tmpdir/merged_fehlix_development_disk-manager/BUILD/disk-manager/data/icons“ wird verlassen
-make[3]: Verzeichnis „/tmpdir/merged_fehlix_development_disk-manager/BUILD/disk-manager/data/icons“ wird verlassen
-make[3]: Verzeichnis „/tmpdir/merged_fehlix_development_disk-manager/BUILD/disk-manager/data“ wird betreten
-make[3]: Für das Ziel „check-am“ ist nichts zu tun.
-make[3]: Verzeichnis „/tmpdir/merged_fehlix_development_disk-manager/BUILD/disk-manager/data“ wird verlassen
-make[2]: Verzeichnis „/tmpdir/merged_fehlix_development_disk-manager/BUILD/disk-manager/data“ wird verlassen
+make[4]: Entering directory '/media/dataext/development/working/disk-manager/all/data/icons/scalable'
+make[4]: Nothing to be done for 'check'.
+make[4]: Leaving directory '/media/dataext/development/working/disk-manager/all/data/icons/scalable'
+make[4]: Entering directory '/media/dataext/development/working/disk-manager/all/data/icons'
+make[4]: Nothing to be done for 'check-am'.
+make[4]: Leaving directory '/media/dataext/development/working/disk-manager/all/data/icons'
+make[3]: Leaving directory '/media/dataext/development/working/disk-manager/all/data/icons'
+make[3]: Entering directory '/media/dataext/development/working/disk-manager/all/data'
+make[3]: Nothing to be done for 'check-am'.
+make[3]: Leaving directory '/media/dataext/development/working/disk-manager/all/data'
+make[2]: Leaving directory '/media/dataext/development/working/disk-manager/all/data'
 Making check in DiskManager
-make[2]: Verzeichnis „/tmpdir/merged_fehlix_development_disk-manager/BUILD/disk-manager/DiskManager“ wird betreten
+make[2]: Entering directory '/media/dataext/development/working/disk-manager/all/DiskManager'
 Making check in Fstab
-make[3]: Verzeichnis „/tmpdir/merged_fehlix_development_disk-manager/BUILD/disk-manager/DiskManager/Fstab“ wird betreten
-make[3]: Für das Ziel „check“ ist nichts zu tun.
-make[3]: Verzeichnis „/tmpdir/merged_fehlix_development_disk-manager/BUILD/disk-manager/DiskManager/Fstab“ wird verlassen
-make[3]: Verzeichnis „/tmpdir/merged_fehlix_development_disk-manager/BUILD/disk-manager/DiskManager“ wird betreten
-make[3]: Für das Ziel „check-am“ ist nichts zu tun.
-make[3]: Verzeichnis „/tmpdir/merged_fehlix_development_disk-manager/BUILD/disk-manager/DiskManager“ wird verlassen
-make[2]: Verzeichnis „/tmpdir/merged_fehlix_development_disk-manager/BUILD/disk-manager/DiskManager“ wird verlassen
-make[2]: Verzeichnis „/tmpdir/merged_fehlix_development_disk-manager/BUILD/disk-manager“ wird betreten
-make[2]: Für das Ziel „check-am“ ist nichts zu tun.
-make[2]: Verzeichnis „/tmpdir/merged_fehlix_development_disk-manager/BUILD/disk-manager“ wird verlassen
-make[1]: Verzeichnis „/tmpdir/merged_fehlix_development_disk-manager/BUILD/disk-manager“ wird verlassen
+make[3]: Entering directory '/media/dataext/development/working/disk-manager/all/DiskManager/Fstab'
+make[3]: Nothing to be done for 'check'.
+make[3]: Leaving directory '/media/dataext/development/working/disk-manager/all/DiskManager/Fstab'
+make[3]: Entering directory '/media/dataext/development/working/disk-manager/all/DiskManager'
+make[3]: Nothing to be done for 'check-am'.
+make[3]: Leaving directory '/media/dataext/development/working/disk-manager/all/DiskManager'
+make[2]: Leaving directory '/media/dataext/development/working/disk-manager/all/DiskManager'
+make[2]: Entering directory '/media/dataext/development/working/disk-manager/all'
+make[2]: Nothing to be done for 'check-am'.
+make[2]: Leaving directory '/media/dataext/development/working/disk-manager/all'
+make[1]: Leaving directory '/media/dataext/development/working/disk-manager/all'
    create-stamp debian/debhelper-build-stamp
    dh_prep
    dh_auto_install
-	make -j4 install DESTDIR=/tmpdir/merged_fehlix_development_disk-manager/BUILD/disk-manager/debian/disk-manager AM_UPDATE_INFO_DIR=no
-make[1]: Verzeichnis „/tmpdir/merged_fehlix_development_disk-manager/BUILD/disk-manager“ wird betreten
+	make -j4 install DESTDIR=/media/dataext/development/working/disk-manager/all/debian/disk-manager AM_UPDATE_INFO_DIR=no
+make[1]: Entering directory '/media/dataext/development/working/disk-manager/all'
 Making install in po
-make[2]: Verzeichnis „/tmpdir/merged_fehlix_development_disk-manager/BUILD/disk-manager/po“ wird betreten
-/bin/sh /tmpdir/merged_fehlix_development_disk-manager/BUILD/disk-manager/install-sh -d /tmpdir/merged_fehlix_development_disk-manager/BUILD/disk-manager/debian/disk-manager/usr/share/locale
+make[2]: Entering directory '/media/dataext/development/working/disk-manager/all/po'
+/bin/sh /media/dataext/development/working/disk-manager/all/install-sh -d /media/dataext/development/working/disk-manager/all/debian/disk-manager/usr/share/locale
 linguas="da de el en_GB es fr it nb pl pt_BR sv zh_CN "; \
 for lang in $linguas; do \
-  dir=/tmpdir/merged_fehlix_development_disk-manager/BUILD/disk-manager/debian/disk-manager/usr/share/locale/$lang/LC_MESSAGES; \
-  /bin/sh /tmpdir/merged_fehlix_development_disk-manager/BUILD/disk-manager/install-sh -d $dir; \
+  dir=/media/dataext/development/working/disk-manager/all/debian/disk-manager/usr/share/locale/$lang/LC_MESSAGES; \
+  /bin/sh /media/dataext/development/working/disk-manager/all/install-sh -d $dir; \
   if test -r $lang.gmo; then \
     /usr/bin/install -c -m 644 $lang.gmo $dir/disk-manager.mo; \
     echo "installing $lang.gmo as $dir/disk-manager.mo"; \
@@ -279,112 +279,112 @@ for lang in $linguas; do \
     fi; \
   fi; \
 done
-installing da.gmo as /tmpdir/merged_fehlix_development_disk-manager/BUILD/disk-manager/debian/disk-manager/usr/share/locale/da/LC_MESSAGES/disk-manager.mo
-installing de.gmo as /tmpdir/merged_fehlix_development_disk-manager/BUILD/disk-manager/debian/disk-manager/usr/share/locale/de/LC_MESSAGES/disk-manager.mo
-installing el.gmo as /tmpdir/merged_fehlix_development_disk-manager/BUILD/disk-manager/debian/disk-manager/usr/share/locale/el/LC_MESSAGES/disk-manager.mo
-installing en_GB.gmo as /tmpdir/merged_fehlix_development_disk-manager/BUILD/disk-manager/debian/disk-manager/usr/share/locale/en_GB/LC_MESSAGES/disk-manager.mo
-installing es.gmo as /tmpdir/merged_fehlix_development_disk-manager/BUILD/disk-manager/debian/disk-manager/usr/share/locale/es/LC_MESSAGES/disk-manager.mo
-installing fr.gmo as /tmpdir/merged_fehlix_development_disk-manager/BUILD/disk-manager/debian/disk-manager/usr/share/locale/fr/LC_MESSAGES/disk-manager.mo
-installing it.gmo as /tmpdir/merged_fehlix_development_disk-manager/BUILD/disk-manager/debian/disk-manager/usr/share/locale/it/LC_MESSAGES/disk-manager.mo
-installing nb.gmo as /tmpdir/merged_fehlix_development_disk-manager/BUILD/disk-manager/debian/disk-manager/usr/share/locale/nb/LC_MESSAGES/disk-manager.mo
-installing pl.gmo as /tmpdir/merged_fehlix_development_disk-manager/BUILD/disk-manager/debian/disk-manager/usr/share/locale/pl/LC_MESSAGES/disk-manager.mo
-installing pt_BR.gmo as /tmpdir/merged_fehlix_development_disk-manager/BUILD/disk-manager/debian/disk-manager/usr/share/locale/pt_BR/LC_MESSAGES/disk-manager.mo
-installing sv.gmo as /tmpdir/merged_fehlix_development_disk-manager/BUILD/disk-manager/debian/disk-manager/usr/share/locale/sv/LC_MESSAGES/disk-manager.mo
-installing zh_CN.gmo as /tmpdir/merged_fehlix_development_disk-manager/BUILD/disk-manager/debian/disk-manager/usr/share/locale/zh_CN/LC_MESSAGES/disk-manager.mo
-make[2]: Verzeichnis „/tmpdir/merged_fehlix_development_disk-manager/BUILD/disk-manager/po“ wird verlassen
+installing da.gmo as /media/dataext/development/working/disk-manager/all/debian/disk-manager/usr/share/locale/da/LC_MESSAGES/disk-manager.mo
+installing de.gmo as /media/dataext/development/working/disk-manager/all/debian/disk-manager/usr/share/locale/de/LC_MESSAGES/disk-manager.mo
+installing el.gmo as /media/dataext/development/working/disk-manager/all/debian/disk-manager/usr/share/locale/el/LC_MESSAGES/disk-manager.mo
+installing en_GB.gmo as /media/dataext/development/working/disk-manager/all/debian/disk-manager/usr/share/locale/en_GB/LC_MESSAGES/disk-manager.mo
+installing es.gmo as /media/dataext/development/working/disk-manager/all/debian/disk-manager/usr/share/locale/es/LC_MESSAGES/disk-manager.mo
+installing fr.gmo as /media/dataext/development/working/disk-manager/all/debian/disk-manager/usr/share/locale/fr/LC_MESSAGES/disk-manager.mo
+installing it.gmo as /media/dataext/development/working/disk-manager/all/debian/disk-manager/usr/share/locale/it/LC_MESSAGES/disk-manager.mo
+installing nb.gmo as /media/dataext/development/working/disk-manager/all/debian/disk-manager/usr/share/locale/nb/LC_MESSAGES/disk-manager.mo
+installing pl.gmo as /media/dataext/development/working/disk-manager/all/debian/disk-manager/usr/share/locale/pl/LC_MESSAGES/disk-manager.mo
+installing pt_BR.gmo as /media/dataext/development/working/disk-manager/all/debian/disk-manager/usr/share/locale/pt_BR/LC_MESSAGES/disk-manager.mo
+installing sv.gmo as /media/dataext/development/working/disk-manager/all/debian/disk-manager/usr/share/locale/sv/LC_MESSAGES/disk-manager.mo
+installing zh_CN.gmo as /media/dataext/development/working/disk-manager/all/debian/disk-manager/usr/share/locale/zh_CN/LC_MESSAGES/disk-manager.mo
+make[2]: Leaving directory '/media/dataext/development/working/disk-manager/all/po'
 Making install in data
-make[2]: Verzeichnis „/tmpdir/merged_fehlix_development_disk-manager/BUILD/disk-manager/data“ wird betreten
+make[2]: Entering directory '/media/dataext/development/working/disk-manager/all/data'
 Making install in icons
-make[3]: Verzeichnis „/tmpdir/merged_fehlix_development_disk-manager/BUILD/disk-manager/data/icons“ wird betreten
+make[3]: Entering directory '/media/dataext/development/working/disk-manager/all/data/icons'
 Making install in 16x16
-make[4]: Verzeichnis „/tmpdir/merged_fehlix_development_disk-manager/BUILD/disk-manager/data/icons/16x16“ wird betreten
-make[5]: Verzeichnis „/tmpdir/merged_fehlix_development_disk-manager/BUILD/disk-manager/data/icons/16x16“ wird betreten
-make[5]: Für das Ziel „install-exec-am“ ist nichts zu tun.
- /usr/bin/mkdir -p '/tmpdir/merged_fehlix_development_disk-manager/BUILD/disk-manager/debian/disk-manager/usr/share/icons/hicolor/16x16/apps'
- /usr/bin/install -c -m 644 disk-manager.png '/tmpdir/merged_fehlix_development_disk-manager/BUILD/disk-manager/debian/disk-manager/usr/share/icons/hicolor/16x16/apps'
-make[5]: Verzeichnis „/tmpdir/merged_fehlix_development_disk-manager/BUILD/disk-manager/data/icons/16x16“ wird verlassen
-make[4]: Verzeichnis „/tmpdir/merged_fehlix_development_disk-manager/BUILD/disk-manager/data/icons/16x16“ wird verlassen
+make[4]: Entering directory '/media/dataext/development/working/disk-manager/all/data/icons/16x16'
+make[5]: Entering directory '/media/dataext/development/working/disk-manager/all/data/icons/16x16'
+make[5]: Nothing to be done for 'install-exec-am'.
+ /usr/bin/mkdir -p '/media/dataext/development/working/disk-manager/all/debian/disk-manager/usr/share/icons/hicolor/16x16/apps'
+ /usr/bin/install -c -m 644 disk-manager.png '/media/dataext/development/working/disk-manager/all/debian/disk-manager/usr/share/icons/hicolor/16x16/apps'
+make[5]: Leaving directory '/media/dataext/development/working/disk-manager/all/data/icons/16x16'
+make[4]: Leaving directory '/media/dataext/development/working/disk-manager/all/data/icons/16x16'
 Making install in 22x22
-make[4]: Verzeichnis „/tmpdir/merged_fehlix_development_disk-manager/BUILD/disk-manager/data/icons/22x22“ wird betreten
-make[5]: Verzeichnis „/tmpdir/merged_fehlix_development_disk-manager/BUILD/disk-manager/data/icons/22x22“ wird betreten
-make[5]: Für das Ziel „install-exec-am“ ist nichts zu tun.
- /usr/bin/mkdir -p '/tmpdir/merged_fehlix_development_disk-manager/BUILD/disk-manager/debian/disk-manager/usr/share/icons/hicolor/22x22/apps'
- /usr/bin/install -c -m 644 disk-manager.png '/tmpdir/merged_fehlix_development_disk-manager/BUILD/disk-manager/debian/disk-manager/usr/share/icons/hicolor/22x22/apps'
-make[5]: Verzeichnis „/tmpdir/merged_fehlix_development_disk-manager/BUILD/disk-manager/data/icons/22x22“ wird verlassen
-make[4]: Verzeichnis „/tmpdir/merged_fehlix_development_disk-manager/BUILD/disk-manager/data/icons/22x22“ wird verlassen
+make[4]: Entering directory '/media/dataext/development/working/disk-manager/all/data/icons/22x22'
+make[5]: Entering directory '/media/dataext/development/working/disk-manager/all/data/icons/22x22'
+make[5]: Nothing to be done for 'install-exec-am'.
+ /usr/bin/mkdir -p '/media/dataext/development/working/disk-manager/all/debian/disk-manager/usr/share/icons/hicolor/22x22/apps'
+ /usr/bin/install -c -m 644 disk-manager.png '/media/dataext/development/working/disk-manager/all/debian/disk-manager/usr/share/icons/hicolor/22x22/apps'
+make[5]: Leaving directory '/media/dataext/development/working/disk-manager/all/data/icons/22x22'
+make[4]: Leaving directory '/media/dataext/development/working/disk-manager/all/data/icons/22x22'
 Making install in 24x24
-make[4]: Verzeichnis „/tmpdir/merged_fehlix_development_disk-manager/BUILD/disk-manager/data/icons/24x24“ wird betreten
-make[5]: Verzeichnis „/tmpdir/merged_fehlix_development_disk-manager/BUILD/disk-manager/data/icons/24x24“ wird betreten
-make[5]: Für das Ziel „install-exec-am“ ist nichts zu tun.
- /usr/bin/mkdir -p '/tmpdir/merged_fehlix_development_disk-manager/BUILD/disk-manager/debian/disk-manager/usr/share/icons/hicolor/24x24/apps'
- /usr/bin/install -c -m 644 disk-manager.png '/tmpdir/merged_fehlix_development_disk-manager/BUILD/disk-manager/debian/disk-manager/usr/share/icons/hicolor/24x24/apps'
-make[5]: Verzeichnis „/tmpdir/merged_fehlix_development_disk-manager/BUILD/disk-manager/data/icons/24x24“ wird verlassen
-make[4]: Verzeichnis „/tmpdir/merged_fehlix_development_disk-manager/BUILD/disk-manager/data/icons/24x24“ wird verlassen
+make[4]: Entering directory '/media/dataext/development/working/disk-manager/all/data/icons/24x24'
+make[5]: Entering directory '/media/dataext/development/working/disk-manager/all/data/icons/24x24'
+make[5]: Nothing to be done for 'install-exec-am'.
+ /usr/bin/mkdir -p '/media/dataext/development/working/disk-manager/all/debian/disk-manager/usr/share/icons/hicolor/24x24/apps'
+ /usr/bin/install -c -m 644 disk-manager.png '/media/dataext/development/working/disk-manager/all/debian/disk-manager/usr/share/icons/hicolor/24x24/apps'
+make[5]: Leaving directory '/media/dataext/development/working/disk-manager/all/data/icons/24x24'
+make[4]: Leaving directory '/media/dataext/development/working/disk-manager/all/data/icons/24x24'
 Making install in scalable
-make[4]: Verzeichnis „/tmpdir/merged_fehlix_development_disk-manager/BUILD/disk-manager/data/icons/scalable“ wird betreten
-make[5]: Verzeichnis „/tmpdir/merged_fehlix_development_disk-manager/BUILD/disk-manager/data/icons/scalable“ wird betreten
-make[5]: Für das Ziel „install-exec-am“ ist nichts zu tun.
- /usr/bin/mkdir -p '/tmpdir/merged_fehlix_development_disk-manager/BUILD/disk-manager/debian/disk-manager/usr/share/icons/hicolor/scalable/apps'
- /usr/bin/install -c -m 644 disk-manager.svg '/tmpdir/merged_fehlix_development_disk-manager/BUILD/disk-manager/debian/disk-manager/usr/share/icons/hicolor/scalable/apps'
-make[5]: Verzeichnis „/tmpdir/merged_fehlix_development_disk-manager/BUILD/disk-manager/data/icons/scalable“ wird verlassen
-make[4]: Verzeichnis „/tmpdir/merged_fehlix_development_disk-manager/BUILD/disk-manager/data/icons/scalable“ wird verlassen
-make[4]: Verzeichnis „/tmpdir/merged_fehlix_development_disk-manager/BUILD/disk-manager/data/icons“ wird betreten
-make[5]: Verzeichnis „/tmpdir/merged_fehlix_development_disk-manager/BUILD/disk-manager/data/icons“ wird betreten
-make[5]: Für das Ziel „install-exec-am“ ist nichts zu tun.
+make[4]: Entering directory '/media/dataext/development/working/disk-manager/all/data/icons/scalable'
+make[5]: Entering directory '/media/dataext/development/working/disk-manager/all/data/icons/scalable'
+make[5]: Nothing to be done for 'install-exec-am'.
+ /usr/bin/mkdir -p '/media/dataext/development/working/disk-manager/all/debian/disk-manager/usr/share/icons/hicolor/scalable/apps'
+ /usr/bin/install -c -m 644 disk-manager.svg '/media/dataext/development/working/disk-manager/all/debian/disk-manager/usr/share/icons/hicolor/scalable/apps'
+make[5]: Leaving directory '/media/dataext/development/working/disk-manager/all/data/icons/scalable'
+make[4]: Leaving directory '/media/dataext/development/working/disk-manager/all/data/icons/scalable'
+make[4]: Entering directory '/media/dataext/development/working/disk-manager/all/data/icons'
+make[5]: Entering directory '/media/dataext/development/working/disk-manager/all/data/icons'
+make[5]: Nothing to be done for 'install-exec-am'.
 make  install-data-hook
-make[6]: Verzeichnis „/tmpdir/merged_fehlix_development_disk-manager/BUILD/disk-manager/data/icons“ wird betreten
+make[6]: Entering directory '/media/dataext/development/working/disk-manager/all/data/icons'
 *** Icon cache not updated.  After install, run this:
 ***   gtk-update-icon-cache -f -t /usr/share/icons/hicolor
-make[6]: Verzeichnis „/tmpdir/merged_fehlix_development_disk-manager/BUILD/disk-manager/data/icons“ wird verlassen
-make[5]: Verzeichnis „/tmpdir/merged_fehlix_development_disk-manager/BUILD/disk-manager/data/icons“ wird verlassen
-make[4]: Verzeichnis „/tmpdir/merged_fehlix_development_disk-manager/BUILD/disk-manager/data/icons“ wird verlassen
-make[3]: Verzeichnis „/tmpdir/merged_fehlix_development_disk-manager/BUILD/disk-manager/data/icons“ wird verlassen
-make[3]: Verzeichnis „/tmpdir/merged_fehlix_development_disk-manager/BUILD/disk-manager/data“ wird betreten
-make[4]: Verzeichnis „/tmpdir/merged_fehlix_development_disk-manager/BUILD/disk-manager/data“ wird betreten
-make[4]: Für das Ziel „install-exec-am“ ist nichts zu tun.
- /usr/bin/mkdir -p '/tmpdir/merged_fehlix_development_disk-manager/BUILD/disk-manager/debian/disk-manager/usr/share/applications'
- /usr/bin/mkdir -p '/tmpdir/merged_fehlix_development_disk-manager/BUILD/disk-manager/debian/disk-manager/usr/share/disk-manager'
- /usr/bin/mkdir -p '/tmpdir/merged_fehlix_development_disk-manager/BUILD/disk-manager/debian/disk-manager/usr/share/man/man8'
- /usr/bin/install -c -m 644 disk-manager.desktop '/tmpdir/merged_fehlix_development_disk-manager/BUILD/disk-manager/debian/disk-manager/usr/share/applications'
- /usr/bin/install -c -m 644 disk-manager.glade write-policy.fdi ro-policy.fdi '/tmpdir/merged_fehlix_development_disk-manager/BUILD/disk-manager/debian/disk-manager/usr/share/disk-manager'
- /usr/bin/install -c -m 644 disk-manager.8 '/tmpdir/merged_fehlix_development_disk-manager/BUILD/disk-manager/debian/disk-manager/usr/share/man/man8'
-make[4]: Verzeichnis „/tmpdir/merged_fehlix_development_disk-manager/BUILD/disk-manager/data“ wird verlassen
-make[3]: Verzeichnis „/tmpdir/merged_fehlix_development_disk-manager/BUILD/disk-manager/data“ wird verlassen
-make[2]: Verzeichnis „/tmpdir/merged_fehlix_development_disk-manager/BUILD/disk-manager/data“ wird verlassen
+make[6]: Leaving directory '/media/dataext/development/working/disk-manager/all/data/icons'
+make[5]: Leaving directory '/media/dataext/development/working/disk-manager/all/data/icons'
+make[4]: Leaving directory '/media/dataext/development/working/disk-manager/all/data/icons'
+make[3]: Leaving directory '/media/dataext/development/working/disk-manager/all/data/icons'
+make[3]: Entering directory '/media/dataext/development/working/disk-manager/all/data'
+make[4]: Entering directory '/media/dataext/development/working/disk-manager/all/data'
+make[4]: Nothing to be done for 'install-exec-am'.
+ /usr/bin/mkdir -p '/media/dataext/development/working/disk-manager/all/debian/disk-manager/usr/share/applications'
+ /usr/bin/mkdir -p '/media/dataext/development/working/disk-manager/all/debian/disk-manager/usr/share/disk-manager'
+ /usr/bin/mkdir -p '/media/dataext/development/working/disk-manager/all/debian/disk-manager/usr/share/man/man8'
+ /usr/bin/install -c -m 644 disk-manager.desktop '/media/dataext/development/working/disk-manager/all/debian/disk-manager/usr/share/applications'
+ /usr/bin/install -c -m 644 disk-manager.glade write-policy.fdi ro-policy.fdi '/media/dataext/development/working/disk-manager/all/debian/disk-manager/usr/share/disk-manager'
+ /usr/bin/install -c -m 644 disk-manager.8 '/media/dataext/development/working/disk-manager/all/debian/disk-manager/usr/share/man/man8'
+make[4]: Leaving directory '/media/dataext/development/working/disk-manager/all/data'
+make[3]: Leaving directory '/media/dataext/development/working/disk-manager/all/data'
+make[2]: Leaving directory '/media/dataext/development/working/disk-manager/all/data'
 Making install in DiskManager
-make[2]: Verzeichnis „/tmpdir/merged_fehlix_development_disk-manager/BUILD/disk-manager/DiskManager“ wird betreten
+make[2]: Entering directory '/media/dataext/development/working/disk-manager/all/DiskManager'
 Making install in Fstab
-make[3]: Verzeichnis „/tmpdir/merged_fehlix_development_disk-manager/BUILD/disk-manager/DiskManager/Fstab“ wird betreten
-make[4]: Verzeichnis „/tmpdir/merged_fehlix_development_disk-manager/BUILD/disk-manager/DiskManager/Fstab“ wird betreten
-make[4]: Für das Ziel „install-exec-am“ ist nichts zu tun.
- /usr/bin/mkdir -p '/tmpdir/merged_fehlix_development_disk-manager/BUILD/disk-manager/debian/disk-manager/usr/lib/python3.9/site-packages/DiskManager/Fstab'
- /usr/bin/install -c -m 644 __init__.py DiskInfo.py EventHandler.py Fstab.py Fstabconfig.py FstabData.py FstabDialogs.py FstabError.py FstabHandler.py FstabUtility.py Mounter.py SimpleGladeApp.py ToolsBackend.py '/tmpdir/merged_fehlix_development_disk-manager/BUILD/disk-manager/debian/disk-manager/usr/lib/python3.9/site-packages/DiskManager/Fstab'
+make[3]: Entering directory '/media/dataext/development/working/disk-manager/all/DiskManager/Fstab'
+make[4]: Entering directory '/media/dataext/development/working/disk-manager/all/DiskManager/Fstab'
+make[4]: Nothing to be done for 'install-exec-am'.
+ /usr/bin/mkdir -p '/media/dataext/development/working/disk-manager/all/debian/disk-manager/usr/lib/python3.9/site-packages/DiskManager/Fstab'
+ /usr/bin/install -c -m 644 __init__.py DiskInfo.py EventHandler.py Fstab.py Fstabconfig.py FstabData.py FstabDialogs.py FstabError.py FstabHandler.py FstabUtility.py Mounter.py SimpleGladeApp.py ToolsBackend.py '/media/dataext/development/working/disk-manager/all/debian/disk-manager/usr/lib/python3.9/site-packages/DiskManager/Fstab'
 Byte-compiling python modules...
 __init__.pyDiskInfo.pyEventHandler.pyFstab.pyFstabconfig.pyFstabData.pyFstabDialogs.pyFstabError.pyFstabHandler.pyFstabUtility.pyMounter.pySimpleGladeApp.pyToolsBackend.py
 Byte-compiling python modules (optimized versions) ...
 __init__.pyDiskInfo.pyEventHandler.pyFstab.pyFstabconfig.pyFstabData.pyFstabDialogs.pyFstabError.pyFstabHandler.pyFstabUtility.pyMounter.pySimpleGladeApp.pyToolsBackend.py
-make[4]: Verzeichnis „/tmpdir/merged_fehlix_development_disk-manager/BUILD/disk-manager/DiskManager/Fstab“ wird verlassen
-make[3]: Verzeichnis „/tmpdir/merged_fehlix_development_disk-manager/BUILD/disk-manager/DiskManager/Fstab“ wird verlassen
-make[3]: Verzeichnis „/tmpdir/merged_fehlix_development_disk-manager/BUILD/disk-manager/DiskManager“ wird betreten
-make[4]: Verzeichnis „/tmpdir/merged_fehlix_development_disk-manager/BUILD/disk-manager/DiskManager“ wird betreten
-make[4]: Für das Ziel „install-exec-am“ ist nichts zu tun.
- /usr/bin/mkdir -p '/tmpdir/merged_fehlix_development_disk-manager/BUILD/disk-manager/debian/disk-manager/usr/lib/python3.9/site-packages/DiskManager'
- /usr/bin/install -c -m 644 __init__.py DiskManager.py Dialogs.py SimpleGladeApp.py config.py Config.py Utility.py '/tmpdir/merged_fehlix_development_disk-manager/BUILD/disk-manager/debian/disk-manager/usr/lib/python3.9/site-packages/DiskManager'
+make[4]: Leaving directory '/media/dataext/development/working/disk-manager/all/DiskManager/Fstab'
+make[3]: Leaving directory '/media/dataext/development/working/disk-manager/all/DiskManager/Fstab'
+make[3]: Entering directory '/media/dataext/development/working/disk-manager/all/DiskManager'
+make[4]: Entering directory '/media/dataext/development/working/disk-manager/all/DiskManager'
+make[4]: Nothing to be done for 'install-exec-am'.
+ /usr/bin/mkdir -p '/media/dataext/development/working/disk-manager/all/debian/disk-manager/usr/lib/python3.9/site-packages/DiskManager'
+ /usr/bin/install -c -m 644 __init__.py DiskManager.py Dialogs.py SimpleGladeApp.py config.py Config.py Utility.py '/media/dataext/development/working/disk-manager/all/debian/disk-manager/usr/lib/python3.9/site-packages/DiskManager'
 Byte-compiling python modules...
 __init__.pyDiskManager.pyDialogs.pySimpleGladeApp.pyconfig.pyConfig.pyUtility.py
 Byte-compiling python modules (optimized versions) ...
 __init__.pyDiskManager.pyDialogs.pySimpleGladeApp.pyconfig.pyConfig.pyUtility.py
-make[4]: Verzeichnis „/tmpdir/merged_fehlix_development_disk-manager/BUILD/disk-manager/DiskManager“ wird verlassen
-make[3]: Verzeichnis „/tmpdir/merged_fehlix_development_disk-manager/BUILD/disk-manager/DiskManager“ wird verlassen
-make[2]: Verzeichnis „/tmpdir/merged_fehlix_development_disk-manager/BUILD/disk-manager/DiskManager“ wird verlassen
-make[2]: Verzeichnis „/tmpdir/merged_fehlix_development_disk-manager/BUILD/disk-manager“ wird betreten
-make[3]: Verzeichnis „/tmpdir/merged_fehlix_development_disk-manager/BUILD/disk-manager“ wird betreten
-make[3]: Für das Ziel „install-data-am“ ist nichts zu tun.
- /usr/bin/mkdir -p '/tmpdir/merged_fehlix_development_disk-manager/BUILD/disk-manager/debian/disk-manager/usr/sbin'
- /usr/bin/install -c disk-manager '/tmpdir/merged_fehlix_development_disk-manager/BUILD/disk-manager/debian/disk-manager/usr/sbin'
-make[3]: Verzeichnis „/tmpdir/merged_fehlix_development_disk-manager/BUILD/disk-manager“ wird verlassen
-make[2]: Verzeichnis „/tmpdir/merged_fehlix_development_disk-manager/BUILD/disk-manager“ wird verlassen
-make[1]: Verzeichnis „/tmpdir/merged_fehlix_development_disk-manager/BUILD/disk-manager“ wird verlassen
+make[4]: Leaving directory '/media/dataext/development/working/disk-manager/all/DiskManager'
+make[3]: Leaving directory '/media/dataext/development/working/disk-manager/all/DiskManager'
+make[2]: Leaving directory '/media/dataext/development/working/disk-manager/all/DiskManager'
+make[2]: Entering directory '/media/dataext/development/working/disk-manager/all'
+make[3]: Entering directory '/media/dataext/development/working/disk-manager/all'
+make[3]: Nothing to be done for 'install-data-am'.
+ /usr/bin/mkdir -p '/media/dataext/development/working/disk-manager/all/debian/disk-manager/usr/sbin'
+ /usr/bin/install -c disk-manager '/media/dataext/development/working/disk-manager/all/debian/disk-manager/usr/sbin'
+make[3]: Leaving directory '/media/dataext/development/working/disk-manager/all'
+make[2]: Leaving directory '/media/dataext/development/working/disk-manager/all'
+make[1]: Leaving directory '/media/dataext/development/working/disk-manager/all'
    dh_install
    dh_installdocs
    dh_installchangelogs
@@ -394,18 +394,18 @@ make[1]: Verzeichnis „/tmpdir/merged_fehlix_development_disk-manager/BUILD/dis
    dh_perl
    dh_link
    dh_strip_nondeterminism
-	Normalized debian/disk-manager/usr/share/locale/sv/LC_MESSAGES/disk-manager.mo
-	Normalized debian/disk-manager/usr/share/locale/pt_BR/LC_MESSAGES/disk-manager.mo
-	Normalized debian/disk-manager/usr/share/locale/pl/LC_MESSAGES/disk-manager.mo
-	Normalized debian/disk-manager/usr/share/locale/nb/LC_MESSAGES/disk-manager.mo
-	Normalized debian/disk-manager/usr/share/locale/el/LC_MESSAGES/disk-manager.mo
-	Normalized debian/disk-manager/usr/share/locale/de/LC_MESSAGES/disk-manager.mo
-	Normalized debian/disk-manager/usr/share/locale/da/LC_MESSAGES/disk-manager.mo
-	Normalized debian/disk-manager/usr/share/locale/it/LC_MESSAGES/disk-manager.mo
-	Normalized debian/disk-manager/usr/share/locale/fr/LC_MESSAGES/disk-manager.mo
-	Normalized debian/disk-manager/usr/share/locale/es/LC_MESSAGES/disk-manager.mo
 	Normalized debian/disk-manager/usr/share/locale/en_GB/LC_MESSAGES/disk-manager.mo
 	Normalized debian/disk-manager/usr/share/locale/zh_CN/LC_MESSAGES/disk-manager.mo
+	Normalized debian/disk-manager/usr/share/locale/sv/LC_MESSAGES/disk-manager.mo
+	Normalized debian/disk-manager/usr/share/locale/pt_BR/LC_MESSAGES/disk-manager.mo
+	Normalized debian/disk-manager/usr/share/locale/de/LC_MESSAGES/disk-manager.mo
+	Normalized debian/disk-manager/usr/share/locale/es/LC_MESSAGES/disk-manager.mo
+	Normalized debian/disk-manager/usr/share/locale/el/LC_MESSAGES/disk-manager.mo
+	Normalized debian/disk-manager/usr/share/locale/nb/LC_MESSAGES/disk-manager.mo
+	Normalized debian/disk-manager/usr/share/locale/it/LC_MESSAGES/disk-manager.mo
+	Normalized debian/disk-manager/usr/share/locale/fr/LC_MESSAGES/disk-manager.mo
+	Normalized debian/disk-manager/usr/share/locale/da/LC_MESSAGES/disk-manager.mo
+	Normalized debian/disk-manager/usr/share/locale/pl/LC_MESSAGES/disk-manager.mo
    dh_compress
    dh_fixperms
    dh_missing
@@ -413,20 +413,9 @@ make[1]: Verzeichnis „/tmpdir/merged_fehlix_development_disk-manager/BUILD/dis
    dh_gencontrol
    dh_md5sums
    dh_builddeb
-dpkg-deb: Paket »disk-manager« wird in »../disk-manager_21.10.18_all.deb« gebaut.
+dpkg-deb: building package 'disk-manager' in '../disk-manager_21.10.18_all.deb'.
  dpkg-genbuildinfo
- dpkg-genchanges -sa >../disk-manager_21.10.18_amd64.changes
-dpkg-genchanges: Information: kompletter Quellcode beim Hochladen hinzufügen
+ dpkg-genchanges  >../disk-manager_21.10.18_amd64.changes
+dpkg-genchanges: info: including full source code in upload
  dpkg-source --after-build .
-dpkg-buildpackage: Information: Alles hochzuladen; Debian-native-Paket (komplette Quelle enthalten)
-Now signing changes and any dsc files...
- signfile dsc disk-manager_21.10.18.dsc fehlix <fehlix@mxlinux.org>
-
- fixup_buildinfo disk-manager_21.10.18.dsc disk-manager_21.10.18_amd64.buildinfo
- signfile buildinfo disk-manager_21.10.18_amd64.buildinfo fehlix <fehlix@mxlinux.org>
-
- fixup_changes dsc disk-manager_21.10.18.dsc disk-manager_21.10.18_amd64.changes
- fixup_changes buildinfo disk-manager_21.10.18_amd64.buildinfo disk-manager_21.10.18_amd64.changes
- signfile changes disk-manager_21.10.18_amd64.changes fehlix <fehlix@mxlinux.org>
-
-Successfully signed dsc, buildinfo, changes files
+dpkg-buildpackage: info: full upload; Debian-native package (full source is included)
