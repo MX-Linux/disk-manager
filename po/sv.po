@@ -390,11 +390,11 @@ msgstr "Redigera systempartition?"
 #: ../DiskManager/DiskManager.py:316
 #, python-format
 msgid ""
-"<i>%s</i> is an important system partition.\n"
+"%s is an important system partition.\n"
 "Be really careful when editing it, or you may have\n"
 "serious problems. Do you want to continue?"
 msgstr ""
-"<i>%s</i> är en partition som är viktig för systemet.\n"
+"%s är en partition som är viktig för systemet.\n"
 "Var mycket försiktig när du redigerar den annars kan du\n"
 "få allvarliga problem. Vill du fortsätta?"
 

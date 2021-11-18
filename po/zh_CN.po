@@ -386,11 +386,11 @@ msgstr "编辑系统分区?"
 #: ../DiskManager/DiskManager.py:316
 #, python-format
 msgid ""
-"<i>%s</i> is an important system partition.\n"
+"%s is an important system partition.\n"
 "Be really careful when editing it, or you may have\n"
 "serious problems. Do you want to continue?"
 msgstr ""
-"<i>%s</i> 是重要的系统分区.\n"
+"%s 是重要的系统分区.\n"
 "编辑时请小心, 否则可能会出现\n"
 "严重问题. 是否继续?"
 
