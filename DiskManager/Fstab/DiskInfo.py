@@ -231,8 +231,12 @@ class DiskInfoBase(list) :
         return self._driver_db["type"]
 
     def _check_module(self, module) :
-
-        return bool(module in getoutput("%s -l %s" % (MODPROBE, module)))
+        try:
+            cmd = [MODPROBE, "-n", "-i", module]
+            run(cmd, check=True)
+            return True
+        except CalledProcessError:
+            return False
 
     def __getitem__(self, item) :
         
