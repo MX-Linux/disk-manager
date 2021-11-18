@@ -2,19 +2,19 @@ Format: 1.0
 Source: disk-manager
 Binary: disk-manager
 Architecture: all source
-Version: 21.10.15
+Version: 21.10.16
 Checksums-Md5:
- 16cab8368ea9ec6d4f1d3ec0c040edf4 726 disk-manager_21.10.15.dsc
- 0234a3eb9345e36f56792692fba4f372 72588 disk-manager_21.10.15_all.deb
+ 9e49d5013d8ed5956ae1824ad2bad197 729 disk-manager_21.10.16.dsc
+ 80f77beea00cb49802972fbe6c587d52 72632 disk-manager_21.10.16_all.deb
 Checksums-Sha1:
- 244e4836df1ad3652f873a7b53b454e35f885ac7 726 disk-manager_21.10.15.dsc
- fa874ac484fa8c8a6006baa407fae289791a1320 72588 disk-manager_21.10.15_all.deb
+ 4a8c4675d8452f9d07f370e3d79c6d50e7616c09 729 disk-manager_21.10.16.dsc
+ f567eab8ecc7b561cbe47b04edd8e3f91ee27777 72632 disk-manager_21.10.16_all.deb
 Checksums-Sha256:
- 249bb520ddea5ced678959149803484e459658e6281e321d7a86d58aeca32927 726 disk-manager_21.10.15.dsc
- 21e21e1b808f08fd6dd4b01321ba737106c64ed1822c38166117475fbd64f44e 72588 disk-manager_21.10.15_all.deb
+ 273da17110db461d6e8c781e43cb2ce02a7c731cbe0338807a16b166a750c27a 729 disk-manager_21.10.16.dsc
+ 66b7d4bd4cf818abe4232e4f142973dc6160de6ea4a3d947c45f2b4e1bcc1a58 72632 disk-manager_21.10.16_all.deb
 Build-Origin: Debian
 Build-Architecture: amd64
-Build-Date: Wed, 17 Nov 2021 17:09:10 -0500
+Build-Date: Wed, 17 Nov 2021 19:48:04 -0500
 Build-Tainted-By:
  merged-usr-via-aliased-dirs
  usr-local-has-libraries
@@ -265,4 +265,4 @@ Installed-Build-Depends:
 Environment:
  DEB_BUILD_OPTIONS="parallel=4"
  LANG="en_US.UTF-8"
- SOURCE_DATE_EPOCH="1637186898"
+ SOURCE_DATE_EPOCH="1637196408"
