@@ -233,7 +233,7 @@ class DiskInfoBase(list) :
     def _check_module(self, module) :
         try:
             cmd = [MODPROBE, "-n", "-i", module]
-            run(cmd, check=True)
+            run(cmd, check=True, stderr=DEVNULL, stdout=DEVNULL)
             return True
         except CalledProcessError:
             return False
