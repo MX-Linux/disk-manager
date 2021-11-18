@@ -25,6 +25,7 @@
                 <property name="can-focus">True</property>
                 <property name="receives-default">False</property>
                 <property name="use-stock">True</property>
+                <property name="always-show-image">True</property>
               </object>
               <packing>
                 <property name="expand">False</property>
@@ -39,6 +40,7 @@
                 <property name="can-focus">True</property>
                 <property name="receives-default">False</property>
                 <property name="use-stock">True</property>
+                <property name="always-show-image">True</property>
               </object>
               <packing>
                 <property name="expand">False</property>
@@ -402,6 +404,7 @@
                 <property name="can-focus">True</property>
                 <property name="receives-default">False</property>
                 <property name="use-stock">True</property>
+                <property name="always-show-image">True</property>
               </object>
               <packing>
                 <property name="expand">False</property>
@@ -629,6 +632,7 @@
                                 <property name="can-focus">True</property>
                                 <property name="receives-default">False</property>
                                 <property name="use-stock">True</property>
+                                <property name="always-show-image">True</property>
                               </object>
                               <packing>
                                 <property name="expand">False</property>
@@ -692,6 +696,7 @@
                 <property name="can-focus">True</property>
                 <property name="receives-default">False</property>
                 <property name="use-stock">True</property>
+                <property name="always-show-image">True</property>
               </object>
               <packing>
                 <property name="expand">False</property>
@@ -1276,6 +1281,7 @@
                 <property name="can-focus">True</property>
                 <property name="receives-default">False</property>
                 <property name="use-stock">True</property>
+                <property name="always-show-image">True</property>
               </object>
               <packing>
                 <property name="expand">False</property>
@@ -1290,6 +1296,7 @@
                 <property name="can-focus">True</property>
                 <property name="receives-default">False</property>
                 <property name="use-stock">True</property>
+                <property name="always-show-image">True</property>
               </object>
               <packing>
                 <property name="expand">False</property>
@@ -1710,6 +1717,7 @@ automatically with the "Auto Configure" button</property>
                             <property name="can-focus">True</property>
                             <property name="receives-default">True</property>
                             <property name="use-stock">True</property>
+                            <property name="always-show-image">True</property>
                           </object>
                           <packing>
                             <property name="expand">True</property>
@@ -1724,6 +1732,7 @@ automatically with the "Auto Configure" button</property>
                             <property name="can-focus">True</property>
                             <property name="receives-default">True</property>
                             <property name="use-stock">True</property>
+                            <property name="always-show-image">True</property>
                           </object>
                           <packing>
                             <property name="expand">True</property>
@@ -1738,6 +1747,7 @@ automatically with the "Auto Configure" button</property>
                             <property name="can-focus">True</property>
                             <property name="receives-default">True</property>
                             <property name="use-stock">True</property>
+                            <property name="always-show-image">True</property>
                           </object>
                           <packing>
                             <property name="expand">True</property>
@@ -1766,6 +1776,7 @@ automatically with the "Auto Configure" button</property>
                             <property name="can-focus">True</property>
                             <property name="receives-default">True</property>
                             <property name="use-stock">True</property>
+                            <property name="always-show-image">True</property>
                           </object>
                           <packing>
                             <property name="expand">False</property>
@@ -1823,6 +1834,7 @@ automatically with the "Auto Configure" button</property>
                             <property name="can-focus">True</property>
                             <property name="receives-default">True</property>
                             <property name="use-stock">True</property>
+                            <property name="always-show-image">True</property>
                           </object>
                           <packing>
                             <property name="expand">False</property>
