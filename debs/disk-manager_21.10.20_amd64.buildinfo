@@ -1,23 +1,20 @@
------BEGIN PGP SIGNED MESSAGE-----
-Hash: SHA512
-
 Format: 1.0
 Source: disk-manager
 Binary: disk-manager
 Architecture: all source
-Version: 21.10.19
+Version: 21.10.20
 Checksums-Md5:
- 486403c334d4e5f65ae7ec3deeaf8d44 1638 disk-manager_21.10.19.dsc
- c7a239f8629e19e81670a07ff11b27eb 72868 disk-manager_21.10.19_all.deb
+ 46a268c4fe3149ba928f5dc44d885b00 726 disk-manager_21.10.20.dsc
+ 9315d745507e70e227dbcb8dcfb8977e 72900 disk-manager_21.10.20_all.deb
 Checksums-Sha1:
- 8dcb8adbd10ed4423ca21da342034ee791847f69 1638 disk-manager_21.10.19.dsc
- 3446e4533cfefe2aad42893a17da88b472c52549 72868 disk-manager_21.10.19_all.deb
+ d8564aedc2feae127d6c15df1874d02f24e0bae5 726 disk-manager_21.10.20.dsc
+ 2c87d4e0cfc70494c43a51422419dd45ecdbe4e2 72900 disk-manager_21.10.20_all.deb
 Checksums-Sha256:
- 17f7046e5877ed380e52d934054a6d7352e8bf5248b73e7e7f430fcb16131c87 1638 disk-manager_21.10.19.dsc
- 2e6662330abc4b62d6ab27aa8b573ac12e36ea1cbc7849f1902b9989df39348f 72868 disk-manager_21.10.19_all.deb
+ ee25e545523a35ecc9cf7fac20f1d832ef6801b1b1fc9a537e224b27ce44fafc 726 disk-manager_21.10.20.dsc
+ 4f863df21a629b4b1c438b76c475079de960c318680eef7ac22a9c3abab1a0fc 72900 disk-manager_21.10.20_all.deb
 Build-Origin: Debian
 Build-Architecture: amd64
-Build-Date: Sat, 20 Nov 2021 00:57:16 +0100
+Build-Date: Fri, 19 Nov 2021 22:39:15 -0500
 Build-Tainted-By:
  merged-usr-via-aliased-dirs
  usr-local-has-libraries
@@ -221,7 +218,7 @@ Installed-Build-Depends:
  libxml2 (= 2.9.10+dfsg-6.7),
  libz3-4 (= 4.8.10-1),
  libzstd1 (= 1.4.8+dfsg-2.1),
- linux-libc-dev (= 5.14.6-3~mx21+1),
+ linux-libc-dev (= 5.14.16-1~mx21+1),
  login (= 1:4.8.1-1),
  lsb-base (= 11.1.0),
  m4 (= 1.4.18-5),
@@ -267,23 +264,5 @@ Installed-Build-Depends:
  zlib1g-dev (= 1:1.2.11.dfsg-2)
 Environment:
  DEB_BUILD_OPTIONS="parallel=4"
- LANG="de_DE.UTF-8"
- SOURCE_DATE_EPOCH="1637357980"
-
------BEGIN PGP SIGNATURE-----
-
-iQJHBAEBCgAxFiEEgRnC8/wKXRM2S0xLL1ePG6ydm+kFAmGYOd0THGZlaGxpeEBt
-eGxpbnV4Lm9yZwAKCRAvV48brJ2b6UhQD/4gQvA8wFbK0nJWX42ktaLwnbSbRPKN
-Fng4bx+Oq9CEh5njdPzkimh8l4hzl30/48N7YYOhHnELiCgcEUgjDLH2Mj51cl5z
-kPiJiRKp0ISjJXjSazd4leHGlwvTXHbjDbE90fZ1vsRJQHRE/Q6Ij9mqTrZrgJVO
-ZPrAl1t3vKNG7GaNWA8vWFqO07KcNJoGJyIjK2V1Woru1ILmW4OGzGmjmpMk4kIn
-1MHd0KUzWj6cxfdEKy7me1J8JgBMqRhfcLM4Og7XtMw1a3hFVZmKnoAZjqLfA1bf
-I3kzn8Vepocu1piqA7qqDScEWRigfgQRjU/GEGLuqGtaCerMAX2w+ddf1Qnpuvhs
-3oZbXeX5D4LhbVEZfKB1QRRJXPhqWn7mJrN0RWLfWNqrMYBWPWOgC2YQAzuprvUW
-4gaTgQeK9IWpHzBlDNHik3dPMFtP0aNK+hfAgenh+A+e3J5/3oMVdHn9cidvpwDU
-ubFVWzNsf1KhzvVCPCBSbaT6C8fQQFNEbeIXG/Ze7XiUa5VsEO7Ci+Ky87ITNba8
-7PgEfOuNV/TgxXUTIIihq6mx0qnhPOvSI0RMECoNHDjfLABBXK0W0jQWn9G5twGA
-kCApxWZac8bwLsZtNdbRaWH8ojFvmBjtBwGH3HOFWFeCE8Qvc8TBCmuKMPN1qF5L
-dwDzoNOv6iC3ww==
-=Cci1
------END PGP SIGNATURE-----
+ LANG="en_US.UTF-8"
+ SOURCE_DATE_EPOCH="1637379385"
