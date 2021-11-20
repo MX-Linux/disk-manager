@@ -35,9 +35,9 @@ from .FstabUtility import *
 
 class Mounter(SimpleGladeApp) :
     ''' Show a progress bar while mounting a list of entry '''
-    
+
     def __init__(self, disk, parent = None) :
-        
+
         self.disk = disk
         self.parent = parent
         self.top_level = None
@@ -114,7 +114,7 @@ class Mounter(SimpleGladeApp) :
         type = "warning"
         title = _("Unmounting failed")
         text = _("Unmounting <i>%s</i> failed because of the following error:") % self.safepath
-        data = error[1].strip()
+        data = str(error[1]).strip()
         options = None
         action = None
 
@@ -147,15 +147,15 @@ class Mounter(SimpleGladeApp) :
 
     def handle_mount_error(self, entry, error) :
 
-        title = _("Mounting failed") 
+        title = _("Mounting failed")
         text = _("Mounting <i>%s</i> failed because of the following error:") % self.safepath
-        data = error[1].strip()
+        data = str(error[1]).strip()
         options = None
         action = _("Retry mount")
         err_code = None
-
         if not data.find("dmesg") == -1 :
             dmesg = get_dmesg_output()
+            logging.debug("[dmesg]: " + dmesg)
             last_dmesg_log = dmesg.split("\n")[-1].lower()
             data += "\n\ndmesg | tail:\n" + dmesg
         else :
@@ -180,7 +180,7 @@ class Mounter(SimpleGladeApp) :
         elif not entry["FS_DRIVERS"]["primary"] :
             err_code = "NODRIVER"
         elif entry["FSTAB_TYPE"] not in list(entry["FS_DRIVERS"]["all"].keys()) or len(data) == 0 :
-            err_code = "BADTYPE"    
+            err_code = "BADTYPE"
 
         retry_string = _("You can try one of the following action:")
 
@@ -228,27 +228,27 @@ class Mounter(SimpleGladeApp) :
         return False
 
     def init_gui(self) :
-    
+
         SimpleGladeApp.__init__(self, GLADEFILE, "window_mounting_progress", domain = PACKAGE)
         self.window_mounting_progress.set_title("")
         if self.parent :
             self.window_mounting_progress.set_transient_for(self.parent)
         self.top_level = self.window_mounting_progress
-        
+
     def set_gui(self, label) :
-    
+
         self.progressbar.set_fraction(0.0)
         self.title2.set_label("<big><b>%s</b></big>" % label)
         self.progress_label.set_label("")
         self.window_mounting_progress.show_now()
         while Gtk.events_pending() :
             Gtk.main_iteration()
-            
+
     def hide_gui(self) :
 
         time.sleep(0.1)
         self.window_mounting_progress.hide()
-            
+
     def update_gui(self, text, step) :
 
         if step > 0:
@@ -257,9 +257,9 @@ class Mounter(SimpleGladeApp) :
             self.progress_label.set_label(text)
         while Gtk.events_pending() :
             Gtk.main_iteration()
-        
+
     def restore_gui(self) :
-    
+
         while Gtk.events_pending() :
             Gtk.main_iteration()
         time.sleep(0.05)

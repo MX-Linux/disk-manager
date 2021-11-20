@@ -227,7 +227,7 @@ class DialogBuilder(SimpleGladeApp) :
             ret = Gtk.ResponseType.REJECT
         result = [ret, None, None]
         if not ret == Gtk.ResponseType.REJECT :
-            if hasattr(self, "treeview") :
+            if hasattr(self, "treeview") and hasattr(self, "tree_store") :
                 select = []
                 unselect = []
                 iter = self.tree_store.get_iter_first()

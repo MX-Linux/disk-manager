@@ -1,3 +1,9 @@
+disk-manager (21.10.19) mx; urgency=medium
+
+  * adjust mount error handling
+
+ -- fehlix <fehlix@mxlinux.org>  Fri, 19 Nov 2021 16:39:40 -0500
+
 disk-manager (21.10.18) mx; urgency=medium
 
   * suppress stderr when checking for driver kernel module

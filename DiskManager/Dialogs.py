@@ -108,7 +108,7 @@ class EditPartition(SimpleGladeApp) :
         self.options3.set_text(self.entry.defaultopt())
 
     def set_driver(self) :
-        if self.entry["FS_TYPE"] in 'ntfs' :
+        if self.entry["FS_TYPE"] in ('ntfs', 'exfat') :
             self.driver_warning_box.hide()
             self.driver_error_box.hide()
         if self.drivers["primary"] :
