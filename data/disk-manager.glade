@@ -1503,6 +1503,7 @@ automatically with the "Auto Configure" button</property>
     <property name="border-width">5</property>
     <property name="modal">True</property>
     <property name="window-position">center-on-parent</property>
+    <property name="default-width">250</property>
     <property name="destroy-with-parent">True</property>
     <property name="type-hint">dialog</property>
     <child internal-child="vbox">
@@ -1516,8 +1517,8 @@ automatically with the "Auto Configure" button</property>
             <property name="layout-style">end</property>
           </object>
           <packing>
-            <property name="expand">False</property>
-            <property name="fill">False</property>
+            <property name="expand">True</property>
+            <property name="fill">True</property>
             <property name="pack-type">end</property>
             <property name="position">0</property>
           </packing>
@@ -1546,7 +1547,8 @@ automatically with the "Auto Configure" button</property>
               <object class="GtkVBox" id="vbox23">
                 <property name="visible">True</property>
                 <property name="can-focus">False</property>
-                <property name="spacing">12</property>
+                <property name="spacing">6</property>
+                <property name="baseline-position">top</property>
                 <child>
                   <object class="GtkLabel" id="title_label">
                     <property name="visible">True</property>
@@ -1557,8 +1559,8 @@ automatically with the "Auto Configure" button</property>
                     <property name="xalign">0</property>
                   </object>
                   <packing>
-                    <property name="expand">False</property>
-                    <property name="fill">False</property>
+                    <property name="expand">True</property>
+                    <property name="fill">True</property>
                     <property name="position">0</property>
                   </packing>
                 </child>
@@ -1578,13 +1580,14 @@ automatically with the "Auto Configure" button</property>
                         <property name="xalign">0</property>
                       </object>
                       <packing>
-                        <property name="expand">False</property>
+                        <property name="expand">True</property>
                         <property name="fill">True</property>
                         <property name="position">0</property>
                       </packing>
                     </child>
                     <child>
                       <object class="GtkScrolledWindow" id="scrolledwindow">
+                        <property name="width-request">200</property>
                         <property name="can-focus">True</property>
                         <property name="shadow-type">in</property>
                         <child>
@@ -1614,8 +1617,8 @@ automatically with the "Auto Configure" button</property>
                             <property name="xalign">0</property>
                           </object>
                           <packing>
-                            <property name="expand">False</property>
-                            <property name="fill">False</property>
+                            <property name="expand">True</property>
+                            <property name="fill">True</property>
                             <property name="position">0</property>
                           </packing>
                         </child>
@@ -1624,8 +1627,8 @@ automatically with the "Auto Configure" button</property>
                         </child>
                       </object>
                       <packing>
-                        <property name="expand">False</property>
-                        <property name="fill">False</property>
+                        <property name="expand">True</property>
+                        <property name="fill">True</property>
                         <property name="position">2</property>
                       </packing>
                     </child>
@@ -1645,7 +1648,7 @@ automatically with the "Auto Configure" button</property>
             </child>
           </object>
           <packing>
-            <property name="expand">False</property>
+            <property name="expand">True</property>
             <property name="fill">True</property>
             <property name="position">1</property>
           </packing>

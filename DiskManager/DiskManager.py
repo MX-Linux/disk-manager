@@ -289,7 +289,7 @@ class DiskManager(SimpleGladeApp):
                 buttons=Gtk.ButtonsType.YES_NO,
                 text=_("Editing system partition?"),
                 ) 
-            question.format_secondary_text(_("<i>%s</i> is an important system partition.\n" \
+            question.format_secondary_text(_("%s is an important system partition.\n" \
                 "Be really careful when editing it, or you may have\n" \
                 "serious problems. Do you want to continue?")%entry["DEV"])
             response = question.run()
