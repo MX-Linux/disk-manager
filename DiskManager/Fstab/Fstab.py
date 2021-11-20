@@ -206,7 +206,7 @@ class Entry(EntryBase) :
         self.make_path()
         cmd = "%s %s %s -t %s -o %s" % (MOUNT, self["DEVICE"], escape_special(self["FSTAB_PATH"]), \
                             self["FSTAB_TYPE"], self["FSTAB_OPTION"])
-        process = Popen(cmd, stderr=STDOUT, stdout=PIPE, close_fds=True, shell=True)
+        process = Popen(cmd, stderr=STDOUT, stdout=PIPE, close_fds=True, shell=True, text=True)
         sts = process.wait()
         output = process.stdout.read()
         logging.debug("Mounting %s on %s :\n-> cmd : %s\n-> exit : %s\n-> output : %s" % \
@@ -219,7 +219,7 @@ class Entry(EntryBase) :
         cmd = "%s %s" % (UMOUNT, escape_special(self["FSTAB_PATH"]))
         if lazy :
             cmd += " -l"
-        process = Popen(cmd, stderr=STDOUT, stdout=PIPE, close_fds=True, shell=True)
+        process = Popen(cmd, stderr=STDOUT, stdout=PIPE, close_fds=True, shell=True, text=True)
         sts = process.wait()
         output = process.stdout.read()
         logging.debug("Unmounting %s on %s :\n-> cmd : %s\n-> exit : %s\n-> output : %s" % \

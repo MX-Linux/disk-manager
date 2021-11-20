@@ -95,7 +95,6 @@ class ToolsBackend(DiskInfoBase) :
         
         # Get the more info posible about the device from udevinfo
         cmd = UDEVINFO + " -p " + dev["SYSFS_PATH"].replace("/sys","") + " -q all"
-        # fehlix
         logging.debug("UDEVINFO : " + cmd)
         (sts, result) = self._exec(cmd)
         if not sts :

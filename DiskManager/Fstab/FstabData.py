@@ -34,6 +34,7 @@ defaults = { "btrfs"        :   ("defaults" + gvfs, "0", "2"),
              "ext3"         :   ("defaults" + gvfs, "0", "2"),
              "ext2"         :   ("defaults" + gvfs, "0", "2"),
              "exfat"        :   ("defaults" + ",uid=" + str(uid) + ",gid=" + str(gid) + ",dmask=0002,fmask=0113,utf8" + gvfs, "0", "2"),
+             "exfat-fuse"   :   ("defaults" + ",uid=" + str(uid) + ",gid=" + str(gid) + ",dmask=0002,fmask=0113,iocharset=utf8,namecase=0,nonempty" + gvfs, "0", "2"),
              "vfat"         :   ("defaults" + ",uid=" + str(uid) + ",gid=" + str(gid) + ",dmask=0002,fmask=0113,utf8" + gvfs, "0", "2"),
              "ntfs"         :   ("defaults,umask=0222" + gvfs, "0", "0"),
              "ntfs-3g"      :   ("defaults" + ",uid=" + str(uid) + ",gid=" + str(gid) + ",dmask=0002,fmask=0113,utf8" + gvfs, "0", "0"),
@@ -45,13 +46,17 @@ special_driver = { "ntfs-3g"    : "Read-write driver",
                    "ntfs"       : "Access driver",
                    "ntfs-fuse"  : "Read-write driver",
                    "__unknow__" : "Unknow driver" }
-                   
+
+if os.path.exists('/sbin/mount.exfat-fuse'):
+    special_driver["exfat-fuse"] = "exFAT-fuse driver"
+
+
 # Secondary driver
 secondary_driver = { "ext3"     : ("ext2"),
                      "exfat"    : ("exFAT"),
                      "vfat"     : ("msdos"),
                      "__all__"  : ("auto")}
-                     
+
 # List type of device that have an FS_TYPE, but that we don't want to configure
 ignore_fs = ("swap", "iso9660", "udf", "iso9660,udf", "udf,iso9660")
 
@@ -62,7 +67,7 @@ ignore_dev = ("/dev/fd0", "/dev/fd1", "/dev/fd2", "/dev/sr0", "/dev/sr1", "/dev/
 virtual_dev = ("proc", "devpts", "tmpfs", "sysfs", "shmfs", "usbfs")
 
 
-# Common options. Keep them when we change fs    
+# Common options. Keep them when we change fs
 common = ("atime","noatime","diratime","nodiratime","auto","noauto","dev","nodev","exec",\
           "noexec","mand","nomand","user","nouser","users","group","_netdev","owner","suid","nosuid",\
           "ro","rw","sync","async","dirsync")
