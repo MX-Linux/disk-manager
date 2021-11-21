@@ -217,7 +217,7 @@ class DiskManager(SimpleGladeApp):
             device = entry["DEV"]
             type = entry["FSTAB_TYPE"]
             path = entry["FSTAB_PATH"]
-            sensitive = 1
+            sensitive = not entry.get_is_system() or not entry in configured
             size_real  = entry.get_size()
             size = size_renderer(size_real)
             if entry in configured :

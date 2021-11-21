@@ -80,8 +80,8 @@ dont_need_remount = ("auto", "noauto", "check=none", "nocheck", "errors=continue
 path_order = ("/", "/usr", "/home")
 
 # System partitions :
-system = { "exact"  : ("/", "/home", "/tmp"),
-           "extand" : ("/usr", "/var", "/boot", "/sys", "/proc")}
+system = { "exact"  : ("/", "/home", "/tmp", "/boot", "/boot/efi", "/boot/grub"),
+           "extand" : ("/usr", "/var", "/sys", "/proc")}
 
 
 # MntFile header
