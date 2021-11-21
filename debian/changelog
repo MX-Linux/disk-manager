@@ -1,3 +1,9 @@
+disk-manager (21.10.21) mx; urgency=medium
+
+  * adjust identification and disable unmounting of system partitions
+
+ -- fehlix <fehlix@mxlinux.org>  Sat, 20 Nov 2021 19:57:33 -0500
+
 disk-manager (21.10.20) mx; urgency=medium
 
   * dialog tweaks 
