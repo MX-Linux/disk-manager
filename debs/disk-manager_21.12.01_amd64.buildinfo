@@ -5,19 +5,19 @@ Format: 1.0
 Source: disk-manager
 Binary: disk-manager
 Architecture: all source
-Version: 21.10.21
+Version: 21.12.01
 Checksums-Md5:
- 24375b1a7a91faeb1e1331e7590f4eb5 1638 disk-manager_21.10.21.dsc
- b3345cdbac63c8a5eac7fe489990ca26 72972 disk-manager_21.10.21_all.deb
+ bfce72d570b8c1eed784f2bcdabc5abb 1638 disk-manager_21.12.01.dsc
+ 6db4edfa3a6a1300230e5e9cc247bea8 74048 disk-manager_21.12.01_all.deb
 Checksums-Sha1:
- 771b573846bd7236237804c359fe07248a54a8d3 1638 disk-manager_21.10.21.dsc
- 23e2250360c381cc466b0435fe5c23997de9b7db 72972 disk-manager_21.10.21_all.deb
+ ecc10ac659d6c9f9e94aa36cdb63ed7cd08255e9 1638 disk-manager_21.12.01.dsc
+ afed81b1d8be45e6b7d2c4193fbd93262bf2c4fd 74048 disk-manager_21.12.01_all.deb
 Checksums-Sha256:
- eaad831db53a915d38ae1e0930e3756aa19faf859e848dbab8ab7f345f5c8b49 1638 disk-manager_21.10.21.dsc
- 79995bb04ac3855ac2d284226ae4b033d01c2412c0c31cee4436b0efeead0fce 72972 disk-manager_21.10.21_all.deb
+ eb36b387c50d3c1bc5a2c662d5ed2a4b6cb0b722e9616a1a6a598b7aa477ce82 1638 disk-manager_21.12.01.dsc
+ 02e8501617f3c358e9bd2f98a84f05dc861cfb745d9fcca40ca598231a3f17bc 74048 disk-manager_21.12.01_all.deb
 Build-Origin: Debian
 Build-Architecture: amd64
-Build-Date: Sun, 21 Nov 2021 02:10:45 +0100
+Build-Date: Sun, 19 Dec 2021 22:57:16 +0100
 Build-Tainted-By:
  merged-usr-via-aliased-dirs
  usr-local-has-libraries
@@ -27,7 +27,7 @@ Installed-Build-Depends:
  automake (= 1:1.16.3-2),
  autopoint (= 0.21-4),
  autotools-dev (= 20180224.1+nmu1),
- base-files (= 11.1+deb11u1),
+ base-files (= 11.1+deb11u2),
  base-passwd (= 3.5.51),
  bash (= 5.1-2+b3),
  binutils (= 2.35.2-2),
@@ -126,7 +126,7 @@ Installed-Build-Depends:
  libglib2.0-data (= 2.66.8-1),
  libglib2.0-dev (= 2.66.8-1),
  libglib2.0-dev-bin (= 2.66.8-1),
- libgmp10 (= 2:6.2.1+dfsg-1),
+ libgmp10 (= 2:6.2.1+dfsg-1+deb11u1),
  libgomp1 (= 10.2.1-6),
  libgpg-error0 (= 1.38-2),
  libgssapi-krb5-2 (= 1.18.3-6+deb11u1),
@@ -188,7 +188,7 @@ Installed-Build-Depends:
  libpython3.9-stdlib (= 3.9.2-1),
  libquadmath0 (= 10.2.1-6),
  libreadline8 (= 8.1-1),
- libseccomp2 (= 2.5.1-1),
+ libseccomp2 (= 2.5.1-1+deb11u1),
  libselinux1 (= 3.1-3),
  libselinux1-dev (= 3.1-3),
  libsepol1 (= 3.1-1),
@@ -267,23 +267,23 @@ Installed-Build-Depends:
  zlib1g-dev (= 1:1.2.11.dfsg-2)
 Environment:
  DEB_BUILD_OPTIONS="parallel=4"
- LANG="de_DE.UTF-8"
- SOURCE_DATE_EPOCH="1637456253"
+ LANG="en_US.UTF-8"
+ SOURCE_DATE_EPOCH="1639947602"
 
 -----BEGIN PGP SIGNATURE-----
 
-iQJHBAEBCgAxFiEEgRnC8/wKXRM2S0xLL1ePG6ydm+kFAmGZnKATHGZlaGxpeEBt
-eGxpbnV4Lm9yZwAKCRAvV48brJ2b6TIjD/wIbB7BurqY5UfzFs137ZY2yX9a3bBD
-XWzAuLi+tC9RW27Jazbly3Ez4XcRu40A5VzFjynLuDBx3ORsVZC72MTH7Ep/bIMV
-Gth/13DBEV0iSCZBZRrXMeVFGms+5bobzH5hfUygM8PRH/HvTNymE7FSnoH2ho17
-rR6W/k3U3gbBchbCxwdWApXwCKSzXHRDSmapgIytVlrz6vKiPFoMJVrD+fTyYZ1r
-U+o7+gTd1DeWsIRHK48Q7LBRI9EB20jEviARIsotQdvL66zczm1tM5Y7qoseTZ8f
-/JDE/vl4A0yESvnE+hjEFDiZfZcg6sahYG2gLrXNGJBxuMnZ+MFd2YYM8a57Z9+2
-2ev/usIeEr8sXAzyKEEnCeDHwVbavs4/E71JdhJOgeBRh4VPWrca+Ne63++pOSGB
-3L6rMo71KOAOoL7+RaPGB5FwDa7/fzHxKHiwtbhW/M+I5jVSoZiGkzPhI8nUwNeL
-Lg0vs5o3SQN1fwpdsox9SLjiWCYjpYy++c7KV2GU5+i6eTIwONmD+3RDAPta0nqW
-VU1TDxO51GeHmXXYmVT8xBMqcC0HHjjuelzbY7V+FrhUQi9FwyIUfUzuaj6lxgf9
-+R7aQqrLJ0TuQFvmn+jF4yu2+vEDGxOlj2UEpn6Y/F5cf8WsZaIGCbw5RNjiIpEn
-zFOozQ05ls0aeA==
-=Uv8c
+iQJHBAEBCgAxFiEEgRnC8/wKXRM2S0xLL1ePG6ydm+kFAmG/qsUTHGZlaGxpeEBt
+eGxpbnV4Lm9yZwAKCRAvV48brJ2b6S9gEACcd18Mg3DOKfznvOCIDN85M+Mu/bKC
+T+FCshbTm9BPn3VyS14ulVw+TXjsjVXXhBXtpM2AAfQGIm83gCVB1Rh788iRRuDA
+M15w/EpH4eBx3zLAg+dS5O8LDnE4kjImee8PuhYDRVWQxNzhsfbek8zeWgluGnk1
+nNMMPpcodWrE7WIQyjEy7J11lJFEgpa0vGmuqGz9wm7BM5cHoed5+RzMERVkDLx1
+7ThEBab8/VpDDiHYmf7KYFtYPCkA1lO70TvnNtVrDux8TvTNo/nMWlmTIbBh5VGQ
+JJ47duWnD6a5mnDKZHhsjhJpkNx5mT6Wfc55d6JhnfN6SasYSZu16o34c4VFIsKf
+cHjQduPvQu3dZJVPEtxY+FvfQ1XKPDRlaSYvewAeeoKnjtBQT2cE6JjA36OeMR8M
+5C6cXhX9bJ/5xV4+FaRCIsRxGSiTMUJm7KX/dfLoUnQfY6YyJwzgHx8MPaTQe/94
+y/X9s1w16Wvp9sUNCksx5CReYVJzZVQVsQmOsKtky0IdXAwFY/sV/g1uQLqwVvGR
+RKLUNKrq7x+OnbU0YYVQ05TpsY7x9fxQuxpb/b6MZFQNhJ/Mu0UMWWpPPJ3ciem5
+SpY8Pmc8aVnrMZEmTpuY5zMjhgUfhLYWx48TV6RvFP1HVRqDSjQqm/gboM8Jcg8Q
+kLAzUTnPi3g8ow==
+=Plo4
 -----END PGP SIGNATURE-----

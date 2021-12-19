@@ -25,7 +25,7 @@ import time
 from xml.sax.saxutils import escape as escape_mkup
 
 from .SimpleGladeApp import SimpleGladeApp
-from gettext import gettext as _
+#from gettext import gettext as _
 
 from .Fstabconfig import *
 from .FstabDialogs import *

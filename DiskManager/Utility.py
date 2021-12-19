@@ -26,7 +26,7 @@ import logging
 from subprocess import *
 from urllib.parse import quote
 
-from gettext import gettext as _
+#from gettext import gettext as _
 
 from .config import *
 

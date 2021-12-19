@@ -26,6 +26,7 @@ import copy
 import shutil
 import tempfile
 import functools
+import subprocess
 from subprocess import *
 
 from . import FstabData
@@ -52,7 +53,7 @@ class EntryBase(dict) :
             self.update(info[info.search_device(entry[0])])
         except :
             pass
- 
+
     def write(self, type = "FSTAB_NAME") :
         ''' w.write() -> Return a string of the entry in fstab/mtab synthax '''
 
@@ -80,7 +81,7 @@ class Entry(EntryBase) :
           different. example : FS_TYPE is ntfs and you don't have the ntfs driver, but ntfs-3g '''
 
     def __init__(self, entry, parent = None) :
-        
+
         self.parent = parent
         EntryBase.__init__(self, entry)
         if not self["FSTAB_PATH"] :
@@ -105,7 +106,7 @@ class Entry(EntryBase) :
                     if value not in FstabData.common :
                         self.removeopt(value)
                 default = list(FstabData.defaults.get(item, FstabData.defaults["__default__"]))
-                if self["FSTAB_OPTION"] : 
+                if self["FSTAB_OPTION"] :
                     default[0] += "," + self["FSTAB_OPTION"]
                 (self["FSTAB_OPTION"], self["FSTAB_FREQ"], self["FSTAB_PASO"]) = default
 
@@ -115,7 +116,7 @@ class Entry(EntryBase) :
                 listopt.remove("locale=autoset")
                 listopt.append("locale=" + os.environ["LANG"])
                 item = ",".join(listopt)
-                
+
         if key == "FSTAB_PATH" and item and "DEVICE" in self \
                 and "FSTAB_PATH" in self :
             while not check_path(item, self.parent, entry = self) :
@@ -124,18 +125,18 @@ class Entry(EntryBase) :
             item = os.path.normpath(item)
 
         dict.__setitem__(self, key, item)
-             
+
     def __eq__(x, y) :
-    
+
         x2 = dict.copy(x)
         x2["FSTAB_NAME"] = y["FSTAB_NAME"]
         return dict.__eq__(x2, y)
-        
+
     def make_path(self) :
         ''' x.make_path() -> Create FSTAB_PATH.\n
             If path is already in use add a "_" until it can be used.
             All path created by the class are stored in %s ''' % CREATED_PATH_FILE
-        
+
         path = self["FSTAB_PATH"]
         logging.debug("Check if %s is created" % path)
         while not check_path(path, self.parent, entry = self) :
@@ -157,17 +158,17 @@ class Entry(EntryBase) :
         ''' x.listopt() -> return a list of FSTAB_OPTION '''
 
         return self["FSTAB_OPTION"].split(",")
-        
+
     def hasopt(self, option) :
         ''' x.hasopt(option) -> True/False '''
-        
+
         if option in self.listopt() :
             return True
         return False
-            
+
     def addopt(self, options) :
         ''' x.addopt([opt1,opt2 ...]) -> Add opt1, opt2 ... to FSTAB_OPTION '''
-        
+
         if isinstance(options, str) :
             options = options.split(",")
         for value in options :
@@ -176,7 +177,7 @@ class Entry(EntryBase) :
                     self["FSTAB_OPTION"] += "," + value
                 else :
                     self["FSTAB_OPTION"] = value
-                
+
     def removeopt(self, options) :
         ''' x.removeopt([opt1,opt2 ...]) -> Remove opt1, opt2 ... from FSTAB_OPTION '''
 
@@ -187,22 +188,21 @@ class Entry(EntryBase) :
                 opt = self.listopt()
                 opt.remove(value)
                 self["FSTAB_OPTION"] = ",".join(opt)
-                
+
     def defaultopt(self) :
         ''' x.defaultopt() -> return the default options for the entry '''
-        
+
         return FstabData.defaults.get(self["FSTAB_TYPE"], FstabData.defaults["__default__"])[0]
-        
+
     def setopt(self, options) :
         ''' x.setopt([opt1,opt2 ...]) -> set opt1, opt2 ... to FSTAB_OPTION '''
-    
+
         self["FSTAB_OPTION"] = ""
         self.addopt(options)
-        
+
     def mount(self) :
         ''' x.mount() -> Mount the entry and return (exit_code, stderr+stdout)\n
             The path is created if it dont exist yet '''
-        
         self.make_path()
         cmd = "%s %s %s -t %s -o %s" % (MOUNT, self["DEVICE"], escape_special(self["FSTAB_PATH"]), \
                             self["FSTAB_TYPE"], self["FSTAB_OPTION"])
@@ -211,24 +211,67 @@ class Entry(EntryBase) :
         output = process.stdout.read()
         logging.debug("Mounting %s on %s :\n-> cmd : %s\n-> exit : %s\n-> output : %s" % \
                 (self["DEVICE"], self["FSTAB_PATH"], cmd, sts , output))
-        return (sts, output)
-        
-    def umount(self, lazy = False) :
-        ''' x.umount() -> Unmount the entry and return (exit_code, stderr+stdout) '''
 
-        cmd = "%s %s" % (UMOUNT, escape_special(self["FSTAB_PATH"]))
-        if lazy :
-            cmd += " -l"
-        process = Popen(cmd, stderr=STDOUT, stdout=PIPE, close_fds=True, shell=True, text=True)
-        sts = process.wait()
-        output = process.stdout.read()
-        logging.debug("Unmounting %s on %s :\n-> cmd : %s\n-> exit : %s\n-> output : %s" % \
-                (self["DEVICE"], self["FSTAB_PATH"], cmd, sts, output))   
+        fstab_path = self["FSTAB_PATH"]
+        chk_bind = "test ! -d /run/systemd/system && grep '" + fstab_path +"' /etc/fstab | awk '/^[a-zA-Z/]/{print $4}' | grep bind"
+        try :
+            logging.debug("TRY CHK_BIND: %s on %s :\n-> cmd : %s\n" % (self["DEVICE"], fstab_path, chk_bind))
+            prc = run(chk_bind, shell=True, stderr=STDOUT, stdout=PIPE, check=True, text=True)
+            ret = prc.returncode
+            out = prc.stdout
+            logging.debug("TRY CHK_BIND: %s" % out)
+            try :
+                logging.debug("MOUNT: bind mounts")
+                prc = run([MOUNT, "-a"], stderr=STDOUT, stdout=PIPE, check=True, text=True)
+                ret = prc.returncode
+                out = prc.stdout
+            except:
+                pass
+        except:
+            pass
         return (sts, output)
+
+    def umount(self, lazy = False) :
+        ''' x.umount() -> Unmount the entry and return (exit_code, stderr+stdout)
+            fix bind mounts by unmounting all mountpoints related to device '''
+        
+        device = self["DEVICE"]
+        fstab_path = self["FSTAB_PATH"]
+        
+        # get mountpoints based on device as listed in /proc/mounts
+        mountpoints = []
+        with open('/proc/mounts', 'rt') as mounts:
+            for mount in mounts:
+                    [dev, mp] = mount.strip().split()[0:2]
+                    if dev == device:
+                        logging.debug(f"Found mountpoint of {dev} on {mp}")
+                        mountpoints += [decode(mp)]
+        ret = 0
+        out = ""
+        # unmount mountpoints in reverse order
+        for mountpoint in mountpoints[::-1]:
+            if not os.path.ismount(mountpoint):
+                continue
+            cmd = [ UMOUNT, "--recursive", mountpoint ]
+            #cmd = [ UMOUNT, mountpoint ]
+            if lazy :
+                cmd += ["-l"]
+            try:
+                prc = run(cmd, stderr=STDOUT, stdout=PIPE, check=True, text=True)
+                ret = prc.returncode
+                out = prc.stdout
+                logging.debug(f"Unmounting {device} on {mountpoint} :\n-> cmd : {' '.join(cmd)}\n-> exit : {ret}\n-> output : {out}")
+            except CalledProcessError as e:
+                ret = e.returncode
+                out = e.stdout
+                logging.debug(f"Unmounting {device} on {mountpoint} :\n-> cmd : {' '.join(cmd)}\n-> exit : {ret}\n-> output : {out}")
+                break
+        
+        return (ret, out)
 
     def get_is_mounted(self) :
         ''' x.get_is_mounted() -> True/False '''
-        
+
         return bool(os.path.ismount(self["FSTAB_PATH"]))
 
     def get_is_system(self) :
@@ -246,7 +289,7 @@ class Entry(EntryBase) :
 
     def get_size(self) :
         ''' x.get_size() -> Return size of device '''
-        
+
         if self.get_is_mounted() :
             return os.statvfs(self["FSTAB_PATH"])[2]*os.statvfs(self["FSTAB_PATH"])[1]
         else :
@@ -255,35 +298,35 @@ class Entry(EntryBase) :
     def get_free_size(self) :
         ''' x.get_free_size() -> Return free size of device\n
             If device is not mounted, return 0 '''
-        
+
         if self.get_is_mounted() :
             stat = os.statvfs(self["FSTAB_PATH"])
             return stat[3]*stat[1]
         else :
             return 0
-        
+
     def get_available_size(self) :
         ''' x.get_available_size() -> Return available size of device\n
             If device is not mounted, return 0 '''
-        
+
         if self.get_is_mounted() :
             stat = os.statvfs(self["FSTAB_PATH"])
             return stat[4]*stat[1]
         else :
-            return 0   
-        
+            return 0
+
     def get_used_size(self) :
         ''' x.get_used_size() -> Return available size of device\n
             If device is not mounted, return 0 '''
-        
+
         if self.get_is_mounted() :
             return self.get_size() - self.get_free_size()
         else :
-            return 0      
+            return 0
 
     def copy(self) :
         ''' x.copy() -> return an exact copy of the entry '''
-        
+
         new = self.__class__([self["FSTAB_NAME"], self["FSTAB_PATH"], self["FSTAB_TYPE"], \
             self["FSTAB_OPTION"], self["FSTAB_FREQ"], self["FSTAB_PASO"]], parent = self.parent)
         return new
@@ -296,7 +339,7 @@ class MntFile(list) :
         A manageable device is a none ignored device of DiskInfo dadatbase.
         Other 6 field entry are stored as EntryBase respectively in x.dev for virtual device,
         x.other for other device, x.comment for commented entry (ex : #device path ...).
-        You can get an Entry from the MntFile, either by specify is index, 
+        You can get an Entry from the MntFile, either by specify is index,
         just like with list, but also by specify it path.
         ex : x[i] -> Entry at index i of MntFile
              x[\"/\"] - > Entry with FSTAB_PATH = \"/\"
@@ -309,7 +352,7 @@ class MntFile(list) :
           available naming are : uuid, dev or auto. auto will use uuid if at least
           one entry of the file use uuid. Default to auto.
         - backend : specify the backend that should be use for DiskInfo. Default to auto '''
-   
+
     def __init__(self, filename, fd = None, minimal = False, \
             naming = "auto", backend = "auto") :
 
@@ -322,15 +365,30 @@ class MntFile(list) :
         if fd :
             mntfile = fd
         else :
+            logging.debug(f"==>> Scanning {self.filename}")
             mntfile = open(self.filename)
         lines = mntfile.readlines()
         mntfile.close()
         if not minimal :
             logging.debug("Creating MntFile object for %s" % filename)
+        seen = []
         for line in lines :
             entry = line.split()
             if not len(entry) == 6 :
                 continue
+            if self.filename == "/etc/mtab":
+                if entry[0] in seen:
+                    logging.debug(f"Skipping seen device in {filename}: {line.strip()}")
+                    continue
+                else:
+                    seen += [ entry[0] ]
+
+                #if entry[2] in "fuseblk":
+                #    logging.debug(f"Skipping fuseblk mounts in {filename}: {line.strip()}")
+                #    continue
+                #else:
+                #    seen += [ entry[0] ]
+
             if minimal :
                 if not entry[0][0] == "#" :
                     self.append(EntryBase(entry))
@@ -350,7 +408,7 @@ class MntFile(list) :
 
     def __getitem__(self, item) :
         ''' x.__getitem__(y) <==> x[y] '''
-        
+
         if isinstance(item, int) :
             try :
                 return list.__getitem__(self, item)
@@ -375,7 +433,7 @@ class MntFile(list) :
 
         self.append(Entry(entry, self))
         return self[-1]
-        
+
     def remove(self, entry) :
         ''' x.remove(entry) -> remove entry from x\n
             entry should be the index of the Entry to delete a path name or the entry itself '''
@@ -389,26 +447,26 @@ class MntFile(list) :
             try :
                 list.remove(self, entry)
             except :
-                raise NotInDatabase(entry)   
+                raise NotInDatabase(entry)
         elif isinstance(entry, str) :
             try :
                 list.__delitem__(self, self.search(entry, strict = "yes")[0])
             except :
                 raise NotInDatabase(entry)
         else :
-            raise DatabaseTypeError(type(entry), (int, str, Entry)) 
+            raise DatabaseTypeError(type(entry), (int, str, Entry))
 
     def list(self, col = "DEVICE") :
         ''' x.list([col]) -> List all values of attribute col. Default to DEVICE '''
-        
+
         result = []
-        for k in self : 
+        for k in self :
             if col in k :
                 result.append(k[col])
             else :
                 result.append("")
         return result
-        
+
     def search(self, pattern, strict = "yes", keys = ["FSTAB_PATH"]) :
         ''' x.search(pattern, [strict], [list], [keys]) -> search for pattern in each
             keys of each Entry of x\n
@@ -427,20 +485,20 @@ class MntFile(list) :
                         result.append(i)
                 i = i + 1
         return result
-            
+
     def make_all_path(self) :
         ''' x.make_all_path() -> check that path used in MntFile are created, and create them if needed\n
             See make_path method of Entry object. '''
-    
+
         logging.debug("Checking that all path used in %s are created :" % self.filename)
         for entry in self :
             entry.make_path()
 
     def write(self) :
         ''' x.write() -> Return a string of the MntFile in fstab/mtab default synthax '''
-         
+
         result = ""
-        for i in range(len(self.dev)) : 
+        for i in range(len(self.dev)) :
             result += self.dev[i].write()
         if not self.naming in ("auto", "dev", "uuid") :
             logging.warning("Fstab naming %s is not supported. Using auto naming." % self.naming)
@@ -451,7 +509,7 @@ class MntFile(list) :
         for entry in self + self.other :
             if "LABEL=" in entry["FSTAB_NAME"] and "FS_LABEL" in entry \
                     and len(self.search(entry["FS_LABEL"], keys = ["FS_LABEL"])) < 2 \
-                    and os.path.exists("/dev/disk/by-label/%s" % entry["FS_LABEL"]) : 
+                    and os.path.exists("/dev/disk/by-label/%s" % entry["FS_LABEL"]) :
                 type = "FS_LABEL"
             elif self.naming == "uuid" and "FS_UUID" in entry \
                     and len(self.search(entry["FS_UUID"], keys = ["FS_UUID"])) < 2 \
@@ -463,13 +521,13 @@ class MntFile(list) :
                 type = "FSTAB_NAME"
             result += entry.write(type)
         result += "\n"
-        for i in range(len(self.comment)) : 
+        for i in range(len(self.comment)) :
             result += self.comment[i].write()
         result += "\n"
         return result
 
     def _sort_path(self, x, y) :
-    
+
         x = x["FSTAB_PATH"]
         y = y["FSTAB_PATH"]
         if x == y :
@@ -483,20 +541,20 @@ class MntFile(list) :
             if x.startswith(path) :
                 ix = i
             if y.startswith(path) :
-                iy = i    
+                iy = i
         return ix - iy
-        
+
     def copy(self) :
         ''' x.copy() -> Create an exact copy of the MntFile '''
-        
+
         new = copy.copy(self)
         for i in range(len(self)) :
                 new[i] = self[i].copy()
         return new
-        
+
     def apply(self) :
         ''' x.apply() -> Write MntFile to filename '''
-        
+
         tmpfile = tempfile.NamedTemporaryFile()
         tmpfile.write(FstabData.header.encode('utf-8'))
         tmpfile.write(self.write().encode('utf-8'))
@@ -506,9 +564,9 @@ class MntFile(list) :
         mntfile.close()
         tmpfile.close()
 
-        
+
 def list_created_path(action = "list", path = None) :
-    ''' Action : 
+    ''' Action :
         "list" : list all path created by python-fstab
         "add"  : add a path to the list
         "del"  : remove a path from the list
@@ -535,7 +593,7 @@ def list_created_path(action = "list", path = None) :
         if len(li) == 1 and len(li[0]) == 0 :
             return []
         return list(map(decode, li))
-        
+
 def clean_path(path) :
     ''' Remove the path if not in use '''
 
@@ -573,14 +631,14 @@ def check_path(path, fstab = None, entry = None) :
         if fstab.search(path) :
             if entry and path == entry["FSTAB_PATH"] and not_in_use :
                 return True
-            return False  
+            return False
         if not_in_use :
             return True
         return False
 
 def device_is_mounted(device) :
-    ''' Return path used by device if device is mounted. 
-        This function differ from the get_is_mounted() method of Entry as this function 
+    ''' Return path used by device if device is mounted.
+        This function differ from the get_is_mounted() method of Entry as this function
         try to find device in mtab, and don't just look if a device is mounted at path '''
 
     mtab = MntFile(MTAB, minimal = True)

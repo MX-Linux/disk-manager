@@ -35,7 +35,9 @@ gi.require_version("GdkPixbuf", "2.0")
 from gi.repository import Gtk
 from gi.repository import GdkPixbuf, Pango
 #  from .SimpleGladeApp import SimpleGladeApp
-from gettext import gettext as _
+#from gettext import gettext as _
+#import gettext
+#gettext.install('disk-manager', '/usr/share/locale')
 
 from DiskManager.Utility import *
 
