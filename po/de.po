@@ -1,0 +1,221 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: disk-manager\n"
+"Report-Msgid-Bugs-To: \n"
+"PO-Revision-Date: 2007-06-24 16:15+0000\n"
+"Last-Translator: sjolle <urandomdev@gmail.com>\n"
+"Language-Team: German <de@li.org>\n"
+"Language: de\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Rosetta-Export-Date: 2007-07-15 23:18:22+0000\n"
+
+msgid "Check device every 30 boots"
+msgstr "Gerät nach jeweils 30 mal Hochfahren überprüfen"
+
+msgid "<b>Options</b>"
+msgstr "<b>Optionen</b>"
+
+msgid "<b>Driver</b>"
+msgstr "<b>Treiber</b>"
+
+msgid "Device"
+msgstr "Laufwerk"
+
+msgid "Disk Manager"
+msgstr "Disk Manager"
+
+msgid "Emptying History?"
+msgstr "Verlauf löschen?"
+
+msgid "Manage filesystem configuration"
+msgstr "Verwalte Dateisystem Konfiguration"
+
+msgid "Reverting to an older version?"
+msgstr "eine ältere Version übernehmen?"
+
+msgid "_Edit"
+msgstr "_Bearbeiten"
+
+msgid "_File"
+msgstr "_Datei"
+
+msgid "_Help"
+msgstr "_Hilfe"
+
+msgid "Remove selected"
+msgstr "Ausgewählte entfernen"
+
+msgid ""
+"Removing unknown devices from\n"
+"the configuration file?"
+msgstr ""
+"Unbekannte Geräte aus der\n" 
+"Konfigurationsdatei entfernen?"
+
+msgid "Insufficient rights"
+msgstr "Unzureichende Rechte"
+
+msgid "You need administrative rights to start this application."
+msgstr "Sie benötigen Administratorrechte, um diese Anwendung zu starten."
+
+msgid "Wrong mount point"
+msgstr "Falscher Einhängepunkt"
+
+msgid ""
+"<i>%s</i> is currently in use.\n"
+"You should try another one."
+msgstr ""
+"<i>%s</i> wird bereits benutzt.\n"
+"Versuchen Sie einen anderen."
+
+msgid "Unmount"
+msgstr "Aushängen"
+
+msgid "Unmount selected"
+msgstr "Ausgewählte aushängen"
+
+msgid "Unmount with the 'lazy' option"
+msgstr "Aushängen mit der Option 'lazy'"
+
+msgid "Unmounting %s"
+msgstr "Aushängen von %s"
+
+msgid "Unmounting <i>%s</i> failed because of the following error:"
+msgstr "Das Aushängen von <i>%s</i> ist mit dem folgenden Fehler fehlgeschlagen:"
+
+msgid ""
+"Unmounting <i>%s</i> failed, because\n"
+"it is currently used by the following applications:"
+msgstr ""
+"Das Aushängen von <i>%s</i> ist fehlgeschlagen, weil\n"
+"es derzeit von den folgenden Anwendungen verwendet wird:"
+
+msgid "Unmounting disabled devices?"
+msgstr "Deaktivierte Geräte aushängen?"
+
+msgid "Unmounting failed"
+msgstr "Aushängen fehlgeschlagen"
+
+msgid "Unmounting partition"
+msgstr "Partition aushängen"
+
+msgid "Use the 'force' option"
+msgstr "Benutze die Option 'force'"
+
+msgid "Used"
+msgstr "Benutzt"
+
+msgid "Free"
+msgstr "Unbenutzt"
+
+msgid "Mount"
+msgstr "Einhängen"
+
+msgid "Mounting %s"
+msgstr "Einhängen von %s"
+
+msgid "Mounting <i>%s</i> failed because of the following error:"
+msgstr "Das Einhängen von <i>%s</i> ist mit dem folgenden Fehler fehlgeschlagen:"
+
+msgid "Mounting failed"
+msgstr "Einhängen fehlgeschlagen"
+
+msgid "Mounting partition"
+msgstr "Partition einhängen"
+
+msgid "Applying changes"
+msgstr "Änderungen anwenden"
+
+msgctxt "yes"
+msgid ""
+"Applying changes.\n"
+"Please wait until the process finishes."
+msgstr ""
+"Änderungen werden angewendet.\n"
+"Bitte warten, bis der Vorgang abgeschlossen ist."
+
+
+msgctxt "yes"
+msgid "<b>Total size:</b>"
+msgstr "<b>Gesamtgröße:</b>"
+
+msgctxt "yes"
+msgid "<b>Free space:</b>"
+msgstr "<b>Freier Platz:</b>"
+
+msgctxt "yes"
+msgid "<b>Available space:</b>"
+msgstr "<b>Verfügbarer Platz:</b>"
+
+msgctxt "yes"
+msgid "<b>Used space:</b>"
+msgstr "<b>Benutzter Platz:</b>"
+
+msgid "Size"
+msgstr "Größe"
+
+msgid "Volume"
+msgstr "Partition"
+
+msgctxt "yes"
+msgid "<b>Mount point:</b>"
+msgstr "<b>Mountpunkt:</b>"
+
+#: ../data/disk-manager.glade.h:20
+msgctxt "yes"
+msgid "<b>Options:</b>"
+msgstr "<b>Optionen:</b>"
+
+msgid "<b>Mount point</b>"
+msgstr "<b>Mountpunkt</b>"
+
+msgid "Mount point"
+msgstr "Mountpunkt"
+
+msgctxt "yes"
+msgid "<b>Device:</b>"
+msgstr "<b>Gerät:</b>"
+
+msgctxt "yes"
+msgid "<b>Type:</b>"
+msgstr "<b>Typ:</b>"
+
+#: ../data/disk-manager.glade.h:18
+msgctxt "yes"
+msgid "<b>Label:</b>"
+msgstr "<b>Label:</b>"
+
+msgid "Drive"
+msgstr "Laufwerk"
+
+msgctxt "yes"
+msgid "<b>Vendor:</b>"
+msgstr "<b>Hersteller:</b>"
+
+msgctxt "yes"
+msgid "<b>Serial:</b>"
+msgstr "<b>Seriennummer:</b>"
+
+msgctxt "yes"
+msgid "<b>Model:</b>"
+msgstr "<b>Modell:</b>"
+
+msgid "Not available"
+msgstr "Nicht verfügbar"
+
+msgctxt "yes"
+msgid "Not available"
+msgstr "Nicht verfügbar"
+
+msgid ""
+"It is advisable to remove them in order to avoid failed mount\n"
+"at start-up. Select the ones you want to remove."
+msgstr ""
+"Es ist ratsam, sie zu entfernen, um ein fehlgeschlagenes Einhängen beim\n" 
+"Start zu vermeiden. Wählen Sie diejenigen aus, die Sie entfernen möchten."
+
+msgid "Select a directory"
+msgstr "Wählen Sie ein Verzeichnis aus"
+

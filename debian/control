@@ -1,32 +1,31 @@
 Source: disk-manager
 Section: admin
 Priority: optional
-Maintainer: David Paleino <dapal@debian.org>
-Build-Depends:
- debhelper (>= 8~)
-Build-Depends-Indep:
- autotools-dev
- , menu
- , python (>= 2.6.6-3~)
- , python-gtk2
- , intltool (>= 0.35.0)
-Standards-Version: 3.9.2
-Homepage: http://flomertens.free.fr/disk-manager/
-Vcs-Git: git://git.debian.org/collab-maint/disk-manager.git
-Vcs-Browser: http://git.debian.org/?p=collab-maint/disk-manager.git
+Maintainer: Dolphin Oracle <dolphinoracle@gmail.com>
+Build-Depends: debhelper-compat (= 13),
+               dh-python,
+               python3-setuptools,
+               python3-all,
+               python3-gi,
+               libglib2.0-dev,
+               menu,
+               gettext,
+               intltool,
+               autotools-dev 
+Standards-Version: 4.5.1
+Homepage: https://github.com/MX-Linux/disk-manager
+Rules-Requires-Root: no
 
 Package: disk-manager
 Architecture: all
-Depends:
- ${python:Depends}
- , python-gtk2
- , python-glade2
- , menu
- , ${misc:Depends}
-Recommends:
- dmsetup
+Depends: ${python3:Depends}, ${misc:Depends},
+         python3-gi,
+         python3-notify2,
+         menu,
+         dmsetup,
+         ntfs-3g
 Description: simple graphical filesystem configurator
- Disk-Manager is a simple filesystem configurator that allows you to:
+ Disk Manager is a simple filesystem configurator that allows you to:
   * Automatically detect new partitions at startup.
-  * Fully manage configuration of filesystem.
+  * Fully manage configuration of filesystem mount options.
   * Enable/disable write support for NTFS (needs ntfs-3g installed).

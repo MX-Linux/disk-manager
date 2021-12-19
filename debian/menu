@@ -1,6 +1,0 @@
-?package(disk-manager): \
-  needs="X11" \
-  section="Applications/System/Administration" \
-  title="Disk Manager" \
-  command="/usr/sbin/disk-manager" \
-  icon="/usr/share/pixmaps/disk-manager.xpm"

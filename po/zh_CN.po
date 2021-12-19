@@ -1,0 +1,672 @@
+# Simplified Chinese translation for disk-manager
+# Copyright (c) 2007 Rosetta Contributors and Canonical Ltd 2007
+# This file is distributed under the same license as the disk-manager package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2007.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: disk-manager\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2011-01-10 23:27+0100\n"
+"PO-Revision-Date: 2007-07-06 14:23+0000\n"
+"Last-Translator: rainofchaos <rainofchaos@gmail.com>\n"
+"Language-Team: Simplified Chinese <zh_CN@li.org>\n"
+"Language: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Rosetta-Export-Date: 2007-07-15 23:18:13+0000\n"
+
+#: ../disk-manager.in:60
+msgid "Insufficient rights"
+msgstr "权限不够"
+
+#: ../disk-manager.in:61
+msgid "You need administrative rights to start this application."
+msgstr "需要管理员权限启动此程序"
+
+#: ../data/disk-manager.glade.h:1
+msgid "<b>Driver</b>"
+msgstr "<b>驱动程序</b>"
+
+#: ../data/disk-manager.glade.h:2
+msgid "<b>Mount point</b>"
+msgstr "<b>挂载点</b>"
+
+#: ../data/disk-manager.glade.h:3
+msgid "<b>Options</b>"
+msgstr "<b>选项</b>"
+
+#: ../data/disk-manager.glade.h:4
+msgid "Check device every 30 boots"
+msgstr "每启动30次检查一下设备"
+
+#: ../data/disk-manager.glade.h:5
+msgid "History"
+msgstr "历史"
+
+#: ../data/disk-manager.glade.h:6
+msgid "This driver seams to not be available for this type."
+msgstr "这种类型无可用驱动。"
+
+#: ../data/disk-manager.glade.h:7
+msgid "_Edit"
+msgstr "编辑(_E)"
+
+#: ../data/disk-manager.glade.h:8
+msgid "_File"
+msgstr "文件(_F)"
+
+#: ../data/disk-manager.glade.h:9
+msgid "_Help"
+msgstr "帮助(_H)"
+
+#: ../data/disk-manager.glade.h:10
+#, fuzzy
+msgctxt "yes"
+msgid "<b>Available space:</b>"
+msgstr "<b>可用空间:</b>"
+
+#: ../data/disk-manager.glade.h:11
+#, fuzzy
+msgctxt "yes"
+msgid "<b>Device:</b>"
+msgstr "<b>设备：</b>"
+
+#: ../data/disk-manager.glade.h:12
+#, fuzzy
+msgctxt "yes"
+msgid "<b>Free space:</b>"
+msgstr "<b>空余空间:</b>"
+
+#: ../data/disk-manager.glade.h:13
+#, fuzzy
+msgctxt "yes"
+msgid "<b>Label:</b>"
+msgstr "<b>标签:</b>"
+
+#: ../data/disk-manager.glade.h:14
+#, fuzzy
+msgctxt "yes"
+msgid "<b>Model:</b>"
+msgstr "<b>型号：</b>"
+
+#: ../data/disk-manager.glade.h:15
+#, fuzzy
+msgctxt "yes"
+msgid "<b>Mount point:</b>"
+msgstr "<b>挂载点:</b>"
+
+#: ../data/disk-manager.glade.h:16
+#, fuzzy
+msgctxt "yes"
+msgid "<b>Options:</b>"
+msgstr "<b>选项:</b>"
+
+#: ../data/disk-manager.glade.h:17
+#, fuzzy
+msgctxt "yes"
+msgid "<b>Serial:</b>"
+msgstr "<b>序列:</b>"
+
+#: ../data/disk-manager.glade.h:18
+#, fuzzy
+msgctxt "yes"
+msgid "<b>Total size:</b>"
+msgstr "<b>总大小:</b>"
+
+#: ../data/disk-manager.glade.h:19
+#, fuzzy
+msgctxt "yes"
+msgid "<b>Type:</b>"
+msgstr "<b>类型：</b>"
+
+#: ../data/disk-manager.glade.h:20
+#, fuzzy
+msgctxt "yes"
+msgid "<b>Used space:</b>"
+msgstr "<b>已用空间:</b>"
+
+#: ../data/disk-manager.glade.h:21
+#, fuzzy
+msgctxt "yes"
+msgid "<b>Vendor:</b>"
+msgstr "<b>供应商：</b>"
+
+#: ../data/disk-manager.glade.h:22
+#, fuzzy
+msgctxt "yes"
+msgid "<b>bus:</b>"
+msgstr "<b>总线:</b>"
+
+#: ../data/disk-manager.glade.h:23
+#, fuzzy
+msgctxt "yes"
+msgid "<big><b>Configuration file:</b></big>"
+msgstr "<big><b>配置文件:</b></big>"
+
+#: ../data/disk-manager.glade.h:24
+#, fuzzy
+msgctxt "yes"
+msgid "<big><b>Configuration history:</b></big>"
+msgstr "<big><b>配置历史:</b></big>"
+
+#: ../data/disk-manager.glade.h:25
+#, fuzzy
+msgctxt "yes"
+msgid "<big><b>New partitions detected</b></big>"
+msgstr "<big><b>检测到新分区</b></big>"
+
+#: ../data/disk-manager.glade.h:26
+#, fuzzy
+msgctxt "yes"
+msgid "Alternatively you can configure them "
+msgstr ""
+"您也可以按“自动配置”按钮 \n"
+"进行自动配置"
+
+#: ../data/disk-manager.glade.h:27
+#, fuzzy
+msgctxt "yes"
+msgid "Applying changes."
+msgstr "正在应用更改"
+
+#: ../data/disk-manager.glade.h:28
+#, fuzzy
+msgctxt "yes"
+msgid "Auto Configure"
+msgstr "自动配置"
+
+#: ../data/disk-manager.glade.h:29
+#, fuzzy
+msgctxt "yes"
+msgid "Drive"
+msgstr "驱动"
+
+#: ../data/disk-manager.glade.h:30
+#, fuzzy
+msgctxt "yes"
+msgid "Empty the log"
+msgstr "清空日志"
+
+#: ../data/disk-manager.glade.h:31
+#, fuzzy
+msgctxt "yes"
+msgid "Not available"
+msgstr "不可用"
+
+#: ../data/disk-manager.glade.h:32
+#, fuzzy
+msgctxt "yes"
+msgid "Size"
+msgstr "大小"
+
+#: ../data/disk-manager.glade.h:33
+#, fuzzy
+msgctxt "yes"
+msgid "The following new partitions were detected."
+msgstr ""
+"已侦测到下列新分区。\n"
+"请选择一个要设置的分区："
+
+#: ../data/disk-manager.glade.h:34
+#, fuzzy
+msgctxt "yes"
+msgid "View config"
+msgstr "查看配置"
+
+#: ../data/disk-manager.glade.h:35
+#, fuzzy
+msgctxt "yes"
+msgid "Volume"
+msgstr "卷"
+
+#: ../data/disk-manager.desktop.in.in.h:1 ../DiskManager/DiskManager.py:102
+msgid "Disk Manager"
+msgstr "磁盘管理器"
+
+#: ../data/disk-manager.desktop.in.in.h:2
+msgid "Manage filesystem configuration"
+msgstr "管理文件系统的配置"
+
+#: ../DiskManager/Dialogs.py:63 ../DiskManager/Fstab/Mounter.py:193
+msgid "Return options to defaults"
+msgstr "恢复到默认设置"
+
+#: ../DiskManager/Dialogs.py:64
+msgid "Select a directory"
+msgstr "选择一个目录"
+
+#: ../DiskManager/Dialogs.py:121 ../DiskManager/Fstab/Mounter.py:204
+#, python-format
+msgid "No driver is available for this type of filsystem : '%s'"
+msgstr "此文件系统无可用驱动: ‘%s'"
+
+#: ../DiskManager/Dialogs.py:176
+msgid "Wrong mount point"
+msgstr "错误的挂载点"
+
+#: ../DiskManager/Dialogs.py:177
+#, python-format
+msgid ""
+"<i>%s</i> is currently in use.\n"
+"You should try another one."
+msgstr ""
+"<i>%s</i> 正在使用.\n"
+"试试其他的."
+
+#: ../DiskManager/Dialogs.py:188
+msgid "Options formatting error"
+msgstr "选项格式错误"
+
+#: ../DiskManager/Dialogs.py:189
+#, python-format
+msgid ""
+"<i>%s</i> is not formatted correctly.\n"
+"Options should be separated by coma (,)"
+msgstr ""
+"<i>%s</i> 格式不正确.\n"
+"选项应该用逗号(,)分开"
+
+#: ../DiskManager/Dialogs.py:258 ../DiskManager/DiskManager.py:400
+msgid "Reverting to an older version?"
+msgstr "退回到老版本?"
+
+#: ../DiskManager/Dialogs.py:259 ../DiskManager/DiskManager.py:401
+msgid "This will apply the following changes:"
+msgstr "将应用下列变更"
+
+#: ../DiskManager/Dialogs.py:259 ../DiskManager/DiskManager.py:401
+msgid "Do you want to continue?"
+msgstr "您希望继续吗？"
+
+#: ../DiskManager/Dialogs.py:283
+msgid "Emptying History?"
+msgstr "清空历史？"
+
+#: ../DiskManager/Dialogs.py:284
+msgid "Do you want to empty the History?"
+msgstr "是否要清空历史？"
+
+#: ../DiskManager/Dialogs.py:313 ../DiskManager/Dialogs.py:314
+#: ../DiskManager/Dialogs.py:315
+msgid "Not available"
+msgstr "不可用"
+
+#: ../DiskManager/Dialogs.py:349
+msgid ""
+"Removing unknown devices from\n"
+"the configuration file?"
+msgstr ""
+"从配置文件中删除\n"
+"未知设备？"
+
+#: ../DiskManager/Dialogs.py:350
+msgid ""
+"I can not find any existing block devices\n"
+"corresponding to the following devices:"
+msgstr ""
+"无法找到与一下设备\n"
+"有关的块设备："
+
+#: ../DiskManager/Dialogs.py:352
+msgid ""
+"It is advisable to remove them in order to avoid failed mount\n"
+"at start-up. Select the ones you want to remove."
+msgstr "建议将它们删除以避免启动时出现挂载失败。选择希望删除的内容。"
+
+#: ../DiskManager/Dialogs.py:355
+msgid "Remove selected"
+msgstr "删除选中的"
+
+#: ../DiskManager/Dialogs.py:355
+msgid "Don't show me this warning in the future."
+msgstr "不再显示此警告"
+
+#: ../DiskManager/Dialogs.py:390
+msgid "Duplicate entry detected"
+msgstr "侦测到重复的内容"
+
+#: ../DiskManager/Dialogs.py:391
+msgid ""
+"The following entries of your configuration file use the same mount point:"
+msgstr "配置文件中的如下记录使用了相同的挂载点："
+
+#: ../DiskManager/Dialogs.py:392
+msgid ""
+"Two different devices can not share the same mount point.\n"
+"You should select the one you want, and the others will be commented.\n"
+"They will be kept in the configuration file, but will be disabled."
+msgstr ""
+"不同的设备无法共享同一个挂载点。\n"
+"你应该选择一个，并把其他的注释掉。\n"
+"它们将保留在配置文件中，但是被禁用。"
+
+#: ../DiskManager/Dialogs.py:395
+msgid "Keep selected"
+msgstr "保留选中的"
+
+#: ../DiskManager/Dialogs.py:437
+msgid "translator-credits"
+msgstr "Feng Chao <rainofchaos@gmail.com>,2007"
+
+#: ../DiskManager/DiskManager.py:159
+msgid "Enable"
+msgstr "启动"
+
+#: ../DiskManager/DiskManager.py:165
+msgid "Device"
+msgstr "设备"
+
+#: ../DiskManager/DiskManager.py:178
+msgid "Mount point"
+msgstr "挂载点"
+
+#: ../DiskManager/DiskManager.py:185
+msgid "Type"
+msgstr "类別"
+
+#: ../DiskManager/DiskManager.py:192
+msgid "Total"
+msgstr "总数"
+
+#: ../DiskManager/DiskManager.py:199
+msgid "Free"
+msgstr "剩余"
+
+#: ../DiskManager/DiskManager.py:206
+msgid "Used"
+msgstr "已用"
+
+#: ../DiskManager/DiskManager.py:315
+msgid "Editing system partition?"
+msgstr "编辑系统分区?"
+
+#: ../DiskManager/DiskManager.py:316
+#, python-format
+msgid ""
+"%s is an important system partition.\n"
+"Be really careful when editing it, or you may have\n"
+"serious problems. Do you want to continue?"
+msgstr ""
+"%s 是重要的系统分区.\n"
+"编辑时请小心, 否则可能会出现\n"
+"严重问题. 是否继续?"
+
+#: ../DiskManager/DiskManager.py:392
+msgid "Unmount"
+msgstr "卸载"
+
+#: ../DiskManager/DiskManager.py:395
+msgid "Mount"
+msgstr "挂载"
+
+#: ../DiskManager/Utility.py:43
+msgid "KB"
+msgstr "KB"
+
+#: ../DiskManager/Utility.py:43
+msgid "MB"
+msgstr "MB"
+
+#: ../DiskManager/Utility.py:43
+msgid "GB"
+msgstr "GB"
+
+#: ../DiskManager/Utility.py:43
+msgid "TB"
+msgstr "TB"
+
+#: ../DiskManager/Fstab/FstabHandler.py:431
+msgid "Unmounting disabled devices?"
+msgstr "卸载禁用的设备？"
+
+#: ../DiskManager/Fstab/FstabHandler.py:432
+msgid "You disabled the following devices:"
+msgstr "您禁用了下列设备："
+
+#: ../DiskManager/Fstab/FstabHandler.py:432
+msgid "Do you want to unmount them?"
+msgstr "您想卸载它们么？"
+
+#: ../DiskManager/Fstab/FstabHandler.py:434
+msgid "Unmount selected"
+msgstr "卸载选中的"
+
+#: ../DiskManager/Fstab/FstabHandler.py:443
+msgid "Reboot require"
+msgstr "需要重新启动计算机"
+
+#: ../DiskManager/Fstab/FstabHandler.py:444
+msgid ""
+"In order to apply all your changes,\n"
+"you'll need to reboot your computer."
+msgstr ""
+"要使您的改变生效，\n"
+"需要重新启动计算机。"
+
+#: ../DiskManager/Fstab/Mounter.py:59
+msgid "Mounting partition"
+msgstr "挂载分区"
+
+#: ../DiskManager/Fstab/Mounter.py:61
+msgid "Unmounting partition"
+msgstr "卸载分区"
+
+#: ../DiskManager/Fstab/Mounter.py:63
+msgid "Applying changes"
+msgstr "正在应用更改"
+
+#: ../DiskManager/Fstab/Mounter.py:69
+#, python-format
+msgid "Unmounting %s"
+msgstr "正在卸载 %s"
+
+#: ../DiskManager/Fstab/Mounter.py:83
+#, python-format
+msgid "Mounting %s"
+msgstr "挂载 %s"
+
+#: ../DiskManager/Fstab/Mounter.py:118
+msgid "Unmounting failed"
+msgstr "卸载失败"
+
+#: ../DiskManager/Fstab/Mounter.py:119
+#, python-format
+msgid "Unmounting <i>%s</i> failed because of the following error:"
+msgstr "卸载 <i>%s</i> 失败，因为出现如下错误:"
+
+#: ../DiskManager/Fstab/Mounter.py:124
+msgid "You can also use the 'lazy' options to detach the filesystem now."
+msgstr "你可以使用‘lazy‘选项卸载此文件系统了"
+
+#: ../DiskManager/Fstab/Mounter.py:129
+#, python-format
+msgid ""
+"Unmounting <i>%s</i> failed, because\n"
+"it is currently used by the following applications:"
+msgstr ""
+"卸载 <i>%s</i>  失败, 因为\n"
+"它正在被如下应用程序使用:"
+
+#: ../DiskManager/Fstab/Mounter.py:131
+msgid "Close all applications that use it and retry to unmount."
+msgstr "关闭所有使用这个分区的应用程序再重新卸载。"
+
+#: ../DiskManager/Fstab/Mounter.py:134
+msgid "The filesystem might be temporary buzy. Wait few seconds and retry."
+msgstr "文件系统可能暂时忙碌，请几秒钟后重试。"
+
+#: ../DiskManager/Fstab/Mounter.py:137
+msgid "Unmount with the 'lazy' option"
+msgstr "使用 'lazy' 选项卸载"
+
+#: ../DiskManager/Fstab/Mounter.py:138
+msgid "Retry unmount"
+msgstr "尝试重新卸载"
+
+#: ../DiskManager/Fstab/Mounter.py:141
+msgid "Even with the lazy option, unmounting failed."
+msgstr "即使使用laze 选项，卸载依然失败。"
+
+#: ../DiskManager/Fstab/Mounter.py:153
+msgid "Mounting failed"
+msgstr "挂载失败"
+
+#: ../DiskManager/Fstab/Mounter.py:154
+#, python-format
+msgid "Mounting <i>%s</i> failed because of the following error:"
+msgstr "挂载 <i>%s</i>失败，因为发生如下错误:"
+
+#: ../DiskManager/Fstab/Mounter.py:157
+msgid "Retry mount"
+msgstr "尝试重新挂载"
+
+#: ../DiskManager/Fstab/Mounter.py:188
+msgid "You can try one of the following action:"
+msgstr "可以尝试如下方法："
+
+#: ../DiskManager/Fstab/Mounter.py:191
+#, python-format
+msgid "It seams that option '%s' is not allowed."
+msgstr "不允许选项 '%s' ."
+
+#: ../DiskManager/Fstab/Mounter.py:195
+#, python-format
+msgid "Don't use the '%s' option"
+msgstr "不使用 '%s' 选项"
+
+#: ../DiskManager/Fstab/Mounter.py:197
+#, python-format
+msgid "It seams that fs type '%s' is not valid."
+msgstr "文件系统类型 '%s' 不可用."
+
+#: ../DiskManager/Fstab/Mounter.py:201
+#, python-format
+msgid "Using driver '%s' (%s)"
+msgstr "使用驱动 '%s' (%s)"
+
+#: ../DiskManager/Fstab/Mounter.py:207
+msgid ""
+"You can try to use the 'force' option. Be Aware that this could be risky."
+msgstr "你可以试试'force'选项。注意此选项有风险"
+
+#: ../DiskManager/Fstab/Mounter.py:208
+msgid "Use the 'force' option"
+msgstr "使用'force'选项"
+
+#~ msgid "No authentication program founds"
+#~ msgstr "未找到验证程序"
+
+#~ msgid ""
+#~ "Disk Manager need to be run as root, but I can't find\n"
+#~ "a graphical authentication program.\n"
+#~ "You should install <i>gksu</i> or <i>kdesu</i>.\n"
+#~ "Alternatively, you can run disk-manager from the terminal with <i>su</i> "
+#~ "or <i>sudo</i>."
+#~ msgstr ""
+#~ "Disk Manager需要以root权限运行,但无法找到有图形界面的验证程序.\n"
+#~ "请安装<i>gksu</i>或<i>kdesu</i>.\n"
+#~ "你也可以在终端中用<i>su</i>或<i>sudo</i>命令运行disk-manager."
+
+#~ msgid "<b>NTFS policy</b>"
+#~ msgstr "<b>NTFS 策略</b>"
+
+#~ msgid "<b>Notification</b>"
+#~ msgstr "<b>注意</b>"
+
+#~ msgid "<b>Status</b>"
+#~ msgstr "<b>状态</b>"
+
+#~ msgid "Advanced configuration"
+#~ msgstr "高级选项"
+
+#~ msgid "Apply policy for all partitions"
+#~ msgstr "对所有分区应用策略"
+
+#~ msgid ""
+#~ "Applying changes.\n"
+#~ "Please wait until the process finishes."
+#~ msgstr ""
+#~ "应用改变。\n"
+#~ "请等待，直到进程结束。"
+
+#~ msgid "Configure new partitions"
+#~ msgstr "配置新分区"
+
+#~ msgid "Detect new devices on start-up"
+#~ msgstr "启动时检测新设备"
+
+#~ msgid "Enable write support"
+#~ msgstr "启用写支持"
+
+#~ msgid "General"
+#~ msgstr "普通"
+
+#~ msgid "Total available size:"
+#~ msgstr "总可用大小:"
+
+#~ msgid "Total free size:"
+#~ msgstr "总剩余空间:"
+
+#~ msgid "Total used size:"
+#~ msgstr "总使用空间:"
+
+#~ msgid "Check for new partitions"
+#~ msgstr "检测新分区"
+
+#~ msgid "Disk manager"
+#~ msgstr "磁盘管理器"
+
+#~ msgid "<Enter a mount point>"
+#~ msgstr "<输入一个挂载点>"
+
+#~ msgid "Add"
+#~ msgstr "添加"
+
+#~ msgid "Mount Point"
+#~ msgstr "挂载点"
+
+#~ msgid "Formatting error"
+#~ msgstr "格式错误"
+
+#~ msgid ""
+#~ "<i>%s</i> contains an invalid character.\n"
+#~ "Mount point should be in /media/. Alternatively, you can enter a simple "
+#~ "name, like <i>disk</i>."
+#~ msgstr ""
+#~ "<i>%s</i>中包含了无效字符。\n"
+#~ "挂载点必须在/media/目录下，您也可以直接输入一个名字，比如<i>disk</i>。"
+
+#~ msgid ""
+#~ "Available size can differ from free size\n"
+#~ "because some space may be reserved for the root user."
+#~ msgstr ""
+#~ "可用空间可能不同于剩余空间\n"
+#~ "因为需要为 root 用户保留一些空间"
+
+#~ msgid "%i new partition(s) can be configured."
+#~ msgstr "可以配置%i个新分区."
+
+#~ msgid "All partitions are configured"
+#~ msgstr "已经配置全部分区"
+
+#~ msgid "%i partitions are in use. (total size : %s)"
+#~ msgstr "%i 分区在使用. (总大小 : %s)"
+
+#~ msgid "New partitions detected"
+#~ msgstr "检测到新分区"
+
+#~ msgid ""
+#~ "New partitions have been detected and can be\n"
+#~ "configured by clicking on this icon."
+#~ msgstr ""
+#~ "检测到新分区而且可以\n"
+#~ "通过点击此图标配置"
+
+#~ msgid "Start configuration"
+#~ msgstr "开始配置"
+
+#~ msgid "Automatic configuration"
+#~ msgstr "自动配置"
