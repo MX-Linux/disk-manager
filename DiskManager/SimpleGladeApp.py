@@ -53,6 +53,7 @@ class SimpleGladeApp:
         self.glade = None
 
         self.builder = Gtk.Builder()
+        self.builder.set_translation_domain("disk-manager")
         self.builder.add_from_file(self.glade_path)
 
         if root:
@@ -157,7 +158,7 @@ class SimpleGladeApp:
         prefix_actions_d = dict(map(drop_prefix, prefix_actions_t))
 
         for widget in self.get_widgets():
-            prefixes = gtk.Widget.get_data(widget, "prefixes")
+            prefixes = Gtk.Widget.get_data(widget, "prefixes")
             if prefixes:
                 for prefix in prefixes:
                     if prefix in prefix_actions_d:
@@ -251,7 +252,7 @@ class SimpleGladeApp:
     def main(self):
         """
         Starts the main loop of processing events.
-        The default implementation calls gtk.main()
+        The default implementation calls Gtk.main()
 
         Useful for applications that needs a non gtk main loop.
         For example, applications based on gstreamer needs to override
@@ -260,12 +261,12 @@ class SimpleGladeApp:
         Do not directly call this method in your programs.
         Use the method run() instead.
         """
-        gtk.main()
+        Gtk.main()
 
     def quit(self, *args):
         """
         Quit processing events.
-        The default implementation calls gtk.main_quit()
+        The default implementation calls Gtk.main_quit()
 
         Useful for applications that needs a non gtk main loop.
         For example, applications based on gstreamer needs to override
@@ -295,10 +296,10 @@ class SimpleGladeApp:
         pass
 
     def install_custom_handler(self, custom_handler):
-        gtk.glade.set_custom_handler(custom_handler)
+        Gtk.glade.set_custom_handler(custom_handler)
 
     def create_glade(self, glade_path, root, domain):
-        return gtk.glade.XML(glade_path, root, domain)
+        return Gtk.glade.XML(glade_path, root, domain)
 
     def get_widget(self, widget_name):
         return self.builder.get_object(widget_name)

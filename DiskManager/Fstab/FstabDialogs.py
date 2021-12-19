@@ -21,7 +21,7 @@
 #
 
 from gi.repository import Gtk, Pango
-from gettext import gettext as _
+#from gettext import gettext as _
 
 from .Fstabconfig import *
 from .SimpleGladeApp import SimpleGladeApp
@@ -84,7 +84,7 @@ class DialogBuilder(SimpleGladeApp) :
             if not isinstance(button, str) :
                 continue
             try :
-                response = getattr(Gtk, "RESPONSE_%s" % button.upper())
+                response = getattr(Gtk.ResponseType, "%s" % button.upper())
             except :
                 response = 0
             if hasattr(Gtk, "STOCK_%s" % button.upper()) :
@@ -180,9 +180,11 @@ class DialogBuilder(SimpleGladeApp) :
             else :
                 widget = Gtk.CheckButton(option)
             widget.set_active(value)
-            box.pack_start(widget, expand=False)
+            #box.pack_start(widget, expand=False)
+            box.pack_start(widget, False, False, 0)
         self.check_box = box
-        self.vbox.pack_end(self.check_box, expand=False)
+        #self.vbox.pack_end(self.check_box, expand=False)
+        self.vbox.pack_end(self.check_box, False, False, 0)
         self.check_box.show_all()
         
     def set_size(self) :

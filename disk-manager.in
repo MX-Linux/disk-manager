@@ -27,7 +27,9 @@ import sys
 import logging
 import gettext
 from optparse import OptionParser
-from gettext import gettext as _
+#from gettext import gettext as _
+import gettext
+gettext.install('disk-manager', '/usr/share/locale')
 
 # Hack to make sure that path is set correctly when installation is in /usr/local
 if "/usr/local" in sys.argv[0] :
@@ -84,8 +86,8 @@ def get_opt_args() :
 
 if __name__ == '__main__' :
 
-    gettext.bindtextdomain("disk-manager",localedir)
-    gettext.textdomain("disk-manager")
+    #gettext.bindtextdomain("disk-manager",localedir)
+    #gettext.textdomain("disk-manager")
     (opts, args) = get_opt_args()
     if opts.debug :
         level = logging.DEBUG

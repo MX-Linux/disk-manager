@@ -27,7 +27,7 @@ import logging
 import tempfile
 import threading
 import configparser
-from gettext import gettext as _
+#from gettext import gettext as _
 
 from .Fstabconfig import *
 from .FstabUtility import *

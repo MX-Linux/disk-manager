@@ -1,3 +1,9 @@
+disk-manager (21.12.01) mx; urgency=medium
+
+  * adjust error pop-up's, bind-mounts and translations handling
+
+ -- fehlix <fehlix@mxlinux.org>  Sun, 19 Dec 2021 16:00:02 -0500
+
 disk-manager (21.10.21) mx; urgency=medium
 
   * adjust identification and disable unmounting of system partitions

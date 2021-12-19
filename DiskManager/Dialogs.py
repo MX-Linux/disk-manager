@@ -25,10 +25,12 @@ import re
 import time
 from xml.sax.saxutils import escape as escape_mkup
 
-from gi.repository import Gtk as gtk
+from gi.repository import Gtk
 from gi.repository import GdkPixbuf, GObject, Pango
 
-from gettext import gettext as _
+import gettext
+#from gettext import gettext as _
+
 from .SimpleGladeApp import SimpleGladeApp
 
 from .config import *
@@ -62,8 +64,8 @@ class EditPartition(SimpleGladeApp) :
         self.dialog_edit.connect("delete-event", self.on_quit)
         self.cancel_button2.connect("clicked", self.on_quit)
         
-        # gtk.Tooltips().set_tip(self.default_button, _("Return options to defaults"))
-        # gtk.Tooltips().set_tip(self.browser_button, _("Select a directory"))
+        # Gtk.Tooltips().set_tip(self.default_button, _("Return options to defaults"))
+        # Gtk.Tooltips().set_tip(self.browser_button, _("Select a directory"))
          
         self.path.set_text(self.entry["FSTAB_PATH"])
         self.options3.set_text(self.entry["FSTAB_OPTION"])
@@ -83,8 +85,8 @@ class EditPartition(SimpleGladeApp) :
         if len(drivers_list) > 1 or not self.drivers["primary"] :
             self.vbox_driver.show()
             self.driver_box.clear()
-            self.liststore = gtk.ListStore(str)
-            renderer = gtk.CellRendererText()
+            self.liststore = Gtk.ListStore(str)
+            renderer = Gtk.CellRendererText()
             self.driver_box.set_model(self.liststore)
             self.driver_box.pack_start(renderer, True)
             self.driver_box.add_attribute(renderer, 'text', 0)
@@ -130,33 +132,44 @@ class EditPartition(SimpleGladeApp) :
 
     def on_browser_clicked(self, button) :
     
-        #gladexml =  gtk.glade.XML(GLADEFILE, "dialog_mount_point")
-        #dialog = gladexml.get_widget("dialog_mount_point")
+        """  not used:
+        gladexml =  Gtk.glade.XML(GLADEFILE, "dialog_mount_point")
+        dialog = gladexml.get_widget("dialog_mount_point")
 
-        # builder = Gtk.Builder()
-        # builder.add_from_file(GLADEFILE)
+        builder = Gtk.Builder()
+        builder.add_from_file(GLADEFILE)
 
-        # dialog = builder.get_object("dialog_mount_point")
+        dialog = builder.get_object("dialog_mount_point")
 
-        # dialog.set_transient_for(self.dialog_edit)
-        # dialog.select_filename(self.path.get_text())
-        # for shortcut in (get_user("dir"), "/media", "/") :
-            # try :
-                # dialog.add_shortcut_folder(shortcut)
-            # except gobject.GError : 
-                # pass
-        # ret = dialog.run()
-        # print(ret)
-        # print(dialog.get_filename())
+        dialog.set_transient_for(self.dialog_edit)
+        dialog.select_filename(self.path.get_text())
+        for shortcut in (get_user("dir"), "/media", "/") :
+            try :
+                dialog.add_shortcut_folder(shortcut)
+            except gobject.GError : 
+                pass
+        ret = dialog.run()
+        print(ret)
+        print(dialog.get_filename())
         
-        # if ret == 1 :
-            # self.path.set_text(dialog.get_filename())
-        # dialog.hide()
+        if ret == 1 :
+            self.path.set_text(dialog.get_filename())
+        dialog.hide()
 
         dialog = Gtk.FileChooserDialog(title="Please choose a folder", action=Gtk.FileChooserAction.SELECT_FOLDER)
+        """
+        
+        dialog = Gtk.FileChooserDialog(title=_("Select a directory"), action=Gtk.FileChooserAction.SELECT_FOLDER)
+
         dialog.add_buttons(
-            Gtk.STOCK_CANCEL, Gtk.ResponseType.CANCEL, "Select", Gtk.ResponseType.OK
+            Gtk.STOCK_CANCEL, 
+            Gtk.ResponseType.CANCEL, 
+            gettext.translation('gtk30').gettext("_Select"), 
+            Gtk.ResponseType.OK
         )
+       #dialog.add_buttons(
+       #     Gtk.STOCK_CANCEL, Gtk.ResponseType.CANCEL, "Select", Gtk.ResponseType.OK
+       # )
 
         logging.debug("Mountpoint: " + self.path.get_text())
         user_mp_dir = os.path.dirname(os.path.realpath(self.path.get_text()))
@@ -251,11 +264,11 @@ class HistoryDialog(SimpleGladeApp) :
         self.close_button.connect("clicked", self.on_quit)
         self.dialog_history.connect("delete-event", self.on_quit)
         
-        renderer = gtk.CellRendererText()
-        column = gtk.TreeViewColumn("historic", renderer, text=0, editable=1)
+        renderer = Gtk.CellRendererText()
+        column = Gtk.TreeViewColumn("historic", renderer, text=0, editable=1)
         self.treeview.append_column(column)
         
-        self.tree_store = gtk.ListStore(str, bool)
+        self.tree_store = Gtk.ListStore(str, bool)
         self.treeview.set_model(self.tree_store)
         self.update_dialog()
         
@@ -281,7 +294,7 @@ class HistoryDialog(SimpleGladeApp) :
         self.apply_button.set_sensitive(False)
         version = self.versions[self.treeview.get_cursor()[0][0]]
         changes = self.disk.get_changes_current_to(version)
-        buf = gtk.TextBuffer()
+        buf = Gtk.TextBuffer()
         tag = buf.create_tag(weight=Pango.Weight.BOLD)
         buf.insert_with_tags(buf.get_start_iter(), "Commit:\n", tag)
         buf.insert_at_cursor(self.disk.get_logcommit(version))
@@ -298,19 +311,19 @@ class HistoryDialog(SimpleGladeApp) :
         ret = dialog("question", _("Reverting to an older version?"), \
             [_("This will apply the following changes:"), _("Do you want to continue?")],
             "\n".join(self.disk.get_changes_current_to(version)), parent = self.dialog_history)
-        if ret[0] == gtk.ResponseType.YES :
+        if ret[0] == Gtk.ResponseType.YES :
             self.disk.revert_to(version)
         self.on_cursor_changed(self.treeview)
         
     def on_see_clicked(self, button) :
     
         version = self.versions[self.treeview.get_cursor()[0][0]]
-        gladexml =  gtk.glade.XML(GLADEFILE, "dialog_fstab")
+        gladexml =  Gtk.glade.XML(GLADEFILE, "dialog_fstab")
         dialog = gladexml.get_widget("dialog_fstab")
         dialog.set_title("")
         dialog.set_transient_for(self.dialog_history)
         textview = gladexml.get_widget("textview_fstab")
-        buf = gtk.TextBuffer()
+        buf = Gtk.TextBuffer()
         if not version == "Original" :
             buf.set_text(FstabData.header)
         buf.insert_at_cursor(self.disk.get_logfile(version))
@@ -322,7 +335,7 @@ class HistoryDialog(SimpleGladeApp) :
     
         ret = dialog("question", _("Emptying History?"), \
             _("Do you want to empty the History?"), parent = self.dialog_history)
-        if ret[0] == gtk.ResponseType.YES :
+        if ret[0] == Gtk.ResponseType.YES :
             self.disk.cleanlog()
             self.update_dialog()
             
@@ -400,7 +413,7 @@ class SanityCheck :
                 "at start-up. Select the ones you want to remove.")], \
                 [ "%s on %s" % (k["FSTAB_NAME"], k["FSTAB_PATH"]) for k in unknow_block ], \
                 _("Remove selected"), [_("Don't show me this warning in the future.")], self.parent)
-            if not dial[0] ==  gtk.ResponseType.REJECT :
+            if not dial[0] ==  Gtk.ResponseType.REJECT :
                 for i in dial[1][0] :
                     logging.debug("Removing unknow entry : %s" % unknow_block[i]["FSTAB_NAME"])
                     self.fstab.other.remove(unknow_block[i])
@@ -440,7 +453,7 @@ class SanityCheck :
                 "You should select the one you want, and the others will be commented.\n"
                 "They will be kept in the configuration file, but will be disabled.")], \
                 data, _("Keep selected"), parent = self.parent)
-                if not dial[0] ==  gtk.ResponseType.REJECT :
+                if not dial[0] ==  Gtk.ResponseType.REJECT :
                     for j in dial[1][1] :
                         i = index[j]
                         logging.debug("Commenting duplicate : %s" % entries[j])
@@ -454,7 +467,7 @@ class SanityCheck :
         
 def about_dialog(button, parent) :
 
-    dial = gtk.AboutDialog()
+    dial = Gtk.AboutDialog()
     dial.set_name("Disk Manager")
     dial.set_version(VERSION)
     dial.set_copyright("Copyright © 2007 Mertens Florent \n 2021 MX Linux")
