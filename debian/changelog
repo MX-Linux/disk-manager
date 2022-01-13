@@ -1,3 +1,9 @@
+disk-manager (22.01.01) mx; urgency=medium
+
+  * add version number handling to debian/rules 
+
+ -- fehlix <fehlix@mxlinux.org>  Wed, 12 Jan 2022 19:08:33 -0500
+
 disk-manager (21.12.02) mx; urgency=medium
 
   * add to mx-tools 
