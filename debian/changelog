@@ -1,6 +1,9 @@
 disk-manager (22.01.01) mx; urgency=medium
 
   * add version number handling to debian/rules 
+  * comment out no used HistoryDialog class
+  * fixed "None" to python None translation
+  * adjust some fuzzy msgstr to display translations
 
  -- fehlix <fehlix@mxlinux.org>  Wed, 12 Jan 2022 19:08:33 -0500
 

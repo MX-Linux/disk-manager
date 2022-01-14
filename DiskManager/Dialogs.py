@@ -245,6 +245,8 @@ class EditPartition(SimpleGladeApp) :
         self.dialog_edit.set_focus(self.options3)
         return 1
 
+""" 
+# (not used)
 
 class HistoryDialog(SimpleGladeApp) :
     ''' Class the manage the History dialog '''
@@ -342,6 +344,7 @@ class HistoryDialog(SimpleGladeApp) :
     def on_quit(self, button, event = None) :
     
         self.dialog_history.hide()
+"""
         
         
 class InfoDialog(SimpleGladeApp) :
@@ -372,13 +375,26 @@ class InfoDialog(SimpleGladeApp) :
         self.dev_label.set_label(self.entry["DEVICE"])
         self.label_label.set_label(self.disk.get_attribute(self.entry, "FS_LABEL"))
         self.uuid_label.set_label(self.disk.get_attribute(self.entry, "FS_UUID"))
-        self.type_label.set_label("%s (%s)" % \
-                (self.disk.get_attribute(self.entry, "FS_TYPE"), \
-                self.disk.get_attribute(self.entry, "FS_VERSION")))
-        self.vendor_label.set_label(self.disk.get_attribute(self.entry, "VENDOR"))
-        self.model_label.set_label(self.disk.get_attribute(self.entry, "MODEL"))
-        self.serial_label.set_label(self.disk.get_attribute(self.entry, "SERIAL"))
-        self.bus_label.set_label(self.disk.get_attribute(self.entry, "BUS"))
+
+        if self.disk.get_attribute(self.entry, "FS_VERSION") in "None":
+            self.type_label.set_label("%s" % \
+                    (self.disk.get_attribute(self.entry, "FS_TYPE")))
+        else:
+            self.type_label.set_label("%s (%s)" % \
+                    (self.disk.get_attribute(self.entry, "FS_TYPE"), \
+                    self.disk.get_attribute(self.entry, "FS_VERSION")))
+
+        if self.disk.get_attribute(self.entry, "VENDOR") not in "None":
+            self.vendor_label.set_label(self.disk.get_attribute(self.entry, "VENDOR"))
+
+        if self.disk.get_attribute(self.entry, "MODEL") not in "None":
+            self.model_label.set_label(self.disk.get_attribute(self.entry, "MODEL"))
+
+        if self.disk.get_attribute(self.entry, "SERIAL") not in "None":
+            self.serial_label.set_label(self.disk.get_attribute(self.entry, "SERIAL"))
+
+        if self.disk.get_attribute(self.entry, "BUS") not in "None":
+            self.bus_label.set_label(self.disk.get_attribute(self.entry, "BUS"))
         
     def on_quit(self, button, event = None) :
     
