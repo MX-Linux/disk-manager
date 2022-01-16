@@ -161,10 +161,12 @@ class EditPartition(SimpleGladeApp) :
         
         dialog = Gtk.FileChooserDialog(title=_("Select a directory"), action=Gtk.FileChooserAction.SELECT_FOLDER)
 
+        gtk_select = "_Select"
+        
         dialog.add_buttons(
             Gtk.STOCK_CANCEL, 
             Gtk.ResponseType.CANCEL, 
-            gettext.translation('gtk30').gettext("_Select"), 
+            gettext.translation('gtk30').gettext(gtk_select), 
             Gtk.ResponseType.OK
         )
        #dialog.add_buttons(
@@ -359,8 +361,8 @@ class InfoDialog(SimpleGladeApp) :
         self.infobuttonclose.connect("clicked", self.on_quit)
 
     def update_dial(self) :
-
-        self.dialog_info.set_title(self.entry["DEV"] + " information")
+        gtk_information = "Information"
+        self.dialog_info.set_title(self.entry["DEV"] + " " + gettext.translation('gtk30').gettext(gtk_information))
         self.size_label.set_label(size_renderer(self.entry.get_size()))
         if self.entry.get_is_mounted() :
             self.free_label.set_label(size_renderer(self.entry.get_free_size()))
@@ -484,7 +486,7 @@ class SanityCheck :
 def about_dialog(button, parent) :
 
     dial = Gtk.AboutDialog()
-    dial.set_name("Disk Manager")
+    dial.set_name(_("Disk Manager"))
     dial.set_version(VERSION)
     dial.set_copyright("Copyright © 2007 Mertens Florent \n 2021 MX Linux")
     dial.set_license( \
@@ -501,7 +503,7 @@ def about_dialog(button, parent) :
         "You should have received a copy of the GNU General Public License\n"
         "along with this library; if not, write to the Free Software\n"
         "Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA  02110-1301  USA")
-    dial.set_comments("Easily manage your filesystem configuration")
+    dial.set_comments(_("Easily manage your filesystem configuration"))
     dial.set_website(HOMEPAGE)
     dial.set_website_label("https://github.com/MX-Linux/disk-manager")
     dial.set_authors(AUTHORS)

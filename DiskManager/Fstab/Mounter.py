@@ -117,7 +117,8 @@ class Mounter(SimpleGladeApp) :
         data = str(error[1]).strip()
         options = None
         action = None
-
+        # TRANSLATORS:
+        # Keep the English term 'lazy' for the 'lazy' unmount option
         lazy_string = "\n%s" % _("You can also use the 'lazy' options to detach the filesystem now.")
 
         self.used_file = get_used_file(entry["FSTAB_PATH"])
@@ -131,10 +132,14 @@ class Mounter(SimpleGladeApp) :
                 text = [text, _("The filesystem might be temporary buzy. Wait few seconds and retry.")]
             if not entry.get_is_system() :
                 text[1] += lazy_string
+                # TRANSLATORS:
+                # Keep the English term 'lazy' for the 'lazy' unmount option
                 options = [_("Unmount with the 'lazy' option")]
                 action = _("Retry unmount")
         else :
             type = "error"
+            # TRANSLATORS:
+            # Keep the English term 'lazy' for the 'lazy' unmount option
             text = [text, _("Even with the lazy option, unmounting failed.")]
 
         ret = dialog(type, title, text, data, action, options, self.top_level)
@@ -201,6 +206,8 @@ class Mounter(SimpleGladeApp) :
             text = [text, _("No driver is available for this type of filsystem : '%s'") % entry["FS_TYPE"]]
             action = None
         elif err_code == "NTFSUNCLEAN" :
+            # TRANSLATORS:
+            # Keep the English term 'force' for the 'force' unmount option
             text = [text, _("You can try to use the 'force' option. Be Aware that this could be risky.")]
             options = [_("Use the 'force' option")]
         else :

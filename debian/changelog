@@ -1,9 +1,13 @@
 disk-manager (22.01.01) mx; urgency=medium
 
   * add version number handling to debian/rules 
-  * comment out no used HistoryDialog class
-  * fixed "None" to python None translation
-  * adjust some fuzzy msgstr to display translations
+  * comment out not used HistoryDialog class
+  * removed not used NewDevice dialog interface in glade
+  * fixed "None" to python None translations
+  * removed msg-context in glade to make merge existing translations properly
+  * fixed fuzzy messages in existing po-translation file
+  * add translator comments to keep 'fuzzy' and 'force' mount options untranslated
+  * made About dialog message translatable
 
  -- fehlix <fehlix@mxlinux.org>  Wed, 12 Jan 2022 19:08:33 -0500
 
