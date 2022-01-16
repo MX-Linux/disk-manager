@@ -139,7 +139,8 @@ cover/
 
 # Translations
 *.mo
-*.pot
+#*.pot
+disk-manager.pot
 
 # Django stuff:
 *.log
