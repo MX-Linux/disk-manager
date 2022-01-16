@@ -1,20 +1,23 @@
+-----BEGIN PGP SIGNED MESSAGE-----
+Hash: SHA512
+
 Format: 1.0
 Source: disk-manager
 Binary: disk-manager
 Architecture: all source
-Version: 21.12.02
+Version: 22.01.01
 Checksums-Md5:
- 14a50fadebf146abf0f8d1b9e6468508 726 disk-manager_21.12.02.dsc
- f5655b46f2c20a3f66d66c031e01ae8b 74064 disk-manager_21.12.02_all.deb
+ fade95e9210d558fb16559409f145c37 1638 disk-manager_22.01.01.dsc
+ 72516732ac985bae207495dfa61dc329 75848 disk-manager_22.01.01_all.deb
 Checksums-Sha1:
- 90316a7ae411e88791741e4f9549975605b1346b 726 disk-manager_21.12.02.dsc
- c31d411275d879c4d925e20aa4e1a5150b3a011b 74064 disk-manager_21.12.02_all.deb
+ 84106ef8d396ee6dd9677832a22d8e997f9e108c 1638 disk-manager_22.01.01.dsc
+ 74b260c8f98a8a85c364a012ff31e7734250e6ee 75848 disk-manager_22.01.01_all.deb
 Checksums-Sha256:
- 3026f5f65e7d9d7ab1c4e17a8f82472e69bb0a9b1403c1cd4a43e69ce35edc20 726 disk-manager_21.12.02.dsc
- c1774c0b86ed46aa027eac5218c9b20d991583c388728853961171c174b908ae 74064 disk-manager_21.12.02_all.deb
+ bf226aa2b69a5dd54b03d7a45efa8bc7191aa5b55fd97dbfc7d23699cc43abc1 1638 disk-manager_22.01.01.dsc
+ 89d39687f8d41dace388a2a1e1332542a1484d5ed3f537dc9f29195724fdb2f4 75848 disk-manager_22.01.01_all.deb
 Build-Origin: Debian
 Build-Architecture: amd64
-Build-Date: Fri, 31 Dec 2021 21:18:37 -0500
+Build-Date: Sun, 16 Jan 2022 01:51:13 +0100
 Build-Tainted-By:
  merged-usr-via-aliased-dirs
  usr-local-has-libraries
@@ -218,7 +221,7 @@ Installed-Build-Depends:
  libxml2 (= 2.9.10+dfsg-6.7),
  libz3-4 (= 4.8.10-1),
  libzstd1 (= 1.4.8+dfsg-2.1),
- linux-libc-dev (= 5.15.5-1~mx21+1),
+ linux-libc-dev (= 5.14.6-3~mx21+1),
  login (= 1:4.8.1-1),
  lsb-base (= 11.1.0),
  m4 (= 1.4.18-5),
@@ -265,4 +268,22 @@ Installed-Build-Depends:
 Environment:
  DEB_BUILD_OPTIONS="parallel=4"
  LANG="en_US.UTF-8"
- SOURCE_DATE_EPOCH="1641003464"
+ SOURCE_DATE_EPOCH="1642032513"
+
+-----BEGIN PGP SIGNATURE-----
+
+iQJHBAEBCgAxFiEEgRnC8/wKXRM2S0xLL1ePG6ydm+kFAmHjbAkTHGZlaGxpeEBt
+eGxpbnV4Lm9yZwAKCRAvV48brJ2b6UmYEACwIuoOGlN4CwqWfRdNZHkac23OQ+K9
+KuiArn2va1Nvle3sleGworFYZlHnJA0xjlQ0ryxCEuVs4q42OYRbmh0B/k4fBep8
+SxY9GZY2DJlVOWuLNxqvIxHb23eSkahNCZ8etq0vR7sgx4d3yCLqcGK+RaGjeahg
+IvRZjODOIqoERpdVXDS2hHymL7211/+B+nu40pvfC5uwPr+tsH3+WBPlP3ShR1qf
+UOOhOBRzY/wy3Pe1wbYnHUUYunITULfdge+iBvIjvKH7J91Z+fOd3nVFWWLXZddy
+IE5ceOL20l81BoK7OBAUFBhk3XEr6+AaIib/I+6JCv9y3m++DpoDncIpgYVlplAI
+HB/umwcsv+46XKletz/BTVksTB6DaihR73qAawR1C5b7sFyYzNNkdsRqa3813oxt
+Ue7CtkeTCmgCFL6wYaPoWH3qzjFYC7kq+OkfSFfI6kTKc+nw3D+LhC1sECMMMT1M
+0i07oNOnsDS8CHtkbOoJu4ssSq5Np2mCdYTEfNM5lXx8rfQGi+Pl7gi1nzhzmV5G
+V4FSiScnzBsNUYCU5JpMeZ5T5FsAL3INK/rDerVodEGwmU73dqisjkGtJq0uRf7h
+EC/dY4vINlE8DlcOcI4Hkqdp0wBKulHUIEiTbH+03VqaQJ9xLi3PG2h/NbNskQ3x
+mH+4od3+fRxqhg==
+=F4nD
+-----END PGP SIGNATURE-----

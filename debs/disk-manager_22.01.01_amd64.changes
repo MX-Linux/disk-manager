@@ -1,0 +1,61 @@
+-----BEGIN PGP SIGNED MESSAGE-----
+Hash: SHA512
+
+Format: 1.8
+Date: Wed, 12 Jan 2022 19:08:33 -0500
+Source: disk-manager
+Binary: disk-manager
+Architecture: source all
+Version: 22.01.01
+Distribution: mx
+Urgency: medium
+Maintainer: Dolphin Oracle <dolphinoracle@gmail.com>
+Changed-By: fehlix <fehlix@mxlinux.org>
+Description:
+ disk-manager - simple graphical filesystem configurator
+Changes:
+ disk-manager (22.01.01) mx; urgency=medium
+ .
+   * add version number handling to debian/rules
+   * comment out not used HistoryDialog class
+   * removed not used NewDevice dialog interface in glade
+   * fixed "None" to python None translations
+   * removed msg-context in glade to make merge existing translations properly
+   * fixed fuzzy messages in existing po-translation file
+   * add translator comments to keep 'fuzzy' and 'force' mount options untranslated
+   * made About dialog message translatable
+   * added en.pot
+   * added updated translation po-files
+Checksums-Sha1:
+ 84106ef8d396ee6dd9677832a22d8e997f9e108c 1638 disk-manager_22.01.01.dsc
+ 4ea8827d5f62c7eda32e85ba652dea215eb85a04 330800 disk-manager_22.01.01.tar.xz
+ 74b260c8f98a8a85c364a012ff31e7734250e6ee 75848 disk-manager_22.01.01_all.deb
+ 44843e33ff31fa35ab6c1cd6c017954be76b8483 8629 disk-manager_22.01.01_amd64.buildinfo
+Checksums-Sha256:
+ bf226aa2b69a5dd54b03d7a45efa8bc7191aa5b55fd97dbfc7d23699cc43abc1 1638 disk-manager_22.01.01.dsc
+ dd9e17f813686bead7c2454a462fbdf9495640a6da2b9918eebbeaed6b77af6b 330800 disk-manager_22.01.01.tar.xz
+ 89d39687f8d41dace388a2a1e1332542a1484d5ed3f537dc9f29195724fdb2f4 75848 disk-manager_22.01.01_all.deb
+ b08df7c390eadeac40ac7a3d5ce40a729cb2f76cac2551e4e0aa64c83a31536a 8629 disk-manager_22.01.01_amd64.buildinfo
+Files:
+ fade95e9210d558fb16559409f145c37 1638 admin optional disk-manager_22.01.01.dsc
+ 42917c623d6dc7eba518ba9e8f5c4e5f 330800 admin optional disk-manager_22.01.01.tar.xz
+ 72516732ac985bae207495dfa61dc329 75848 admin optional disk-manager_22.01.01_all.deb
+ 8381ed21572f93f8181f6a371b7043f7 8629 admin optional disk-manager_22.01.01_amd64.buildinfo
+
+-----BEGIN PGP SIGNATURE-----
+
+iQJHBAEBCgAxFiEEgRnC8/wKXRM2S0xLL1ePG6ydm+kFAmHjbAkTHGZlaGxpeEBt
+eGxpbnV4Lm9yZwAKCRAvV48brJ2b6ZbkD/9roDGIRayLUnU7SOcJKmSqWUph0g87
+MczYELi0WKJIVRVJ5doPaQXxBPlCISqqtWQ4r6T+VfA0ohWjO77LH5yYLo4aU2Au
+Hl3ktt50zEeMBOKpegCsbrw9VxCniD/Y8S5d1QabdrHf1ddgBpCy2QJyiIahHsv9
+5RmyrsJcTLh+fRk/Jvgn2lzquELo2CjdnoyvynA2i1jVo2Yk70+wTkeo7OhWHH26
+iQhbM2kmIRkoCgMDnr9ymgut+EY/bqukWC0VBnB6hG6SGI0EKDGvGFka4/6RXzFa
+eTYWxB0E27ZVOwJ1eUB+1i6wjP6goCLr+G5vVdPK22IT90j3Pq3No7iIA4Yu2ttG
+VZpKMviplsvK/rCjMbNW48Mjhx1Eo83Nk4J9Vz8XAKYvs6CYJzfvKmTGzV9rhFu8
+3UL4ikFDcaI4WfNiHZmN+UiLOEYJ1sINgHEi7bE8cBUv4oSHo/hkWld9AbgoRJ16
+1Uhv0Cz8dVE0tcgflmCvZPBEcPlTXtTxpUBWMtfbn0dBltpV32w4OdznQg07O7jZ
+1/bfoD6xA1jsWloVlV00IEGZMLxMrtyHtJYKSviAFf2B8qpEhQ4F1pjApr3J6B5t
+PpM6YBVtAa4QYZw3WgI5ILGMsB93VbzLfQCritBlGqgN8Ekt+Y8YsHNo4v5DdNAR
+pPvXP+uh4v+8Hg==
+=Xuzk
+-----END PGP SIGNATURE-----
