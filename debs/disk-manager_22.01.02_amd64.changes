@@ -19,35 +19,35 @@ Changes:
    * adjust translatable strings
    * translation refresh
 Checksums-Sha1:
- f72d7deecef7104ec5452bc4e4cb43d59d56d363 1638 disk-manager_22.01.02.dsc
- deca96dbcdc6357911952524b78775013eb5e7a6 551448 disk-manager_22.01.02.tar.xz
+ df3654e8c9178e9d1d6b5a6af2f581d6e2353a54 1638 disk-manager_22.01.02.dsc
+ daa4f6259b9af49faf2700a8968658dfff1d3c6a 135128 disk-manager_22.01.02.tar.xz
  39ab16bf926de297e1239f20c1ade3bed1faa9f4 87640 disk-manager_22.01.02_all.deb
- 679f08b7c1e7fe741e125e158280b18c7872ed6e 8629 disk-manager_22.01.02_amd64.buildinfo
+ 72365c9e8298b7e66c019f7389d0237e5de71dce 8629 disk-manager_22.01.02_amd64.buildinfo
 Checksums-Sha256:
- 2dc912fade74c7e5718a43418fd77c9e2b496df473f3671722bab6a691d1b081 1638 disk-manager_22.01.02.dsc
- 4adfc41532627fe150e6d5676c20174d0632ece123525c73b6e263f359446e5b 551448 disk-manager_22.01.02.tar.xz
+ 956ac910a7def30dc8886b0dd16c86c1feda4ffac8cc54eee428ef0cf36d4874 1638 disk-manager_22.01.02.dsc
+ 1a7213a056723f7555f687feac676c7c498c29d9c5ee4d0b8f28398d7ab0826a 135128 disk-manager_22.01.02.tar.xz
  851c4158f231f960a0aa464205d2ffad420d6eb04947f20a59559932e76aef68 87640 disk-manager_22.01.02_all.deb
- 932e39f293c4463177a9c0b448fd683a5c90d26b90b791dfca12ccab573f0590 8629 disk-manager_22.01.02_amd64.buildinfo
+ c55d506c8df1cfecb7340670b5301b6885098dc823ee13a4443f80231ccc9618 8629 disk-manager_22.01.02_amd64.buildinfo
 Files:
- b2e9f567a6ccd814d45874147c217d00 1638 admin optional disk-manager_22.01.02.dsc
- 2ad0c8d7b0b783a4d6262c7c8f1ce0c1 551448 admin optional disk-manager_22.01.02.tar.xz
+ eb351261d1b3b6a49b2944359ffb380f 1638 admin optional disk-manager_22.01.02.dsc
+ eb58a8ee40b78d9776c06a60ed8b316a 135128 admin optional disk-manager_22.01.02.tar.xz
  7458e2d8d43ddb8466e45adbff263616 87640 admin optional disk-manager_22.01.02_all.deb
- 49cacd86110d65c099c2488ef0ed7a0b 8629 admin optional disk-manager_22.01.02_amd64.buildinfo
+ 7a6e04f32f4284f931a210f886db5212 8629 admin optional disk-manager_22.01.02_amd64.buildinfo
 
 -----BEGIN PGP SIGNATURE-----
 
-iQJGBAEBCgAxFiEEgRnC8/wKXRM2S0xLL1ePG6ydm+kFAmH1fh4THGZlaGxpeEBt
-eGxpbnV4Lm9yZwAKCRAvV48brJ2b6U6rD/ink/ch0CDzqlWz5hfJEyJOHiuZFXp0
-lSF8iyNqmr0+qJ29sBVv1hEWSb8aRC05P/W1Sf+YIEUz93dBE8rLNllc6EySxF+1
-BNK4DYTgL8U4lUGUj+HP2lRxTG8KZAuMvlwYC9BvAA6qRwZO2boKHgdFJ2GOWYNo
-hZ2msvxakkcdx9Hq4Vhcdke3nRU1tzaQ5tZXg1TPURmHDjvRiilGNdrGAOLWcnn7
-gQJ/+5fPVFmo55A1vWd57N5sykazJ/YtkDL216VUWQ3D5EiLlmtSXpgb/EmsVkdi
-GU7kRrrHtpPIfi3PZjcxU4B9ISepQzOb5VMak/YPPq0zzO0TuMDMsxL25v9Zm/4q
-+D0kbWlsAhTbYs0z1khT+TB57FaLxx583PTJPrh5YfQ8tju9E+PxuINpvUzdsw3B
-HwAAUC6TCZ59unT+RJxARzjGqPi9E9kcCHVmQZW5/FFRSJZpu64I6SIuyaU6HZvD
-JV5A5xb2/ADlQzguNZcXpzdENe8Ln6kEuj0FPk0I/eA0x2KLS6p1+w9xj2Pn4cie
-l7AWNKZZeuFbtqL0c7jQpTb+TzpCYutreJmjJ9Ju8CRwP3756/QXqdHHq3CJVbU4
-BnuGwV7+BXiXPJ81L0OKt3t0pWW4nZ4sqqAfAdUgPOvM9yOtz3dyFOvfiZAEPveY
-u6IQFes8VJTe
-=SwTH
+iQJHBAEBCgAxFiEEgRnC8/wKXRM2S0xLL1ePG6ydm+kFAmH1lC8THGZlaGxpeEBt
+eGxpbnV4Lm9yZwAKCRAvV48brJ2b6ac4D/wI3uW9udf1ty5n3EDFLSmBingXYuWD
+BZyoZ4gio6SnyiT+vIktkEeO0M7eXxoed+KsAH49TQ/lTaL4AsKoyJya2FhREMHO
+vq7X8Wvko+FhAxzzFqkbjLHfHYnFjlNQsXqrCaSR+Oir4zOv8/8rg5W6w+o9sDTD
+t0DUVQxv9ATP0TIE4B2TtGRwOWFEcJVUw3lSbrESELMuYCYAPrV44vj/XpvH0mvi
+iRkHLRN0DO7t5bEhgLW5h020cJH3h4J3LfVPW9mAedRVnMYF75iEDl/FR6MqPp2P
+z6x4Nli3Y1uLea6Eh5SqCa5hbDkgFVOMCggMy0G5CnsiVESRPAdVTgNoduBR8BkF
+j/iS7IGMBM4iFOhw3RnG5G/tXAEP2PNf3kzzPGz3V+WFO27srRDnHG8U8ZDaAjIK
+M5RZwBxJrne3DDWrpL+KisZUQ6+R1zC1F7H+v7Kwvg4/9uo6r9jl0lRQlFhwjHHh
+4XeWj/cl5y8AH75SHzWW3Fj+rTbM2C302YHZ2/ujgFjFBCu4VXD2rO0XzScfoOYu
+zdLaQzzZwlUKwY6Ikm98w49vTsvgVAjMosSVFy+6L7ERj8THth5WYmMj/D78yTVo
+VrEN3vT7U5O/YMl5qNaTI5kekTL1yEHEO3znK2jU1jxXBN/slE8YZlwdx0GYQcu0
+s2mCTr/neVIeOg==
+=FMdM
 -----END PGP SIGNATURE-----

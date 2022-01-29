@@ -8,6 +8,88 @@ dpkg-buildpackage: info: host architecture amd64
  debian/rules clean
 dh clean \
 	--with python3
+   dh_auto_clean
+	make -j4 distclean
+make[1]: Entering directory '/tmpdir/build/merged_fehlix_main_disk-manager/disk-manager'
+Making distclean in po
+make[2]: Entering directory '/tmpdir/build/merged_fehlix_main_disk-manager/disk-manager/po'
+rm -f *.pox disk-manager.pot *.old.po cat-id-tbl.tmp
+rm -f .intltool-merge-cache
+rm -f Makefile Makefile.in POTFILES stamp-it
+rm -f *.mo *.msg *.cat *.cat.m *.gmo
+make[2]: Leaving directory '/tmpdir/build/merged_fehlix_main_disk-manager/disk-manager/po'
+Making distclean in data
+make[2]: Entering directory '/tmpdir/build/merged_fehlix_main_disk-manager/disk-manager/data'
+Making distclean in icons
+make[3]: Entering directory '/tmpdir/build/merged_fehlix_main_disk-manager/disk-manager/data/icons'
+Making distclean in 16x16
+make[4]: Entering directory '/tmpdir/build/merged_fehlix_main_disk-manager/disk-manager/data/icons/16x16'
+test -z "" || rm -f 
+test . = "." || test -z "" || rm -f 
+rm -f Makefile
+make[4]: Leaving directory '/tmpdir/build/merged_fehlix_main_disk-manager/disk-manager/data/icons/16x16'
+Making distclean in 22x22
+make[4]: Entering directory '/tmpdir/build/merged_fehlix_main_disk-manager/disk-manager/data/icons/22x22'
+test -z "" || rm -f 
+test . = "." || test -z "" || rm -f 
+rm -f Makefile
+make[4]: Leaving directory '/tmpdir/build/merged_fehlix_main_disk-manager/disk-manager/data/icons/22x22'
+Making distclean in 24x24
+make[4]: Entering directory '/tmpdir/build/merged_fehlix_main_disk-manager/disk-manager/data/icons/24x24'
+test -z "" || rm -f 
+test . = "." || test -z "" || rm -f 
+rm -f Makefile
+make[4]: Leaving directory '/tmpdir/build/merged_fehlix_main_disk-manager/disk-manager/data/icons/24x24'
+Making distclean in scalable
+make[4]: Entering directory '/tmpdir/build/merged_fehlix_main_disk-manager/disk-manager/data/icons/scalable'
+test -z "" || rm -f 
+test . = "." || test -z "" || rm -f 
+rm -f Makefile
+make[4]: Leaving directory '/tmpdir/build/merged_fehlix_main_disk-manager/disk-manager/data/icons/scalable'
+make[4]: Entering directory '/tmpdir/build/merged_fehlix_main_disk-manager/disk-manager/data/icons'
+test -z "" || rm -f 
+rm -f TAGS ID GTAGS GRTAGS GSYMS GPATH tags
+test . = "." || test -z "" || rm -f 
+make[4]: Leaving directory '/tmpdir/build/merged_fehlix_main_disk-manager/disk-manager/data/icons'
+rm -f Makefile
+make[3]: Leaving directory '/tmpdir/build/merged_fehlix_main_disk-manager/disk-manager/data/icons'
+make[3]: Entering directory '/tmpdir/build/merged_fehlix_main_disk-manager/disk-manager/data'
+test -z "disk-manager.desktop" || rm -f disk-manager.desktop
+test -z "disk-manager.desktop.in" || rm -f disk-manager.desktop.in
+rm -f TAGS ID GTAGS GRTAGS GSYMS GPATH tags
+test . = "." || test -z "" || rm -f 
+make[3]: Leaving directory '/tmpdir/build/merged_fehlix_main_disk-manager/disk-manager/data'
+rm -f Makefile
+make[2]: Leaving directory '/tmpdir/build/merged_fehlix_main_disk-manager/disk-manager/data'
+Making distclean in DiskManager
+make[2]: Entering directory '/tmpdir/build/merged_fehlix_main_disk-manager/disk-manager/DiskManager'
+Making distclean in Fstab
+make[3]: Entering directory '/tmpdir/build/merged_fehlix_main_disk-manager/disk-manager/DiskManager/Fstab'
+test -z "Fstabconfig.py" || rm -f Fstabconfig.py
+test -z "Fstabconfig.py" || rm -f Fstabconfig.py
+test . = "." || test -z "" || rm -f 
+rm -f Makefile
+make[3]: Leaving directory '/tmpdir/build/merged_fehlix_main_disk-manager/disk-manager/DiskManager/Fstab'
+make[3]: Entering directory '/tmpdir/build/merged_fehlix_main_disk-manager/disk-manager/DiskManager'
+test -z "config.py" || rm -f config.py
+test -z "config.py" || rm -f config.py
+rm -f TAGS ID GTAGS GRTAGS GSYMS GPATH tags
+test . = "." || test -z "" || rm -f 
+make[3]: Leaving directory '/tmpdir/build/merged_fehlix_main_disk-manager/disk-manager/DiskManager'
+rm -f Makefile
+make[2]: Leaving directory '/tmpdir/build/merged_fehlix_main_disk-manager/disk-manager/DiskManager'
+make[2]: Entering directory '/tmpdir/build/merged_fehlix_main_disk-manager/disk-manager'
+test -z "disk-manager" || rm -f disk-manager
+test -z "disk-manager" || rm -f disk-manager
+rm -f TAGS ID GTAGS GRTAGS GSYMS GPATH tags
+test . = "." || test -z "" || rm -f 
+rm -f cscope.out cscope.in.out cscope.po.out cscope.files
+test -z "intltool-extract intltool-merge intltool-update config.status.lineno" || rm -f intltool-extract intltool-merge intltool-update config.status.lineno
+make[2]: Leaving directory '/tmpdir/build/merged_fehlix_main_disk-manager/disk-manager'
+rm -f config.status config.cache config.log configure.lineno config.status.lineno
+rm -f Makefile
+make[1]: Leaving directory '/tmpdir/build/merged_fehlix_main_disk-manager/disk-manager'
+   dh_autoreconf_clean
    dh_clean
  dpkg-source -b .
 dpkg-source: info: using source format '3.0 (native)'
@@ -446,9 +528,9 @@ make[4]: Entering directory '/tmpdir/build/merged_fehlix_main_disk-manager/disk-
 make[4]: Nothing to be done for 'install-exec-am'.
  /usr/bin/mkdir -p '/tmpdir/build/merged_fehlix_main_disk-manager/disk-manager/debian/disk-manager/usr/share/applications'
  /usr/bin/mkdir -p '/tmpdir/build/merged_fehlix_main_disk-manager/disk-manager/debian/disk-manager/usr/share/disk-manager'
+ /usr/bin/mkdir -p '/tmpdir/build/merged_fehlix_main_disk-manager/disk-manager/debian/disk-manager/usr/share/man/man8'
  /usr/bin/install -c -m 644 disk-manager.desktop '/tmpdir/build/merged_fehlix_main_disk-manager/disk-manager/debian/disk-manager/usr/share/applications'
  /usr/bin/install -c -m 644 disk-manager.glade write-policy.fdi ro-policy.fdi '/tmpdir/build/merged_fehlix_main_disk-manager/disk-manager/debian/disk-manager/usr/share/disk-manager'
- /usr/bin/mkdir -p '/tmpdir/build/merged_fehlix_main_disk-manager/disk-manager/debian/disk-manager/usr/share/man/man8'
  /usr/bin/install -c -m 644 disk-manager.8 '/tmpdir/build/merged_fehlix_main_disk-manager/disk-manager/debian/disk-manager/usr/share/man/man8'
 make[4]: Leaving directory '/tmpdir/build/merged_fehlix_main_disk-manager/disk-manager/data'
 make[3]: Leaving directory '/tmpdir/build/merged_fehlix_main_disk-manager/disk-manager/data'
@@ -508,18 +590,6 @@ make[1]: Leaving directory '/tmpdir/build/merged_fehlix_main_disk-manager/disk-m
 	Normalized debian/disk-manager/usr/share/locale/nb/LC_MESSAGES/disk-manager.mo
 	Normalized debian/disk-manager/usr/share/locale/lt/LC_MESSAGES/disk-manager.mo
 	Normalized debian/disk-manager/usr/share/locale/ko/LC_MESSAGES/disk-manager.mo
-	Normalized debian/disk-manager/usr/share/locale/fi/LC_MESSAGES/disk-manager.mo
-	Normalized debian/disk-manager/usr/share/locale/fa/LC_MESSAGES/disk-manager.mo
-	Normalized debian/disk-manager/usr/share/locale/es_ES/LC_MESSAGES/disk-manager.mo
-	Normalized debian/disk-manager/usr/share/locale/es/LC_MESSAGES/disk-manager.mo
-	Normalized debian/disk-manager/usr/share/locale/el/LC_MESSAGES/disk-manager.mo
-	Normalized debian/disk-manager/usr/share/locale/de/LC_MESSAGES/disk-manager.mo
-	Normalized debian/disk-manager/usr/share/locale/da/LC_MESSAGES/disk-manager.mo
-	Normalized debian/disk-manager/usr/share/locale/cs/LC_MESSAGES/disk-manager.mo
-	Normalized debian/disk-manager/usr/share/locale/ca/LC_MESSAGES/disk-manager.mo
-	Normalized debian/disk-manager/usr/share/locale/bg/LC_MESSAGES/disk-manager.mo
-	Normalized debian/disk-manager/usr/share/locale/ar/LC_MESSAGES/disk-manager.mo
-	Normalized debian/disk-manager/usr/share/locale/am/LC_MESSAGES/disk-manager.mo
 	Normalized debian/disk-manager/usr/share/locale/kk/LC_MESSAGES/disk-manager.mo
 	Normalized debian/disk-manager/usr/share/locale/ja/LC_MESSAGES/disk-manager.mo
 	Normalized debian/disk-manager/usr/share/locale/it/LC_MESSAGES/disk-manager.mo
@@ -532,6 +602,18 @@ make[1]: Leaving directory '/tmpdir/build/merged_fehlix_main_disk-manager/disk-m
 	Normalized debian/disk-manager/usr/share/locale/fr_BE/LC_MESSAGES/disk-manager.mo
 	Normalized debian/disk-manager/usr/share/locale/fr/LC_MESSAGES/disk-manager.mo
 	Normalized debian/disk-manager/usr/share/locale/fil_PH/LC_MESSAGES/disk-manager.mo
+	Normalized debian/disk-manager/usr/share/locale/fi/LC_MESSAGES/disk-manager.mo
+	Normalized debian/disk-manager/usr/share/locale/fa/LC_MESSAGES/disk-manager.mo
+	Normalized debian/disk-manager/usr/share/locale/es_ES/LC_MESSAGES/disk-manager.mo
+	Normalized debian/disk-manager/usr/share/locale/es/LC_MESSAGES/disk-manager.mo
+	Normalized debian/disk-manager/usr/share/locale/el/LC_MESSAGES/disk-manager.mo
+	Normalized debian/disk-manager/usr/share/locale/de/LC_MESSAGES/disk-manager.mo
+	Normalized debian/disk-manager/usr/share/locale/da/LC_MESSAGES/disk-manager.mo
+	Normalized debian/disk-manager/usr/share/locale/cs/LC_MESSAGES/disk-manager.mo
+	Normalized debian/disk-manager/usr/share/locale/ca/LC_MESSAGES/disk-manager.mo
+	Normalized debian/disk-manager/usr/share/locale/bg/LC_MESSAGES/disk-manager.mo
+	Normalized debian/disk-manager/usr/share/locale/ar/LC_MESSAGES/disk-manager.mo
+	Normalized debian/disk-manager/usr/share/locale/am/LC_MESSAGES/disk-manager.mo
 	Normalized debian/disk-manager/usr/share/locale/zh_TW/LC_MESSAGES/disk-manager.mo
 	Normalized debian/disk-manager/usr/share/locale/zh_CN/LC_MESSAGES/disk-manager.mo
 	Normalized debian/disk-manager/usr/share/locale/vi/LC_MESSAGES/disk-manager.mo
