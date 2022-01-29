@@ -124,7 +124,7 @@ class EditPartition(SimpleGladeApp) :
             self.driver_box.set_sensitive(False)
             self.driver_error_box.show()
             self.driver_error_label.set_label( \
-               _("No driver is available for this type of filsystem : '%s'") \
+               _("No driver is available for this type of filesystem : '%s'") \
                % self.entry["FS_TYPE"])
             fsk = 0
         self.check_button.set_active(bool(int(self.entry["FSTAB_PASO"])))
@@ -242,7 +242,7 @@ class EditPartition(SimpleGladeApp) :
             return 0     
         dialog("warning", _("Options formatting error"), \
                 _("<i>%s</i> is not formatted correctly.\n" \
-                "Options should be separated by coma (,)") % escape_mkup(options), \
+                "Options should be separated by comma (,)") % escape_mkup(options), \
                 parent = self.dialog_edit)
         self.dialog_edit.set_focus(self.options3)
         return 1
