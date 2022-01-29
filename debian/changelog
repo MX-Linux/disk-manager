@@ -1,3 +1,10 @@
+disk-manager (22.01.02) mx; urgency=medium
+
+  * adjust translatable strings
+  * translation refresh
+
+ -- fehlix <fehlix@mxlinux.org>  Sat, 29 Jan 2022 13:18:50 -0400
+
 disk-manager (22.01.01) mx; urgency=medium
 
   * add version number handling to debian/rules 

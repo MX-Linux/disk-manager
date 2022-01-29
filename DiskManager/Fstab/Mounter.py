@@ -129,7 +129,7 @@ class Mounter(SimpleGladeApp) :
                     _("Close all applications that use it and retry to unmount.")]
                 data = [ self.used_file, False]
             else :
-                text = [text, _("The filesystem might be temporary buzy. Wait few seconds and retry.")]
+                text = [text, _("The filesystem might be temporarily busy. Wait few seconds and retry.")]
             if not entry.get_is_system() :
                 text[1] += lazy_string
                 # TRANSLATORS:
@@ -187,28 +187,28 @@ class Mounter(SimpleGladeApp) :
         elif entry["FSTAB_TYPE"] not in list(entry["FS_DRIVERS"]["all"].keys()) or len(data) == 0 :
             err_code = "BADTYPE"
 
-        retry_string = _("You can try one of the following action:")
+        retry_string = _("You can try one of the following actions:")
 
         if err_code == "BADOPT" :
-            s = _("It seams that option '%s' is not allowed.") % bad_opt
+            s = _("It seems that option '%s' is not allowed.") % bad_opt
             text = [text, "%s\n%s" % (s, retry_string)]
             options = ([_("Return options to defaults")], True)
             if not entry["FSTAB_OPTION"] == bad_opt :
                 options[0].append(_("Don't use the '%s' option") % bad_opt)
         elif err_code == "BADTYPE" :
-            s = _("It seams that fs type '%s' is not valid.") % entry["FSTAB_TYPE"]
+            s = _("It seems that fs type '%s' is not valid.") % entry["FSTAB_TYPE"]
             text = [text, "%s\n%s" % (s, retry_string)]
             options = []
             for driver in entry["FS_DRIVERS"]["primary"] :
                 options.append(_("Using driver '%s' (%s)") % (driver[0], driver[1]))
             options = [ options, True ]
         elif err_code == "NODRIVER" :
-            text = [text, _("No driver is available for this type of filsystem : '%s'") % entry["FS_TYPE"]]
+            text = [text, _("No driver is available for this type of filesystem : '%s'") % entry["FS_TYPE"]]
             action = None
         elif err_code == "NTFSUNCLEAN" :
             # TRANSLATORS:
             # Keep the English term 'force' for the 'force' unmount option
-            text = [text, _("You can try to use the 'force' option. Be Aware that this could be risky.")]
+            text = [text, _("You can try to use the 'force' option. Be aware that this could be risky.")]
             options = [_("Use the 'force' option")]
         else :
             action = None

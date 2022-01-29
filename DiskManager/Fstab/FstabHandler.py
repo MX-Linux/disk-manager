@@ -444,7 +444,7 @@ class FstabHandler(MntFile) :
 
         # Require reboot if some device couldn't be unmounted
         if self._mounter.do(mount = to_mount, umount = to_umount)[0] :
-            dialog("warning", _("Reboot require"), \
+            dialog("warning", _("Reboot required"), \
                 _("In order to apply all your changes,\n"\
                 "you'll need to reboot your computer."), parent = self._parent)
                 

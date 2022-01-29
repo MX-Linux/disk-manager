@@ -1,22 +1,26 @@
-# Danish translation for disk-manager
-# Copyright (c) 2007 Rosetta Contributors and Canonical Ltd 2007
-# This file is distributed under the same license as the disk-manager package.
-# FIRST AUTHOR <EMAIL@ADDRESS>, 2007.
-#
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+# 
+# Translators:
+# scootergrisen, 2022
+# Roy Avrett <avrett@cs.fsu.edu>, 2022
+# 
 #, fuzzy
 msgid ""
 msgstr ""
-"Project-Id-Version: disk-manager\n"
+"Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-01-15 23:43+0100\n"
-"PO-Revision-Date: 2007-07-05 17:30+0000\n"
-"Last-Translator: Joe Hansen <joedalton2@yahoo.dk>\n"
-"Language-Team: Danish <da@li.org>\n"
-"Language: da\n"
+"POT-Creation-Date: 2022-01-16 00:46+0100\n"
+"PO-Revision-Date: 2022-01-21 17:21+0000\n"
+"Last-Translator: Roy Avrett <avrett@cs.fsu.edu>, 2022\n"
+"Language-Team: Danish (https://www.transifex.com/anticapitalista/teams/10162/da/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Rosetta-Export-Date: 2007-07-15 23:18:17+0000\n"
+"Language: da\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
 #: ../disk-manager.in:66
 msgid "Insufficient rights"
@@ -31,8 +35,8 @@ msgid "<b>Driver</b>"
 msgstr "<b>Styringsprogram</b>"
 
 #: ../data/disk-manager.glade.h:2
-msgid "This driver seams to not be available for this type."
-msgstr "Dette drivprogram virker ikke som værende tilgængelig for denne type."
+msgid "This driver seems to not be available for this type."
+msgstr ""
 
 #: ../data/disk-manager.glade.h:3
 msgid "<b>Mount point</b>"
@@ -138,7 +142,7 @@ msgstr ""
 
 #: ../DiskManager/Dialogs.py:127 ../DiskManager/Fstab/Mounter.py:206
 #, python-format
-msgid "No driver is available for this type of filsystem : '%s'"
+msgid "No driver is available for this type of filesystem : '%s'"
 msgstr ""
 
 #: ../DiskManager/Dialogs.py:162
@@ -164,7 +168,7 @@ msgstr ""
 #, python-format
 msgid ""
 "<i>%s</i> is not formatted correctly.\n"
-"Options should be separated by coma (,)"
+"Options should be separated by comma (,)"
 msgstr ""
 
 #: ../DiskManager/Dialogs.py:427
@@ -223,11 +227,11 @@ msgstr ""
 
 #: ../DiskManager/DiskManager.py:132
 msgid "Enable"
-msgstr ""
+msgstr "Aktivér"
 
 #: ../DiskManager/DiskManager.py:138
 msgid "Device"
-msgstr ""
+msgstr "Enhed"
 
 #: ../DiskManager/DiskManager.py:151
 msgid "Mount point"
@@ -235,19 +239,19 @@ msgstr ""
 
 #: ../DiskManager/DiskManager.py:158
 msgid "Type"
-msgstr ""
+msgstr "Type"
 
 #: ../DiskManager/DiskManager.py:165
 msgid "Total"
-msgstr ""
+msgstr "Samlet"
 
 #: ../DiskManager/DiskManager.py:172
 msgid "Free"
-msgstr ""
+msgstr "Ledig"
 
 #: ../DiskManager/DiskManager.py:179
 msgid "Used"
-msgstr ""
+msgstr "Brugt"
 
 #: ../DiskManager/DiskManager.py:292
 msgid "Editing system partition?"
@@ -263,11 +267,11 @@ msgstr ""
 
 #: ../DiskManager/DiskManager.py:399
 msgid "Unmount"
-msgstr ""
+msgstr "Afmonter"
 
 #: ../DiskManager/DiskManager.py:402
 msgid "Mount"
-msgstr ""
+msgstr "Monter"
 
 #: ../DiskManager/DiskManager.py:407
 msgid "Reverting to an older version?"
@@ -279,7 +283,7 @@ msgstr ""
 
 #: ../DiskManager/DiskManager.py:408
 msgid "Do you want to continue?"
-msgstr ""
+msgstr "Vil du fortsætte?"
 
 #: ../DiskManager/Utility.py:45
 msgid "KB"
@@ -287,11 +291,11 @@ msgstr ""
 
 #: ../DiskManager/Utility.py:45
 msgid "MB"
-msgstr ""
+msgstr "MB"
 
 #: ../DiskManager/Utility.py:45
 msgid "GB"
-msgstr ""
+msgstr "GB"
 
 #: ../DiskManager/Utility.py:45
 msgid "TB"
@@ -314,7 +318,7 @@ msgid "Unmount selected"
 msgstr ""
 
 #: ../DiskManager/Fstab/FstabHandler.py:447
-msgid "Reboot require"
+msgid "Reboot required"
 msgstr ""
 
 #: ../DiskManager/Fstab/FstabHandler.py:448
@@ -372,7 +376,7 @@ msgid "Close all applications that use it and retry to unmount."
 msgstr ""
 
 #: ../DiskManager/Fstab/Mounter.py:132
-msgid "The filesystem might be temporary buzy. Wait few seconds and retry."
+msgid "The filesystem might be temporarily busy. Wait few seconds and retry."
 msgstr ""
 
 #. TRANSLATORS:
@@ -405,12 +409,12 @@ msgid "Retry mount"
 msgstr ""
 
 #: ../DiskManager/Fstab/Mounter.py:190
-msgid "You can try one of the following action:"
+msgid "You can try one of the following actions:"
 msgstr ""
 
 #: ../DiskManager/Fstab/Mounter.py:193
 #, python-format
-msgid "It seams that option '%s' is not allowed."
+msgid "It seems that option '%s' is not allowed."
 msgstr ""
 
 #: ../DiskManager/Fstab/Mounter.py:195
@@ -424,7 +428,7 @@ msgstr ""
 
 #: ../DiskManager/Fstab/Mounter.py:199
 #, python-format
-msgid "It seams that fs type '%s' is not valid."
+msgid "It seems that fs type '%s' is not valid."
 msgstr ""
 
 #: ../DiskManager/Fstab/Mounter.py:203
@@ -436,7 +440,7 @@ msgstr ""
 #. Keep the English term 'force' for the 'force' unmount option
 #: ../DiskManager/Fstab/Mounter.py:211
 msgid ""
-"You can try to use the 'force' option. Be Aware that this could be risky."
+"You can try to use the 'force' option. Be aware that this could be risky."
 msgstr ""
 
 #: ../DiskManager/Fstab/Mounter.py:212

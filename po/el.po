@@ -1,22 +1,26 @@
-# Greek translation for disk-manager
-# Copyright (c) 2007 Rosetta Contributors and Canonical Ltd 2007
-# This file is distributed under the same license as the disk-manager package.
-# FIRST AUTHOR <EMAIL@ADDRESS>, 2007.
-#
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+# 
+# Translators:
+# anticapitalista <anticapitalista@riseup.net>, 2022
+# Roy Avrett <avrett@cs.fsu.edu>, 2022
+# 
 #, fuzzy
 msgid ""
 msgstr ""
-"Project-Id-Version: disk-manager\n"
+"Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-01-15 23:43+0100\n"
-"PO-Revision-Date: 2007-07-15 22:29+0000\n"
-"Last-Translator: Ioannis Koniaris <ikoniari@csd.auth.gr>\n"
-"Language-Team: Greek <el@li.org>\n"
-"Language: el\n"
+"POT-Creation-Date: 2022-01-16 00:46+0100\n"
+"PO-Revision-Date: 2022-01-21 17:21+0000\n"
+"Last-Translator: Roy Avrett <avrett@cs.fsu.edu>, 2022\n"
+"Language-Team: Greek (https://www.transifex.com/anticapitalista/teams/10162/el/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Rosetta-Export-Date: 2007-07-15 23:18:09+0000\n"
+"Language: el\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
 #: ../disk-manager.in:66
 msgid "Insufficient rights"
@@ -24,14 +28,15 @@ msgstr "Ελλιπή δικαιώματα"
 
 #: ../disk-manager.in:67
 msgid "You need administrative rights to start this application."
-msgstr "Χρειάζεστε δικαιώματα διαχειριστή για να εκκινήσετε αυτή την εφαρμογή."
+msgstr ""
+"Χρειάζεστε δικαιώματα διαχειριστή για να εκκινήσετε αυτή την εφαρμογή."
 
 #: ../data/disk-manager.glade.h:1
 msgid "<b>Driver</b>"
 msgstr "<b>Οδηγός</b>"
 
 #: ../data/disk-manager.glade.h:2
-msgid "This driver seams to not be available for this type."
+msgid "This driver seems to not be available for this type."
 msgstr ""
 
 #: ../data/disk-manager.glade.h:3
@@ -97,7 +102,7 @@ msgstr "<b>Επιλογές:</b>"
 
 #: ../data/disk-manager.glade.h:18
 msgid "Volume"
-msgstr ""
+msgstr "Τόμος"
 
 #: ../data/disk-manager.glade.h:19
 msgid "<b>Total size:</b>"
@@ -138,7 +143,7 @@ msgstr ""
 
 #: ../DiskManager/Dialogs.py:127 ../DiskManager/Fstab/Mounter.py:206
 #, python-format
-msgid "No driver is available for this type of filsystem : '%s'"
+msgid "No driver is available for this type of filesystem : '%s'"
 msgstr ""
 
 #: ../DiskManager/Dialogs.py:162
@@ -164,7 +169,7 @@ msgstr ""
 #, python-format
 msgid ""
 "<i>%s</i> is not formatted correctly.\n"
-"Options should be separated by coma (,)"
+"Options should be separated by comma (,)"
 msgstr ""
 
 #: ../DiskManager/Dialogs.py:427
@@ -263,11 +268,11 @@ msgstr ""
 
 #: ../DiskManager/DiskManager.py:399
 msgid "Unmount"
-msgstr ""
+msgstr "αποπροσάρτηση"
 
 #: ../DiskManager/DiskManager.py:402
 msgid "Mount"
-msgstr ""
+msgstr "Προσάρτηση"
 
 #: ../DiskManager/DiskManager.py:407
 msgid "Reverting to an older version?"
@@ -279,7 +284,7 @@ msgstr ""
 
 #: ../DiskManager/DiskManager.py:408
 msgid "Do you want to continue?"
-msgstr ""
+msgstr "Θέλετε να συνεχίσετε; "
 
 #: ../DiskManager/Utility.py:45
 msgid "KB"
@@ -314,8 +319,8 @@ msgid "Unmount selected"
 msgstr ""
 
 #: ../DiskManager/Fstab/FstabHandler.py:447
-msgid "Reboot require"
-msgstr "Απαιτείται επανεκκίνηση"
+msgid "Reboot required"
+msgstr ""
 
 #: ../DiskManager/Fstab/FstabHandler.py:448
 msgid ""
@@ -372,10 +377,8 @@ msgid "Close all applications that use it and retry to unmount."
 msgstr ""
 
 #: ../DiskManager/Fstab/Mounter.py:132
-msgid "The filesystem might be temporary buzy. Wait few seconds and retry."
+msgid "The filesystem might be temporarily busy. Wait few seconds and retry."
 msgstr ""
-"Το σύστημα αρχείων μπορεί να είναι απασχολημένο προσωρινά. Περιμένετε μερικά "
-"δευτερόλεπτα και ξαναδοκιμάστε."
 
 #. TRANSLATORS:
 #. Keep the English term 'lazy' for the 'lazy' unmount option
@@ -407,12 +410,12 @@ msgid "Retry mount"
 msgstr ""
 
 #: ../DiskManager/Fstab/Mounter.py:190
-msgid "You can try one of the following action:"
-msgstr "Μπορείτε να δοκιμάστε μια από τις ακόλουθες ενέργειες:"
+msgid "You can try one of the following actions:"
+msgstr ""
 
 #: ../DiskManager/Fstab/Mounter.py:193
 #, python-format
-msgid "It seams that option '%s' is not allowed."
+msgid "It seems that option '%s' is not allowed."
 msgstr ""
 
 #: ../DiskManager/Fstab/Mounter.py:195
@@ -426,7 +429,7 @@ msgstr "Μη χρησιμοποιείτε την επιλογή '%s'"
 
 #: ../DiskManager/Fstab/Mounter.py:199
 #, python-format
-msgid "It seams that fs type '%s' is not valid."
+msgid "It seems that fs type '%s' is not valid."
 msgstr ""
 
 #: ../DiskManager/Fstab/Mounter.py:203
@@ -438,7 +441,7 @@ msgstr ""
 #. Keep the English term 'force' for the 'force' unmount option
 #: ../DiskManager/Fstab/Mounter.py:211
 msgid ""
-"You can try to use the 'force' option. Be Aware that this could be risky."
+"You can try to use the 'force' option. Be aware that this could be risky."
 msgstr ""
 
 #: ../DiskManager/Fstab/Mounter.py:212
