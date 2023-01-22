@@ -92,7 +92,7 @@ class EditPartition(SimpleGladeApp) :
             self.driver_box.add_attribute(renderer, 'text', 0)
             current_driver_focus = 0
             for i in range(len(drivers_list)) :
-                self.driver_box.insert_text(0, "%s (%s)" % \
+                self.driver_box.append_text("%s (%s)" % \
                     (drivers_list[i][0], drivers_list[i][1]))
                 if driver == drivers_list[i][0] :
                     current_driver_focus = i
