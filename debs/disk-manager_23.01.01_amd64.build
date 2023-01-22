@@ -578,27 +578,6 @@ make[1]: Leaving directory '/tmpdir/build/disk-manager'
    dh_perl
    dh_link
    dh_strip_nondeterminism
-	Normalized debian/disk-manager/usr/share/locale/fi/LC_MESSAGES/disk-manager.mo
-	Normalized debian/disk-manager/usr/share/locale/fa/LC_MESSAGES/disk-manager.mo
-	Normalized debian/disk-manager/usr/share/locale/es_ES/LC_MESSAGES/disk-manager.mo
-	Normalized debian/disk-manager/usr/share/locale/es/LC_MESSAGES/disk-manager.mo
-	Normalized debian/disk-manager/usr/share/locale/el/LC_MESSAGES/disk-manager.mo
-	Normalized debian/disk-manager/usr/share/locale/de/LC_MESSAGES/disk-manager.mo
-	Normalized debian/disk-manager/usr/share/locale/da/LC_MESSAGES/disk-manager.mo
-	Normalized debian/disk-manager/usr/share/locale/cs/LC_MESSAGES/disk-manager.mo
-	Normalized debian/disk-manager/usr/share/locale/ca/LC_MESSAGES/disk-manager.mo
-	Normalized debian/disk-manager/usr/share/locale/bg/LC_MESSAGES/disk-manager.mo
-	Normalized debian/disk-manager/usr/share/locale/ar/LC_MESSAGES/disk-manager.mo
-	Normalized debian/disk-manager/usr/share/locale/am/LC_MESSAGES/disk-manager.mo
-	Normalized debian/disk-manager/usr/share/locale/zh_TW/LC_MESSAGES/disk-manager.mo
-	Normalized debian/disk-manager/usr/share/locale/zh_CN/LC_MESSAGES/disk-manager.mo
-	Normalized debian/disk-manager/usr/share/locale/vi/LC_MESSAGES/disk-manager.mo
-	Normalized debian/disk-manager/usr/share/locale/uk/LC_MESSAGES/disk-manager.mo
-	Normalized debian/disk-manager/usr/share/locale/tr/LC_MESSAGES/disk-manager.mo
-	Normalized debian/disk-manager/usr/share/locale/th/LC_MESSAGES/disk-manager.mo
-	Normalized debian/disk-manager/usr/share/locale/sv/LC_MESSAGES/disk-manager.mo
-	Normalized debian/disk-manager/usr/share/locale/sr/LC_MESSAGES/disk-manager.mo
-	Normalized debian/disk-manager/usr/share/locale/sq/LC_MESSAGES/disk-manager.mo
 	Normalized debian/disk-manager/usr/share/locale/kk/LC_MESSAGES/disk-manager.mo
 	Normalized debian/disk-manager/usr/share/locale/ja/LC_MESSAGES/disk-manager.mo
 	Normalized debian/disk-manager/usr/share/locale/it/LC_MESSAGES/disk-manager.mo
@@ -623,6 +602,27 @@ make[1]: Leaving directory '/tmpdir/build/disk-manager'
 	Normalized debian/disk-manager/usr/share/locale/nb/LC_MESSAGES/disk-manager.mo
 	Normalized debian/disk-manager/usr/share/locale/lt/LC_MESSAGES/disk-manager.mo
 	Normalized debian/disk-manager/usr/share/locale/ko/LC_MESSAGES/disk-manager.mo
+	Normalized debian/disk-manager/usr/share/locale/zh_TW/LC_MESSAGES/disk-manager.mo
+	Normalized debian/disk-manager/usr/share/locale/zh_CN/LC_MESSAGES/disk-manager.mo
+	Normalized debian/disk-manager/usr/share/locale/vi/LC_MESSAGES/disk-manager.mo
+	Normalized debian/disk-manager/usr/share/locale/uk/LC_MESSAGES/disk-manager.mo
+	Normalized debian/disk-manager/usr/share/locale/tr/LC_MESSAGES/disk-manager.mo
+	Normalized debian/disk-manager/usr/share/locale/th/LC_MESSAGES/disk-manager.mo
+	Normalized debian/disk-manager/usr/share/locale/sv/LC_MESSAGES/disk-manager.mo
+	Normalized debian/disk-manager/usr/share/locale/sr/LC_MESSAGES/disk-manager.mo
+	Normalized debian/disk-manager/usr/share/locale/sq/LC_MESSAGES/disk-manager.mo
+	Normalized debian/disk-manager/usr/share/locale/fi/LC_MESSAGES/disk-manager.mo
+	Normalized debian/disk-manager/usr/share/locale/fa/LC_MESSAGES/disk-manager.mo
+	Normalized debian/disk-manager/usr/share/locale/es_ES/LC_MESSAGES/disk-manager.mo
+	Normalized debian/disk-manager/usr/share/locale/es/LC_MESSAGES/disk-manager.mo
+	Normalized debian/disk-manager/usr/share/locale/el/LC_MESSAGES/disk-manager.mo
+	Normalized debian/disk-manager/usr/share/locale/de/LC_MESSAGES/disk-manager.mo
+	Normalized debian/disk-manager/usr/share/locale/da/LC_MESSAGES/disk-manager.mo
+	Normalized debian/disk-manager/usr/share/locale/cs/LC_MESSAGES/disk-manager.mo
+	Normalized debian/disk-manager/usr/share/locale/ca/LC_MESSAGES/disk-manager.mo
+	Normalized debian/disk-manager/usr/share/locale/bg/LC_MESSAGES/disk-manager.mo
+	Normalized debian/disk-manager/usr/share/locale/ar/LC_MESSAGES/disk-manager.mo
+	Normalized debian/disk-manager/usr/share/locale/am/LC_MESSAGES/disk-manager.mo
    dh_compress
    dh_fixperms
    dh_missing

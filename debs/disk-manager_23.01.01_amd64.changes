@@ -16,38 +16,38 @@ Description:
 Changes:
  disk-manager (23.01.01) mx; urgency=medium
  .
-   * make ntfs-3g default preselected driver within list for ntfs
+   * make ntfs-3g default preselected driver for ntfs
    * replace "Access driver" with "Read-only driver" for ntfs
 Checksums-Sha1:
- f380a362ca4b155103d03ccdac31737f57a849cd 1638 disk-manager_23.01.01.dsc
- a6d37090932cef769d7340ae6b70d2ce0547f97e 134432 disk-manager_23.01.01.tar.xz
- 5cb317a454e3b8c2956119f475204cf8fbf98a4f 87644 disk-manager_23.01.01_all.deb
- 52c23ab724c57555763bf41437aec027872bfb32 8848 disk-manager_23.01.01_amd64.buildinfo
+ 75575bd6dd6330c58c673c01487efc27f6ebdefb 1638 disk-manager_23.01.01.dsc
+ 62edf9e160d36f7cd04c2daea0d78de47dfb0734 134404 disk-manager_23.01.01.tar.xz
+ 90122933811e8d8eb6ddcff434c465561d27710a 87636 disk-manager_23.01.01_all.deb
+ 0746e70036f9dcea5e868d43afeb848cdde71932 8849 disk-manager_23.01.01_amd64.buildinfo
 Checksums-Sha256:
- 61a37240a93f614b07984d0c9bf180c33d4ab1d3d43dd37c8662b1cd9c37807f 1638 disk-manager_23.01.01.dsc
- 00c1bfebcbe7fab55dbd5dd33e8c29017e4a9659a812ff65423751b8af90a0dc 134432 disk-manager_23.01.01.tar.xz
- 8e42c610a256455cb5ffcabac6f8f8403688d070fc15958bb3e23baf2b0aab1e 87644 disk-manager_23.01.01_all.deb
- 8232b9ecf48080d2e7139f1f242ea98d45ce1541ba7b8fbe217b9389a4d0567f 8848 disk-manager_23.01.01_amd64.buildinfo
+ a62ae7acfc27a09d6413348ecc28457f822db9174fe4aaf0a1dc3276c1f5ef3b 1638 disk-manager_23.01.01.dsc
+ 88e2090bb12c0366c9cc7a66cb51e763c852f3cf0a38610138baddeb19ab6ab9 134404 disk-manager_23.01.01.tar.xz
+ a41b230c645d628d97d7dbd82fa4dd18fb876dd7f78c79479575207b9a87c901 87636 disk-manager_23.01.01_all.deb
+ f39be95d37d84ca695b5f4362701674afb457e9c61faec272ce7c696bd2fd5db 8849 disk-manager_23.01.01_amd64.buildinfo
 Files:
- 74640cbc6c27e8635e85f5a3f27ccb5f 1638 admin optional disk-manager_23.01.01.dsc
- 783e4268aa1b52ab782ac803d94b4f39 134432 admin optional disk-manager_23.01.01.tar.xz
- 88c154f5207d5ff2b3e0dc541fd540e6 87644 admin optional disk-manager_23.01.01_all.deb
- 95ebb50cc7c558cb1d8cc06f8fdfc03c 8848 admin optional disk-manager_23.01.01_amd64.buildinfo
+ c6d8d5e1bb39191dd88a6b0b9aa8627a 1638 admin optional disk-manager_23.01.01.dsc
+ dbc4587386702af1fa91d987f5e7e298 134404 admin optional disk-manager_23.01.01.tar.xz
+ e1913f48d5941f289b5849fde1690c29 87636 admin optional disk-manager_23.01.01_all.deb
+ 9f8ee6e42bc932caffa133150602cb5f 8849 admin optional disk-manager_23.01.01_amd64.buildinfo
 
 -----BEGIN PGP SIGNATURE-----
 
-iQJHBAEBCgAxFiEEgRnC8/wKXRM2S0xLL1ePG6ydm+kFAmPMF4MTHGZlaGxpeEBt
-eGxpbnV4Lm9yZwAKCRAvV48brJ2b6Z6ND/43VJbCU242Wnty+WSFdDbZGcQ7rqaO
-m9+VP+s3vl9zYroH0AzXX5UZNpDRLtcu5/0GzlGwStmJOO6TDIgA+2AdzVheo6Cz
-bS3P/57DfpokjHGA90MER+l2HJWdPWE+BWNOrkyZ614XrWkZbxBLswFMlkr0sCek
-uLKW4btKmzkTG6EjK/VbQJQWLYPLpB+Dfponul2EnJB3vVcmvyvsi8Mj60nPVMoK
-PUVo8ENjDKRRgi8N0Cmd3Y2H1PsGLieeer45Kt2Tt+xbAf9d667c4VLfhta8NBsu
-T5W9FtDyDnsGZ/XWWgX5Wd7/yMpt+3hAmKHVlhFmARQ08YDbZxYRS5yVryz59sih
-Mf0oQ1AiqtM8gxHDKthaqMMh35PTmaTj/iXddEcy0gNM9Lf51dXd0nMgz6UPruOM
-3rQCoLSVgeMFhAES6XASnFCSn5DN1+prus4hfqIEWRBTmZS2sCSq4rhaxi3N453e
-Mh00CGTX8bfb/0a88oANsm5KUaRgsjFutcKvq4nmahflPoYM+YH/fVEr0qxm1ao7
-bgjqWXqzZ3mukUX35Oe8POV3eqyx23+wGXA1KrLOB62D45wcKabISMEJW5byj6Tb
-3qofsNbRNKSTR6NFOPLCX1Mfb1YYUxV11JpV/ty6GrGsgWSuDS4j+YmRpjk3fU6c
-SSqdi8b+K0wR0w==
-=0PnC
+iQJHBAEBCgAxFiEEgRnC8/wKXRM2S0xLL1ePG6ydm+kFAmPMkPgTHGZlaGxpeEBt
+eGxpbnV4Lm9yZwAKCRAvV48brJ2b6Vy5EACMfE8yreG5xlArAY9zoa/d44sE5Ccw
+ctudV85Mwd7fjj4V8LCWn4kjnKkL+1XL9g9O6Zav+KAuIM3cs/Y8P3WMzPV8ixXu
+2dJFN8eFZykwwVUtAaMCAfWya3hKUDXmRcyJeTsr9TPiP5w15JXC4QHyzYhWyKkR
+GXpQ1QjJlaNnVEZj6cB3EUKaDQHBOb/UcCTWpZIxVKvEzKJAlID/D+e/iNyn1jwd
+lBWgmtRFr3Q6WkTl17Qj0RS7BZGYTCggcYIMDwY2T121is/HW+Mgnhb5foeqdA/H
+PK1m4wuGQlrp4kQ8qwo6JuiBFFRwH1fNirDAvjEqImiTK6IzZbq3gUtJluEQdnMP
+Gb+RJn86mbvNhU2GMSFLbkuaLqHhCPv+x0xglNKp6sSOMnLtOlCL4p5sIuuNA7Bj
+1NnCsv4c/GkcXqgY1hv/oNmIWhNll9xyPdEUhzn90imxYNtdyUW9qGJqh2fVon/r
+04GJ5hjeia4iVNooVKsDIyMXUdxATXlzUKE3KFqAFyo2tVzb0m0gb3XGwgmhEXZ2
+Aw5xz+tWNUNUGHr/jzmv9qE/iL+mhIwRBP8eUBbcwHAvHiMkbarEVdYEq45/iQO/
+C5GqQux5RwmMylNpGnNYrQAwsAnABjJwEV2l0+g86HmwdAsq++2nuT4jqDy+XEYs
+vbfC2ko1pjlObw==
+=eARL
 -----END PGP SIGNATURE-----
