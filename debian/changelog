@@ -1,3 +1,9 @@
+disk-manager (23.04.01) mx; urgency=medium
+
+  * add polkit policy
+
+ -- Dolphin Oracle <dolphinoracle@gmail.com>  Sat, 08 Apr 2023 12:48:10 -0400
+
 disk-manager (23.01.01) mx; urgency=medium
 
   * make ntfs-3g default preselected driver for ntfs
