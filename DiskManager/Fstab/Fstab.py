@@ -374,6 +374,10 @@ class MntFile(list) :
         seen = []
         for line in lines :
             entry = line.split()
+            if len(entry) == 4 and entry[2] == "swap" :
+                entry.append("0")
+            if len(entry) == 5 and entry[2] == "swap" :
+                entry.append("0")
             if not len(entry) == 6 :
                 continue
             if self.filename == "/etc/mtab":
