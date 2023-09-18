@@ -1,3 +1,9 @@
+disk-manager (23.09.01) mx; urgency=medium
+
+  * add missing dump- and pass-fields to swap lines in fstab
+
+ -- fehlix <fehlix@mxlinux.org>  Sun, 17 Sep 2023 21:01:52 -0400
+
 disk-manager (23.04.04) mx; urgency=medium
 
   * update launcher script
