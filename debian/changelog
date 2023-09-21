@@ -1,3 +1,9 @@
+disk-manager (23.09.02) mx; urgency=medium
+
+  * adjust missing dump and passno fields for all fstab lines
+
+ -- fehlix <fehlix@mxlinux.org>  Thu, 21 Sep 2023 15:26:37 -0400
+
 disk-manager (23.09.01) mx; urgency=medium
 
   * add missing dump- and pass-fields to swap lines in fstab
