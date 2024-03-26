@@ -1,6 +1,22 @@
+# added by fehlix
+mesonbuild/
+.tx/
+*.bak/
+*.orig/
+*~/
+*.bak
+*.orig
+*~
+.intltool-merge-cache.lock
+
+debian/.debhelper/
+debian/debhelper-build-stamp
+debian/files
+debian/*.substvars
 
 # Created by https://www.toptal.com/developers/gitignore/api/python,autotools,autotools+strict
 # Edit at https://www.toptal.com/developers/gitignore?templates=python,autotools,autotools+strict
+
 
 ### Autotools ###
 # http://www.gnu.org/software/automake
