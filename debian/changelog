@@ -1,3 +1,10 @@
+disk-manager (25.11.01) mx; urgency=medium
+
+  * add support for ntfs3 file system
+  * remove "ntfs read-only" from selection list
+
+ -- fehlix <fehlix@mxlinux.org>  Wed, 12 Nov 2025 19:22:06 -0500
+
 disk-manager (25.04.01) mx; urgency=medium
 
   * fix regex in ToolsBackend
