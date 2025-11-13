@@ -1,3 +1,9 @@
+disk-manager (25.11.02) mx; urgency=medium
+
+  * another backslash regex fix
+
+ -- fehlix <fehlix@mxlinux.org>  Thu, 13 Nov 2025 16:49:39 -0500
+
 disk-manager (25.11.01) mx; urgency=medium
 
   * add support for ntfs3 file system
